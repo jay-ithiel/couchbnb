@@ -10,7 +10,7 @@
 ## Minimum Viable Product
 Couchbnb is a web application inspired by Couchsurfing built using Ruby on Rails, Javascript and React/Redux. At minimum, this app will satisfy the following criteria with bug-free, smooth navigation, adequate seed data and sufficient CSS styling.
 
-- [x] Hosting on Heroku
+- [ ] Hosting on Heroku
 - [ ] New user sign up, login and guest login
 - [ ] Bookings
 - [ ] Spots
@@ -31,5 +31,3 @@ Couchbnb is a web application inspired by Couchsurfing built using Ruby on Rails
 [sample-state]: docs/sample-state.md
 [api-endpoints]: docs/api-endpoints.md
 [schema]: docs/schema.md -->
-
-<tt>hello world</tt>
