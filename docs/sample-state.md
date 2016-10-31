@@ -1,3 +1,4 @@
+```js
 {
   currentUser: {
     id: 1,
@@ -75,3 +76,4 @@
     recipient_id: recipient_id
   }
 }
+```
