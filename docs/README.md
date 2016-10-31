@@ -43,7 +43,7 @@ Couchbnb is a web application inspired by Couchsurfing built using Ruby on Rails
 ### Phase 3: Spots models and components (1 days)
 **Objective:** Spots can be created, edited, viewed and destroyed
 
-## Phase 4: Bookings models and components (1 day)
+### Phase 4: Bookings models and components (1 day)
 **Objective:** Users can request bookings from spot show page, hosts can accept/decline
 
 ### Phase 5: Spots Search with Google Maps API (3 days)
