@@ -5,39 +5,39 @@
 
 ## JSON API
   **Users**
-    * POST /api/users
-    * PATCH /api/users
+    * <tt>POST /api/users</tt>
+    * <tt>PATCH /api/users</tt>
     + Bonus
-      * GET /api/users/:id
+      * <tt>GET /api/users/:id</tt>
 
   **Session**
-    * POST /api/session
-    * GET /api/session
-    * DELETE /api/session
+    * <tt>POST /api/session</tt>
+    * <tt>GET /api/session</tt>
+    * <tt>DELETE /api/session</tt>
 
   **Spots**
-    * GET /api/spots
-    * POST /api/spots
-    * GET /api/spots/:id
-    * PATCH /api/spots/:id
-    * DELETE /api/spots/:id
+    * <tt>GET /api/spots</tt>
+    * <tt>POST /api/spots</tt>
+    * <tt>GET /api/spots/:id</tt>
+    * <tt>PATCH /api/spots/:id</tt>
+    * <tt>DELETE /api/spots/:id</tt>
 
   **Bookings**
-    * GET /api/bookings
-    * POST /api/bookings
-    * GET /api//bookings/:id
-    * DELETE /api/bookings/:id
+    * <tt>GET /api/bookings</tt>
+    * <tt>POST /api/bookings</tt>
+    * <tt>GET /api//bookings/:id</tt>
+    * <tt>DELETE /api/bookings/:id</tt>
     + Bonus
-      * PATCH /api/bookings/:id
+      * <tt>PATCH /api/bookings/:id</tt>
 
   **Reviews**
-    * GET /api/reviews
-    * POST /api/reviews
-    * GET /api/reviews/:id
-    * DELETE /api/reviews/:id
+    * <tt>GET /api/reviews</tt>
+    * <tt>POST /api/reviews</tt>
+    * <tt>GET /api/reviews/:id</tt>
+    * <tt>DELETE /api/reviews/:id</tt>
 
   **Messages**
-    * GET /api/messages
-    * POST /api/messages
-    * GET /api/messages/:id
-    * DELETE /api/messages/:id
+    * <tt>GET /api/messages</tt>
+    * <tt>POST /api/messages</tt>
+    * <tt>GET /api/messages/:id</tt>
+    * <tt>DELETE /api/messages/:id</tt>
