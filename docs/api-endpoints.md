@@ -1,43 +1,43 @@
 # API Endpoints
 
 ## HTML API
-  * <tt>GET /</tt> - loads Couchbnb web app
+  - `GET /` - loads Couchbnb web app
 
 ## JSON API
   **Users**
-    * <tt>POST /api/users</tt>
-    * <tt>PATCH /api/users</tt>
-    + Bonus
-      * <tt>GET /api/users/:id</tt>
+    - `POST /api/users`
+    - `PATCH /api/users`
+    - Bonus
+      - `GET /api/users/:id`
 
   **Session**
-    * <tt>POST /api/session</tt>
-    * <tt>GET /api/session</tt>
-    * <tt>DELETE /api/session</tt>
+    - `POST /api/session`
+    - `GET /api/session`
+    - `DELETE /api/session`
 
   **Spots**
-    * <tt>GET /api/spots</tt>
-    * <tt>POST /api/spots</tt>
-    * <tt>GET /api/spots/:id</tt>
-    * <tt>PATCH /api/spots/:id</tt>
-    * <tt>DELETE /api/spots/:id</tt>
+    - `GET /api/spots`
+    - `POST /api/spots`
+    - `GET /api/spots/:id`
+    - `PATCH /api/spots/:id`
+    - `DELETE /api/spots/:id`
 
   **Bookings**
-    * <tt>GET /api/bookings</tt>
-    * <tt>POST /api/bookings</tt>
-    * <tt>GET /api//bookings/:id</tt>
-    * <tt>DELETE /api/bookings/:id</tt>
+    - `GET /api/bookings`
+    - `POST /api/bookings`
+    - `GET /api//bookings/:id`
+    - `DELETE /api/bookings/:id`
     + Bonus
-      * <tt>PATCH /api/bookings/:id</tt>
+      - `PATCH /api/bookings/:id`
 
   **Reviews**
-    * <tt>GET /api/reviews</tt>
-    * <tt>POST /api/reviews</tt>
-    * <tt>GET /api/reviews/:id</tt>
-    * <tt>DELETE /api/reviews/:id</tt>
+    - `GET /api/reviews`
+    - `POST /api/reviews`
+    - `GET /api/reviews/:id`
+    - `DELETE /api/reviews/:id`
 
   **Messages**
-    * <tt>GET /api/messages</tt>
-    * <tt>POST /api/messages</tt>
-    * <tt>GET /api/messages/:id</tt>
-    * <tt>DELETE /api/messages/:id</tt>
+    - `GET /api/messages`
+    - `POST /api/messages`
+    - `GET /api/messages/:id`
+    - `DELETE /api/messages/:id`
