@@ -1,7 +1,7 @@
 # Couchbnb
 
-[Heroku link][heroku]
-[Trello link][trello]
+- [Heroku link][heroku]
+- [Trello link][trello]
 
 [heroku]: https://couchbnb.herokuapp.com/
 [trello]: https://trello.com/b/zK9iofDv/full-stack-couchbnb
