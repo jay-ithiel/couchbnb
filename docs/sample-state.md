@@ -4,17 +4,7 @@
     id: 1,
     fname: "first-name",
     lname: "last-name",
-    email: "email@email.com",
-    reviews: {
-      1: {
-        id: 1,
-        title: "title",
-        body: "body",
-        star-rating: "* * * * * ",
-        author_id: 1
-        spot_id: spot_id
-      }
-    }
+    email: "email@email.com"
   },
 
   forms: {
@@ -29,7 +19,7 @@
   bookings: {
     1: {
       booking_id: 1
-      host_id: host-id,
+      spot_id: spot-id,
       guest_id: guest-id,
       check-in-date: 01/December/2016,
       check-out-date: 01/January/2017,
@@ -61,19 +51,20 @@
         heating: true,
         parking: true,
       },
-      reviews: {
-        1: {
-          id: 1,
-          title: "review title",
-          body: "review body",
-          star-rating: "* * * * * ",
-          author_id: author_id,
-          spot_id: spot_id
-        }
-      }
     }
   },
 
+  reviews: {
+    1: {
+      id: 1,
+      title: "review title",
+      body: "review body",
+      star-rating: "* * * * * ",
+      author_id: author_id,
+      spot_id: spot_id
+    }
+  },
+  
   messages: {
     subject: "message subject",
     body: "message body",

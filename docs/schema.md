@@ -14,8 +14,8 @@ session_token   | string    | not null, indexed, unique
 column name    | data-type | details
 ---------------|-----------|----------------------------
 id             | integer   | not null, primary key
-host_id        | integer   | not null, foreign key (refs users), indexed
-guest_id       | integer   | not null, foreign key (refs users), indexed
+spot_id        | integer   | not null, foreign key (references spots), indexed
+guest_id       | integer   | not null, foreign key (references users), indexed
 check-in-date  | date      | not null
 check-out-date | date      | not null
 price          | string    | not null
@@ -25,7 +25,7 @@ location       | string    | not null
 column name     | data-type | details
 ----------------|-----------|------
 id              | integer   | not null, primary key
-host_id         | integer   | not null, foreign key (refs users), indexed
+host_id         | integer   | not null, foreign key (references users), indexed
 country         | string    | not null, indexed
 state-region    | string    | not null, indexed
 post-code       | string    | not null, indexed
@@ -40,3 +40,22 @@ pet-friendly    | boolean   | indexed
 air-con         | boolean   | indexed
 heating         | boolean   | indexed
 parking         | boolean   | indexed
+
+## Reviews
+column name  | data-type | details
+-------------|-----------|-------------------
+id           | integer   | not null, primary key
+author_id    | integer   | not null, foreign key (references users), indexed
+spot_id      | integer   | not null, foreign key (references spots), indexed
+title        | string    | not null
+body         | string    | nut null
+star-rating  | string    | not null, indexed
+
+## Messages
+column name   | data-type | details
+--------------|-----------|-------
+id            | integer   | not null, primary key
+author_id     | integer   | not null, foreign key (references users), indexed
+recipient_id  | integer   | not null, foreign key (references users), indexed
+subject       | string    | not null
+body          | string    | not null
