@@ -1,39 +1,53 @@
-# Component Hierarchy
+## Component Hierarchy
 
-## SplashContainer
-  * Header
+**SplashContainer**
+  - Header
     * LoginForm (modal)
-  * Body
+  -  Body
     * SignUpForm (modal)
 
-## ReviewContainer (modal)
-  * ReviewForm
+**ReviewContainer**
+  - ReviewForm (modal)
 
-## HomeContainer
-  * LoggedInHeader
+**HomeContainer**
+  - LoggedInHeader
     * UserDetail
     * SearchBar (by date/location/guests)
     * NewSpotFrom
-  * Body
-    * SpotIndex
+  - Body
+    * SpotIndex (image links to spot show)
 
-## SearchContainer
-  * LoggedInHeader
-  * SpotFilter
+**SearchContainer**
+  - LoggedInHeader
+  - SpotFilter
     * GoogleMap
     * SpotIndex
 
-## SpotContainer
+**SpotContainer**
   * LoggedInHeader
   * SpotDetail
   * BookingForm
 
-## MessagesContainer
-  * MessageForm
-  * MessageIndex
-    * MessageIndexItem
+**MessagesContainer**
+  - MessageForm
+  - MessageIndex
+    + MessageIndexItem
       * MessageDetail
 
-## UserContainer
-  * LoggedInHeader
-  * 
+**UserContainer**
+  - LoggedInHeader
+  - UserDetail
+
+## Routes
+
+|Path   | Component   |
+|-------|-------------|
+| "/" | "SplashContainer" |
+| "/login" | "LoginForm" |
+| "/sign-up" | "SignUpForm" |
+| "/home" | "HomeContainer" |
+| "/search" | "SearchContainer" |
+| "/spot/:spotId" | "SpotContainer" |
+| "/messages" | "MessagesContainer" |
+| "/messages/:messageId" | "MessageIndexItem" |
+| "/users/:userId" | "UserContainer" |
