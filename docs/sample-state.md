@@ -43,7 +43,12 @@
       spot_id: 1,
       host_id: host-id,
       title: "spot-title",
-      location: "spot-location",
+      location: {  
+        country: "United States",
+        state-region: "California",
+        post-code: "94102",
+        street-address: "string"
+      }
       price: "$100 per night",
       spotDetails: {
         room-type: "private-house/apt/flat",
