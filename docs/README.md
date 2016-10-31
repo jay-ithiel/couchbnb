@@ -21,13 +21,13 @@ Couchbnb is a web application inspired by Couchsurfing built using Ruby on Rails
 
 ## Design Docs
 * [View Wireframes][wireframes]
-<!-- * [React Components][components]
+* [React Components][components]
 * [API endpoints][api-endpoints]
 * [DB schema][schema]
-* [Sample State][sample-state] -->
+* [Sample State][sample-state]
 
 [wireframes]: docs/wireframes
-<!-- [components]: docs/component-hierarchy.md
+[components]: docs/component-hierarchy.md
 [sample-state]: docs/sample-state.md
 [api-endpoints]: docs/api-endpoints.md
-[schema]: docs/schema.md -->
+[schema]: docs/schema.md
