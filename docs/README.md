@@ -1,10 +1,10 @@
 # Couchbnb
 
 [Heroku link][heroku]
-<!-- [Trello link][trello] -->
+[Trello link][trello]
 
 [heroku]: https://couchbnb.herokuapp.com/
-<!-- [trello]:  -->
+[trello]: https://trello.com/b/zK9iofDv/full-stack-couchbnb
 
 
 ## Minimum Viable Product
