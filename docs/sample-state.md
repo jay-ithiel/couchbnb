@@ -32,25 +32,15 @@
     1: {
       spot_id: 1,
       host_id: host-id,
+      host_name: host_name,
       title: "spot-title",
-      location: {  
-        country: "United States",
-        state-region: "California",
-        post-code: "94102",
-        street-address: "string"
-      }
+      country: "United States",
+      state-region: "California",
+      post-code: "94102",
+      street-address: "string"
       price: "$100 per night",
-      spotDetails: {
-        room-type: "private-house/apt/flat",
-        max-guests: 4,
-        bed-count: 4,
-        bathroom-count: 2.5,
-        kitchen: true,
-        pet-friendly: true,
-        air-conditioning: true,
-        heating: true,
-        parking: true,
-      },
+      room-type: "private-house/apt/flat",
+      bed-count: 4
     }
   },
 
@@ -59,12 +49,12 @@
       id: 1,
       title: "review title",
       body: "review body",
-      star-rating: "* * * * * ",
+      star-rating: 5,
       author_id: author_id,
       spot_id: spot_id
     }
   },
-  
+
   messages: {
     subject: "message subject",
     body: "message body",

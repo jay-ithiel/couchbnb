@@ -1,2 +1,10 @@
 import React from 'react';
-import { Provider } from 'react-redux';
+
+const App = (props) => (
+  <div>
+    <h3>Hello from App</h3>
+    {props.children}
+  </div>
+);
+
+export default App;
