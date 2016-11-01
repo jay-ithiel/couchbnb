@@ -9,13 +9,17 @@ class Api::SessionsController < ApplicationController
       login!(@user)
       render 'api/users/home'
     else
-      render @user.errors.full_messages, status: 422
+      render "Invalid login credentials", status: 422
     end
   end
 
   def destroy
-    logout!
-    render '/'
+    if logged_in?
+      logout!
+      render json: {}
+    else
+      render json: ["No current user"], status: 404
+    end
   end
 
 end
