@@ -55,4 +55,5 @@ Couchbnb is a web application inspired by Couchsurfing built using Ruby on Rails
 ### Bonus Features
 - [ ] Users can send messages
 - [ ] User profiles
+- [ ] Add fancy styling to splash page
 - [ ] Change splash background image to gif

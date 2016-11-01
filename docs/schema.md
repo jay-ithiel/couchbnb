@@ -49,7 +49,7 @@ author_id    | integer   | not null, foreign key (references users), indexed
 spot_id      | integer   | not null, foreign key (references spots), indexed
 title        | string    | not null
 body         | string    | nut null
-star-rating  | string    | not null, indexed
+star-rating  | integer   | not null, indexed
 
 ## Messages
 column name   | data-type | details
