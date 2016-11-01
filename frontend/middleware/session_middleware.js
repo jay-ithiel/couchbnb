@@ -11,12 +11,12 @@ import { login,
        } from '../util/session_api_util';
 
 const SessionMiddleware = store => next => action => {
-  const loginSuccessCallback = (user) => (
-    store.dispatch(receiveCurrentUser(user))
-  );
-  const errorCallback = (errors) => (
-    store.dispatch(receiveErrors(errors.responseJSON))
-  );
+  const loginSuccessCallback = (user) => {
+    store.dispatch(receiveCurrentUser(user));
+  };
+  const errorCallback = (errors) => {
+    store.dispatch(receiveErrors(errors.responseJSON));
+  };
 
   switch(action.type) {
     case LOGIN:
