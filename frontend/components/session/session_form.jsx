@@ -34,6 +34,7 @@ class SessionForm extends React.Component {
   }
 
   render() {
+    console.log(this.props.formType);
     const errors = this.props.errors;
     let errorsLi;
     if (errors) {

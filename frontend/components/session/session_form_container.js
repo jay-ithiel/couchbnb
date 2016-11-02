@@ -13,7 +13,8 @@ const mapDispatchToProps = (dispatch, routerProps) => {
 
   return {
     formType: formTypeVal,
-    processForm: (user) => dispatch(processFormVal(user))
+    processForm: (user) => dispatch(processFormVal(user)),
+    routePath: routerProps.location.pathname
   };
 };
 

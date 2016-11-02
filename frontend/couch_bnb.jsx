@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Root from './components/root';
 import configureStore from './store/store';
+import Modal from 'react-modal';
 
 // dev test imports
 import { login,
@@ -11,6 +12,7 @@ import { login,
 
 document.addEventListener("DOMContentLoaded", () => {
   const mainRoot = document.getElementById("root");
+  Modal.setAppElement(document.body);
 
   let store;
   if (window.currentUser) {

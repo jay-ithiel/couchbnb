@@ -3,15 +3,17 @@
 <head>
   <title>Couchbnb</title>
   <link
-    rel="stylsheet"
-    type="text/css"
-    href="app/assets/stylesheets/css_reset.scss">
-  <link
     href="https://fonts.googleapis.com/css?family=Permanent+Marker"
     rel="stylesheet">
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
+  <script type="text/javascript">
+    window.cloudinary_options = {
+      cloud_name: '<%= ENV["CLOUD_NAME"] %>',
+      upload_preset: '<%= ENV["UPLOAD_PRESET"] %>'
+    };
+  </script>
 </head>
 <body>
 
