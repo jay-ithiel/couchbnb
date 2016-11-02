@@ -1,7 +1,6 @@
 class User < ActiveRecord::Base
   validates :first_name,
             :last_name,
-            uniqueness: true,
             presence: true
 
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
