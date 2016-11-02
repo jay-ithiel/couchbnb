@@ -1,18 +1,10 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Couchbnb</title>
-    <script type="text/javascript">
-      <% if logged_in? %>
-        window.currentUser = <%= render(
-          "api/users/user.json.jbuilder",
-          user: current_user
-        ).html_safe %>
-      <% end %>
-    </script>
-  </head>
-  <body>
-    <main id="root">This is Root</main>
-  </body>
-</html>
+<script type="text/javascript">
+  <% if logged_in? %>
+    window.currentUser = <%= render(
+      "api/users/user.json.jbuilder",
+      user: current_user
+    ).html_safe %>
+  <% end %>
+</script>
+
+<main id="root">This is Root</main>
