@@ -34,7 +34,6 @@ class SessionForm extends React.Component {
   }
 
   render() {
-    console.log(this.props.formType);
     const errors = this.props.errors;
     let errorsLi;
     if (errors) {
@@ -66,12 +65,12 @@ class SessionForm extends React.Component {
     };
 
     const toggleForm = this.props.formType === "Log in" ? "/signup" : "/login";
-    const toggleFormType = this.props.formType === "Log in" ? "Sign Up" : "Log in";
+    const toggleFormType = this.props.type === false ? "Sign Up" : "Log in";
 
     return(
       <div>
         <form onSubmit={this.handleSubmit}>
-          <h2>{this.props.formType}</h2>
+          <h2 className="session-form-type">{toggleFormType}</h2>
           <Link to={toggleForm}>{toggleFormType}</Link>
           <ul>
             {errorsLi}

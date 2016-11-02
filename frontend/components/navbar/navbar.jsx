@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router';
 import Modal from 'react-modal';
 import ModalStyle from '../modal/modal_style';
+import SessionFormContainer from '../session/session_form_container';
 
 class Navbar extends React.Component {
   constructor(props) {
@@ -12,9 +13,11 @@ class Navbar extends React.Component {
     this.logo = this.logo.bind(this);
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
+    this.handleClickLogin = this.handleClickLogin.bind(this);
 
     this.state = {
-      modalOpen: false
+      modalOpen: false,
+      signIn: false
     };
   }
 
@@ -31,9 +34,23 @@ class Navbar extends React.Component {
       <Modal isOpen={this.state.modalOpen}
              onRequestClose={this.closeModal}
              style={ModalStyle}>
-        Hello from the modal!
+          {<SessionFormContainer type={this.state.signIn}/>}
       </Modal>
     );
+  }
+
+  handleClickLogin() {
+    this.setState({
+      modalOpen: true,
+      signIn: true
+    });
+  }
+
+  handleClickSignup() {
+    this.setState({
+      modalOpen: true,
+      signIn: false
+    });
   }
 
   userWelcome(currentUser, logout) {
@@ -48,11 +65,13 @@ class Navbar extends React.Component {
   loginLink() {
     return (
       <div className="header-login">
-        <div onClick={this.openModal}>
+        <div onClick={this.handleClickLogin}>
           <p>Log In</p>
         </div>
 
-        { this.modal() }
+        <div className="modal">
+          { this.modal() }
+        </div>
       </div>
     );
   }

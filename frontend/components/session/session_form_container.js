@@ -8,13 +8,19 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = (dispatch, routerProps) => {
-  let formTypeVal = routerProps.location.pathname === '/login' ? "Log in" : "Sign Up";
-  let processFormVal = formTypeVal === "Log in" ? login : signup;
+  let formType;
+  const processForm = (user) => {
+    if (routerProps.type === true) {
+      login(user);
+      formType = 'login';
+    } else {
+      signup(user);
+      formType= 'signup';
+    }
+  };
 
   return {
-    formType: formTypeVal,
-    processForm: (user) => dispatch(processFormVal(user)),
-    routePath: routerProps.location.pathname
+    processForm: user => dispatch(processForm(user))
   };
 };
 
