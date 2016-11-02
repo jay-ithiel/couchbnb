@@ -27,7 +27,7 @@ class SessionForm extends React.Component {
     };
   }
 
-  componentWillUpdate() {
+  componentDidUpdate() {
     if (this.props.loggedIn) {
       this.props.router.push('/');
     }
@@ -38,7 +38,7 @@ class SessionForm extends React.Component {
     let errorsLi;
     if (errors) {
       errorsLi = errors.map(error => (
-        <li>error</li>
+        <li>{error}</li>
       ));
     }
 

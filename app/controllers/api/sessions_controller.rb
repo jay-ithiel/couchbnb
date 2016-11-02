@@ -9,7 +9,7 @@ class Api::SessionsController < ApplicationController
       login!(@user)
       render 'api/users/home'
     else
-      render "Invalid login credentials", status: 422
+      render json: ["Invalid login credentials"], status: 422
     end
   end
 
