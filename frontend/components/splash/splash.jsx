@@ -30,7 +30,7 @@ class Splash extends React.Component {
   guestLogin() {
     return (
       <div className="guest-login">
-        Guest Login
+        <p>Guest Login</p>
       </div>
     );
   }
@@ -39,7 +39,7 @@ class Splash extends React.Component {
     return (
       <div className="signup">
         <Link to="/signup">
-          Sign Up
+          <p>Sign Up</p>
         </Link>
       </div>
     );

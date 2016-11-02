@@ -69,7 +69,23 @@
   background-color: #eb6542;
 
   text-align: center;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.signup p {
   color: white;
+  font-family: sans-serif;
+  font-size: 20px;
+  font-weight: 300;
+}
+
+.signup:hover {
+  background-color: #ea5432;
+  transition: background .2s ease-in;
+  cursor: pointer;
 }
 
 .guest-login {
@@ -83,8 +99,22 @@
   border-radius: 4px;
   background-color: #3b5998;
 
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.guest-login p {
   color: white;
+  font-family: sans-serif;
+  font-size: 20px;
+  font-weight: 300;
+}
+
+.guest-login:hover {
+  background-color: #3a4898;
+  transition: background .2s ease-in;
+  cursor: pointer;
 }
 
 .session-links {
@@ -97,7 +127,6 @@
   font-family: sans-serif;
   font-weight: 300;
   color: white;
-
 
   margin-bottom: 30px;
 }
