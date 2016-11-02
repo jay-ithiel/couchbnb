@@ -1,20 +1,28 @@
 import React from 'react';
+import { Link } from 'react-router';
 
 class Splash extends React.Component {
   constructor(props) {
     super(props);
 
     this.backgroundImage = this.backgroundImage.bind(this);
+    this.signupLink = this.signupLink.bind(this);
+  }
+
+  signupLink() {
+    return (
+      <div className="splash-signup">
+        <Link to="/signup">
+          Sign Up
+        </Link>
+      </div>
+    );
   }
 
   backgroundImage() {
     return (
       <div className="main-pic">
-        <img
-          className="nyc-skyline"
-          src="https://static.pexels.com/photos/2324/skyline-buildings-new-york-skyscrapers.jpg"
-          alt="New York City">
-        </img>
+        { this.signupLink() }
       </div>
     );
   }

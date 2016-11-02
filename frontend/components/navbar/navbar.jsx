@@ -7,7 +7,7 @@ class Navbar extends React.Component {
 
     this.loginLink = this.loginLink.bind(this);
     this.userWelcome = this.userWelcome.bind(this);
-    this.signupLink = this.signupLink.bind(this);
+    // this.signupLink = this.signupLink.bind(this);
     this.logo = this.logo.bind(this);
   }
 
@@ -25,16 +25,6 @@ class Navbar extends React.Component {
       <div className="header-login">
         <Link to="/login">
           <p>Log In</p>
-        </Link>
-      </div>
-    );
-  }
-
-  signupLink() {
-    return (
-      <div className="header-signup">
-        <Link to="/signup">
-          Sign Up
         </Link>
       </div>
     );
