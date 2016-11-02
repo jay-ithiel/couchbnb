@@ -1,11 +1,23 @@
 import React from 'react';
-import GreetingContainer from './greeting/greeting_container';
+import NavbarContainer from './navbar/navbar_container';
+import Splash from './splash/splash';
 
-const App = ({ children }) => (
-  <div>
-    <GreetingContainer />
-    {children}
-  </div>
-);
+class App extends React.Component {
+  constructor(props){
+    super(props);
+    this.children = props.children;
+  }
+
+  render() {
+    return(
+      <div>
+        <NavbarContainer />
+        <Splash />
+        {this.children}
+      </div>
+    );
+  }
+}
+
 
 export default App;

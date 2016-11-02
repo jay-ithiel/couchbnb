@@ -21,17 +21,35 @@
 
 .header-login {
   width: 100px;
+
   margin-top: 10px;
   margin-bottom: 10px;
   margin-right: 30px;
-  padding-top: 10px;
-  text-align: center;
+
+  padding-top: 12px;
   border: 1px solid #287fb8;
   border-radius: 4px;
-  text-color: black;
+
+  text-align: center;
+}
+
+.header-login p {
+  color: #287fb8;
+  font-family: sans-serif;
+  font-size: 14px;
+  font-weight: 500;
 }
 
 .header-login:hover {
-  background-color: #f7f7f7;
+  background-color: #f5f5f5;
   cursor: pointer;
+  transition: background .2s ease-in
+}
+
+.main-pic {
+  width: 100%;
+}
+
+.nyc-skyline {
+  width: 100%;
 }

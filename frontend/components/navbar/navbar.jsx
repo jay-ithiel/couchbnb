@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router';
 
-class Greeting extends React.Component {
+class Navbar extends React.Component {
   constructor(props) {
     super(props);
 
@@ -12,7 +12,6 @@ class Greeting extends React.Component {
   }
 
   userWelcome(currentUser, logout) {
-    console.log('userWelcome');
     return(
       <div>
         <h2>Welcome {currentUser.first_name}</h2>
@@ -25,7 +24,7 @@ class Greeting extends React.Component {
     return (
       <div className="header-login">
         <Link to="/login">
-          Log In
+          <p>Log In</p>
         </Link>
       </div>
     );
@@ -59,4 +58,4 @@ class Greeting extends React.Component {
   }
 }
 
-export default Greeting;
+export default Navbar;
