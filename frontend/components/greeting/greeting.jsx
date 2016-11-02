@@ -1,28 +1,62 @@
 import React from 'react';
 import { Link } from 'react-router';
 
-const sessionLinks = () => (
-  <div>
-    <Link to='/signup'>Sign Up</Link>
-    <Link to='/login'>Log In</Link>
-  </div>
-);
+class Greeting extends React.Component {
+  constructor(props) {
+    super(props);
 
-const userWelcome = (currentUser, logout) => {
-  return(
-    <div>
-      <h2>Welcome {currentUser.first_name}</h2>
-      <button onClick={logout}>Log Out</button>
-    </div>
-  );
-};
-
-const Greeting = (props) => {
-  if (props.currentUser) {
-    return userWelcome(props.currentUser, props.logout);
-  } else {
-    return sessionLinks();
+    this.loginLink = this.loginLink.bind(this);
+    this.userWelcome = this.userWelcome.bind(this);
+    this.signupLink = this.signupLink.bind(this);
+    this.logo = this.logo.bind(this);
   }
-};
+
+  userWelcome(currentUser, logout) {
+    console.log('userWelcome');
+    return(
+      <div>
+        <h2>Welcome {currentUser.first_name}</h2>
+        <button onClick={logout}>Log Out</button>
+      </div>
+    );
+  }
+
+  loginLink() {
+    return (
+      <div className="header-login">
+        <Link to="/login">
+          Log In
+        </Link>
+      </div>
+    );
+  }
+
+  signupLink() {
+    return (
+      <div className="header-signup">
+        <Link to="/signup">
+          Sign Up
+        </Link>
+      </div>
+    );
+  }
+
+  logo() {
+    return (
+      <div className="logo">
+        <h1>Couchbnb</h1>
+      </div>
+    );
+  }
+
+  render() {
+    return(
+      <div className="navbar">
+        { this.logo() }
+        { this.loginLink() }
+      </div>
+    );
+  }
+}
 
 export default Greeting;
