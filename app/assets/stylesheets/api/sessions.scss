@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .session-form-header {
-  background-color: grey;
+  background-color: #dedede;
   height: 40px;
   text-align: center;
 }
@@ -11,4 +11,42 @@
   font-family: sans-serif;
   font-size: 18px;
   color: black;
+}
+
+
+input {
+  display: block;
+
+  border: 1px solid #dedede;
+  border-radius: 3px;
+
+  margin: 10px auto;
+
+  width: 280px;
+  height: 35px;
+}
+
+.form-submit {
+  border-radius: 3px;
+  margin: 30px 10px;
+
+  height: 35px;
+  width: 280px;
+
+  background-color: #287fb8;
+
+  font-family: sans-serif;
+}
+
+.form-submit:hover {
+  background-color: #2077b0;
+  transition: background .2s ease-in;
+  cursor: pointer;
+}
+
+.toggle-form {
+  font-family: sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

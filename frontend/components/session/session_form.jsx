@@ -66,7 +66,6 @@ class SessionForm extends React.Component {
 
     const toggleForm = this.props.loginForm === false ? "Log In" : "Sign Up";
     const formHeader = this.props.loginForm === true ? "Log In" : "Sign Up";
-    // const formHeader = this.props.loginForm === true ?
 
     return(
       <div>
@@ -82,27 +81,30 @@ class SessionForm extends React.Component {
 
           { this.props.loginForm === "Sign Up" ? nameInputFields() : ""}
 
-          <label>Email
+          <label className="input">
             <input
               type="text"
               value={this.state.email}
               onChange={this.handleChange('email')}
+              placeholder="Email"
             />
           </label>
 
-          <label>Password
+          <label className="input">
             <input
               type="password"
               value={this.state.password}
               onChange={this.handleChange('password')}
+              placeholder="Password"
             />
           </label>
 
-          <button>{this.props.loginForm}</button>
+          <button className="form-submit">{formHeader}</button>
 
           <div className="toggle-form">
-            <p>Not a member yet? </p>
-            <Link to={toggleForm}>{toggleForm}</Link>
+            <p>
+              Not a member yet? <Link to={toggleForm}>{toggleForm}</Link>
+            </p>
           </div>
         </form>
       </div>

@@ -15,7 +15,7 @@ const mapDispatchToProps = (dispatch, routerProps) => {
       formType = 'login';
     } else {
       signup(user);
-      formType= 'signup';
+      formType = 'signup';
     }
   };
 
