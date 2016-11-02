@@ -12,7 +12,6 @@ import { login,
 document.addEventListener("DOMContentLoaded", () => {
   const mainRoot = document.getElementById("root");
   const store = configureStore();
-  // ReactDOM.render(<h2>This is react Root</h2>, mainRoot);
 
   window.store = store;
   window.login = login;
