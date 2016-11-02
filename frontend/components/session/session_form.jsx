@@ -64,19 +64,23 @@ class SessionForm extends React.Component {
       );
     };
 
-    const toggleForm = this.props.formType === "Log in" ? "/signup" : "/login";
-    const toggleFormType = this.props.type === false ? "Sign Up" : "Log in";
+    const toggleForm = this.props.loginForm === false ? "Log In" : "Sign Up";
+    const formHeader = this.props.loginForm === true ? "Log In" : "Sign Up";
+    // const formHeader = this.props.loginForm === true ?
 
     return(
       <div>
         <form onSubmit={this.handleSubmit}>
-          <h2 className="session-form-type">{toggleFormType}</h2>
-          <Link to={toggleForm}>{toggleFormType}</Link>
+          <div className="session-form-header">
+            <h2 className="session-form-type">{formHeader}</h2>
+          </div>
+
+
           <ul>
             {errorsLi}
           </ul>
 
-          { this.props.formType === "Sign Up" ? nameInputFields() : ""}
+          { this.props.loginForm === "Sign Up" ? nameInputFields() : ""}
 
           <label>Email
             <input
@@ -94,7 +98,12 @@ class SessionForm extends React.Component {
             />
           </label>
 
-          <button>{this.props.formType}</button>
+          <button>{this.props.loginForm}</button>
+
+          <div className="toggle-form">
+            <p>Not a member yet? </p>
+            <Link to={toggleForm}>{toggleForm}</Link>
+          </div>
         </form>
       </div>
     );

@@ -17,7 +17,7 @@ class Navbar extends React.Component {
 
     this.state = {
       modalOpen: false,
-      signIn: false
+      login: false
     };
   }
 
@@ -34,7 +34,7 @@ class Navbar extends React.Component {
       <Modal isOpen={this.state.modalOpen}
              onRequestClose={this.closeModal}
              style={ModalStyle}>
-          {<SessionFormContainer type={this.state.signIn}/>}
+          {<SessionFormContainer loginForm={this.state.login}/>}
       </Modal>
     );
   }
@@ -42,14 +42,14 @@ class Navbar extends React.Component {
   handleClickLogin() {
     this.setState({
       modalOpen: true,
-      signIn: true
+      login: true
     });
   }
 
   handleClickSignup() {
     this.setState({
       modalOpen: true,
-      signIn: false
+      login: false
     });
   }
 
