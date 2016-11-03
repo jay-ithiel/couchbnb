@@ -1,6 +1,14 @@
 // Place all the styles related to the api/sessions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.ReactModal__Content {
+  max-width: 300px;
+  max-height: 350px;
+  width: 300px;
+  height: 350px;
+  margin: auto;
+}
+
 .session-form-header {
   background-color: #dedede;
   height: 40px;
@@ -13,17 +21,27 @@
   color: black;
 }
 
-
 input {
   display: block;
 
   border: 1px solid #dedede;
   border-radius: 3px;
 
-  margin: 10px auto;
+  margin: 10px;
 
   width: 280px;
   height: 35px;
+}
+
+.name-input-fields {
+  display: flex;
+}
+
+.name-input-fields input {
+  width: 133px;
+  margin-bottom: 0;
+  margin-left: 10px;
+  margin-right: 0;
 }
 
 .form-submit {

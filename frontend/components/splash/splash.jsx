@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router';
+import SessionFormContainer from '../session/session_form_container';
 
 class Splash extends React.Component {
   constructor(props) {
@@ -8,7 +9,7 @@ class Splash extends React.Component {
     this.backgroundImage = this.backgroundImage.bind(this);
     this.banner = this.banner.bind(this);
     this.sessionLinks = this.sessionLinks.bind(this);
-    this.signupLink = this.signupLink.bind(this);
+
     this.guestLogin = this.guestLogin.bind(this);
   }
 
@@ -22,25 +23,16 @@ class Splash extends React.Component {
     return (
       <div className="session-links">
         { this.guestLogin() }
-        { this.signupLink() }
+        <SessionFormContainer loginForm={false} />
       </div>
     );
   }
+
 
   guestLogin() {
     return (
       <div className="guest-login">
         <p>Guest Login</p>
-      </div>
-    );
-  }
-
-  signupLink() {
-    return (
-      <div className="signup">
-        <Link to="/signup">
-          <p>Sign Up</p>
-        </Link>
       </div>
     );
   }
