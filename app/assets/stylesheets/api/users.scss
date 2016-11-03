@@ -10,16 +10,25 @@
 }
 
 .user-info {
-  margin-right: 30px;
-  border-left: 3px solid #dedede;
-  padding-left: 30px;
+  padding: 0 30px;
 
   height: 100%;
-  width: 110px;
+  width: 10%;
 
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  background-color: red;
+}
+
+.user-info p {
+  font-family: sans-serif;
+  font-size: 15px;
+  font-weight: 200px;
+}
+
+.user-info:hover {
+  cursor: pointer;
+  background-color: #f7f7f7;
+  transition: background .2s ease-in;
 }

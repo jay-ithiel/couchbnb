@@ -19,7 +19,7 @@ class UserInfo extends React.Component {
   render() {
     return (
       <div className="user-info">
-        { this.props.currentUser.first_name }
+        <p>{ this.props.currentUser.first_name }</p>
         { this.userPic() }
       </div>
     );
