@@ -93,16 +93,14 @@ class Home extends React.Component {
   }
 
   handleSearch() {
-    alert('you clicked search!');
+    alert('You clicked search! Too bad I don\'t know how to search.');
   }
 
   searchButton() {
     return (
-      <div className="main-head-search-button">
-        <button className="main-head-search-button"
-                onClick={this.handleSearch}>
-          Search
-        </button>
+      <div className="main-head-search-button"
+           onClick={this.handleSearch} >
+        Search
       </div>
     );
   }
