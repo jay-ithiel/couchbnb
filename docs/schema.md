@@ -26,20 +26,15 @@ column name     | data-type | details
 ----------------|-----------|------
 id              | integer   | not null, primary key
 host_id         | integer   | not null, foreign key (references users), indexed
+host_name       | string    |
+title           | string    |
 country         | string    | not null, indexed
 state-region    | string    | not null, indexed
 post-code       | string    | not null, indexed
 street-address  | string    | not null
 price-per-night | string    | not null, indexed
 room-type       | string    | not null, indexed
-max-guests      | integer   | not null, indexed
 bed-count       | integer   | not null, indexed
-bathroom-count  | integer   | not null, indexed
-kitchen         | boolean   | indexed
-pet-friendly    | boolean   | indexed
-air-con         | boolean   | indexed
-heating         | boolean   | indexed
-parking         | boolean   | indexed
 
 ## Reviews
 column name  | data-type | details
