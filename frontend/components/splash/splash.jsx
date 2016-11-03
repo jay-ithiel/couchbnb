@@ -1,12 +1,13 @@
 import React from 'react';
 import { Link, withRouter} from 'react-router';
 import SessionFormContainer from '../session/session_form_container';
+import Footer from '../footer/footer';
 
 class Splash extends React.Component {
   constructor(props) {
     super(props);
 
-    this.backgroundImage = this.backgroundImage.bind(this);
+    this.header = this.header.bind(this);
     this.banner = this.banner.bind(this);
     this.sessionLinks = this.sessionLinks.bind(this);
     this.guestLogin = this.guestLogin.bind(this);
@@ -42,7 +43,7 @@ class Splash extends React.Component {
     );
   }
 
-  backgroundImage() {
+  header() {
     return (
       <div className="main-pic">
         { this.banner() }
@@ -51,11 +52,25 @@ class Splash extends React.Component {
     );
   }
 
+  body() {
+    return (
+      <div className="body">
+        I am the body!
+      </div>
+    );
+  }
+
   render() {
     if (this.props.loggedIn) {
       return (<div></div>);
     } else {
-      return this.backgroundImage();
+      return (
+        <div>
+          { this.header() }
+          { this.body() }
+          <Footer />
+        </div>
+      );
     }
   }
 }
