@@ -34,11 +34,13 @@
 }
 
 .user-info-items {
+  border: 1px solid #dedede;
   position: absolute;
   top: 60px;
+  right: 0px;
 
-  width: 400px;
-  height: 500px;
+  width: 300px;
+  height: 100px;
 }
 
 .hidden {
@@ -46,6 +48,18 @@
 }
 
 .user-info-item {
-  border: 1px solid red;
   height: 50px;
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+
+  font-size: 14px;
+  font-family: sans-serif;
+}
+
+.user-info-item-divider {
+  height: 1px;
+  width: 280px;
+  background-color: #dedede;
+  margin: 0 auto -1px auto;
 }
