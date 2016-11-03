@@ -51,13 +51,14 @@ class Home extends React.Component {
         { this.mainHeadSearchBar() }
         { this.mainHeadSearchDate() }
         { this.numGuests() }
+        { this.searchButton() }
       </div>
     );
   }
 
   mainHeadSearchBar() {
     return (
-      <div className="main-head-search-bar">
+      <div className="main-head-search-bar-container">
         <input type="text"
                className="main-head-search-bar"
                placeholder="Where to?"/>
@@ -82,10 +83,10 @@ class Home extends React.Component {
 
   numGuests() {
     return (
-      <div className="numGuests">
+      <div className="num-guests-container">
         <input
           type="text"
-          className="numGuests"
+          className="num-guests"
           placeholder="2 Guests"/>
       </div>
     );
@@ -98,7 +99,10 @@ class Home extends React.Component {
   searchButton() {
     return (
       <div className="main-head-search-button">
-        <button onClick={this.handleSearch}>Search</button>
+        <button className="main-head-search-button"
+                onClick={this.handleSearch}>
+          Search
+        </button>
       </div>
     );
   }

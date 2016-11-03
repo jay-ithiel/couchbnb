@@ -214,6 +214,11 @@
   background-color: #fff;
 }
 
+.main-head-search-bar-container {
+  width: 30%;
+  height: 100%;
+}
+
 .main-head-search-bar {
   margin: 0;
   padding: 0 10px;
@@ -224,9 +229,7 @@
   background-color: #fff;
 
   height: 40px;
-  width: 200px;
-
-  background-color: yellow;
+  width: 100%;
 
   font-size: 17px;
   outline: none;
@@ -245,7 +248,7 @@
   border: 0;
 
   height: 100%;
-  width: 300px;
+  width: 35%;
 }
 
 .main-head-search-date {
@@ -257,19 +260,45 @@
   border-radius: 0;
 
   height: 100%;
-  width: 150px;
-  background-color: blue;
+  width: 50%;
 }
 
-.numGuests {
+.num-guests-container {
+  width: 15%;
+  height: 100%;
+}
+
+.num-guests {
   margin: 0;
   padding: 0;
   border: 0;
   border-radius: 0;
 
-  background-color: green;
   border-left: 1px solid #dedede;
+  border-right: 1px solid #dedede;
 
-  width: 300px;
+  width: 100%;
   height: 100%;
+}
+
+.main-head-search-button {
+  margin: 0;
+  border: 0;
+  padding: 0;
+
+  padding-left: 1px solid #dedede;
+
+  border-bottom-right-radius: 4px;
+  border-top-right-radius: 4px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-family: sans-serif;
+  font-weight: 300;
+  font-size: 18px;
+
+  height: 100%;
+  width: 20%;
 }
