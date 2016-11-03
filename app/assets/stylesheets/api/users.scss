@@ -37,10 +37,15 @@
   position: absolute;
   top: 60px;
 
-  width: 100px;
-  height: 100px;
+  width: 400px;
+  height: 500px;
 }
 
 .hidden {
   visibility: hidden;
+}
+
+.user-info-item {
+  border: 1px solid red;
+  height: 50px;
 }
