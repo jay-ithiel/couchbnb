@@ -29,8 +29,6 @@ class UserInfo extends React.Component {
   }
 
   toggleUserInfoItems() {
-    // let toggle = this.showUserInfoItems ? false : true;
-    // this.showUserInfoItems = toggle;
     $(".user-info-items").removeClass("hidden");
     $(".user-info-items").mouseleave(() => (
       $(".user-info-items").addClass("hidden")
@@ -39,11 +37,11 @@ class UserInfo extends React.Component {
 
   render() {
     return (
-        <div className="user-info" onClick={ this.toggleUserInfoItems }>
-          <p>{ this.props.currentUser.first_name }</p>
-          { this.userPic() }
-          { this.userInfoItems() }
-        </div>
+      <div className="user-info" onClick={ this.toggleUserInfoItems }>
+        <p>{ this.props.currentUser.first_name }</p>
+        { this.userPic() }
+        { this.userInfoItems() }
+      </div>
     );
   }
 }
