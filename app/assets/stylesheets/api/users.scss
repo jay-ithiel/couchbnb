@@ -57,6 +57,11 @@
   font-family: sans-serif;
 }
 
+.user-info-item:hover {
+  padding-left: 17px;
+  transition: padding .1s ease-in;
+}
+
 .user-info-item-divider {
   height: 1px;
   width: 280px;

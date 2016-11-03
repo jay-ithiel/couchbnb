@@ -1,5 +1,5 @@
 import React from 'react';
-import UserInfoItem from './user_info_item';
+import UserInfoItemContainer from './user_info_item_container';
 
 class UserInfo extends React.Component {
   constructor(props) {
@@ -22,8 +22,7 @@ class UserInfo extends React.Component {
   userInfoItems() {
     return (
       <div className="user-info-items hidden">
-        <UserInfoItem />
-        <UserInfoItem />
+        <UserInfoItemContainer />
       </div>
     );
   }
