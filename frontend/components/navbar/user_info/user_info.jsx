@@ -1,10 +1,15 @@
 import React from 'react';
+import UserInfoItem from './user_info_item';
 
 class UserInfo extends React.Component {
   constructor(props) {
     super(props);
+
+    this.showUserInfoItems = false
+
     this.userPic = this.userPic.bind(this);
-    this.userInfoContainer = this.userInfoContainer.bind(this);
+    this.userInfoItems = this.userInfoItems.bind(this);
+    this.toggleUserInfoItems = this.toggleUserInfoItems.bind(this);
   }
 
   userPic() {
@@ -17,23 +22,33 @@ class UserInfo extends React.Component {
   }
 
   userInfoItems() {
-
+    // if (this.showUserInfoItems) {
+      return (
+        <div className="user-info-items">
+          <UserInfoItem />
+          <UserInfoItem />
+        </div>
+      );
+    // }
+    // else {
+    //   return (
+    //     <div className="user-info-items"></div>
+    //   );
+    // }
   }
 
-  userInfoContainer() {
-    return (
-      <div className="user-info">
-        <p>{ this.props.currentUser.first_name }</p>
-        { this.userPic() }
-      </div>
-    );
+  toggleUserInfoItems() {
+    let toggle = this.showUserInfoItems ? false : true;
+    this.showUserInfoItems = toggle;
   }
 
   render() {
     return (
-      <div>
-        { this.userInfoContainer() }
-      </div>
+        <div className="user-info" onClick={ this.toggleUserInfoItems }>
+          <p>{ this.props.currentUser.first_name }</p>
+          { this.userPic() }
+          { this.userInfoItems() }
+        </div>
     );
   }
 }
