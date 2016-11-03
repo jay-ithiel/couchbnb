@@ -8,7 +8,6 @@ class Navbar extends React.Component {
     super(props);
 
     this.loginLink = this.loginLink.bind(this);
-    this.userWelcome = this.userWelcome.bind(this);
     this.logo = this.logo.bind(this);
     this.handleClickLogin = this.handleClickLogin.bind(this);
     this.searchBar = this.searchBar.bind(this);
@@ -35,15 +34,6 @@ class Navbar extends React.Component {
                name="search"
                className="search-bar"
                placeholder="Where to?"/>
-      </div>
-    );
-  }
-
-  userWelcome(currentUser, logout) {
-    return (
-      <div>
-        <h2>Welcome {currentUser.first_name}</h2>
-        <button onClick={logout}>Log Out</button>
       </div>
     );
   }

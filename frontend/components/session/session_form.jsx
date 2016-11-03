@@ -43,20 +43,16 @@ class SessionForm extends React.Component {
 
   loginModal() {
     return (
-      <div className="header-login">
-        <div onClick={this.openModal}>
-          <p>Log In</p>
-        </div>
+      <div className="header-login" onClick={this.openModal}>
+        <p>Log In</p>
       </div>
     );
   }
 
   signupModal() {
     return (
-      <div className="signup">
-        <div onClick={this.openModal}>
-          <p>Sign Up</p>
-        </div>
+      <div className="signup" onClick={this.openModal}>
+        <p>Sign Up</p>
       </div>
     );
   }
