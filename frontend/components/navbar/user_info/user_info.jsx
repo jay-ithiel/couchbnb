@@ -5,8 +5,6 @@ class UserInfo extends React.Component {
   constructor(props) {
     super(props);
 
-    this.showUserInfoItems = false
-
     this.userPic = this.userPic.bind(this);
     this.userInfoItems = this.userInfoItems.bind(this);
     this.toggleUserInfoItems = this.toggleUserInfoItems.bind(this);
