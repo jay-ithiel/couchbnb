@@ -22,7 +22,7 @@ class UserInfo extends React.Component {
   userInfoItems() {
     // if (this.showUserInfoItems) {
       return (
-        <div className="user-info-items">
+        <div className="user-info-items hidden">
           <UserInfoItem />
           <UserInfoItem />
         </div>
@@ -36,8 +36,12 @@ class UserInfo extends React.Component {
   }
 
   toggleUserInfoItems() {
-    let toggle = this.showUserInfoItems ? false : true;
-    this.showUserInfoItems = toggle;
+    // let toggle = this.showUserInfoItems ? false : true;
+    // this.showUserInfoItems = toggle;
+    $(".user-info-items").removeClass("hidden");
+    $(".user-info-items").mouseleave(() => (
+      $(".user-info-items").addClass("hidden")
+    ));
   }
 
   render() {

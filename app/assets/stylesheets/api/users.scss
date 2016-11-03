@@ -36,5 +36,11 @@
 .user-info-items {
   position: absolute;
   top: 60px;
-  display: none;
+
+  width: 100px;
+  height: 100px;
+}
+
+.hidden {
+  visibility: hidden;
 }
