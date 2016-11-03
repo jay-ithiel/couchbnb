@@ -5,6 +5,14 @@ class Home extends React.Component {
     super(props);
 
     this.mainHead = this.mainHead.bind(this);
+    this.banner = this.banner.bind(this);
+    this.mainHeadSearchBorder = this.mainHeadSearchBorder.bind(this);
+    this.mainHeadSearchContainer = this.mainHeadSearchContainer.bind(this);
+    this.mainHeadSearchBar = this.mainHeadSearchBar.bind(this);
+    this.mainHeadSearchDate = this.mainHeadSearchDate.bind(this);
+    this.numGuests = this.numGuests.bind(this);
+    this.searchButton = this.searchButton.bind(this);
+    this.handleSearch = this.handleSearch.bind(this);
   }
 
   componentDidUpdate() {
@@ -13,9 +21,84 @@ class Home extends React.Component {
     }
   }
 
+  banner() {
+    return (
+      <h2 className="banner">Go Anywhere</h2>
+    );
+  }
+
   mainHead() {
     return (
       <div className="main-head">
+        <div className="placeholder"></div>
+        { this.banner() }
+        { this.mainHeadSearchBorder() }
+      </div>
+    );
+  }
+
+  mainHeadSearchBorder() {
+    return (
+      <div className="main-head-search-border">
+        { this.mainHeadSearchContainer() }
+      </div>
+    );
+  }
+
+  mainHeadSearchContainer() {
+    return (
+      <div className="main-head-search-container">
+        { this.mainHeadSearchBar() }
+        { this.mainHeadSearchDate() }
+        { this.numGuests() }
+      </div>
+    );
+  }
+
+  mainHeadSearchBar() {
+    return (
+      <div className="main-head-search-bar">
+        <input type="text"
+               className="main-head-search-bar"
+               placeholder="Where to?"/>
+      </div>
+    );
+  }
+
+  mainHeadSearchDate() {
+    return (
+      <div className="main-head-search-dates">
+        <input
+          type="text"
+          className="main-head-search-date"
+          placeholder="Start Date" />
+        <input
+          type="text"
+          className="main-head-search-date"
+          placeholder="End Date"/>
+      </div>
+    );
+  }
+
+  numGuests() {
+    return (
+      <div className="numGuests">
+        <input
+          type="text"
+          className="numGuests"
+          placeholder="2 Guests"/>
+      </div>
+    );
+  }
+
+  handleSearch() {
+    alert('you clicked search!');
+  }
+
+  searchButton() {
+    return (
+      <div className="main-head-search-button">
+        <button onClick={this.handleSearch}>Search</button>
       </div>
     );
   }
