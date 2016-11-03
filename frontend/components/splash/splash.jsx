@@ -9,7 +9,6 @@ class Splash extends React.Component {
     this.backgroundImage = this.backgroundImage.bind(this);
     this.banner = this.banner.bind(this);
     this.sessionLinks = this.sessionLinks.bind(this);
-
     this.guestLogin = this.guestLogin.bind(this);
   }
 
@@ -28,10 +27,10 @@ class Splash extends React.Component {
     );
   }
 
-
   guestLogin() {
     return (
-      <div className="guest-login">
+      <div className="guest-login"
+           onClick={this.props.guestLogin}>
         <p>Guest Login</p>
       </div>
     );
