@@ -7,7 +7,7 @@ class UserInfoItem extends React.Component {
 
   render() {
     return(
-      <div>
+      <div className="user-info-item">
         I am a UserInfoItem
       </div>
     );

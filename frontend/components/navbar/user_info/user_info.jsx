@@ -20,19 +20,12 @@ class UserInfo extends React.Component {
   }
 
   userInfoItems() {
-    // if (this.showUserInfoItems) {
-      return (
-        <div className="user-info-items hidden">
-          <UserInfoItem />
-          <UserInfoItem />
-        </div>
-      );
-    // }
-    // else {
-    //   return (
-    //     <div className="user-info-items"></div>
-    //   );
-    // }
+    return (
+      <div className="user-info-items hidden">
+        <UserInfoItem />
+        <UserInfoItem />
+      </div>
+    );
   }
 
   toggleUserInfoItems() {
