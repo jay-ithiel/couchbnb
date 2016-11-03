@@ -7,6 +7,12 @@ class Home extends React.Component {
     this.mainHead = this.mainHead.bind(this);
   }
 
+  componentDidUpdate() {
+    if (!this.props.loggedIn) {
+      this.props.router.push('/splash');
+    }
+  }
+
   mainHead() {
     return (
       <div className="main-head">
@@ -15,11 +21,17 @@ class Home extends React.Component {
   }
 
   render() {
-    return (
-      <div>
-        { this.mainHead() }
-      </div>
-    );
+    if (this.props.currentUser) {
+      return (
+        <div>
+          { this.mainHead() }
+        </div>
+      );
+    } else {
+      return (
+        <div></div>
+      );
+    }
   }
 }
 

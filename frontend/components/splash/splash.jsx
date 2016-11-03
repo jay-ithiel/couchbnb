@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router';
+import { Link, withRouter} from 'react-router';
 import SessionFormContainer from '../session/session_form_container';
 
 class Splash extends React.Component {
@@ -10,6 +10,12 @@ class Splash extends React.Component {
     this.banner = this.banner.bind(this);
     this.sessionLinks = this.sessionLinks.bind(this);
     this.guestLogin = this.guestLogin.bind(this);
+  }
+
+  componentDidUpdate() {
+    if (this.props.loggedIn) {
+      this.props.router.push('/');
+    }
   }
 
   banner() {
@@ -54,4 +60,4 @@ class Splash extends React.Component {
   }
 }
 
-export default Splash;
+export default withRouter(Splash);

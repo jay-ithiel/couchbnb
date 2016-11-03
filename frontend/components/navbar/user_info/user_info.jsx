@@ -27,6 +27,9 @@ class UserInfo extends React.Component {
     );
   }
 
+  userName() {
+  }
+
   toggleUserInfoItems() {
     $(".user-info-items").removeClass("hidden");
     $(".user-info-items").mouseleave(() => (
@@ -36,7 +39,7 @@ class UserInfo extends React.Component {
 
   render() {
     return (
-      <div className="user-info" onClick={ this.toggleUserInfoItems }>
+      <div className="user-info" onMouseEnter={ this.toggleUserInfoItems }>
         <p>{ this.props.currentUser.first_name }</p>
         { this.userPic() }
         { this.userInfoItems() }

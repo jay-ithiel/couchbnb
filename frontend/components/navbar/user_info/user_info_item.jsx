@@ -5,18 +5,17 @@ class UserInfoItem extends React.Component {
   constructor(props) {
     super(props);
 
-    this.logout = this.logout.bind(this);
-    this.logoutRedirect = this.logoutRedirect.bind(this);
+    this.displayLogout = this.displayLogout.bind(this);
+    this.handleLogout = this.handleLogout.bind(this);
   }
 
-  logoutRedirect() {
+  handleLogout(e) {
     this.props.logout();
-    this.props.router.replace('/');
   }
 
-  logout() {
+  displayLogout() {
     return (
-      <div className="user-info-item" onClick={this.logoutRedirect}>
+      <div className="user-info-item" onClick={this.handleLogout}>
         Log Out
       </div>
     );
@@ -25,7 +24,7 @@ class UserInfoItem extends React.Component {
   render() {
     return(
       <div>
-        { this.logout() }
+        { this.displayLogout() }
         <div className="user-info-item-divider"></div>
       </div>
     );

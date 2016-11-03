@@ -60,9 +60,8 @@ class SessionForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const user = this.state;
-    if (this.props.processForm({user})) {
-      this.props.router.replace('home');
-    }
+
+    this.props.processForm({ user });
   }
 
   handleChange(field) {

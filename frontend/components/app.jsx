@@ -12,8 +12,8 @@ class App extends React.Component {
     return(
       <div>
         <NavbarContainer />
-        <SplashContainer />
-        {this.children}
+
+        {this.props.children}
       </div>
     );
   }

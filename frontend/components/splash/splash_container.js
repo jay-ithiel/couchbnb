@@ -7,6 +7,7 @@ import { connect } from 'react-redux';
 import Splash from './splash.jsx';
 
 const mapStateToProps = state => ({
+  loggedIn: state.session.currentUser ? true : false,
   currentUser: state.session.currentUser
 });
 

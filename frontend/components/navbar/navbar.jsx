@@ -39,7 +39,7 @@ class Navbar extends React.Component {
   }
 
   loginLink() {
-    if (this.props.currentUser) {
+    if (this.props.loggedIn) {
       return (
         <UserInfoContainer />
       );
