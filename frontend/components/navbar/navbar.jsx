@@ -34,7 +34,7 @@ class Navbar extends React.Component {
         <input type="text"
                name="search"
                className="search-bar"
-               placeholder="Search.."/>
+               placeholder="Where to?"/>
       </div>
     );
   }
