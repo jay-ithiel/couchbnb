@@ -1,5 +1,7 @@
 import React from 'react';
-import { Link } from 'react-router';
+import { Link, withRouter } from 'react-router';
+import Modal from 'react-modal';
+import ModalStyle from '../modal/modal_style';
 
 class SessionForm extends React.Component {
   constructor(props) {
@@ -8,17 +10,41 @@ class SessionForm extends React.Component {
       first_name: "",
       last_name: "",
       email: "",
-      password: ""
+      password: "",
+      modalOpen: false
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
+    this.openModal = this.openModal.bind(this);
+    this.closeModal = this.closeModal.bind(this);
+  }
+
+  modal() {
+    return (
+      <Modal isOpen={this.state.modalOpen}
+             onRequestClose={this.closeModal}
+             style={ModalStyle}>
+          {<SessionFormContainer loginForm={this.state.login}/>}
+      </Modal>
+    );
+  }
+
+  openModal() {
+    this.setState({ modalOpen: true });
+  }
+
+  closeModal() {
+    this.setState({ modalOpen: false });
   }
 
   handleSubmit(e) {
     e.preventDefault();
     const user = this.state;
-    this.props.processForm({user});
+    if (this.props.processForm({user})) {
+      this.props.router.replace('home');
+    }
+
   }
 
   handleChange(field) {
@@ -28,9 +54,9 @@ class SessionForm extends React.Component {
   }
 
   componentDidUpdate() {
-    if (this.props.loggedIn) {
-      this.props.router.push('/');
-    }
+    // if (this.props.loggedIn) {
+    //   this.props.router.location.push('/');
+    // }
   }
 
   render() {
@@ -69,47 +95,60 @@ class SessionForm extends React.Component {
 
     return(
       <div>
-        <form onSubmit={this.handleSubmit}>
-          <div className="session-form-header">
-            <h2 className="session-form-type">{formHeader}</h2>
-          </div>
+      <div className="header-login">
+        <div onClick={this.openModal}>
+          <p>Log In</p>
+        </div>
+      </div>
 
 
-          <ul>
-            {errorsLi}
-          </ul>
+      <Modal isOpen={this.state.modalOpen}
+             onRequestClose={this.closeModal}
+             style={ModalStyle}>
+        <div>
+          <form onSubmit={this.handleSubmit}>
+            <div className="session-form-header">
+              <h2 className="session-form-type">{formHeader}</h2>
+            </div>
 
-          { this.props.loginForm === "Sign Up" ? nameInputFields() : ""}
 
-          <label className="input">
-            <input
-              type="text"
-              value={this.state.email}
-              onChange={this.handleChange('email')}
-              placeholder="Email"
-            />
-          </label>
+            <ul>
+              {errorsLi}
+            </ul>
 
-          <label className="input">
-            <input
-              type="password"
-              value={this.state.password}
-              onChange={this.handleChange('password')}
-              placeholder="Password"
-            />
-          </label>
+            { this.props.loginForm === "Sign Up" ? nameInputFields() : ""}
 
-          <button className="form-submit">{formHeader}</button>
+            <label className="input">
+              <input
+                type="text"
+                value={this.state.email}
+                onChange={this.handleChange('email')}
+                placeholder="Email"
+              />
+            </label>
 
-          <div className="toggle-form">
-            <p>
-              Not a member yet? <Link to={toggleForm}>{toggleForm}</Link>
-            </p>
-          </div>
-        </form>
+            <label className="input">
+              <input
+                type="password"
+                value={this.state.password}
+                onChange={this.handleChange('password')}
+                placeholder="Password"
+              />
+            </label>
+
+            <button className="form-submit">{formHeader}</button>
+
+            <div className="toggle-form">
+              <p>
+                Not a member yet? <Link to={toggleForm}>{toggleForm}</Link>
+              </p>
+            </div>
+          </form>
+        </div>
+      </Modal>
       </div>
     );
   }
 }
 
-export default SessionForm;
+export default withRouter(SessionForm);

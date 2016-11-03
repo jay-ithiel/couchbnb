@@ -55,11 +55,11 @@ class Splash extends React.Component {
   }
 
   render() {
-    return (
-      <div>
-        { this.backgroundImage() }
-      </div>
-    );
+    if (this.props.currentUser) {
+      return (<div></div>);
+    } else {
+      return this.backgroundImage();
+    }
   }
 }
 

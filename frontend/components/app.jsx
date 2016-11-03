@@ -1,6 +1,6 @@
 import React from 'react';
 import NavbarContainer from './navbar/navbar_container';
-import Splash from './splash/splash';
+import SplashContainer from './splash/splash_container';
 
 class App extends React.Component {
   constructor(props){
@@ -12,7 +12,7 @@ class App extends React.Component {
     return(
       <div>
         <NavbarContainer />
-        <Splash />
+        <SplashContainer />
         {this.children}
       </div>
     );
