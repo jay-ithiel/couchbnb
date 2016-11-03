@@ -14,10 +14,17 @@
   flex-direction: row;
 }
 
+.search-bar {
+  border-left: 2px solid #dedede;
+  background-color: blue;
+  width: 60%;
+  height: 100%;
+}
+
 .logo {
   font-family: 'Permanent Marker', cursive;
   font-size: 23px;
-  padding: 10px 15px;
+  padding: 10px 30px;
 }
 
 .header-login {

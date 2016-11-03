@@ -1,8 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router';
-// import Modal from 'react-modal';
-// import ModalStyle from '../modal/modal_style';
 import SessionFormContainer from '../session/session_form_container';
+import UserInfoContainer from './user_info/user_info_container';
 
 class Navbar extends React.Component {
   constructor(props) {
@@ -12,6 +11,7 @@ class Navbar extends React.Component {
     this.userWelcome = this.userWelcome.bind(this);
     this.logo = this.logo.bind(this);
     this.handleClickLogin = this.handleClickLogin.bind(this);
+    this.searchBar = this.searchBar.bind(this);
   }
 
   handleClickLogin() {
@@ -28,6 +28,14 @@ class Navbar extends React.Component {
     });
   }
 
+  searchBar() {
+    return (
+      <div className="search-bar">
+        hello from search bar
+      </div>
+    );
+  }
+
   userWelcome(currentUser, logout) {
     return (
       <div>
@@ -39,7 +47,9 @@ class Navbar extends React.Component {
 
   loginLink() {
     if (this.props.currentUser) {
-      return (<div>you are logged in</div>);
+      return (
+        <UserInfoContainer />
+      );
     } else {
       return (
         <SessionFormContainer loginForm={true} />
@@ -59,6 +69,7 @@ class Navbar extends React.Component {
     return(
       <div className="navbar">
         { this.logo() }
+        { this.searchBar() }
         { this.loginLink() }
       </div>
     );

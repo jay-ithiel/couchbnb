@@ -48,9 +48,9 @@ group :development do
   gem 'annotate'
   gem 'better_errors'
   gem 'binding_of_caller'
+  
+  gem 'guard', require: false
+  gem 'guard-livereload', require: false
+  gem 'rack-livereload'
+  gem 'rb-fsevent', require: false
 end
-
-gem 'guard', require: false
-gem 'guard-livereload', require: false
-gem 'rack-livereload'
-gem 'rb-fsevent', require: false
