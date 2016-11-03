@@ -35,7 +35,11 @@
   padding: 0 30px;
 }
 
-
+.logo:hover {
+  background-color: #f7f7f7;
+  transition: background .2s ease-in;
+  cursor: pointer;
+}
 
 .header-login {
   display: flex;
