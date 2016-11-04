@@ -9,6 +9,7 @@ class Spot < ActiveRecord::Base
             :price_per_night,
             :room_type,
             :bed_count,
+            :max_guests,
             presence: true
 
   belongs_to :host,

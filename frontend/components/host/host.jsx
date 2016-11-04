@@ -31,7 +31,6 @@ class Host extends React.Component {
   head() {
     return (
       <div className="host-head" onClick={this.handleNewSpot}>
-        <p>I am the host head. Give me a pretty picture</p>
         <h2 className="banner">Host an Unforgettable Vacation</h2>
       </div>
     );

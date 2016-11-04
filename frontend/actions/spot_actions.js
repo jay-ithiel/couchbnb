@@ -6,7 +6,8 @@ export const createSpot = spot => ({
 
 export const DELETE_SPOT = "DELETE_SPOT";
 export const deleteSpot = id => ({
-  type: DELETE_SPOT
+  type: DELETE_SPOT,
+  id
 });
 
 export const UPDATE_SPOT = "UPDATE_SPOT";

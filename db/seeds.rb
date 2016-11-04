@@ -29,8 +29,8 @@ Spot.create({
   post_code: '94103',
   street_address: '12345 California St',
   price_per_night: '$100',
-  max_guests: 4,
   room_type: "Apartment",
-  bed_count: "4",
+  bed_count: 4,
+  max_guests: 4,
   spot_pic_url: 'https://www.google.com',
 })
