@@ -55,9 +55,19 @@
   width: 25%;
   height: 375px;
   background-color: yellow;
+  margin-top: -40px;
+}
 
-  // float: right;
-  margin-top: -50px;
+.price-info-head {
+  height: 12%;
+  width: 100%;
+  background-color: grey;
+}
+
+.price-info-form {
+  width: 100%;
+  height: 88%;
+  background-color: green;
 }
 
 .margin-left {

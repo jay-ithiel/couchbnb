@@ -2,10 +2,12 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import { Router, Route, IndexRoute, hashHistory } from 'react-router';
 import App from './app';
+
 import SessionFormContainer from './session/session_form_container';
 import SplashContainer from './splash/splash_container';
 import HomeContainer from './home/home_container';
 import SpotContainer from './spot/spot_container';
+import HostContainer from './host/host_container';
 
 const Root = ({ store }) => {
 
@@ -38,8 +40,13 @@ const Root = ({ store }) => {
           </Route>
 
           <Route
-            path='/spot'
+            path='/spots/:spot_id'
             component={SpotContainer} >
+          </Route>
+
+          <Route
+            path='/host'
+            component={HostContainer}>
           </Route>
 
         </Route>

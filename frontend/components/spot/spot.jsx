@@ -38,7 +38,6 @@ class Spot extends React.Component {
   marginRight() {
     return (
       <div className="margin-right">
-        I am margin right
       </div>
     );
   }
@@ -46,7 +45,6 @@ class Spot extends React.Component {
   marginLeft() {
     return (
       <div className="margin-left">
-        I am margin left
       </div>
     );
   }
@@ -73,7 +71,12 @@ class Spot extends React.Component {
   priceInfo() {
     return (
       <div className="price-info">
-        I am price info
+        <div className="price-info-head">
+          <p>$100</p>
+        </div>
+        <form className="price-info-form">
+          
+        </form>
       </div>
     );
   }
@@ -83,11 +86,7 @@ class Spot extends React.Component {
       <div className="spot-body">
         { this.marginLeft() }
         { this.detailInfo() }
-
-        <div className="spot-body-placeholder">
-
-        </div>
-        
+        <div className="spot-body-placeholder"></div>
         { this.marginRight() }
       </div>
     );
@@ -100,8 +99,6 @@ class Spot extends React.Component {
       </div>
     );
   }
-
-
 
   render() {
     return (

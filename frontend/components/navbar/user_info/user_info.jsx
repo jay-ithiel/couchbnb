@@ -1,13 +1,20 @@
 import React from 'react';
 import UserInfoItemContainer from './user_info_item_container';
+import { withRouter } from 'react-router';
 
 class UserInfo extends React.Component {
   constructor(props) {
     super(props);
 
+    this.userName = this.userName.bind(this);
     this.userPic = this.userPic.bind(this);
     this.userInfoItems = this.userInfoItems.bind(this);
     this.toggleUserInfoItems = this.toggleUserInfoItems.bind(this);
+
+    this.displayLogout = this.displayLogout.bind(this);
+    this.handleLogout = this.handleLogout.bind(this);
+    this.displayHost = this.displayHost.bind(this);
+    this.handleHost = this.handleHost.bind(this);
   }
 
   userPic() {
@@ -19,15 +26,19 @@ class UserInfo extends React.Component {
     );
   }
 
-  userInfoItems() {
+  userName() {
     return (
-      <div className="user-info-items hidden">
-        <UserInfoItemContainer />
-      </div>
+      <p>{ this.props.currentUser.first_name }</p>
     );
   }
 
-  userName() {
+  userInfoItems() {
+    return (
+      <div className="user-info-items hidden">
+        { this.displayHost() }
+        { this.displayLogout() }
+      </div>
+    );
   }
 
   toggleUserInfoItems() {
@@ -37,10 +48,34 @@ class UserInfo extends React.Component {
     ));
   }
 
+  handleLogout() {
+    this.props.logout();
+  }
+
+  displayLogout() {
+    return (
+      <div className="user-info-item" onClick={this.handleLogout}>
+        Log Out
+      </div>
+    );
+  }
+
+  handleHost() {
+    this.props.router.push('host');
+  }
+
+  displayHost() {
+    return (
+      <div className="user-info-item" onClick={this.handleHost}>
+        Host
+      </div>
+    );
+  }
+
   render() {
     return (
       <div className="user-info" onMouseEnter={ this.toggleUserInfoItems }>
-        <p>{ this.props.currentUser.first_name }</p>
+        { this.userName() }
         { this.userPic() }
         { this.userInfoItems() }
       </div>
@@ -48,4 +83,4 @@ class UserInfo extends React.Component {
   }
 }
 
-export default UserInfo;
+export default withRouter(UserInfo);

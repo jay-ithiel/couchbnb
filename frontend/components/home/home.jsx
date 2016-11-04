@@ -97,7 +97,7 @@ class Home extends React.Component {
   }
 
   handleSearch() {
-    this.props.router.push('/spot');
+    this.props.router.push(`/spots/1`);
   }
 
   searchButton() {

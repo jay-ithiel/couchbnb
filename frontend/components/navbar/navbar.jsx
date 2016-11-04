@@ -42,7 +42,7 @@ class Navbar extends React.Component {
   }
 
   handleSearchSubmit() {
-    this.props.router.push('spot');
+    this.props.router.push(`spots/1`);
   }
 
   searchBar() {
