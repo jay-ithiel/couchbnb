@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 20161104003126) do
     t.string   "price_per_night", null: false
     t.string   "room_type",       null: false
     t.integer  "bed_count",       null: false
+    t.string   "spot_pic_url"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
   end

@@ -38,7 +38,13 @@ class SessionForm extends React.Component {
   }
 
   closeModal() {
-    this.setState({ modalOpen: false });
+    this.setState({
+      first_name: "",
+      last_name: "",
+      email: "",
+      password: "",
+      modalOpen: false
+    });
   }
 
   loginModal() {

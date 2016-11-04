@@ -14,6 +14,8 @@ class CreateSpots < ActiveRecord::Migration
       t.string :room_type, null: false, index: true
       t.integer :bed_count, null: false, index: true
 
+      t.string :spot_pic_url
+
       t.timestamps null: false
     end
   end
