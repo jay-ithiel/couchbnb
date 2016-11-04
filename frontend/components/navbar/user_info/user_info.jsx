@@ -1,5 +1,4 @@
 import React from 'react';
-import UserInfoItemContainer from './user_info_item_container';
 import { withRouter } from 'react-router';
 
 class UserInfo extends React.Component {

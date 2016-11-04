@@ -46,7 +46,8 @@ const Root = ({ store }) => {
 
           <Route
             path='/host'
-            component={HostContainer}>
+            component={HostContainer}
+            onEnter={_redirectUnlessLoggedIn}>
           </Route>
 
         </Route>

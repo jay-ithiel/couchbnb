@@ -117,6 +117,8 @@
   background-size: cover;
   background-position: 50% 50%;
 
+  border-bottom: 2px solid #dedede;
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -194,6 +196,8 @@
   font-weight: 300;
   color: white;
 
+  text-shadow: #000 0 0 10px;
+
   margin-bottom: 30px;
 }
 
@@ -237,6 +241,8 @@
   background: url("http://res.cloudinary.com/ddgtwtbre/image/upload/v1478197956/grand-canyon_q8k9tf.jpg");
   background-size: cover;
   background-position: 100% 50%;
+
+  border-bottom: 2px solid #dedede;
 
   display: flex;
   flex-direction: column;
