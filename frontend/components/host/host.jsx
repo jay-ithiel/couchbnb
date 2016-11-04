@@ -1,6 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router';
 import Footer from '../footer/footer';
+import SpotFormContainer from '../spot/spot_form_container';
 
 class Host extends React.Component {
   constructor(props) {
@@ -24,7 +25,7 @@ class Host extends React.Component {
   }
 
   handleNewSpot() {
-    alert("Don't click me.");
+    $(".spot-form-container").removeClass("display-none");
   }
 
   head() {
@@ -67,6 +68,7 @@ class Host extends React.Component {
     return (
       <div>
         { this.head() }
+        <SpotFormContainer />
         { this.body() }
         <Footer />
       </div>
