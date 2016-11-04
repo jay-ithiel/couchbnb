@@ -1,7 +1,6 @@
 import merge from 'lodash/merge';
-import { CREATE_SPOT,
-         UPDATE_SPOT,
-         DELETE_SPOT
+import { RECEIVE_SPOT,
+         RECEIVE_SPOTS
        } from '../actions/spot_actions';
 
 const _defaultState = {
@@ -14,13 +13,13 @@ const SpotReducer = (oldState = _defaultState, action) => {
   let newState = merge({}, oldState);
 
   switch(action.type) {
-    case CREATE_SPOT:
+    case RECEIVE_SPOTS:
+      newState = action.spot;
       return newState;
 
-    case UPDATE_SPOT:
-      return newState;
-
-    case DELETE_SPOT:
+    case RECEIVE_SPOT:
+      newState = merge({}, oldState);
+      newState[action.spot.id] = action.spot;
       return newState;
 
     default:

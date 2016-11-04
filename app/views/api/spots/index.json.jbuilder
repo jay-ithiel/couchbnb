@@ -6,4 +6,5 @@ json.extract! @spots, :id,
                       :state_region,
                       :price_per_night,
                       :room_type,
-                      :bed_count
+                      :bed_count,
+                      :max_guests

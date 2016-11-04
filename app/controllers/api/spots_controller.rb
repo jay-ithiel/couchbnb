@@ -8,6 +8,15 @@ class Api::SpotsController < ApplicationController
     end
   end
 
+  def update
+    @spot = Spot.find(params[:id])
+    if @spot.update
+      render json: :show
+    else
+      render json: @spot.errors.full_messages
+    end
+  end
+
   def index
     @spots = Spot.all
     render json: :index

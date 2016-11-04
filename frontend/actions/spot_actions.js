@@ -4,16 +4,39 @@ export const createSpot = spot => ({
   spot
 });
 
+export const UPDATE_SPOT = "UPDATE_SPOT";
+export const updateSpot = spot => ({
+  type: UPDATE_SPOT,
+  spot
+});
+
 export const DELETE_SPOT = "DELETE_SPOT";
 export const deleteSpot = id => ({
   type: DELETE_SPOT,
   id
 });
 
-export const UPDATE_SPOT = "UPDATE_SPOT";
-export const updateSpot = spot => ({
-  type: UPDATE_SPOT,
+export const RECEIVE_SPOT = "RECEIVE_SPOT";
+export const receiveSpot = spot => ({
+  type: RECEIVE_SPOT,
   spot
+});
+
+export const RECEIVE_SPOTS = "RECEIVE_SPOTS";
+export const receiveSpots = spots => ({
+  type: RECEIVE_SPOTS,
+  spots
+});
+
+export const REQUEST_SPOT = "REQUEST_SPOT";
+export const requestSpot = id => ({
+  type: REQUEST_SPOT,
+  id
+});
+
+export const REQUEST_SPOTS = "REQUEST_SPOTS";
+export const requestSpots = () => ({
+  type: REQUEST_SPOTS
 });
 
 export const RECEIVE_ERRORS = "RECEIVE_ERRORS";
