@@ -36,3 +36,52 @@
   transition: background .2s ease-in;
   cursor: pointer;
 }
+
+.spot-info-container {
+  display: flex;
+
+  background-color: red;
+  height: 250px;
+  width: 100%;
+}
+
+.spot-info {
+  width: 55%;
+  height: 100%;
+  background-color: blue;
+}
+
+.price-info {
+  width: 25%;
+  height: 375px;
+  background-color: yellow;
+
+  // float: right;
+  margin-top: -50px;
+}
+
+.margin-left {
+  width: 10%;
+  height: 50px;
+  background-color: purple;
+}
+
+.margin-right {
+  width: 10%;
+  height: 50px;
+  background-color: purple;
+}
+
+.spot-body {
+  display: flex;
+}
+
+.detail-info {
+  width: 55%;
+  height: 450px;
+  background-color: grey;
+}
+
+.spot-body-placeholder {
+  width: 25%;
+}

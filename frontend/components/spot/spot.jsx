@@ -7,7 +7,16 @@ class Spot extends React.Component {
     super(props);
 
     this.head = this.head.bind(this);
+    this.marginRight = this.marginRight.bind(this);
+    this.marginLeft = this.marginLeft.bind(this);
+
     this.allPhotosButton = this.allPhotosButton.bind(this);
+    this.spotInfoContainer = this.spotInfoContainer.bind(this);
+    this.spotInfo = this.spotInfo.bind(this);
+    this.priceInfo = this.priceInfo.bind(this);
+
+    this.body = this.body.bind(this);
+    this.detailInfo = this.detailInfo.bind(this);
   }
 
   head() {
@@ -26,11 +35,80 @@ class Spot extends React.Component {
     );
   }
 
+  marginRight() {
+    return (
+      <div className="margin-right">
+        I am margin right
+      </div>
+    );
+  }
+
+  marginLeft() {
+    return (
+      <div className="margin-left">
+        I am margin left
+      </div>
+    );
+  }
+
+  spotInfoContainer() {
+    return (
+      <div className="spot-info-container">
+        { this.marginLeft() }
+        { this.spotInfo() }
+        { this.priceInfo() }
+        { this.marginRight() }
+      </div>
+    );
+  }
+
+  spotInfo() {
+    return (
+      <div className="spot-info">
+        I am spot info
+      </div>
+    );
+  }
+
+  priceInfo() {
+    return (
+      <div className="price-info">
+        I am price info
+      </div>
+    );
+  }
+
+  body() {
+    return (
+      <div className="spot-body">
+        { this.marginLeft() }
+        { this.detailInfo() }
+
+        <div className="spot-body-placeholder">
+
+        </div>
+        
+        { this.marginRight() }
+      </div>
+    );
+  }
+
+  detailInfo() {
+    return (
+      <div className="detail-info">
+        I am detail info
+      </div>
+    );
+  }
+
+
+
   render() {
     return (
       <div className="spot">
         { this.head() }
-        <Body />
+        { this.spotInfoContainer() }
+        { this.body() }
         <Footer />
       </div>
     );

@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 20161104003126) do
     t.string   "price_per_night", null: false
     t.string   "room_type",       null: false
     t.integer  "bed_count",       null: false
+    t.integer  "max_guests",      null: false
     t.string   "spot_pic_url"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
@@ -34,6 +35,7 @@ ActiveRecord::Schema.define(version: 20161104003126) do
 
   add_index "spots", ["bed_count"], name: "index_spots_on_bed_count", using: :btree
   add_index "spots", ["country"], name: "index_spots_on_country", using: :btree
+  add_index "spots", ["max_guests"], name: "index_spots_on_max_guests", using: :btree
   add_index "spots", ["post_code"], name: "index_spots_on_post_code", using: :btree
   add_index "spots", ["price_per_night"], name: "index_spots_on_price_per_night", using: :btree
   add_index "spots", ["room_type"], name: "index_spots_on_room_type", using: :btree
