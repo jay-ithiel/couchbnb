@@ -1,6 +1,7 @@
 import React from 'react';
 import Body from '../body/body';
 import Footer from '../footer/footer';
+import { withRouter } from 'react-router';
 
 class Home extends React.Component {
   constructor(props) {
@@ -96,7 +97,7 @@ class Home extends React.Component {
   }
 
   handleSearch() {
-    alert('You clicked search! Too bad I don\'t know how to search.');
+    this.props.router.push('/spot');
   }
 
   searchButton() {
@@ -125,4 +126,4 @@ class Home extends React.Component {
   }
 }
 
-export default Home;
+export default withRouter(Home);
