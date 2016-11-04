@@ -116,6 +116,19 @@
   font-family: sans-serif;
 }
 
+.host-head:hover {
+  cursor: pointer;
+  filter: brightness(97%);
+}
+
+.host-head h2 {
+  color: #eaeaea;
+}
+
+.host-head:hover h2 {
+  color: #fff;
+}
+
 .host-body {
   display: flex;
   justify-content: center;

@@ -23,9 +23,13 @@ class Host extends React.Component {
     this._redirectUnlessLoggedIn();
   }
 
+  handleNewSpot() {
+    alert("Don't click me.");
+  }
+
   head() {
     return (
-      <div className="host-head">
+      <div className="host-head" onClick={this.handleNewSpot}>
         <p>I am the host head. Give me a pretty picture</p>
         <h2 className="banner">Host an Unforgettable Vacation</h2>
       </div>
