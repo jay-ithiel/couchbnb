@@ -5,7 +5,7 @@ import App from './app';
 import SessionFormContainer from './session/session_form_container';
 import SplashContainer from './splash/splash_container';
 import HomeContainer from './home/home_container';
-
+import SpotContainer from './spot/spot_container';
 
 const Root = ({ store }) => {
 
@@ -35,6 +35,11 @@ const Root = ({ store }) => {
             path='/splash'
             component={SplashContainer}
             onEnter={_redirectIfLoggedIn} >
+          </Route>
+
+          <Route
+            path='/spot'
+            component={SpotContainer} >
           </Route>
 
         </Route>

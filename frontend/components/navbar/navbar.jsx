@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router';
+import { withRouter } from 'react-router';
 import SessionFormContainer from '../session/session_form_container';
 import UserInfoContainer from './user_info/user_info_container';
 
@@ -9,8 +9,21 @@ class Navbar extends React.Component {
 
     this.loginLink = this.loginLink.bind(this);
     this.logo = this.logo.bind(this);
+    this.handleLogoClick = this.handleLogoClick.bind(this);
     this.handleClickLogin = this.handleClickLogin.bind(this);
     this.searchBar = this.searchBar.bind(this);
+  }
+
+  logo() {
+    return (
+      <div className="logo" onClick={this.handleLogoClick}>
+        <h1>Couchbnb</h1>
+      </div>
+    );
+  }
+
+  handleLogoClick() {
+    this.props.router.push('/');
   }
 
   handleClickLogin() {
@@ -50,14 +63,6 @@ class Navbar extends React.Component {
     }
   }
 
-  logo() {
-    return (
-      <div className="logo">
-        <h1>Couchbnb</h1>
-      </div>
-    );
-  }
-
   render() {
     return(
       <div className="navbar">
@@ -69,4 +74,4 @@ class Navbar extends React.Component {
   }
 }
 
-export default (Navbar);
+export default withRouter(Navbar);

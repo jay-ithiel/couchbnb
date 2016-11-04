@@ -1,0 +1,11 @@
+json.extract! @spot, :id,
+                     :host_id,
+                     :host_name,
+                     :title,
+                     :country,
+                     :state_region,
+                     :post_code,
+                     :street_address,
+                     :price_per_night,
+                     :room_type,
+                     :bed_count
