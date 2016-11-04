@@ -2,6 +2,7 @@ import React from 'react';
 import { Link, withRouter} from 'react-router';
 import SessionFormContainer from '../session/session_form_container';
 import Footer from '../footer/footer';
+import Body from '../body/body';
 
 class Splash extends React.Component {
   constructor(props) {
@@ -52,14 +53,6 @@ class Splash extends React.Component {
     );
   }
 
-  body() {
-    return (
-      <div className="body">
-        I am the body!
-      </div>
-    );
-  }
-
   render() {
     if (this.props.loggedIn) {
       return (<div></div>);
@@ -67,7 +60,7 @@ class Splash extends React.Component {
       return (
         <div>
           { this.header() }
-          { this.body() }
+          <Body />
           <Footer />
         </div>
       );

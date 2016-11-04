@@ -30,16 +30,6 @@ class Footer extends React.Component {
     );
   }
 
-  // Footer links:
-  // about
-  // getting started
-  // sitemap
-  // safety
-  // community
-  // support
-  // terms
-  // privacy
-
   about() {
     return (
       <div className="footer-link">

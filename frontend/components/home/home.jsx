@@ -1,4 +1,6 @@
 import React from 'react';
+import Body from '../body/body';
+import Footer from '../footer/footer';
 
 class Home extends React.Component {
   constructor(props) {
@@ -59,9 +61,10 @@ class Home extends React.Component {
   mainHeadSearchBar() {
     return (
       <div className="main-head-search-bar-container">
-        <input type="text"
-               className="main-head-search-bar"
-               placeholder="Where to?"/>
+        <input
+          type="text"
+          className="main-head-search-bar"
+          placeholder="Where to?"/>
       </div>
     );
   }
@@ -110,6 +113,8 @@ class Home extends React.Component {
       return (
         <div>
           { this.mainHead() }
+          <Body />
+          <Footer />
         </div>
       );
     } else {
