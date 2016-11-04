@@ -1,14 +1,27 @@
-class SpotsController < ApplicationController
+class Api::SpotsController < ApplicationController
   def create
+    @spot = Spot.new(spot_params)
+    if @spot.save
+      render json: :show
+    else
+      render json: @spot.errors.full_messages
+    end
   end
 
   def index
+    @spots = Spot.all
+    render json: :index
   end
 
   def show
+    @spot = Spot.find(params[:id])
+    render json: :show
   end
 
   def destroy
+    @spot = Spot.find(params[:id])
+    @spot.destroy
+    render '/'
   end
 
   private
