@@ -25,16 +25,17 @@ const Root = ({ store }) => {
     <Provider store={store}>
       <Router history={hashHistory}>
         <Route path='/' component={App} >
+
           <IndexRoute
             component={HomeContainer}
             onEnter={_redirectUnlessLoggedIn}>
           </IndexRoute>
 
-          <Route path='/splash'
-                 component={SplashContainer}
-                 onEnter={_redirectIfLoggedIn} >
+          <Route
+            path='/splash'
+            component={SplashContainer}
+            onEnter={_redirectIfLoggedIn} >
           </Route>
-
 
         </Route>
       </Router>

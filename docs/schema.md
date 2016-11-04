@@ -27,7 +27,7 @@ column name     | data-type | details
 id              | integer   | not null, primary key
 host_id         | integer   | not null, foreign key (references users), indexed
 host_name       | string    |
-title           | string    |
+title           | string    | not null
 country         | string    | not null, indexed
 state-region    | string    | not null, indexed
 post-code       | string    | not null, indexed
