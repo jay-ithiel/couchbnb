@@ -1,4 +1,6 @@
 import React from 'react';
+import Body from '../body/body';
+import Footer from '../footer/footer';
 
 class Spot extends React.Component {
   constructor(props) {
@@ -6,7 +8,6 @@ class Spot extends React.Component {
 
     this.head = this.head.bind(this);
     this.allPhotosButton = this.allPhotosButton.bind(this);
-
   }
 
   head() {
@@ -29,6 +30,8 @@ class Spot extends React.Component {
     return (
       <div className="spot">
         { this.head() }
+        <Body />
+        <Footer />
       </div>
     );
   }

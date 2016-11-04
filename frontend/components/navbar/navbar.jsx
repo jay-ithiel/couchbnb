@@ -12,6 +12,7 @@ class Navbar extends React.Component {
     this.handleLogoClick = this.handleLogoClick.bind(this);
     this.handleClickLogin = this.handleClickLogin.bind(this);
     this.searchBar = this.searchBar.bind(this);
+    this.handleSearchSubmit = this.handleSearchSubmit.bind(this);
   }
 
   logo() {
@@ -40,13 +41,23 @@ class Navbar extends React.Component {
     });
   }
 
+  handleSearchSubmit() {
+    this.props.router.push('spot');
+  }
+
   searchBar() {
     return (
       <div className="nav-search-bar-container">
-        <input type="text"
-               name="search"
-               className="nav-search-bar"
-               placeholder="Where to?"/>
+        <form className="nav-search-bar-form"
+              onSubmit={ this.handleSearchSubmit } >
+          <input
+            type="text"
+            name="search"
+            className="nav-search-bar"
+            placeholder="Where to?" />
+
+          <button className="nav-search-button"></button>
+        </form>
       </div>
     );
   }
