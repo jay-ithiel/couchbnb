@@ -41,6 +41,7 @@ class Api::SpotsController < ApplicationController
         :title,
         :country,
         :state_region,
+        :city,
         :post_code,
         :street_address,
         :price_per_night,

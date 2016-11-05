@@ -28,6 +28,7 @@ id              | integer   | not null, primary key
 host_id         | integer   | not null, foreign key (references users), indexed
 host_name       | string    |
 title           | string    | not null
+city            | string    | not null, indexed
 country         | string    | not null, indexed
 state-region    | string    | not null, indexed
 post-code       | string    | not null, indexed

@@ -286,14 +286,12 @@
 
   margin: 0;
   padding: 0;
-  
 }
 
 .address {
   width: 90%;
-
+  height: 100px;
   display: flex;
-  flex-wrap: wrap;
 }
 
 .location-input-half {
@@ -303,4 +301,11 @@
   margin: 0;
   padding: 0;
   border: 1px solid #dedede;
+}
+
+.spot-input {
+  width: 90%;
+  height: 50px;
+  margin: 0;
+  padding: 0;
 }

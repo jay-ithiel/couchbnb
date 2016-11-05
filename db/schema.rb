@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 20161104003126) do
     t.string   "title",           null: false
     t.string   "country",         null: false
     t.string   "state_region",    null: false
+    t.string   "city",            null: false
     t.string   "post_code",       null: false
     t.string   "street_address",  null: false
     t.string   "price_per_night", null: false
@@ -34,6 +35,7 @@ ActiveRecord::Schema.define(version: 20161104003126) do
   end
 
   add_index "spots", ["bed_count"], name: "index_spots_on_bed_count", using: :btree
+  add_index "spots", ["city"], name: "index_spots_on_city", using: :btree
   add_index "spots", ["country"], name: "index_spots_on_country", using: :btree
   add_index "spots", ["max_guests"], name: "index_spots_on_max_guests", using: :btree
   add_index "spots", ["post_code"], name: "index_spots_on_post_code", using: :btree

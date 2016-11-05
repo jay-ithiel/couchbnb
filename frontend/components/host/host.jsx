@@ -53,12 +53,18 @@ class Host extends React.Component {
   }
 
   listings() {
+    let spotLis = this.props.currentUserSpots.map(spot => {
+      return (
+        <li className='listing'>
+          { spot.title }
+        </li>
+      );
+    });
+
     return (
       <div className='listings'>
         <h2 className='listings-header'>Your hosted vacations</h2>
-        { this.listing() }
-        { this.listing() }
-        { this.listing() }
+        { spotLis }
       </div>
     );
   }
