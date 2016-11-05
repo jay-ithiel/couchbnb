@@ -16,6 +16,12 @@ export const deleteSpot = id => ({
   id
 });
 
+export const REMOVE_SPOT = "REMOVE_SPOT";
+export const removeSpot = id => ({
+  type: REMOVE_SPOT,
+  id
+});
+
 export const RECEIVE_SPOT = "RECEIVE_SPOT";
 export const receiveSpot = spot => ({
   type: RECEIVE_SPOT,
@@ -29,9 +35,9 @@ export const receiveSpots = spots => ({
 });
 
 export const REQUEST_SPOT = "REQUEST_SPOT";
-export const requestSpot = id => ({
+export const requestSpot = spot => ({
   type: REQUEST_SPOT,
-  id
+  spot
 });
 
 export const REQUEST_SPOTS = "REQUEST_SPOTS";

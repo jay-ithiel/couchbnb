@@ -6,6 +6,7 @@ import ModalStyle from '../modal/modal_style';
 class SessionForm extends React.Component {
   constructor(props) {
     super(props);
+    
     this.state = {
       first_name: "",
       last_name: "",

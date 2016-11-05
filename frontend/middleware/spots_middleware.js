@@ -3,6 +3,7 @@ import { CREATE_SPOT,
          DELETE_SPOT,
          REQUEST_SPOT,
          REQUEST_SPOTS,
+         removeSpot,
          receiveSpot,
          receiveSpots,
          receiveErrors
@@ -15,13 +16,17 @@ import { createSpot,
          fetchAllSpots
        } from '../util/spot_api_util';
 
-const SpotMiddleware = store => next => action => {
+const SpotsMiddleware = store => next => action => {
   const spotSuccess = data => {
     store.dispatch(receiveSpot(data));
   };
 
   const spotsSuccess = data => {
     store.dispatch(receiveSpots(data));
+  };
+
+  const deleteSpotSuccess = data => {
+    store.dispatch(removeSpot(data));
   };
 
   const errorCallback = errors => {
@@ -38,12 +43,11 @@ const SpotMiddleware = store => next => action => {
       return next(action);
 
     case DELETE_SPOT:
-      // not sure how to delete
-      // deleteSpot(action.id,)
+      deleteSpot(action.id, deleteSpotSuccess, errorCallback);
       return next(action);
 
     case REQUEST_SPOT:
-      fetchSpot(action.id, spotSuccess, errorCallback);
+      fetchSpot(action.spot, spotSuccess, errorCallback);
       return next(action);
 
     case REQUEST_SPOTS:
@@ -55,4 +59,4 @@ const SpotMiddleware = store => next => action => {
   }
 };
 
-export default SpotMiddleware;
+export default SpotsMiddleware;

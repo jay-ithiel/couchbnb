@@ -4,22 +4,22 @@ import { RECEIVE_SPOT,
        } from '../actions/spot_actions';
 
 const _defaultState = {
-  spot: null,
+  index: {},
   errors: []
 };
 
-const SpotReducer = (oldState = _defaultState, action) => {
+const SpotsReducer = (oldState = _defaultState, action) => {
   Object.freeze(oldState);
   let newState = merge({}, oldState);
 
   switch(action.type) {
     case RECEIVE_SPOTS:
-      newState = action.spot;
+      newState.index = action.spots;
       return newState;
 
     case RECEIVE_SPOT:
       newState = merge({}, oldState);
-      newState[action.spot.id] = action.spot;
+      newState.index[action.spot.id] = action.spot;
       return newState;
 
     default:
@@ -28,4 +28,4 @@ const SpotReducer = (oldState = _defaultState, action) => {
 
 };
 
-export default SpotReducer;
+export default SpotsReducer;
