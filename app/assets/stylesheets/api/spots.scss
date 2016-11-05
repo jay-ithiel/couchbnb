@@ -156,6 +156,12 @@
   font-family: sans-serif;
 }
 
+.listings-ul {
+  width: 100%;
+  display: flex;
+  flex-direction: column-reverse;
+}
+
 .listings-header {
   margin-top: 80px;
   margin-bottom: 20px;
@@ -165,16 +171,63 @@
 }
 
 .listing {
-  width: 60%;
-  height: 250px;
+  width: 100%;
+  height: 350px;
 
   margin: 30px 0;
 
   border: 1px solid #dedede;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.listing-image {
+  width: 40%;
+  height: 80%;
+  margin-right: 20px;
+
+  background-color: #dedede;
+}
+
+.listing-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  width: 50%;
+  height: 80%;
 }
 
 .listing:last-child {
   margin-bottom: 60px;
+}
+
+.listing-title {
+  font-size: 20px;
+}
+
+.listing-info-buttons {
+  width: 100%;
+  height: 15%;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.listing-info-button {
+  width: 30%;
+  height: 100%;
+
+  border: 1px solid #dedede;
+  background-color: #fff;
+}
+
+.listing-info-button:hover {
+  background-color: #f7f7f7;
+  transition: background .2s ease-in;
+  cursor: pointer;
 }
 
 .spot-form-container {

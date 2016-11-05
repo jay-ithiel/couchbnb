@@ -1,10 +1,11 @@
 import React from 'react';
+import { withRouter } from 'react-router';
 
 class SpotForm extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = {
+    this.state = props.spotFormInfo.editSpotTarget || {
         host_id: this.props.currentUser.id,
         host_name: this.props.currentUser.first_name,
         title: "",
@@ -13,10 +14,10 @@ class SpotForm extends React.Component {
         city: "",
         post_code: "",
         street_address: "",
-        price_per_night: "$0",
+        price_per_night: "",
         room_type: "Entire Place",
-        bed_count: 1,
-        max_guests: 1
+        bed_count: '',
+        max_guests: ""
     };
 
     this.spotFormContainer = this.spotFormContainer.bind(this);
@@ -38,7 +39,7 @@ class SpotForm extends React.Component {
     this.postCode = this.postCode.bind(this);
     this.address= this.address.bind(this);
 
-    this.handleCreateSpot = this.handleCreateSpot.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   marginRight() {
@@ -191,10 +192,10 @@ class SpotForm extends React.Component {
     );
   }
 
-  handleCreateSpot(e) {
+  handleSubmit(e) {
     e.preventDefault();
     const spot = this.state;
-    this.props.createSpot( spot );
+    this.props.processForm( spot );
 
     this.setState({
         host_id: this.props.currentUser.id,
@@ -205,18 +206,20 @@ class SpotForm extends React.Component {
         city: "",
         post_code: "",
         street_address: "",
-        price_per_night: "$0",
+        price_per_night: "",
         room_type: "Entire Place",
-        bed_count: 1,
-        max_guests: 1
+        bed_count: '',
+        max_guests: ''
     });
 
     this.handleSpotFormClose();
+
+    window.location.reload();
   }
 
   spotForm() {
     return (
-      <form className="spotForm" onSubmit={this.handleCreateSpot}>
+      <form className="spotForm" onSubmit={this.handleSubmit}>
 
         <input
           type="text"
@@ -260,4 +263,4 @@ class SpotForm extends React.Component {
   }
 }
 
-export default SpotForm;
+export default withRouter(SpotForm);

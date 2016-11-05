@@ -5,16 +5,31 @@ import { createSpot,
          deleteSpot
        } from '../../actions/spot_actions';
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state, ownProps) => ({
   currentUser: state.session.currentUser,
-  loggedIn: state.session.currentUser ? true : null
+  loggedIn: state.session.currentUser ? true : null,
+  spot: ownProps.spotFormInfo.editSpotTarget
 });
 
-const mapDispatchToProps = dispatch => ({
-  createSpot: spot => dispatch(createSpot(spot)),
-  updateSpot: spot => dispatch(updateSpot(spot)),
-  deleteSpot: spotId => dispatch(deleteSpot(spotId))
-});
+const mapDispatchToProps = (dispatch, ownProps) => {
+  let formType;
+  const processForm = spot => {
+    if (ownProps.spotFormInfo.isNewSpot === true) {
+      formType = 'Create a Vacation';
+      return createSpot(spot);
+    } else {
+      formType = 'Edit your Vacation';
+      return updateSpot(spot);
+    }
+  };
+
+  return {
+    processForm: spot => dispatch(processForm(spot)),
+    createSpot: spot => dispatch(createSpot(spot)),
+    updateSpot: spot => dispatch(updateSpot(spot)),
+    deleteSpot: spotId => dispatch(deleteSpot(spotId))
+  };
+};
 
 export default connect(
   mapStateToProps,

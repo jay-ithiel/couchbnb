@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 import Host from './host';
+import { deleteSpot } from '../../actions/spot_actions';
 
 const mapStateToProps = state => ({
   loggedIn: state.session.currentUser ? true : false,
@@ -8,7 +9,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-
+  deleteSpot: spotId => dispatch(deleteSpot(spotId))
 });
 
 export default connect(
