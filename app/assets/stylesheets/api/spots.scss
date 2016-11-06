@@ -126,6 +126,7 @@
 }
 
 .host-head:hover {
+  z-index: -2;
   cursor: pointer;
   filter: brightness(106%);
   transition: filter .15s ease-in;
