@@ -108,7 +108,7 @@ class SpotForm extends React.Component {
 
   roomType() {
     return (
-      <label className="spot-form-label">
+      <label className="spot-form-label">Room Type
         <select className="room-type"
                 value={ this.state.room_type }
                 onChange={ this.handleInputChange('room_type') }>
@@ -136,7 +136,7 @@ class SpotForm extends React.Component {
           onChange={ this.handleInputChange('max_guests') }
           value={ this.state.max_guests }
           placeholder="Max Guests"
-          className="bed-guest-input" />
+          className="input-half" />
       );
     }
 
@@ -147,7 +147,7 @@ class SpotForm extends React.Component {
           onChange={ this.handleInputChange('bed_count') }
           value={ this.state.bed_count }
           placeholder="Bed Count"
-          className="bed-guest-input" />
+          className="input-half" />
       );
     }
 
@@ -176,7 +176,8 @@ class SpotForm extends React.Component {
   cityStateRegionRow() {
     return (
       <div className='spot-form-row two'>
-
+        {this.city()}
+        {this.stateRegion()}
       </div>
     );
   }
@@ -188,7 +189,7 @@ class SpotForm extends React.Component {
           onChange={ this.handleInputChange('city') }
           value={ this.state.city }
           placeholder="City"
-          className="location-input-half" />
+          className="input-half" />
       );
     }
 
@@ -199,14 +200,15 @@ class SpotForm extends React.Component {
           onChange={ this.handleInputChange('state_region') }
           value={ this.state.state_region }
           placeholder="State/Region"
-          className="location-input-half" />
+          className="input-half" />
       );
     }
 
     countryPostCode() {
       return (
         <div className="spot-form-row two">
-
+          {this.country()}
+          {this.postCode()}
         </div>
       );
     }
@@ -218,7 +220,7 @@ class SpotForm extends React.Component {
             onChange={ this.handleInputChange('country') }
             value={ this.state.country }
             placeholder="Country"
-            className="location-input-half" />
+            className="input-half" />
         );
       }
 
@@ -229,7 +231,7 @@ class SpotForm extends React.Component {
             onChange={ this.handleInputChange('post_code') }
             value={ this.state.post_code }
             placeholder="Post Code"
-            className="location-input-half" />
+            className="input-half" />
         );
       }
 
@@ -261,12 +263,15 @@ class SpotForm extends React.Component {
     return (
       <form className="spotForm" onSubmit={this.handleSubmit}>
 
+        { this.title() }
+        { this.roomType() }
         { this.bedGuestContainer() }
+        { this.price() }
+        { this.streetAddress() }
+        { this.cityStateRegionRow() }
+        { this.countryPostCode() }
 
-
-
-
-        <button className="form-submit">Create</button>
+        <button className="spot-form-row">Create</button>
       </form>
     );
   }

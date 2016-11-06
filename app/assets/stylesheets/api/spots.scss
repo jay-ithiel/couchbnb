@@ -256,7 +256,7 @@
   width: 20px;
 
   margin: 20px;
-  font-size: 17px;
+  font-size: 16px;
   color: #aaa;
 }
 
@@ -267,7 +267,7 @@
 .spotForm {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
 
   width: 30%;
@@ -276,20 +276,8 @@
   border: 1px solid #dedede;
 }
 
-.room-type {
-  outline: none;
-
-  -webkit-appearance: none;
-  -webkit-border-radius: 0px;
-
-  border-radius: 2.5px;
-
-  margin: 0;
-  padding: 0;
-  border: 1px solid #dedede;
-
-  width: 100%;
-  height: 50px;
+.spotForm input {
+  border-radius: 0;
 }
 
 .spot-form-label {
@@ -302,44 +290,46 @@
   font-size: 14px;
 }
 
-.bed-guest-container {
-  width: 90%;
-  height: 50px;
+.room-type {
+  outline: none;
 
-  display: flex;
-  justify-content: space-between;
-}
-
-.bed-guest-input {
-  margin: 0;
-  padding: 0;
-  border: 1px solid #aaa;
-  border-radius: 0;
-
-  width: 45%;
-  height: 100%;
-}
-
-.location {
-  height: 150px;
-  width: 90%;
-}
-
-.location-input {
-  width: 100%;
-  height: 50px;
-
-  margin: 0;
-  padding: 0;
-}
-
-.location-input-half {
-  width: 45%;
-  height: 50px;
+  -webkit-appearance: none;
+  -webkit-border-radius: 0px;
 
   margin: 0;
   padding: 0;
   border: 1px solid #dedede;
+  border-radius: 2.5px;
+
+  width: 100%;
+  height: 50px;
+
+  font-size: 16px;
+}
+
+.input-half {
+  width: 50%;
+  height: 50px;
+
+  margin: 0;
+  padding: 0;
+}
+
+.spot-form-row {
+  outline: none;
+
+  width: 90%;
+  height: 50px;
+  border-radius: 2.5px;
+
+  margin: 0;
+  padding: 0;
+  border: 1px solid #dedede;
+}
+
+.two {
+  display: flex;
+  justify-content: space-between;
 }
 
 .search-container {
