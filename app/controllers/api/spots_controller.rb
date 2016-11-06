@@ -2,7 +2,7 @@ class Api::SpotsController < ApplicationController
   def create
     @spot = Spot.new(spot_params)
     if @spot.save
-      render json: :show
+      render :show
     else
       render json: @spot.errors.full_messages
     end
@@ -11,7 +11,7 @@ class Api::SpotsController < ApplicationController
   def update
     @spot = Spot.find(params[:id])
     if @spot.update
-      render json: :show
+      render :show
     else
       render json: @spot.errors.full_messages
     end
@@ -19,7 +19,7 @@ class Api::SpotsController < ApplicationController
 
   def index
     @spots = Spot.all
-    render json: :index
+    render :index
   end
 
   def show

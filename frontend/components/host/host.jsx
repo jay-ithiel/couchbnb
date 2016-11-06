@@ -35,6 +35,7 @@ class Host extends React.Component {
   }
 
   componentDidUpdate() {
+
     this._redirectUnlessLoggedIn();
   }
 
@@ -96,7 +97,6 @@ class Host extends React.Component {
   handleDelete(spot) {
     return () => {
       this.props.deleteSpot(spot.id);
-      window.location.reload();
     };
   }
 
@@ -122,6 +122,8 @@ class Host extends React.Component {
   }
 
   listings() {
+    if (this.props.currentUserSpots == null) { return; }
+
     let spotLis = this.props.currentUserSpots.map(spot => {
       return (
         <div className='listing' key={ spot.id }>

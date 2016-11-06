@@ -8,6 +8,7 @@ import SplashContainer from './splash/splash_container';
 import HomeContainer from './home/home_container';
 import SpotContainer from './spot/spot_container';
 import HostContainer from './host/host_container';
+import SearchContainer from './search/search_container';
 
 const Root = ({ store }) => {
 
@@ -48,6 +49,11 @@ const Root = ({ store }) => {
             path='/host'
             component={HostContainer}
             onEnter={_redirectUnlessLoggedIn}>
+          </Route>
+
+          <Route
+            path='/search'
+            component={SearchContainer}>
           </Route>
 
         </Route>

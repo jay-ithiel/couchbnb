@@ -362,3 +362,36 @@
   margin: 0;
   padding: 0;
 }
+
+.testme {
+  height: 300px;
+  width: 300px;
+  background-color: grey;
+}
+
+.search-container {
+  display: flex;
+  max-height: 610px;
+  height: 610px;
+}
+
+.filters {
+  height: 55%;
+  width: 100%;
+}
+
+.results {
+  width: 60%;
+  height: 610px;
+  overflow-y: scroll;
+}
+
+.spot-item {
+  height: 800px;
+  width: 100%;
+}
+
+.map-container {
+  height: 100%;
+  width: 40%;
+}

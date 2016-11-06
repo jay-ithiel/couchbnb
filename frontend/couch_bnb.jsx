@@ -10,6 +10,8 @@ import { login,
          signup
        } from './actions/session_actions';
 
+import { requestSpots } from './actions/spot_actions';
+
 document.addEventListener("DOMContentLoaded", () => {
   const mainRoot = document.getElementById("root");
   Modal.setAppElement(document.body);
@@ -26,6 +28,8 @@ document.addEventListener("DOMContentLoaded", () => {
   window.login = login;
   window.logout = logout;
   window.signup = signup;
+
+  window.requestSpots = requestSpots;
 
   ReactDOM.render(<Root store={store}/>, mainRoot);
 });
