@@ -10,7 +10,9 @@ import { login,
          signup
        } from './actions/session_actions';
 
-import { requestSpots } from './actions/spot_actions';
+import { requestSpot,
+         requestSpots
+       } from './actions/spot_actions';
 
 document.addEventListener("DOMContentLoaded", () => {
   const mainRoot = document.getElementById("root");
@@ -29,6 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
   window.logout = logout;
   window.signup = signup;
 
+  window.requestSpot = requestSpot;
   window.requestSpots = requestSpots;
 
   ReactDOM.render(<Root store={store}/>, mainRoot);

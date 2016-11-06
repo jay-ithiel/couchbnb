@@ -35,9 +35,9 @@ export const receiveSpots = spots => ({
 });
 
 export const REQUEST_SPOT = "REQUEST_SPOT";
-export const requestSpot = spot => ({
+export const requestSpot = spotId => ({
   type: REQUEST_SPOT,
-  spot
+  spotId
 });
 
 export const REQUEST_SPOTS = "REQUEST_SPOTS";

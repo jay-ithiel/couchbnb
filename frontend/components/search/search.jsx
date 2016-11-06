@@ -1,4 +1,5 @@
 import React from 'react';
+import { withRouter } from 'react-router';
 import SearchResultItem from './search_result_item';
 
 class Search extends React.Component {
@@ -16,6 +17,10 @@ class Search extends React.Component {
     this.props.requestSpots();
   }
 
+  handleSpotView(spotId) {
+    return () => this.props.router.push(`spots/${spotId}`);
+  }
+
   spots() {
     let spotIds = Object.keys(this.props.spots);
 
@@ -23,8 +28,10 @@ class Search extends React.Component {
     let allSpots = spotIds.map(spotId => {
       let spot = this.props.spots[spotId];
       return (
-        <div key={spot.id} className="spot-item">
-          <SearchResultItem />
+        <div key={spot.id}
+             className="spot-item"
+             onClick={ this.handleSpotView(spot.id) }>
+          <SearchResultItem spot={spot}/>
         </div>
       );
     });

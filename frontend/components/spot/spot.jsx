@@ -19,6 +19,11 @@ class Spot extends React.Component {
     this.detailInfo = this.detailInfo.bind(this);
   }
 
+  componentDidMount() {
+    let spotId = this.props.routeParams.spot_id;
+    this.props.requestSpot(spotId);
+  }
+
   head() {
     return (
       <div className='spot-head'>
@@ -61,9 +66,37 @@ class Spot extends React.Component {
   }
 
   spotInfo() {
+    const spotId = this.props.routeParams.spot_id;
+    const spot = this.props.spots[spotId];
+
+    if (spot === undefined) { return; }
+
+    const location = `${spot.city}, ${spot.state_region}, ${spot.country}`;
+
     return (
       <div className="spot-info">
+        <div className="host-info-side">
+          <div className="host-info-side-pic">
 
+          </div>
+
+          <div className="host-info-side-name">
+            { spot.host_name }
+          </div>
+        </div>
+
+        <div className="spot-info-side">
+          <div className="spot-info-side-top">
+            <h2>{ spot.title }</h2>
+            <p>{ location }</p>
+          </div>
+
+          <div className="spot-info-side-bottom">
+            <div>{ spot.room_type }</div>
+            <div>{ spot.max_guests }</div>
+            <div>{ spot.bed_count }</div>
+          </div>
+        </div>
       </div>
     );
   }

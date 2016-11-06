@@ -12,7 +12,7 @@
   display: flex;
   align-items: flex-end;
 
-  border-bottom: 2px solid #dedede;
+  // border-bottom: 2px solid #dedede;
 }
 
 .all-photos-button {
@@ -42,13 +42,81 @@
 .spot-info-container {
   display: flex;
   border-bottom: 1px solid #dedede;
-  height: 250px;
+  height: 200px;
   width: 100%;
+
+  font-family: sans-serif;
 }
 
 .spot-info {
   width: 55%;
   height: 100%;
+  display: flex;
+}
+
+.host-info-side {
+  height: 100%;
+  width: 20%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.host-info-side-pic {
+  width: 70%;
+  background-color: whitesmoke;
+  height: 48%;
+
+  border-radius: 50%;
+}
+
+.host-info-side-name {
+  width: 100%;
+  height: 15%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.spot-info-side {
+  height: 100%;
+  width: 80%;
+}
+
+.spot-info-side-top {
+  width: 100%;
+  height: 35%;
+  padding: 20px;
+}
+
+.spot-info-side-top h2 {
+  font-size: 30px;
+  margin-bottom: 5px;
+}
+
+.spot-info-side-top p {
+  font-size: 13px;
+}
+
+.spot-info-side-bottom {
+  width: 100%;
+  height: 45%;
+
+  font-size: 13px;
+
+  display: flex;
+}
+
+.spot-info-side-bottom div {
+  height: 100%;
+  width: 33.333333%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .price-info {
@@ -412,7 +480,6 @@
 .filtered-spots {
   width: 100%;
   height: 100%;
-  background-color: green;
 
   display: flex;
   flex-wrap: wrap;
@@ -447,5 +514,4 @@
 .search-result-item-info {
   height: 20%;
   width: 100%;
-  background-color: blue;
 }

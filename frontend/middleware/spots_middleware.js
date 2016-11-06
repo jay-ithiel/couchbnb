@@ -47,7 +47,7 @@ const SpotsMiddleware = store => next => action => {
       return next(action);
 
     case REQUEST_SPOT:
-      fetchSpot(action.spot, spotSuccess, errorCallback);
+      fetchSpot(action.spotId, spotSuccess, errorCallback);
       return next(action);
 
     case REQUEST_SPOTS:
