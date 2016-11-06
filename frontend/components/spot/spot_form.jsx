@@ -27,6 +27,7 @@ class SpotForm extends React.Component {
     this.handleInputChange = this.handleInputChange.bind(this);
 
     this.closeSpotForm = this.closeSpotForm.bind(this);
+    this.spotFormImage = this.spotFormImage.bind(this);
     this.spotFormContainer = this.spotFormContainer.bind(this);
 
     this.title = this.title.bind(this);
@@ -81,11 +82,20 @@ class SpotForm extends React.Component {
     );
   }
 
+  spotFormImage() {
+    return (
+      <img
+        className="spot-form-image"
+        src="https://res.cloudinary.com/ddgtwtbre/image/upload/v1478412229/sf-golden-gate-couple_fy0y0n.png" />
+    );
+  }
+
   spotFormContainer() {
     return (
       <div className="spot-form-container display-none">
         { this.marginLeft() }
         { this.spotForm() }
+        { this.spotFormImage() }
         { this.marginRight() }
       </div>
     );
@@ -102,7 +112,7 @@ class SpotForm extends React.Component {
         value={ this.state.title }
         onChange={ this.handleInputChange('title') }
         placeholder="Title"
-        className='spot-form-row'/>
+        className='spot-form-row one'/>
     );
   }
 
@@ -158,7 +168,7 @@ class SpotForm extends React.Component {
         value={ this.state.price_per_night }
         onChange={ this.handleInputChange('price_per_night') }
         placeholder="Price Per Night"
-        className='spot-form-row' />
+        className='spot-form-row one' />
     );
   }
 
@@ -169,7 +179,7 @@ class SpotForm extends React.Component {
         onChange={ this.handleInputChange('street_address') }
         value={ this.state.street_address }
         placeholder="Street Address"
-        className="spot-form-row" />
+        className="spot-form-row one" />
     );
   }
 
@@ -271,7 +281,7 @@ class SpotForm extends React.Component {
         { this.cityStateRegionRow() }
         { this.countryPostCode() }
 
-        <button className="spot-form-row">Create</button>
+        <button className="spot-form-row button">Create</button>
       </form>
     );
   }

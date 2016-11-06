@@ -35,7 +35,6 @@ class Host extends React.Component {
   }
 
   componentDidUpdate() {
-
     this._redirectUnlessLoggedIn();
   }
 
@@ -81,7 +80,7 @@ class Host extends React.Component {
         </button>
 
         <button
-          className="listing-info-button"
+          className="preview-button"
           onClick={ this.handlePreview(spot.id) }>Preview
         </button>
       </div>

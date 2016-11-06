@@ -63,7 +63,7 @@ class Spot extends React.Component {
   spotInfo() {
     return (
       <div className="spot-info">
-        I am spot info
+
       </div>
     );
   }
@@ -72,10 +72,10 @@ class Spot extends React.Component {
     return (
       <div className="price-info">
         <div className="price-info-head">
-          <p>$100</p>
+
         </div>
         <form className="price-info-form">
-          
+
         </form>
       </div>
     );
@@ -95,7 +95,7 @@ class Spot extends React.Component {
   detailInfo() {
     return (
       <div className="detail-info">
-        I am detail info
+
       </div>
     );
   }
