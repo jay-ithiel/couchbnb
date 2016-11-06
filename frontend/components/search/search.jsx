@@ -1,4 +1,5 @@
 import React from 'react';
+import SearchResultItem from './search_result_item';
 
 class Search extends React.Component {
   constructor(props) {
@@ -23,12 +24,16 @@ class Search extends React.Component {
       let spot = this.props.spots[spotId];
       return (
         <div key={spot.id} className="spot-item">
-          { spot.title }
+          <SearchResultItem />
         </div>
       );
     });
 
-    return allSpots;
+    return (
+      <div className='filtered-spots'>
+        {allSpots}
+      </div>
+    );
   }
 
   mapContainer() {
