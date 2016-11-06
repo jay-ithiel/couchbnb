@@ -76,7 +76,7 @@ class SpotForm extends React.Component {
 
   closeSpotForm() {
     return (
-      <div className="closeSpotForm" onClick={this.handleSpotFormClose}>
+      <div className="close-spot-form" onClick={this.handleSpotFormClose}>
         X
       </div>
     );

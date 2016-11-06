@@ -24,7 +24,8 @@ class Host extends React.Component {
     this.state = {
       isNewSpot: true,
       editSpotTarget: null,
-      hostedSpots: props.currentUserSpots
+      hostedSpots: props.currentUserSpots,
+      isFormShowing: false
     };
   }
 
@@ -39,7 +40,13 @@ class Host extends React.Component {
   }
 
   toggleSpotForm() {
-    $(".spot-form-container").removeClass("display-none");
+    if (this.state.isFormShowing) {
+      $(".spot-form-container").addClass("display-none");
+      this.setState({ isFormShowing: false });
+    } else {
+      $(".spot-form-container").removeClass("display-none");
+      this.setState({ isFormShowing: true });
+    }
   }
 
   head() {
