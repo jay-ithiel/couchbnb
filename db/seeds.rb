@@ -88,3 +88,14 @@ Spot.create({
   max_guests: 4,
   spot_pic_url: 'http://res.cloudinary.com/ddgtwtbre/image/upload/v1478492826/spot1pic2_ucamo9.jpg'
 })
+
+# Booking.create({
+#   spot_id: 1,
+#   guest_id: 1,
+#   location: "City, State/Region, Country",
+#   status: "PENDING",
+#   check_in_date: Mon, 07 Nov 2016,
+#   check_out_date: Mon, 07 Nov 2016,
+#   numGuests: 2,
+#   price: "$100"
+# })

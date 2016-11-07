@@ -1,6 +1,6 @@
 import merge from 'lodash/merge';
-import { RECEIVE_SPOT,
-         RECEIVE_SPOTS,
+import { RECEIVE_BOOKING,
+         RECEIVE_BOOKINGS,
          RECEIVE_ERRORS
        } from '../actions/spot_actions';
 
@@ -9,17 +9,17 @@ const _defaultState = {
   errors: []
 };
 
-const SpotsReducer = (oldState = _defaultState, action) => {
+const BookingsReducer = (oldState = _defaultState, action) => {
   Object.freeze(oldState);
   let newState = merge({}, oldState);
 
   switch(action.type) {
-    case RECEIVE_SPOTS:
-      newState.index = action.spots;
+    case RECEIVE_BOOKINGS:
+      newState.index = action.bookings;
       return newState;
 
-    case RECEIVE_SPOT:
-      newState.index[action.spot.id] = action.spot;
+    case RECEIVE_BOOKING:
+      newState.index[action.booking.id] = action.booking;
       newState.errors = [];
       return newState;
 
@@ -33,4 +33,4 @@ const SpotsReducer = (oldState = _defaultState, action) => {
 
 };
 
-export default SpotsReducer;
+export default BookingsReducer;

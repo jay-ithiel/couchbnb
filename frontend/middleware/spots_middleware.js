@@ -34,7 +34,7 @@ const SpotsMiddleware = store => next => action => {
   };
 
   switch(action.type) {
-      case CREATE_SPOT:
+    case CREATE_SPOT:
       createSpot(action.spot, spotSuccess, errorCallback);
       return next(action);
 

@@ -252,6 +252,12 @@ class Spot extends React.Component {
       alert("You have been blacklisted from this listing.");
     };
 
+    const bookedDates = [
+      moment().subtract(1, 'days'),
+      moment().subtract(2, 'days'),
+      moment().subtract(3, 'days')
+    ];
+
     return (
       <div className="price-info">
         <div className="price-info-head">
@@ -267,6 +273,9 @@ class Spot extends React.Component {
               <label>Check In</label>
               <DatePicker
                 onChange={handleCheckIn}
+                selectsStart  startDate={this.state.checkIn}
+                excludeDates={ bookedDates }
+                endDate={this.state.checkOut}
                 selected={this.state.checkIn} />
             </div>
 
@@ -274,6 +283,9 @@ class Spot extends React.Component {
               <label>Check Out</label>
               <DatePicker
                 onChange={handleCheckOut}
+                excludeDates={ bookedDates }
+                selectsEnd  startDate={this.state.checkIn}
+                endDate={this.state.checkOut}
                 selected={this.state.checkOut} />
             </div>
 

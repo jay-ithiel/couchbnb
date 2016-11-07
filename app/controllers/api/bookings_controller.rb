@@ -3,14 +3,14 @@ class Api::BookingsController < ApplicationController
   def create
     @booking = Booking.new(booking_params)
     if @booking.save
-
+      render json: @booking
     else
       render json: @booking.errors.full_messages
     end
   end
 
   def index
-
+    @bookings = Booking.all
   end
 
   def destroy
@@ -26,11 +26,10 @@ class Api::BookingsController < ApplicationController
         :guest_id,
         :location,
         :status,
-        :check_id_date,
+        :check_in_date,
         :check_out_date,
         :numGuests,
         :price
       )
     end
-
 end
