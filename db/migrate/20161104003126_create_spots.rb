@@ -4,6 +4,7 @@ class CreateSpots < ActiveRecord::Migration
       t.integer :host_id, null: false
       t.string :host_name, null: false
       t.string :title, null: false
+      t.text :description
 
       t.string :country, null: false, index: true
       t.string :state_region, null: false, index: true

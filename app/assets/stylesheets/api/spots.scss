@@ -217,7 +217,7 @@
   justify-content: center;
   align-items: center;
 
-  border-bottom: 2px solid #dedede;
+  // border-bottom: 2px solid #dedede;
 
   width: 100%;
   height: 604px;
@@ -368,7 +368,7 @@
   font-family: sans-serif;
   color: #aaa;
 
-  border-bottom: 2px solid #dedede;
+  border-bottom: 1px solid #dedede;
 }
 
 .spot-form-container input {
@@ -412,16 +412,6 @@
   height: 90%;
 }
 
-.spot-form-label {
-  margin: 0;
-  padding: 0;
-
-  width: 80%;
-  height: 70px;
-
-  font-size: 14px;
-}
-
 .room-type {
   outline: none;
 
@@ -430,13 +420,13 @@
 
   margin: 0;
   padding: 0;
-  border: 1px solid #dedede;
-  border-radius: 2.5px;
+  border: 0;
+  border-radius: 0;
 
-  width: 100%;
-  height: 50px;
+  width: 55%;
+  height: 45px;
 
-  font-size: 18px;
+  font-size: 15px;
 
   color: #aaa;
   padding-left: 10px;
@@ -445,7 +435,7 @@
 
 .input-half {
   width: 50%;
-  height: 50px;
+  height: 45px;
 
   margin: 0;
   padding: 0 10px;
@@ -454,6 +444,8 @@
   border-radius: 2.5px;
   border-bottom-left-radius: 0;
   border-top-left-radius: 0;
+
+  font-size: 15px;
 }
 
 .input-half:nth-child(2) {
@@ -462,12 +454,34 @@
 
 .spot-form-row {
   width: 80%;
-  height: 50px;
+  height: 45px;
   border-radius: 2.5px;
 
   margin: 0;
   padding: 0;
   border: 1px solid #dedede;
+
+  font-size: 15px;
+}
+
+.spot-form-description {
+  overflow: auto !important;
+  outline: none !important;
+
+  -webkit-box-shadow: none !important;
+  -moz-box-shadow: none !important;
+  box-shadow: none !important;
+  resize: none;
+
+  width: 76%;
+  height: 140px;
+  border-radius: 2.5px;
+
+  margin: 0;
+  border: 1px solid #dedede;
+  padding: 10px;
+
+  font-size: 15px;
 }
 
 .button {
@@ -506,6 +520,36 @@
   height: 55%;
   width: 100%;
   border-bottom: 1px solid #dedede;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  font-family: sans-serif;
+}
+
+.filters-row {
+  width: 95%;
+  height: 25%;
+
+  border-bottom: 1px solid #eef0f0;
+
+  display: flex;
+  align-items: center;
+}
+
+.filters h2 {
+  color: #484848;
+  font-size: 13.5px;
+}
+
+.filters-row-bottom {
+  width: 95%;
+  height: 50%;
+
+  display: flex;
+  align-items: center;
 }
 
 .results {
@@ -527,9 +571,13 @@
 .spot-item {
   height: 275px;
   width: 45%;
-
   margin: 15px;
 }
+
+.spot-item:hover {
+  cursor: pointer;
+}
+
 
 .map-container {
   height: 100%;
@@ -579,11 +627,5 @@
   color: #a6a6a6;
   font-size: 13px;
   font-weight: 300;
-  margin-right: 10px;
-}
-
-.bullet {
-  height: 1px;
-  width: 1px;
-  background-color: #a6a6a6;
+  margin-right: 5px;
 }

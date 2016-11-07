@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20161104003126) do
     t.integer  "host_id",         null: false
     t.string   "host_name",       null: false
     t.string   "title",           null: false
+    t.text     "description"
     t.string   "country",         null: false
     t.string   "state_region",    null: false
     t.string   "city",            null: false

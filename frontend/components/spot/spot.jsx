@@ -113,6 +113,7 @@ class Spot extends React.Component {
           </div>
           <p>Per Night</p>
         </div>
+
         <form className="price-info-form">
 
         </form>
@@ -132,10 +133,16 @@ class Spot extends React.Component {
   }
 
   detailInfo() {
+    const spotId = this.props.routeParams.spot_id;
+    const spot = this.props.spots[spotId];
+    if (spot === undefined) { return; }
+
     return (
       <div className="detail-info">
         <h2>About this listing</h2>
         <p>
+          { spot.description }
+
           Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
         </p>
       </div>

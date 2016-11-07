@@ -54,7 +54,17 @@ class Search extends React.Component {
   filters() {
     return (
       <div className="filters">
+        <div className="filters-row">
+          <h2>Dates</h2>
+        </div>
 
+        <div className="filters-row">
+          <h2>Room Type</h2>
+        </div>
+
+        <div className="filters-row-bottom">
+          <h2>Price Range</h2>
+        </div>
       </div>
     );
   }

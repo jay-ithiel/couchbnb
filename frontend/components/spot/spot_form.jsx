@@ -15,7 +15,7 @@ class SpotForm extends React.Component {
         post_code: "",
         street_address: "",
         price_per_night: "",
-        room_type: "Entire Place",
+        room_type: "Room Type",
         bed_count: '',
         max_guests: ""
     };
@@ -31,11 +31,13 @@ class SpotForm extends React.Component {
     this.spotFormContainer = this.spotFormContainer.bind(this);
 
     this.title = this.title.bind(this);
-    this.roomType = this.roomType.bind(this);
+    this.description = this.description.bind(this);
+    this.roomTypePrice = this.roomTypePrice.bind(this);
+      this.roomType = this.roomType.bind(this);
+      this.price = this.price.bind(this);
     this.bedGuestContainer = this.bedGuestContainer.bind(this);
       this.maxGuestsInput = this.maxGuestsInput.bind(this);
       this.bedCountInput = this.bedCountInput.bind(this);
-    this.price = this.price.bind(this);
     this.streetAddress = this.streetAddress.bind(this);
     this.cityStateRegionRow = this.cityStateRegionRow.bind(this);
       this.city = this.city.bind(this);
@@ -116,9 +118,27 @@ class SpotForm extends React.Component {
     );
   }
 
-  roomType() {
+  description() {
     return (
-      <label className="spot-form-label">Room Type
+      <textarea
+        className="spot-form-description"
+        placeholder="Short description">
+
+      </textarea>
+    );
+  }
+
+  roomTypePrice() {
+    return (
+      <div className="spot-form-row two">
+        { this.roomType() }
+        { this.price() }
+      </div>
+    );
+  }
+
+    roomType() {
+      return (
         <select className="room-type"
                 value={ this.state.room_type }
                 onChange={ this.handleInputChange('room_type') }>
@@ -126,9 +146,19 @@ class SpotForm extends React.Component {
           <option value="Private Room">Private Room</option>
           <option value="Shared Room">Shared Room</option>
         </select>
-      </label>
-    );
-  }
+      );
+    }
+
+    price() {
+      return (
+        <input
+          type="text"
+          value={ this.state.price_per_night }
+          onChange={ this.handleInputChange('price_per_night') }
+          placeholder="Price Per Night"
+          className='input-half' />
+      );
+    }
 
   bedGuestContainer() {
     return (
@@ -160,17 +190,6 @@ class SpotForm extends React.Component {
           className="input-half" />
       );
     }
-
-  price() {
-    return (
-      <input
-        type="text"
-        value={ this.state.price_per_night }
-        onChange={ this.handleInputChange('price_per_night') }
-        placeholder="Price Per Night"
-        className='spot-form-row one' />
-    );
-  }
 
   streetAddress() {
     return (
@@ -274,9 +293,9 @@ class SpotForm extends React.Component {
       <form className="spotForm" onSubmit={this.handleSubmit}>
 
         { this.title() }
-        { this.roomType() }
+        { this.description() }
+        { this.roomTypePrice() }
         { this.bedGuestContainer() }
-        { this.price() }
         { this.streetAddress() }
         { this.cityStateRegionRow() }
         { this.countryPostCode() }

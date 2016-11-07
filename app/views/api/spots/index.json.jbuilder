@@ -5,6 +5,7 @@
     :host_id,
     :host_name,
     :title,
+    :description,
     :country,
     :state_region,
     :city,

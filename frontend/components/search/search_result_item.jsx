@@ -34,7 +34,7 @@ class SearchResultItem extends React.Component {
         { this.userImage() }
         <div>
           <p>{ spot.room_type }</p>
-          <div className="bullet"></div>
+          <p>-</p>
           <p>{ spot.max_guests } guests</p>
         </div>
       </div>
