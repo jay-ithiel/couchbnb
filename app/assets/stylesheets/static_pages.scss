@@ -276,6 +276,11 @@
   background-color: #fff;
 }
 
+.main-head-search-container input {
+  font-weight: 200;
+  font-size: 16px;
+}
+
 .main-head-search-bar-container {
   width: 30%;
   height: 100%;
@@ -293,7 +298,6 @@
   height: 40px;
   width: 100%;
 
-  font-size: 17px;
   outline: none;
 }
 

@@ -246,7 +246,7 @@ class Spot extends React.Component {
               <label>Guests</label>
               <div className="react-datepicker__input-container">
                 <select value={this.state.guests}
-                        onChange={this.handleGuests}>
+                        onChange={handleGuests('guests')}>
                   <option value="1">1</option>
                   <option value="2">2</option>
                   <option value="3">3</option>
