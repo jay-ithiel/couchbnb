@@ -16,4 +16,14 @@ class Spot < ActiveRecord::Base
     primary_key: :id,
     foreign_key: :host_id,
     class_name: :User
+
+  has_many :bookings
+
+  def pending_requests?
+    pending_requests.size > 0
+  end
+
+  def pending_requests
+    :bookings.select { |request| request.pending? }
+  end
 end
