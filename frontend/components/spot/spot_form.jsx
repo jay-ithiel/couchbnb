@@ -142,7 +142,7 @@ class SpotForm extends React.Component {
         <select className="room-type"
                 value={ this.state.room_type }
                 onChange={ this.handleInputChange('room_type') }>
-          <option value="Entire place">Entire Place</option>
+          <option value="Entire House/Apt">Entire House/Apt</option>
           <option value="Private Room">Private Room</option>
           <option value="Shared Room">Shared Room</option>
         </select>

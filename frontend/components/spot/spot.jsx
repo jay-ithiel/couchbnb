@@ -17,6 +17,10 @@ class Spot extends React.Component {
 
     this.body = this.body.bind(this);
     this.detailInfo = this.detailInfo.bind(this);
+
+    this.roomTypeIcon = this.roomTypeIcon.bind(this);
+    this.bedIcon = this.bedIcon.bind(this);
+    this.guestIcon = this.guestIcon.bind(this);
   }
 
   componentDidMount() {
@@ -91,12 +95,76 @@ class Spot extends React.Component {
           </div>
 
           <div className="spot-info-side-bottom">
-            <div>{ spot.room_type }</div>
-            <div>{ spot.max_guests }</div>
-            <div>{ spot.bed_count }</div>
+            <div>
+              { this.roomTypeIcon(spot.room_type) }
+              { spot.room_type }
+            </div>
+
+            <div>
+              { this.guestIcon() }
+              { spot.max_guests } Guests
+            </div>
+
+            <div>
+              { this.bedIcon() }
+              { spot.bed_count } Beds
+            </div>
           </div>
         </div>
       </div>
+    );
+  }
+
+  roomTypeIcon(roomType) {
+    switch(roomType) {
+      case 'Entire House/Apt':
+        return (
+          <img
+            className="spot-icon"
+            src="https://res.cloudinary.com/ddgtwtbre/image/upload/v1478491173/entire-home_apt_iqmboe.png">
+          </img>
+        );
+
+      case 'Private Room':
+        return (
+          <img
+            className="spot-icon"
+            src="https://res.cloudinary.com/ddgtwtbre/image/upload/v1478491173/private-room_nlmeda.png">
+          </img>
+        );
+
+      case 'Shared Room':
+        return (
+          <img
+            className="spot-icon-wide"
+            src="https://res.cloudinary.com/ddgtwtbre/image/upload/v1478491173/shared-room_z3mqza.png">
+          </img>
+        );
+
+      default:
+        return (
+          <div>
+            I don't know what you are.
+          </div>
+        );
+    }
+  }
+
+  guestIcon() {
+    return (
+      <img
+        className="spot-icon"
+        src="http://res.cloudinary.com/ddgtwtbre/image/upload/v1478491815/guests_bnbtqt.png">
+      </img>
+    );
+  }
+
+  bedIcon() {
+    return (
+      <img
+        className="spot-icon"
+        src="https://res.cloudinary.com/ddgtwtbre/image/upload/v1478491173/bed_b4d2i6.png">
+      </img>
     );
   }
 
