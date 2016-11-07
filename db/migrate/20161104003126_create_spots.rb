@@ -7,7 +7,7 @@ class CreateSpots < ActiveRecord::Migration
       t.text :description
 
       t.string :country, null: false, index: true
-      t.string :state_region, null: false, index: true
+      t.string :state_region, index: true
       t.string :city, null: false, index: true
       t.string :post_code, null: false, index: true
       t.string :street_address, null: false

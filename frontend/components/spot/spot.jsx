@@ -2,11 +2,16 @@ import React from 'react';
 import Body from '../body/body';
 import Footer from '../footer/footer';
 
+var DatePicker = require('react-datepicker');
+var moment = require('moment');
+
+
 class Spot extends React.Component {
   constructor(props) {
     super(props);
 
     this.head = this.head.bind(this);
+    this.headImg = this.headImg.bind(this);
     this.marginRight = this.marginRight.bind(this);
     this.marginLeft = this.marginLeft.bind(this);
 
@@ -31,8 +36,21 @@ class Spot extends React.Component {
   head() {
     return (
       <div className='spot-head'>
-        { this.allPhotosButton() }
+        { this.headImg() }
       </div>
+    );
+  }
+
+  headImg() {
+    const spotId = this.props.routeParams.spot_id;
+    const spot = this.props.spots[spotId];
+    if (spot === undefined) { return; }
+
+    return (
+      <img
+        className="head-img"
+        src={spot.spot_pic_url}>
+      </img>
     );
   }
 
@@ -183,7 +201,7 @@ class Spot extends React.Component {
         </div>
 
         <form className="price-info-form">
-
+          <DatePicker />
         </form>
       </div>
     );

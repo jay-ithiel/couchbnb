@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 20161104003126) do
     t.string   "title",           null: false
     t.text     "description"
     t.string   "country",         null: false
-    t.string   "state_region",    null: false
+    t.string   "state_region"
     t.string   "city",            null: false
     t.string   "post_code",       null: false
     t.string   "street_address",  null: false

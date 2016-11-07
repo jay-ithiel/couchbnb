@@ -3,7 +3,6 @@ class Spot < ActiveRecord::Base
             :host_name,
             :title,
             :country,
-            :state_region,
             :city,
             :post_code,
             :street_address,

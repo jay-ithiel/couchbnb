@@ -65,14 +65,6 @@ class Host extends React.Component {
     );
   }
 
-  listingImage() {
-    return (
-      <div className="listing-image">
-
-      </div>
-    );
-  }
-
   listingInfoButtons(spot) {
     return (
       <div className="listing-info-buttons">
@@ -127,13 +119,22 @@ class Host extends React.Component {
     );
   }
 
+  listingImage(spot) {
+    return (
+      <img
+        className="listing-image"
+        src={spot.spot_pic_url}>
+      </img>
+    );
+  }
+
   listings() {
     if (this.props.currentUserSpots == null) { return; }
 
     let spotLis = this.props.currentUserSpots.map(spot => {
       return (
         <div className='listing' key={ spot.id }>
-          { this.listingImage() }
+          { this.listingImage(spot) }
           { this.listingInfo(spot) }
         </div>
       );

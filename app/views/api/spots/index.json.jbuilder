@@ -14,6 +14,7 @@
     :price_per_night,
     :room_type,
     :bed_count,
-    :max_guests
+    :max_guests,
+    :spot_pic_url
   end
 end

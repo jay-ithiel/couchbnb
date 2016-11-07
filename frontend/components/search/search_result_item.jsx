@@ -11,9 +11,10 @@ class SearchResultItem extends React.Component {
 
   spotImage() {
     return (
-      <div className="search-item-spot-image">
-
-      </div>
+      <img
+        className="search-item-spot-image"
+        src={this.props.spot.spot_pic_url}>
+      </img>
     );
   }
 
