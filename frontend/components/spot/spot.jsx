@@ -10,6 +10,12 @@ class Spot extends React.Component {
   constructor(props) {
     super(props);
 
+    this.state = {
+      checkIn: moment(),
+      checkOut: moment(),
+      guests: '1'
+    };
+
     this.head = this.head.bind(this);
     this.headImg = this.headImg.bind(this);
     this.marginRight = this.marginRight.bind(this);
@@ -191,6 +197,26 @@ class Spot extends React.Component {
     const spot = this.props.spots[spotId];
     if (spot === undefined) { return; }
 
+    const handleCheckIn = date => {
+      this.setState({
+        checkIn: date
+      });
+    };
+
+    const handleCheckOut = date => {
+      this.setState({
+        checkOut: date
+      });
+    };
+
+    const handleGuests = field => {
+      return (e) => {
+        this.setState({
+          [field]: e.target.value
+        });
+      };
+    };
+
     return (
       <div className="price-info">
         <div className="price-info-head">
@@ -201,7 +227,35 @@ class Spot extends React.Component {
         </div>
 
         <form className="price-info-form">
-          <DatePicker />
+          <div className="dates-guests">
+            <div className="dates-guests-date">
+              <label>Check In</label>
+              <DatePicker
+                onChange={handleCheckIn}
+                selected={this.state.checkIn} />
+            </div>
+
+            <div className="dates-guests-date">
+              <label>Check Out</label>
+              <DatePicker
+                onChange={handleCheckOut}
+                selected={this.state.checkOut} />
+            </div>
+
+            <div className="dates-guests-guest">
+              <label>Guests</label>
+              <div className="react-datepicker__input-container">
+                <select value={this.state.guests}
+                        onChange={this.handleGuests}>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5+">5+</option>
+                </select>
+              </div>
+            </div>
+          </div>
         </form>
       </div>
     );

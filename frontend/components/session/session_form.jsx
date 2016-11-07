@@ -6,7 +6,7 @@ import ModalStyle from '../modal/modal_style';
 class SessionForm extends React.Component {
   constructor(props) {
     super(props);
-    
+
     this.state = {
       first_name: "",
       last_name: "",
@@ -89,23 +89,19 @@ class SessionForm extends React.Component {
     const nameInputFields = () => {
       return(
         <div className="name-input-fields">
-          <label>
-            <input
-              type="text"
-              value={this.state.first_name}
-              onChange={this.handleChange('first_name')}
-              placeholder="First Name"
-            />
-          </label>
+          <input
+            type="text"
+            value={this.state.first_name}
+            onChange={this.handleChange('first_name')}
+            placeholder="First Name"
+            className="input" />
 
-          <label>
-            <input
-              type="text"
-              value={this.state.last_name}
-              onChange={this.handleChange('last_name')}
-              placeholder="Last Name"
-            />
-          </label>
+          <input
+            type="text"
+            value={this.state.last_name}
+            onChange={this.handleChange('last_name')}
+            placeholder="Last Name"
+            className="input" />
         </div>
       );
     };
@@ -133,23 +129,19 @@ class SessionForm extends React.Component {
 
               { this.props.loginForm === false ? nameInputFields() : ""}
 
-              <label className="input">
-                <input
-                  type="text"
-                  value={this.state.email}
-                  onChange={this.handleChange('email')}
-                  placeholder="Email"
-                />
-              </label>
+              <input
+                type="text"
+                value={this.state.email}
+                onChange={this.handleChange('email')}
+                placeholder="Email"
+                className="input" />
 
-              <label className="input">
-                <input
-                  type="password"
-                  value={this.state.password}
-                  onChange={this.handleChange('password')}
-                  placeholder="Password"
-                />
-              </label>
+              <input
+                type="password"
+                value={this.state.password}
+                onChange={this.handleChange('password')}
+                placeholder="Password"
+                className="input" />
 
               <button className="form-submit">{formHeader}</button>
 

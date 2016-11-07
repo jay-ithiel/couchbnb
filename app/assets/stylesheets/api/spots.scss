@@ -180,6 +180,74 @@
   background-color: #fff;
 }
 
+.dates-guests {
+  margin-top: 20px;
+  color: #484848;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  font-size: 14px;
+}
+
+.dates-guests label {
+  margin-bottom: 10px;
+}
+
+.react-datepicker__input-container {
+  width: 95%;
+  height: 50%;
+  border: none;
+}
+
+.react-datepicker__input-container input {
+  width: 100%;
+  height: 100%;
+  padding-left: 5px;
+  font-size: 13px;
+
+  border: 0;
+  border: 1px solid #dedede;
+  border-radius: 2.5px;
+}
+
+.react-datepicker__input-container select {
+  outline: none;
+
+  -webkit-appearance: none;
+  -webkit-border-radius: 0px;
+
+  width: 100%;
+  height: 100%;
+  padding-left: 5px;
+  font-size: 13px;
+
+  border: 0;
+  border: 1px solid #dedede;
+  border-radius: 2.5px;
+
+  background-color: #fff;
+}
+
+.dates-guests-date {
+  width: 30%;
+  height: 65px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.dates-guests-guest {
+  width: 20%;
+  height: 73px;
+
+  display: flex;
+  flex-direction: column;
+
+  margin-bottom: -8px;
+}
+
 .margin-left {
   display: flex;
   justify-content: flex-start;
@@ -650,10 +718,9 @@
   margin-right: 5px;
 }
 
-
-// .react-datepicker {
-//   background-color: red;
-// }
+///////////////////////////
+// REACT DATE PICKER CSS //
+///////////////////////////
 
 $border-color: #aeaeae;
 $background-color: #f0f0f0;
