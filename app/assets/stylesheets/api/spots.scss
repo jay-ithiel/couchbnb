@@ -144,12 +144,12 @@
 
 .price-info {
   width: 25%;
-  height: 300px;
+  height: 350px;
   margin-top: -42px;
 }
 
 .price-info-head {
-  height: 14%;
+  height: 12%;
   width: 100%;
   color: #fff;
 
@@ -175,20 +175,27 @@
 
 .price-info-form {
   width: 100%;
-  height: 86%;
+  height: 84%;
   border: 1px solid #dedede;
   background-color: #fff;
+
+  padding: 10px 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
 }
 
 .dates-guests {
-  margin-top: 20px;
   color: #484848;
 
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
 
   font-size: 14px;
+  width: 90%;
 }
 
 .dates-guests label {
@@ -246,6 +253,48 @@
   flex-direction: column;
 
   margin-bottom: -8px;
+}
+
+.price-calculations {
+  width: 90%;
+  height: 40%;
+}
+
+.price-calculations-row {
+  width: 93%;
+  height: 33.3333%;
+  border-bottom: 1px solid #dedede;
+
+  padding: 0 10px;
+
+  font-size: 13.5px;
+  color: #484848;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.price-calculations-row:last-child {
+  border: 0;
+}
+
+.request-to-book {
+  width: 90%;
+  height: 45px;
+
+  color: #fff;
+  font-weight: 500;
+  font-size: 15px;
+
+  background-color: #ff5a5f;
+  border-radius: 3px;
+}
+
+.request-to-book:hover {
+  filter: brightness(130%);
+  transition: filter .15s ease-in;
+  cursor: pointer;
 }
 
 .margin-left {

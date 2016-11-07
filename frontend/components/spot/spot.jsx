@@ -13,7 +13,8 @@ class Spot extends React.Component {
     this.state = {
       checkIn: moment(),
       checkOut: moment(),
-      guests: '1'
+      guests: '1',
+      totalPrice: 0
     };
 
     this.head = this.head.bind(this);
@@ -197,13 +198,43 @@ class Spot extends React.Component {
     const spot = this.props.spots[spotId];
     if (spot === undefined) { return; }
 
+    const date1 = this.state.checkIn;
+    const date2 = this.state.checkOut;
+    const diffDays = date2.diff(date1, 'days');
+
+    const priceCurrency = spot.price_per_night.slice(0,1);
+    const priceAmount = diffDays * parseInt(spot.price_per_night.slice(1));
+    const daysPrice = `${priceCurrency}${priceAmount}`;
+
+    const serviceFeeAmount = priceAmount * .12;
+    const serviceFee = `${priceCurrency}${serviceFeeAmount}`;
+
+    const totalPriceAmount = priceAmount + serviceFeeAmount;
+    const totalPrice = `${priceCurrency}${totalPriceAmount}`;
+
     const handleCheckIn = date => {
+      updateCheckIn(date);
+      updatePrice();
+    };
+
+    const handleCheckOut = date => {
+      updateCheckOut(date);
+      updatePrice();
+    };
+
+    const updatePrice = () => {
+      this.setState({
+        totalPrice
+      });
+    };
+
+    const updateCheckIn = date => {
       this.setState({
         checkIn: date
       });
     };
 
-    const handleCheckOut = date => {
+    const updateCheckOut = date => {
       this.setState({
         checkOut: date
       });
@@ -217,6 +248,10 @@ class Spot extends React.Component {
       };
     };
 
+    const handleBookingRequest = () => {
+      alert("You have been blacklisted from this listing.");
+    };
+
     return (
       <div className="price-info">
         <div className="price-info-head">
@@ -226,7 +261,7 @@ class Spot extends React.Component {
           <p>Per Night</p>
         </div>
 
-        <form className="price-info-form">
+        <form className="price-info-form" onSubmit={handleBookingRequest}>
           <div className="dates-guests">
             <div className="dates-guests-date">
               <label>Check In</label>
@@ -256,6 +291,25 @@ class Spot extends React.Component {
               </div>
             </div>
           </div>
+
+          <div className="price-calculations">
+            <div className="price-calculations-row">
+              { spot.price_per_night } x { diffDays } nights
+              <p>{ daysPrice }</p>
+            </div>
+
+            <div className="price-calculations-row">
+              <p>Service Fee</p>
+              { serviceFee }
+            </div>
+
+            <div className='price-calculations-row'>
+              <p>Total</p>
+              { this.state.totalPrice }
+            </div>
+          </div>
+
+          <button className="request-to-book button">Request To Book</button>
         </form>
       </div>
     );
