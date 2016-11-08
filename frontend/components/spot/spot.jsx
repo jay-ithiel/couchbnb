@@ -16,6 +16,9 @@ class Spot extends React.Component {
       guests: '1',
       totalPrice: 0
     };
+    // I need to keep track of booking state here.
+    // Should I nest the bookings' state under a 'booking' key
+    // or just throw all of the booking info in the state
 
     this.head = this.head.bind(this);
     this.headImg = this.headImg.bind(this);
@@ -198,19 +201,20 @@ class Spot extends React.Component {
     const spot = this.props.spots[spotId];
     if (spot === undefined) { return; }
 
-    const date1 = this.state.checkIn;
-    const date2 = this.state.checkOut;
-    const diffDays = date2.diff(date1, 'days');
+    let date1 = this.state.checkIn;
+    let date2 = this.state.checkOut;
+    let diffDays = date2.diff(date1, 'days');
 
-    const priceCurrency = spot.price_per_night.slice(0,1);
-    const priceAmount = diffDays * parseInt(spot.price_per_night.slice(1));
-    const daysPrice = `${priceCurrency}${priceAmount}`;
+    let priceCurrency = spot.price_per_night.slice(0,1);
+    let priceAmount = diffDays * parseInt(spot.price_per_night.slice(1));
+    let daysPrice = `${priceCurrency}${priceAmount}`;
 
-    const serviceFeeAmount = priceAmount * .12;
-    const serviceFee = `${priceCurrency}${serviceFeeAmount}`;
-
-    const totalPriceAmount = priceAmount + serviceFeeAmount;
-    const totalPrice = `${priceCurrency}${totalPriceAmount}`;
+    let serviceFeeAmount = priceAmount * .12;
+    let serviceFee = `${priceCurrency}${serviceFeeAmount}`;
+debugger;
+    let totalPriceAmount = priceAmount + serviceFeeAmount;
+    console.log(totalPriceAmount);
+    let totalPrice = `${priceCurrency}${totalPriceAmount}`;
 
     const handleCheckIn = date => {
       updateCheckIn(date);
@@ -248,7 +252,10 @@ class Spot extends React.Component {
       };
     };
 
-    const handleBookingRequest = () => {
+    const handleBookingRequest = (e) => {
+      e.preventDefault;
+      const booking = this.state;
+
       alert("You have been blacklisted from this listing.");
     };
 
@@ -317,7 +324,7 @@ class Spot extends React.Component {
 
             <div className='price-calculations-row'>
               <p>Total</p>
-              { this.state.totalPrice }
+              { totalPrice }
             </div>
           </div>
 
