@@ -3,6 +3,8 @@ import Body from '../body/body';
 import Footer from '../footer/footer';
 import { withRouter } from 'react-router';
 
+import BookingFormContainer from '../booking/booking_form_container';
+
 var DatePicker = require('react-datepicker');
 var moment = require('moment');
 
@@ -13,11 +15,11 @@ class Spot extends React.Component {
 
     this.state = {
       spot_id: this.props.routeParams.spot_id,
-      guest_id: this.props.currentUser.id,
+      guest_id: this.props.currentUser.id || 1,
       location: null,
       check_in_date: moment(),
       check_out_date: moment(),
-      guests: '1',
+      num_guests: '1',
       price: 0
     };
 
@@ -250,8 +252,10 @@ class Spot extends React.Component {
     const handleBookingRequest = (e) => {
       e.preventDefault;
       const booking = this.state;
-      alert("You have been blacklisted from this listing. Please try again later");
-      // this.props.createBooking(booking);
+      booking.check_in_date = booking.check_in_date.unix();
+      booking.check_out_date = booking.check_out_date.unix();
+      // alert("You have been blacklisted from this listing. Please try again later");
+      this.props.createBooking(booking);
 
       this.setState({
         spot_id: this.props.routeParams.spot_id,
@@ -259,7 +263,7 @@ class Spot extends React.Component {
         location: null,
         check_in_date: moment(),
         check_out_date: moment(),
-        guests: '1',
+        num_guests: '1',
         price: `${this.currency}0`
       });
 
@@ -306,7 +310,7 @@ class Spot extends React.Component {
               <label>Guests</label>
               <div className="react-datepicker__input-container">
                 <select value={this.state.guests}
-                        onChange={handleGuests('guests')}>
+                        onChange={handleGuests('num_guests')}>
                   <option value="1">1</option>
                   <option value="2">2</option>
                   <option value="3">3</option>

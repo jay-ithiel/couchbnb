@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 20161107183606) do
     t.string   "status",         default: "PENDING"
     t.date     "check_in_date",                      null: false
     t.date     "check_out_date",                     null: false
-    t.integer  "numGuests",                          null: false
+    t.integer  "num_guests",                         null: false
     t.string   "price",                              null: false
     t.datetime "created_at",                         null: false
     t.datetime "updated_at",                         null: false

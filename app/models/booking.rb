@@ -4,7 +4,7 @@ class Booking < ActiveRecord::Base
             :location,
             :check_in_date,
             :check_out_date,
-            :numGuests,
+            :num_guests,
             :price,
             presence: true
 

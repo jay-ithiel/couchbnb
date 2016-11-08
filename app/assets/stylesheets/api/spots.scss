@@ -649,8 +649,9 @@
 
 .search-container {
   display: flex;
-  max-height: 610px;
-  height: 610px;
+  height: 100vh;
+  // max-height: 610px;
+  // height: 610px;
   // height: 100%;
   // width: 100%;
 }
@@ -693,7 +694,7 @@
 
 .results {
   width: 60%;
-  height: 610px;
+  height: 100vh;
   overflow-y: scroll;
 }
 

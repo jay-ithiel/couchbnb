@@ -7,7 +7,7 @@
       :status,
       :check_id_date,
       :check_out_date,
-      :numGuests,
+      :num_guests,
       :price
   end
 end

@@ -9,7 +9,7 @@ class CreateBookings < ActiveRecord::Migration
       t.date :check_in_date, null: false
       t.date :check_out_date, null: false
 
-      t.integer :numGuests, null: false
+      t.integer :num_guests, null: false
       t.string :price, null: false
 
       t.timestamps null: false

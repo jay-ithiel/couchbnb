@@ -9,13 +9,13 @@ export default class MarkerManager {
   updateMarkers(spots) {
     this.spots = spots;
     this._benchesToAdd().forEach(this._createMarkerFromBench);
-    this._markersToRemove().forEach(this._removeMarker);
   }
 
   _benchesToAdd() {
+    if (this.spots === undefined) { return []; }
     const currentSpots = this.markers.map( marker => marker.spotId );
 
-    return this.spots.filter( spot => !currentSpots.includes(spot.id) );
+    // return this.spots.filter( spot => !currentSpots.includes(spot.id) );
   }
 
   _createMarkerFromBench(spot) {

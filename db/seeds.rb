@@ -182,6 +182,6 @@ Spot.create({
 #   status: "PENDING",
 #   check_in_date: Mon, 07 Nov 2016,
 #   check_out_date: Mon, 07 Nov 2016,
-#   numGuests: 2,
+#   num_guests: 2,
 #   price: "$100"
 # })

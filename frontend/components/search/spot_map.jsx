@@ -15,7 +15,6 @@ class SpotMap extends React.Component {
 
     this.map = new google.maps.Map(mapDOMNode, mapOptions);
     this.MarkerManager = new MarkerManager(this.map);
-    debugger;
     const spotsArray = Object.values(this.props.spots);
     this.MarkerManager.updateMarkers();
   }
@@ -27,7 +26,7 @@ class SpotMap extends React.Component {
   render() {
     return (
       <div id='map-container' ref='map'>
-        I am map-container
+
       </div>
     );
   }

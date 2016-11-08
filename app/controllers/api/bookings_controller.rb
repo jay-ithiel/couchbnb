@@ -1,7 +1,12 @@
 class Api::BookingsController < ApplicationController
 
   def create
-    @booking = Booking.new(booking_params)
+    booking_info = booking_params
+    booking_info[:check_in_date] = Time.at(booking_info[:check_in_date].to_i)
+    booking_info[:check_out_date] = Time.at(booking_info[:check_out_date].to_i)
+
+    @booking = Booking.new(booking_info)
+
     if @booking.save
       render json: @booking
     else
@@ -28,7 +33,7 @@ class Api::BookingsController < ApplicationController
         :status,
         :check_in_date,
         :check_out_date,
-        :numGuests,
+        :num_guests,
         :price
       )
     end

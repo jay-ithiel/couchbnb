@@ -18,7 +18,7 @@ spot_id        | integer   | not null, foreign key (references spots), indexed
 guest_id       | integer   | not null, foreign key (references users), indexed
 check-in-date  | date      | not null
 check-out-date | date      | not null
-numGuests      | integer   | not null
+num_guests     | integer   | not null
 price          | string    | not null
 location       | string    | not null
 
