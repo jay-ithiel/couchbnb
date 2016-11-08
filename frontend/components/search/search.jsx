@@ -10,8 +10,11 @@ class Search extends React.Component {
     this.state = {};
 
     this.spots = this.spots.bind(this);
-    this.mapContainer = this.mapContainer.bind(this);
     this.filters = this.filters.bind(this);
+  }
+
+  componentWillMount() {
+    this.props.requestSpots();
   }
 
   componentDidMount() {
@@ -44,14 +47,6 @@ class Search extends React.Component {
     );
   }
 
-  mapContainer() {
-    return (
-      <div className="map-container">
-        <SpotMap />
-      </div>
-    );
-  }
-
   filters() {
     return (
       <div className="filters">
@@ -77,7 +72,7 @@ class Search extends React.Component {
           {this.filters()}
           {this.spots()}
         </div>
-        <SpotMap spot={this.props.spots}/>
+        <SpotMap spots={this.props.spots}/>
       </div>
     );
   }

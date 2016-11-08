@@ -250,8 +250,8 @@ class Spot extends React.Component {
     const handleBookingRequest = (e) => {
       e.preventDefault;
       const booking = this.state;
-      debugger;
-      this.props.createBooking(booking);
+      alert("You have been blacklisted from this listing. Please try again later");
+      // this.props.createBooking(booking);
 
       this.setState({
         spot_id: this.props.routeParams.spot_id,
@@ -263,7 +263,6 @@ class Spot extends React.Component {
         price: `${this.currency}0`
       });
 
-      alert("You have been blacklisted from this listing.");
     };
 
     const bookedDates = [
