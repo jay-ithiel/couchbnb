@@ -34,7 +34,9 @@ Spot.create({
   room_type: "Entire House/Apt",
   bed_count: 4,
   max_guests: 4,
-  spot_pic_url: 'https://res.cloudinary.com/ddgtwtbre/image/upload/v1478492826/spot1pic3_hdfvpl.jpg'
+  spot_pic_url: 'https://res.cloudinary.com/ddgtwtbre/image/upload/v1478492826/spot1pic3_hdfvpl.jpg',
+  lat: 37.794144,
+  lng: -122.408957
 })
 
 Spot.create({
@@ -51,7 +53,9 @@ Spot.create({
   room_type: "Entire House/Apt",
   bed_count: 4,
   max_guests: 4,
-  spot_pic_url: 'https://res.cloudinary.com/ddgtwtbre/image/upload/v1478492826/spot1pic1_ojh6w2.jpg'
+  spot_pic_url: 'https://res.cloudinary.com/ddgtwtbre/image/upload/v1478492826/spot1pic1_ojh6w2.jpg',
+  lat: 34.052256,
+  lng: -118.254381
 })
 
 
@@ -69,7 +73,9 @@ Spot.create({
   room_type: "Private Room",
   bed_count: 1,
   max_guests: 2,
-  spot_pic_url: 'https://res.cloudinary.com/ddgtwtbre/image/upload/v1478492826/spot1pic4_r0oafw.jpg'
+  spot_pic_url: 'https://res.cloudinary.com/ddgtwtbre/image/upload/v1478492826/spot1pic4_r0oafw.jpg',
+  lat: 51.520915,
+  lng: -0.149832,
 })
 
 Spot.create({
@@ -86,7 +92,9 @@ Spot.create({
   room_type: "Shared Room",
   bed_count: 2,
   max_guests: 4,
-  spot_pic_url: 'http://res.cloudinary.com/ddgtwtbre/image/upload/v1478492826/spot1pic2_ucamo9.jpg'
+  spot_pic_url: 'http://res.cloudinary.com/ddgtwtbre/image/upload/v1478492826/spot1pic2_ucamo9.jpg',
+  lat: 34.090932,
+  lng: -118.406058
 })
 
 # Booking.create({

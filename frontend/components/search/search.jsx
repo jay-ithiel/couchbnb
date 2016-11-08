@@ -1,6 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router';
 import SearchResultItem from './search_result_item';
+import SpotMap from './spot_map';
 
 class Search extends React.Component {
   constructor(props) {
@@ -46,7 +47,7 @@ class Search extends React.Component {
   mapContainer() {
     return (
       <div className="map-container">
-
+        <SpotMap />
       </div>
     );
   }
@@ -76,7 +77,7 @@ class Search extends React.Component {
           {this.filters()}
           {this.spots()}
         </div>
-        {this.mapContainer()}
+        <SpotMap spot={this.props.spots}/>
       </div>
     );
   }
