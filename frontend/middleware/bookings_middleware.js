@@ -13,7 +13,7 @@ import { createBooking,
          deleteBooking,
          fetchBooking,
          fetchAllBookings
-       } from '../util/spot_api_util';
+       } from '../util/booking_api_util';
 
 const BookingsMiddleware = store => next => action => {
   const bookingSuccess = data => {

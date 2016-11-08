@@ -1,6 +1,7 @@
 import React from 'react';
 import Body from '../body/body';
 import Footer from '../footer/footer';
+import { withRouter } from 'react-router';
 
 var DatePicker = require('react-datepicker');
 var moment = require('moment');
@@ -11,14 +12,14 @@ class Spot extends React.Component {
     super(props);
 
     this.state = {
-      checkIn: moment(),
-      checkOut: moment(),
+      spot_id: this.props.routeParams.spot_id,
+      guest_id: this.props.currentUser.id,
+      location: null,
+      check_in_date: moment(),
+      check_out_date: moment(),
       guests: '1',
-      totalPrice: 0
+      price: 0
     };
-    // I need to keep track of booking state here.
-    // Should I nest the bookings' state under a 'booking' key
-    // or just throw all of the booking info in the state
 
     this.head = this.head.bind(this);
     this.headImg = this.headImg.bind(this);
@@ -39,8 +40,26 @@ class Spot extends React.Component {
   }
 
   componentDidMount() {
-    let spotId = this.props.routeParams.spot_id;
-    this.props.requestSpot(spotId);
+    this.spotId = this.props.routeParams.spot_id;
+    this.props.requestSpot(this.spotId);
+  }
+
+  componentDidUpdate() {
+    this.spot = this.props.spots[this.spotId];
+    this.location = `${this.spot.city}, ${this.spot.state_region}, ${this.spot.country}`;
+    this.currency = this.spot.price_per_night.slice(0,1);
+
+    if (this.state.location === null) {
+      this.setState({
+        location: this.location
+      });
+    }
+
+    if (this.state.price !== this.totalPrice) {
+      this.setState({
+        price: this.totalPrice
+      });
+    }
   }
 
   head() {
@@ -52,14 +71,13 @@ class Spot extends React.Component {
   }
 
   headImg() {
-    const spotId = this.props.routeParams.spot_id;
-    const spot = this.props.spots[spotId];
-    if (spot === undefined) { return; }
+    if (this.spot === undefined) { return; }
+    if (this.spot === undefined) { return; }
 
     return (
       <img
         className="head-img"
-        src={spot.spot_pic_url}>
+        src={this.spot.spot_pic_url}>
       </img>
     );
   }
@@ -98,11 +116,7 @@ class Spot extends React.Component {
   }
 
   spotInfo() {
-    const spotId = this.props.routeParams.spot_id;
-    const spot = this.props.spots[spotId];
-    if (spot === undefined) { return; }
-
-    const location = `${spot.city}, ${spot.state_region}, ${spot.country}`;
+    if (this.spot === undefined) { return; }
 
     return (
       <div className="spot-info">
@@ -112,30 +126,30 @@ class Spot extends React.Component {
           </div>
 
           <div className="host-info-side-name">
-            { spot.host_name }
+            { this.spot.host_name }
           </div>
         </div>
 
         <div className="spot-info-side">
           <div className="spot-info-side-top">
-            <h2>{ spot.title }</h2>
-            <p>{ location }</p>
+            <h2>{ this.spot.title }</h2>
+            <p>{ this.location }</p>
           </div>
 
           <div className="spot-info-side-bottom">
             <div>
-              { this.roomTypeIcon(spot.room_type) }
-              { spot.room_type }
+              { this.roomTypeIcon(this.spot.room_type) }
+              { this.spot.room_type }
             </div>
 
             <div>
               { this.guestIcon() }
-              { spot.max_guests } Guests
+              { this.spot.max_guests } Guests
             </div>
 
             <div>
               { this.bedIcon() }
-              { spot.bed_count } Beds
+              { this.spot.bed_count } Beds
             </div>
           </div>
         </div>
@@ -197,50 +211,31 @@ class Spot extends React.Component {
   }
 
   priceInfo() {
-    const spotId = this.props.routeParams.spot_id;
-    const spot = this.props.spots[spotId];
-    if (spot === undefined) { return; }
+    if (this.spot === undefined) { return; }
 
-    let date1 = this.state.checkIn;
-    let date2 = this.state.checkOut;
+    let date1 = this.state.check_in_date;
+    let date2 = this.state.check_out_date;
     let diffDays = date2.diff(date1, 'days');
 
-    let priceCurrency = spot.price_per_night.slice(0,1);
-    let priceAmount = diffDays * parseInt(spot.price_per_night.slice(1));
+    let priceCurrency = this.spot.price_per_night.slice(0,1);
+    let priceAmount = diffDays * parseInt(this.spot.price_per_night.slice(1));
     let daysPrice = `${priceCurrency}${priceAmount}`;
 
     let serviceFeeAmount = priceAmount * .12;
     let serviceFee = `${priceCurrency}${serviceFeeAmount}`;
-debugger;
     let totalPriceAmount = priceAmount + serviceFeeAmount;
-    console.log(totalPriceAmount);
     let totalPrice = `${priceCurrency}${totalPriceAmount}`;
+    this.totalPrice = totalPrice;
 
     const handleCheckIn = date => {
-      updateCheckIn(date);
-      updatePrice();
+      this.setState({
+        check_in_date: date
+      });
     };
 
     const handleCheckOut = date => {
-      updateCheckOut(date);
-      updatePrice();
-    };
-
-    const updatePrice = () => {
       this.setState({
-        totalPrice
-      });
-    };
-
-    const updateCheckIn = date => {
-      this.setState({
-        checkIn: date
-      });
-    };
-
-    const updateCheckOut = date => {
-      this.setState({
-        checkOut: date
+        check_out_date: date
       });
     };
 
@@ -255,6 +250,18 @@ debugger;
     const handleBookingRequest = (e) => {
       e.preventDefault;
       const booking = this.state;
+      debugger;
+      this.props.createBooking(booking);
+
+      this.setState({
+        spot_id: this.props.routeParams.spot_id,
+        guest_id: this.props.currentUser.id,
+        location: null,
+        check_in_date: moment(),
+        check_out_date: moment(),
+        guests: '1',
+        price: `${this.currency}0`
+      });
 
       alert("You have been blacklisted from this listing.");
     };
@@ -269,7 +276,7 @@ debugger;
       <div className="price-info">
         <div className="price-info-head">
           <div>
-            { spot.price_per_night }
+            { this.spot.price_per_night }
           </div>
           <p>Per Night</p>
         </div>
@@ -280,10 +287,10 @@ debugger;
               <label>Check In</label>
               <DatePicker
                 onChange={handleCheckIn}
-                selectsStart  startDate={this.state.checkIn}
+                selectsStart  startDate={this.state.check_in_date}
                 excludeDates={ bookedDates }
-                endDate={this.state.checkOut}
-                selected={this.state.checkIn} />
+                endDate={this.state.check_out_date}
+                selected={this.state.check_in_date} />
             </div>
 
             <div className="dates-guests-date">
@@ -291,9 +298,9 @@ debugger;
               <DatePicker
                 onChange={handleCheckOut}
                 excludeDates={ bookedDates }
-                selectsEnd  startDate={this.state.checkIn}
-                endDate={this.state.checkOut}
-                selected={this.state.checkOut} />
+                selectsEnd  startDate={this.state.check_in_date}
+                endDate={this.state.check_out_date}
+                selected={this.state.check_out_date} />
             </div>
 
             <div className="dates-guests-guest">
@@ -313,7 +320,7 @@ debugger;
 
           <div className="price-calculations">
             <div className="price-calculations-row">
-              { spot.price_per_night } x { diffDays } nights
+              { this.spot.price_per_night } x { diffDays } nights
               <p>{ daysPrice }</p>
             </div>
 
@@ -324,7 +331,7 @@ debugger;
 
             <div className='price-calculations-row'>
               <p>Total</p>
-              { totalPrice }
+              { this.state.price }
             </div>
           </div>
 
@@ -346,15 +353,13 @@ debugger;
   }
 
   detailInfo() {
-    const spotId = this.props.routeParams.spot_id;
-    const spot = this.props.spots[spotId];
-    if (spot === undefined) { return; }
+    if (this.spot === undefined) { return; }
 
     return (
       <div className="detail-info">
         <h2>About this listing</h2>
         <p>
-          { spot.description }
+          { this.spot.description }
 
           Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
         </p>
@@ -374,4 +379,4 @@ debugger;
   }
 }
 
-export default Spot;
+export default withRouter(Spot);

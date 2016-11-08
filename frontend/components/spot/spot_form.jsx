@@ -267,7 +267,7 @@ class SpotForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const spot = this.state;
-    this.props.processForm( spot );
+    this.props.processForm(spot);
 
     this.setState({
         host_id: this.props.currentUser.id,
