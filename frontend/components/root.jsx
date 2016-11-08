@@ -10,6 +10,8 @@ import SpotContainer from './spot/spot_container';
 import HostContainer from './host/host_container';
 import SearchContainer from './search/search_container';
 
+import { requestSpots } from '../actions/spot_actions';
+
 const Root = ({ store }) => {
 
   const _redirectUnlessLoggedIn = (nextState, replace) => {
@@ -22,6 +24,10 @@ const Root = ({ store }) => {
     if (store.getState().session.currentUser) {
       replace('/');
     }
+  };
+
+  const _getSpotsForSearch = () => {
+    store.dispatch(requestSpots());
   };
 
   return (
@@ -53,7 +59,8 @@ const Root = ({ store }) => {
 
           <Route
             path='/search'
-            component={SearchContainer}>
+            component={SearchContainer}
+            onEnter={_getSpotsForSearch}>
           </Route>
 
         </Route>

@@ -13,14 +13,6 @@ class Search extends React.Component {
     this.filters = this.filters.bind(this);
   }
 
-  componentWillMount() {
-    this.props.requestSpots();
-  }
-
-  componentDidMount() {
-    this.props.requestSpots();
-  }
-
   handleSpotView(spotId) {
     return () => this.props.router.push(`spots/${spotId}`);
   }
@@ -66,15 +58,28 @@ class Search extends React.Component {
   }
 
   render() {
-    return (
-      <div className='search-container'>
-        <div className='results'>
-          {this.filters()}
-          {this.spots()}
+    // break if this.props.spots === null
+    if (Object.keys(this.props.spots).length === 0) {
+      console.log('hello world');
+      return (
+        <div className='search-container'>
+          <div className='results'>
+            {this.filters()}
+            {this.spots()}
+          </div>
         </div>
-        <SpotMap spots={this.props.spots}/>
-      </div>
-    );
+      );
+    } else {
+      return (
+        <div className='search-container'>
+          <div className='results'>
+            {this.filters()}
+            {this.spots()}
+          </div>
+          <SpotMap spots={this.props.spots}/>
+        </div>
+      );
+    }
   }
 }
 

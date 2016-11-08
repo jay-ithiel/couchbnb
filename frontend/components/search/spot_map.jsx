@@ -15,12 +15,11 @@ class SpotMap extends React.Component {
 
     this.map = new google.maps.Map(mapDOMNode, mapOptions);
     this.MarkerManager = new MarkerManager(this.map);
-    const spotsArray = Object.values(this.props.spots);
-    this.MarkerManager.updateMarkers();
+    this.MarkerManager.updateMarkers(this.props.spots);
   }
 
   componentDidUpdate() {
-    this.MarkerManager.updateMarkers();
+    this.MarkerManager.updateMarkers(this.props.spots);
   }
 
   render() {

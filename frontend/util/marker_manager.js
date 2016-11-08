@@ -3,22 +3,22 @@ export default class MarkerManager {
     this.map = map;
     this.markers = [];
 
-    this._createMarkerFromBench = this._createMarkerFromBench.bind(this);
+    this._spotsToAdd = this._spotsToAdd.bind(this);
+    this._createMarkerFromSpot = this._createMarkerFromSpot.bind(this);
   }
 
   updateMarkers(spots) {
-    this.spots = spots;
-    this._benchesToAdd().forEach(this._createMarkerFromBench);
+    this.spots = Object.keys(spots).map(key => spots[key]);
+    this._spotsToAdd().forEach(this._createMarkerFromSpot);
   }
 
-  _benchesToAdd() {
+  _spotsToAdd() {
     if (this.spots === undefined) { return []; }
     const currentSpots = this.markers.map( marker => marker.spotId );
-
-    // return this.spots.filter( spot => !currentSpots.includes(spot.id) );
+    return this.spots.filter( spot => !currentSpots.includes(spot.id) );
   }
 
-  _createMarkerFromBench(spot) {
+  _createMarkerFromSpot(spot) {
     const position = new google.maps.LatLng(spot.lat, spot.lng);
     const marker = new google.maps.Marker({
       position: position,
@@ -26,7 +26,9 @@ export default class MarkerManager {
       spotId: spot.id
     });
 
+    console.log('you hit _createMarkerFromSpot');
     // marker.addListener('click', () => this.handleClick(spot));
     this.markers.push(marker);
+    marker.setMap(this.map);
   }
 }
