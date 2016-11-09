@@ -10,6 +10,7 @@ export default class MarkerManager {
   updateMarkers(spots) {
     this.spots = Object.keys(spots).map(key => spots[key]);
     this._spotsToAdd().forEach(this._createMarkerFromSpot);
+    this._markersToRemove().forEach(this._removeMarker);
   }
 
   _spotsToAdd() {
@@ -28,6 +29,18 @@ export default class MarkerManager {
 
     // marker.addListener('click', () => this.handleClick(spot));
     this.markers.push(marker);
+    debugger;
     marker.setMap(this.map);
+  }
+
+  _markersToRemove() {
+    const spotIds = this.spots.map( spot => spot.id );
+    return this.markers.filter( marker => !spotIds.includes(marker.spotId) );
+  }
+
+  _removeMarker(marker) {
+    const idx = this.markers.indexOf(marker);
+    this.markers[idx].setMap(null);
+    this.markers.splice(idx, 1);
   }
 }

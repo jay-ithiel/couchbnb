@@ -3,6 +3,7 @@ import { CREATE_SPOT,
          DELETE_SPOT,
          REQUEST_SPOT,
          REQUEST_SPOTS,
+         requestSpots,
          removeSpot,
          receiveSpot,
          receiveSpots,
@@ -15,6 +16,8 @@ import { createSpot,
          fetchSpot,
          fetchAllSpots
        } from '../util/spot_api_util';
+
+import { UPDATE_BOUNDS } from '../actions/filter_actions';
 
 const SpotsMiddleware = store => next => action => {
   const spotSuccess = data => {
@@ -51,15 +54,14 @@ const SpotsMiddleware = store => next => action => {
       return next(action);
 
     case REQUEST_SPOTS:
-      const filters = {
-        bounds: {
-          "northEast": {"lat": "37.80971", "lng": "-122.39208"},
-          "southWest": {"lat": "37.74187", "lng": "-122.47791"}
-        }
-      };
-
+      const filters = store.getState().filters;
       fetchAllSpots(filters, spotsSuccess, errorCallback);
       return next(action);
+
+    case UPDATE_BOUNDS:
+      next(action);
+      store.dispatch(requestSpots());
+      break;
 
     default:
       return next(action);
