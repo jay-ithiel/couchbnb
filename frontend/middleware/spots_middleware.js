@@ -21,6 +21,7 @@ import { UPDATE_BOUNDS } from '../actions/filter_actions';
 
 const SpotsMiddleware = store => next => action => {
   const spotSuccess = data => {
+    // re-render the host component here.
     store.dispatch(receiveSpot(data));
   };
 

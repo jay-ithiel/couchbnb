@@ -529,9 +529,12 @@
 }
 
 .spot-form-image {
-  height: 90%;
-  width: 40%;
+  height: 84%;
+  width: 45%;
   border-radius: 2.5px;
+  background: url("https://res.cloudinary.com/ddgtwtbre/image/upload/v1478412229/sf-golden-gate-couple_fy0y0n.png");
+  background-size: cover;
+  background-position: 50% 50%;
 }
 
 .spotForm {
@@ -540,7 +543,7 @@
   justify-content: space-between;
   align-items: center;
 
-  width: 60%;
+  width: 55%;
   height: 90%;
 }
 

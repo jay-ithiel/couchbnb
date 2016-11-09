@@ -123,7 +123,7 @@ class SessionForm extends React.Component {
                 <h2 className="session-form-type">{formHeader}</h2>
               </div>
 
-              <ul>
+              <ul className="errors">
                 { errorsLi }
               </ul>
 
