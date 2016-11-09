@@ -48,6 +48,7 @@ class Spot extends React.Component {
 
   componentDidUpdate() {
     this.spot = this.props.spots[this.spotId];
+    if (this.spot === undefined) { return; }
     this.location = `${this.spot.city}, ${this.spot.state_region}, ${this.spot.country}`;
     this.currency = this.spot.price_per_night.slice(0,1);
 

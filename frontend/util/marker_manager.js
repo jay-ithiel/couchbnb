@@ -29,7 +29,6 @@ export default class MarkerManager {
 
     // marker.addListener('click', () => this.handleClick(spot));
     this.markers.push(marker);
-    debugger;
     marker.setMap(this.map);
   }
 

@@ -124,7 +124,7 @@ class SessionForm extends React.Component {
               </div>
 
               <ul>
-                {errorsLi}
+                { errorsLi }
               </ul>
 
               { this.props.loginForm === false ? nameInputFields() : ""}
