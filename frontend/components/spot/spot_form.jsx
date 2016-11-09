@@ -12,17 +12,17 @@ class SpotForm extends React.Component {
         host_name: this.props.currentUser.first_name,
         title: "",
         description: "",
-        country: "Country",
+        country: "",
         state_region: "",
-        city: "City",
+        city: "",
         post_code: "",
         street_address: "",
         price_per_night: "",
-        room_type: "Room Type",
-        bed_count: "Bed Count",
-        max_guests: "Max Guests",
-        lat: "",
-        lng: ""
+        room_type: "",
+        bed_count: "",
+        max_guests: "",
+        lat: 0.0,
+        lng: 0.0
     };
 
     this.marginRight = this.marginRight.bind(this);
@@ -52,9 +52,7 @@ class SpotForm extends React.Component {
 
   marginLeft() {
     return (
-      <div className="margin-left">
-
-      </div>
+      <div className="margin-left"></div>
     );
   }
 
@@ -62,17 +60,17 @@ class SpotForm extends React.Component {
     $(".spot-form-container").addClass("display-none");
   }
 
-  handleInputChange(field) {
-    return(e) => (
-      this.setState({ [field]: e.target.value })
-    );
-  }
-
   closeSpotForm() {
     return (
       <div className="close-spot-form" onClick={this.handleSpotFormClose}>
         X
       </div>
+    );
+  }
+
+  handleInputChange(field) {
+    return(e) => (
+      this.setState({ [field]: e.target.value })
     );
   }
 
@@ -95,23 +93,16 @@ class SpotForm extends React.Component {
     );
   }
 
-  // cities
-  // Seoul, South Korea
-  // Durban, South Africa
-  // Amsterdam, Netherlands
-  // Paris, France
-  // Los, Angeles
-  // London
-  // San Francisco 37.794144
-
   setCoords(city) {
-    this.setState({ lat: city.lat });
-    debugger;
+    this.setState({
+      city: city.name,
+      lat: city.lat,
+      lng: city.lng
+    });
   }
 
   handleCityChange(e) {
     let selectedCity = e.target.value;
-    debugger;
     this.setCoords(CITIES[selectedCity]);
   }
 
@@ -120,22 +111,22 @@ class SpotForm extends React.Component {
     const spot = this.state;
     this.props.processForm(spot);
 
-    this.setState({
-        host_id: this.props.currentUser.id,
-        host_name: this.props.currentUser.first_name,
-        title: "",
-        country: "",
-        state_region: "",
-        city: "",
-        post_code: "",
-        street_address: "",
-        price_per_night: "",
-        room_type: "Room Type",
-        bed_count: 'Bed Count',
-        max_guests: 'Max Guests',
-        lat: "",
-        lng: ""
-    });
+    // this.setState({
+    //     host_id: this.props.currentUser.id,
+    //     host_name: this.props.currentUser.first_name,
+    //     title: "",
+    //     country: "",
+    //     state_region: "",
+    //     city: "",
+    //     post_code: "",
+    //     street_address: "",
+    //     price_per_night: "",
+    //     room_type: "Room Type",
+    //     bed_count: 'Bed Count',
+    //     max_guests: 'Max Guests',
+    //     lat: 0.0,
+    //     lng: 0.0
+    // });
   }
 
   spotForm() {
@@ -257,12 +248,17 @@ class SpotForm extends React.Component {
         </div>
 
         <div className="spot-form-row">
-          <input
-            type="text"
-            onChange={ this.handleInputChange('country') }
-            value={ this.state.country }
-            placeholder="Country"
-            className="input-half" />
+          <select className="select-input"
+                  value={ this.state.country }
+                  onChange={ this.handleInputChange('country') }>
+            <option value="" disabled selected>Country</option>
+            <option value="France">France</option>
+            <option value="Netherlands">Netherlands</option>
+            <option value="South Africa">South Africa</option>
+            <option value="South Korea">South Korea</option>
+            <option value="United Kingdom">United Kingdom</option>
+            <option value="United States">United States</option>
+          </select>
 
           <input
             type="text"

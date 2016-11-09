@@ -45,8 +45,8 @@ export const requestSpots = () => ({
   type: REQUEST_SPOTS
 });
 
-export const RECEIVE_ERRORS = "RECEIVE_ERRORS";
-export const receiveErrors = (errors) => ({
-  type: RECEIVE_ERRORS,
+export const RECEIVE_SPOT_ERRORS = "RECEIVE_SPOT_ERRORS";
+export const receiveSpotErrors = (errors) => ({
+  type: RECEIVE_SPOT_ERRORS,
   errors
 });

@@ -1,7 +1,7 @@
 import merge from 'lodash/merge';
 import { RECEIVE_SPOT,
          RECEIVE_SPOTS,
-         RECEIVE_ERRORS
+         RECEIVE_SPOT_ERRORS
        } from '../actions/spot_actions';
 
 const _defaultState = {
@@ -23,7 +23,7 @@ const SpotsReducer = (oldState = _defaultState, action) => {
       newState.errors = [];
       return newState;
 
-    case RECEIVE_ERRORS:
+    case RECEIVE_SPOT_ERRORS:
       newState.errors = action.errors;
       return newState;
 

@@ -8,7 +8,8 @@ import { createSpot,
 const mapStateToProps = (state, ownProps) => ({
   currentUser: state.session.currentUser,
   loggedIn: state.session.currentUser ? true : null,
-  spot: ownProps.spotFormInfo.editSpotTarget
+  spot: ownProps.spotFormInfo.editSpotTarget,
+  errors: state.spots.errors || []
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => {

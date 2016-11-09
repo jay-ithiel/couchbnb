@@ -7,7 +7,7 @@ import { CREATE_SPOT,
          removeSpot,
          receiveSpot,
          receiveSpots,
-         receiveErrors
+         receiveSpotErrors
        } from '../actions/spot_actions';
 
 import { createSpot,
@@ -33,7 +33,7 @@ const SpotsMiddleware = store => next => action => {
   };
 
   const errorCallback = errors => {
-    store.dispatch(receiveErrors(errors.responseJSON));
+    store.dispatch(receiveSpotErrors(errors.responseJSON));
   };
 
   switch(action.type) {

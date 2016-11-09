@@ -4,7 +4,7 @@ class Api::SpotsController < ApplicationController
     if @spot.save
       render :show
     else
-      render json: @spot.errors.full_messages
+      render json: @spot.errors.full_messages, status: 400
     end
   end
 
@@ -49,6 +49,8 @@ class Api::SpotsController < ApplicationController
         :room_type,
         :bed_count,
         :max_guests,
+        :lat,
+        :lng,
         :bounds
       )
     end
