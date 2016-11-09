@@ -9,6 +9,7 @@ class SpotForm extends React.Component {
         host_id: this.props.currentUser.id,
         host_name: this.props.currentUser.first_name,
         title: "",
+        description: "",
         country: "",
         state_region: "",
         city: "",
@@ -122,8 +123,9 @@ class SpotForm extends React.Component {
     return (
       <textarea
         className="spot-form-description"
-        placeholder="Short description">
-
+        placeholder="Short description"
+        onChange={this.handleInputChange('description')}
+        value={this.state.description}>
       </textarea>
     );
   }
@@ -279,7 +281,7 @@ class SpotForm extends React.Component {
         post_code: "",
         street_address: "",
         price_per_night: "",
-        room_type: "Entire Place",
+        room_type: "Room Type",
         bed_count: '',
         max_guests: ''
     });
@@ -288,17 +290,126 @@ class SpotForm extends React.Component {
     window.location.reload();
   }
 
+  // { this.title() }
+  // { this.description() }
+  // { this.roomTypePrice() }
+  // { this.bedGuestContainer() }
+  // { this.streetAddress() }
+  // { this.cityStateRegionRow() }
+  // { this.countryPostCode() }
+
   spotForm() {
     return (
       <form className="spotForm" onSubmit={this.handleSubmit}>
 
-        { this.title() }
-        { this.description() }
-        { this.roomTypePrice() }
-        { this.bedGuestContainer() }
-        { this.streetAddress() }
-        { this.cityStateRegionRow() }
-        { this.countryPostCode() }
+        <div className="spot-form-row">
+          <input
+            type="text"
+            value={this.state.title}
+            onChange={this.handleInputChange('title')}
+            className="input"
+            placeholder="Title" />
+        </div>
+
+        <div className="spot-form-row description">
+          <textarea
+            className="spot-form-description"
+            placeholder="Short description"
+            onChange={this.handleInputChange('description')}
+            value={this.state.description}>
+          </textarea>
+        </div>
+
+        <div className="spot-form-row">
+          <select className="select-input"
+                  value={ this.state.room_type }
+                  onChange={ this.handleInputChange('room_type') }>
+            <option value="Entire House/Apt">Entire House/Apt</option>
+            <option value="Private Room">Private Room</option>
+            <option value="Shared Room">Shared Room</option>
+          </select>
+
+          <input
+            type="text"
+            value={ this.state.price_per_night }
+            onChange={ this.handleInputChange('price_per_night') }
+            placeholder="Price Per Night"
+            className='input-half' />
+        </div>
+
+        <div className="spot-form-row">
+          <select className="select-input"
+                  value={ this.state.max_guests }
+                  onChange={ this.handleInputChange('max_guests') }>
+            <option value="1">1</option>
+            <option value='2'>2</option>
+            <option value='3'>3</option>
+            <option value='4'>4</option>
+            <option value='5'>5</option>
+            <option value='6'>6</option>
+            <option value='7'>7</option>
+            <option value='8'>8</option>
+            <option value='9'>9</option>
+            <option value='10+'>10+</option>
+          </select>
+
+          <select className="select-input"
+                  value={ this.state.bed_count }
+                  onChange={ this.handleInputChange('max_guests') }>
+            <option value='0'>0</option>
+            <option value='1'>1</option>
+            <option value='2'>2</option>
+            <option value='3'>3</option>
+            <option value='4'>4</option>
+            <option value='5'>5</option>
+            <option value='6'>6</option>
+            <option value='7'>7</option>
+            <option value='8'>8</option>
+            <option value='9'>9</option>
+            <option value='10+'>10+</option>
+          </select>
+        </div>
+
+        <div className="spot-form-row">
+          <input
+            type="text"
+            onChange={ this.handleInputChange('street_address') }
+            value={ this.state.street_address }
+            placeholder="Street Address"
+            className="input" />
+        </div>
+
+        <div className="spot-form-row">
+          <input
+            type="text"
+            onChange={ this.handleInputChange('city') }
+            value={ this.state.city }
+            placeholder="City"
+            className="input-half" />
+
+          <input
+            type="text"
+            onChange={ this.handleInputChange('state_region') }
+            value={ this.state.state_region }
+            placeholder="State/Region"
+            className="input-half" />
+        </div>
+
+        <div className="spot-form-row">
+          <input
+            type="text"
+            onChange={ this.handleInputChange('country') }
+            value={ this.state.country }
+            placeholder="Country"
+            className="input-half" />
+
+          <input
+            type="text"
+            onChange={ this.handleInputChange('post_code') }
+            value={ this.state.post_code }
+            placeholder="Post Code"
+            className="input-half" />
+        </div>
 
         <button className="spot-form-row button">Create</button>
       </form>

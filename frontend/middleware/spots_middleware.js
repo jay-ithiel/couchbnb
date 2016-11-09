@@ -51,7 +51,14 @@ const SpotsMiddleware = store => next => action => {
       return next(action);
 
     case REQUEST_SPOTS:
-      fetchAllSpots(spotsSuccess, errorCallback);
+      const filters = {
+        bounds: {
+          "northEast": {"lat": "37.80971", "lng": "-122.39208"},
+          "southWest": {"lat": "37.74187", "lng": "-122.47791"}
+        }
+      };
+
+      fetchAllSpots(filters, spotsSuccess, errorCallback);
       return next(action);
 
     default:

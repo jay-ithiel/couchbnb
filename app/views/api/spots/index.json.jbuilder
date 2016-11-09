@@ -15,6 +15,8 @@
       :room_type,
       :bed_count,
       :max_guests,
-      :spot_pic_url
+      :spot_pic_url,
+      :lat,
+      :lng
   end
 end

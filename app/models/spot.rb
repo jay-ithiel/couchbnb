@@ -26,4 +26,11 @@ class Spot < ActiveRecord::Base
   def pending_requests
     :bookings.select { |request| request.pending? }
   end
+
+  def self.in_bounds(bounds)
+    self.where("lat < ?", bounds[:northEast][:lat])
+        .where("lat > ?", bounds[:southWest][:lat])
+        .where("lng > ?", bounds[:southWest][:lng])
+        .where("lng < ?", bounds[:northEast][:lng])
+  end
 end

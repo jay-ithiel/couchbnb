@@ -18,7 +18,7 @@ class Api::SpotsController < ApplicationController
   end
 
   def index
-    @spots = Spot.all
+    @spots = Spot.in_bounds(params[:bounds])
     render :index
   end
 
@@ -48,7 +48,8 @@ class Api::SpotsController < ApplicationController
         :price_per_night,
         :room_type,
         :bed_count,
-        :max_guests
+        :max_guests,
+        :bounds
       )
     end
 end

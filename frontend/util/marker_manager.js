@@ -26,7 +26,6 @@ export default class MarkerManager {
       spotId: spot.id
     });
 
-    console.log('you hit _createMarkerFromSpot');
     // marker.addListener('click', () => this.handleClick(spot));
     this.markers.push(marker);
     marker.setMap(this.map);

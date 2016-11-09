@@ -36,10 +36,11 @@ export const fetchSpot = (id, success, error) => {
   });
 };
 
-export const fetchAllSpots = (success, error) => {
+export const fetchAllSpots = (filters, success, error) => {
   $.ajax ({
     method: 'GET',
     url: 'api/spots',
+    data: filters,
     success,
     error
   });

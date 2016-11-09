@@ -58,9 +58,7 @@ class Search extends React.Component {
   }
 
   render() {
-    // break if this.props.spots === null
     if (Object.keys(this.props.spots).length === 0) {
-      console.log('hello world');
       return (
         <div className='search-container'>
           <div className='results'>
@@ -76,7 +74,9 @@ class Search extends React.Component {
             {this.filters()}
             {this.spots()}
           </div>
-          <SpotMap spots={this.props.spots}/>
+          <SpotMap
+            spots={this.props.spots}
+            updateBounds={this.props.updateBounds}/>
         </div>
       );
     }
