@@ -95,6 +95,7 @@ class SpotForm extends React.Component {
   handleSpotFormClose() {
     this.props.spotFormInfo.isFormShowing = false;
     this.props.spotFormInfo.editSpotTarget = null;
+    this.props.errors = [];
     this.setState({
       spot: {
         host_id: this.props.currentUser.id,
@@ -309,7 +310,9 @@ class SpotForm extends React.Component {
             className="input-half" />
         </div>
 
-        <button className="spot-form-row button">Create</button>
+        <button className="spot-form-row button">
+          { this.props.formType }
+        </button>
       </form>
     );
   }

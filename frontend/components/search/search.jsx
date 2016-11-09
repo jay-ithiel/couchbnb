@@ -3,6 +3,9 @@ import { withRouter } from 'react-router';
 import SearchResultItem from './search_result_item';
 import SpotMap from './spot_map';
 
+const DatePicker = require('react-datepicker');
+const moment = require('moment');
+
 class Search extends React.Component {
   constructor(props) {
     super(props);
@@ -44,6 +47,10 @@ class Search extends React.Component {
       <div className="filters">
         <div className="filters-row">
           <h2>Dates</h2>
+          <div className="filters-row-date">
+            <label>Check In</label>
+            <DatePicker />
+          </div>
         </div>
 
         <div className="filters-row">

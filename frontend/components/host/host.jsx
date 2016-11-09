@@ -51,8 +51,11 @@ class Host extends React.Component {
 
   head() {
     return (
-      <div className="host-head" onClick={this.toggleSpotForm}>
-        <h2 className="banner">Host an Unforgettable Vacation</h2>
+      <div className="host-head">
+        <h2 className="banner host-button"
+            onClick={ this.toggleSpotForm }>
+          Host an Unforgettable Vacation
+        </h2>
       </div>
     );
   }

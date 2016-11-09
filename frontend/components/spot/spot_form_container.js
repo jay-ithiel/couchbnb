@@ -5,21 +5,28 @@ import { createSpot,
          deleteSpot
        } from '../../actions/spot_actions';
 
-const mapStateToProps = (state, ownProps) => ({
-  currentUser: state.session.currentUser,
-  loggedIn: state.session.currentUser ? true : null,
-  spot: ownProps.spotFormInfo.editSpotTarget,
-  errors: state.spots.errors || []
-});
+const mapStateToProps = (state, ownProps) => {
+  let formType;
+  if (ownProps.spotFormInfo.isNewSpot === true) {
+    formType = 'Create a Vacation';
+  } else {
+    formType = 'Update Your Vacation';
+  }
+
+  return {
+    currentUser: state.session.currentUser,
+    loggedIn: state.session.currentUser ? true : null,
+    spot: ownProps.spotFormInfo.editSpotTarget,
+    errors: state.spots.errors || [],
+    formType: formType
+  };
+};
 
 const mapDispatchToProps = (dispatch, ownProps) => {
-  let formType;
   const processForm = spot => {
     if (ownProps.spotFormInfo.isNewSpot === true) {
-      formType = 'Create a Vacation';
       return createSpot(spot);
     } else {
-      formType = 'Edit your Vacation';
       return updateSpot(spot);
     }
   };

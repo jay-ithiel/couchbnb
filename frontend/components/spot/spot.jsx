@@ -5,8 +5,8 @@ import { withRouter } from 'react-router';
 
 import BookingFormContainer from '../booking/booking_form_container';
 
-var DatePicker = require('react-datepicker');
-var moment = require('moment');
+const DatePicker = require('react-datepicker');
+const moment = require('moment');
 
 
 class Spot extends React.Component {

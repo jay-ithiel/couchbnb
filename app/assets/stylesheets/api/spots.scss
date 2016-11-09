@@ -354,8 +354,6 @@
   justify-content: center;
   align-items: center;
 
-  // border-bottom: 2px solid #dedede;
-
   width: 100%;
   height: 604px;
 
@@ -364,22 +362,29 @@
   background-position: 50% 50%;
 
   font-family: sans-serif;
-  filter: brightness(110%);
 }
 
-.host-head:hover {
-  z-index: -2;
+// .host-head:hover {
+//   z-index: -2;
+//   cursor: pointer;
+//   filter: brightness(106%);
+//   transition: filter .15s ease-in;
+// }
+
+.host-button {
+  padding: 15px;
+  border: 2px solid whitesmoke;
+  border-radius: 5px;
+}
+
+.host-button:hover {
   cursor: pointer;
-  filter: brightness(106%);
+  filter: brightness(150%);
+}
+
+.host-button:hover .host-head{
+  filter: brightness(120%);
   transition: filter .15s ease-in;
-}
-
-.host-head h2 {
-  color: #eaeaea;
-}
-
-.host-head:hover h2 {
-  color: #fff;
 }
 
 .host-body {
@@ -529,7 +534,8 @@
 }
 
 .spot-form-image {
-  height: 84%;
+  height: 87%;
+  margin-top: 18px;
   width: 45%;
   border-radius: 2.5px;
   background: url("https://res.cloudinary.com/ddgtwtbre/image/upload/v1478412229/sf-golden-gate-couple_fy0y0n.png");
