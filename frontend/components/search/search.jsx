@@ -124,6 +124,7 @@ class Search extends React.Component {
         </div>
         <SpotMap
           spots={this.props.spots}
+          requestSpots={this.props.requestSpots}
           updateFilter={this.props.updateFilter}/>
       </div>
     );

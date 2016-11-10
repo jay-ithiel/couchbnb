@@ -1,6 +1,8 @@
 import merge from 'lodash/';
 import { UPDATE_BOUNDS,
-         UPDATE_FILTER
+         UPDATE_FILTER,
+         UPDATE_MIN_PRICE,
+         UPDATE_MAX_PRICE
        } from '../actions/filter_actions';
 
 const _defaultState = {
@@ -19,6 +21,21 @@ const FilterReducer = (oldState = _defaultState, action) => {
   switch(action.type) {
     case UPDATE_FILTER:
       newState[action.filter] = action.value;
+      return newState;
+
+    case UPDATE_BOUNDS:
+    debugger;
+      newState.bounds = action.bounds;
+      return newState;
+
+    case UPDATE_MIN_PRICE:
+    debugger;
+      newState.minPrice = action.minPrice;
+      return newState;
+
+    case UPDATE_MAX_PRICE:
+    debugger;
+      newState.maxPrice = action.maxPrice;
       return newState;
 
     default:

@@ -34,6 +34,7 @@ class SpotMap extends React.Component {
         southWest: { lat: south, lng: west }
       };
 
+      this.props.requestSpots();
       this.props.updateFilter('bounds', bounds);
     });
 

@@ -17,24 +17,28 @@ import { createSpot,
          fetchAllSpots
        } from '../util/spot_api_util';
 
-import { UPDATE_BOUNDS } from '../actions/filter_actions';
+import { UPDATE_BOUNDS,
+         UPDATE_FILTER,
+         UPDATE_MIN_PRICE,
+         UPDATE_MAX_PRICE
+       } from '../actions/filter_actions';
 
-const SpotsMiddleware = store => next => action => {
+const SpotsMiddleware = ({ getState, dispatch }) => next => action => {
   const spotSuccess = data => {
     // re-render the host component here.
-    store.dispatch(receiveSpot(data));
+    dispatch(receiveSpot(data));
   };
 
   const spotsSuccess = data => {
-    store.dispatch(receiveSpots(data));
+    dispatch(receiveSpots(data));
   };
 
   const deleteSpotSuccess = data => {
-    store.dispatch(removeSpot(data));
+    dispatch(removeSpot(data));
   };
 
   const errorCallback = errors => {
-    store.dispatch(receiveSpotErrors(errors.responseJSON));
+    dispatch(receiveSpotErrors(errors.responseJSON));
   };
 
   switch(action.type) {
@@ -55,13 +59,18 @@ const SpotsMiddleware = store => next => action => {
       return next(action);
 
     case REQUEST_SPOTS:
-      const filters = store.getState().filters;
+      const filters = getState().filters;
       fetchAllSpots(filters, spotsSuccess, errorCallback);
       return next(action);
 
     case UPDATE_BOUNDS:
       next(action);
-      store.dispatch(requestSpots());
+      dispatch(requestSpots());
+      break;
+
+    case UPDATE_FILTER:
+      next(action);
+      dispatch(requestSpots());
       break;
 
     default:

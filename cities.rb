@@ -1,8 +1,8 @@
 
 
 locations = "
-  SEOUL	| South Korea |*
-  Sao Paulo |	Brazil |*
+  SEOUL	| South Korea *
+  Sao Paulo |	Brazil *
   Bombay |	India *
   JAKARTA |	Indonesia *
   Karachi |	Pakistan*

@@ -3,7 +3,9 @@ import Search from './search';
 import { requestSpots } from '../../actions/spot_actions';
 
 import { updateBounds,
-         updateFilter
+         updateFilter,
+         updateMinPrice,
+         updateMaxPrice
        } from '../../actions/filter_actions';
 
 import { asArray } from '../../reducers/selectors';
@@ -16,7 +18,10 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   requestSpots: () => dispatch(requestSpots()),
-  updateFilter: (filter) => dispatch(updateFilter(filter))
+  updateFilter: (filter, value) => dispatch(updateFilter(filter, value)),
+  updateBounds: (bounds) => dispatch(updateBounds(bounds)),
+  updateMinPrice: minPrice => dispatch(updateMinPrice(minPrice)),
+  updateMaxPrice: maxPrice => dispatch(updateMaxPrice(maxPrice))
 });
 
 export default connect(
