@@ -1,4 +1,4 @@
-import merge from 'lodash/';
+import merge from 'lodash/merge';
 import { UPDATE_BOUNDS,
          UPDATE_FILTER,
          UPDATE_MIN_PRICE,
@@ -24,17 +24,14 @@ const FilterReducer = (oldState = _defaultState, action) => {
       return newState;
 
     case UPDATE_BOUNDS:
-    debugger;
       newState.bounds = action.bounds;
       return newState;
 
     case UPDATE_MIN_PRICE:
-    debugger;
       newState.minPrice = action.minPrice;
       return newState;
 
     case UPDATE_MAX_PRICE:
-    debugger;
       newState.maxPrice = action.maxPrice;
       return newState;
 

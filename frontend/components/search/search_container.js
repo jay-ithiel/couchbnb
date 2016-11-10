@@ -10,11 +10,14 @@ import { updateBounds,
 
 import { asArray } from '../../reducers/selectors';
 
-const mapStateToProps = state => ({
-  spots: state.spots.index,
-  minPrice: state.filters.minPrice,
-  maxPrice: state.filters.maxPrice
-});
+const mapStateToProps = state => {
+
+  return {
+    spots: state.spots.index,
+    minPrice: state.filters.minPrice,
+    maxPrice: state.filters.maxPrice
+  };
+};
 
 const mapDispatchToProps = dispatch => ({
   requestSpots: () => dispatch(requestSpots()),

@@ -47,9 +47,9 @@ const handleChange = (filter, updateFilter) => (
   }
 );
 
-const FilterForm = ({ minPrice, maxPrice, updateFilter }) => {
+const FilterForm = ({ minPrice, maxPrice, updateFilter, updateMinPrice, updateMaxPrice }) => {
   if (minPrice === undefined || maxPrice === undefined) {
-    debugger;
+    
 
     return (
       <div>its broeciaehtn ohusoucnhts</div>

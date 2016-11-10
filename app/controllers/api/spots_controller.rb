@@ -21,7 +21,6 @@ class Api::SpotsController < ApplicationController
     spots = bounds ? Spot.in_bounds(params[:bounds]) : Spot.all
 
     if (params[:minPrice] && params[:maxPrice])
-      debugger
       spots = spots.where(price_per_night: price_range)
     end
 

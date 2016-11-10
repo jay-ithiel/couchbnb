@@ -50,7 +50,7 @@ class Spot extends React.Component {
     this.spot = this.props.spots[this.spotId];
     if (this.spot === undefined) { return; }
     this.location = `${this.spot.city}, ${this.spot.state_region}, ${this.spot.country}`;
-    this.currency = this.spot.price_per_night.slice(0,1);
+    // this.currency = this.spot.price_per_night.slice(0,1);
 
     if (this.state.location === null) {
       this.setState({
@@ -220,11 +220,11 @@ class Spot extends React.Component {
     let date2 = this.state.check_out_date;
     let diffDays = date2.diff(date1, 'days');
 
-    let priceCurrency = this.spot.price_per_night.slice(0,1);
-    let priceAmount = diffDays * parseInt(this.spot.price_per_night.slice(1));
+    let priceCurrency = '$'; //this.spot.price_per_night.slice(0,1);
+    let priceAmount = diffDays * this.spot.price_per_night; // parseInt(this.spot.price_per_night.slice(1));
     let daysPrice = `${priceCurrency}${priceAmount}`;
 
-    let serviceFeeAmount = priceAmount * .12;
+    let serviceFeeAmount = Math.round(priceAmount * .12);
     let serviceFee = `${priceCurrency}${serviceFeeAmount}`;
     let totalPriceAmount = priceAmount + serviceFeeAmount;
     let totalPrice = `${priceCurrency}${totalPriceAmount}`;

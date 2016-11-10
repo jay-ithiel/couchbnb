@@ -5,7 +5,7 @@ class SpotMap extends React.Component {
   constructor(props) {
     super(props);
 
-    this._registerListeners = this._registerListeners.bind(this);
+    // this._registerListeners = this._registerListeners.bind(this);
   }
 
   componentDidMount() {
@@ -26,16 +26,17 @@ class SpotMap extends React.Component {
   }
 
   _registerListeners() {
+    let that = this;
     google.maps.event.addListener(this.map, 'idle', () => {
 
-      const { north, south, east, west } = this.map.getBounds().toJSON();
+      const { north, south, east, west } = that.map.getBounds().toJSON();
       const bounds = {
         northEast: { lat: north, lng: east },
         southWest: { lat: south, lng: west }
       };
 
-      this.props.requestSpots();
-      this.props.updateFilter('bounds', bounds);
+      that.props.requestSpots();
+      that.props.updateBounds(bounds);
     });
 
     // google.maps.event.addListener(this.map, 'click', event => {
