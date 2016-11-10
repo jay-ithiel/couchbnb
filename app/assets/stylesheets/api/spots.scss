@@ -673,7 +673,7 @@
   // width: 100%;
 }
 
-.filters {
+.filters-container {
   height: 55%;
   width: 100%;
   border-bottom: 1px solid #dedede;
@@ -696,9 +696,14 @@
   align-items: center;
 }
 
-.filters h2 {
+.filters-container h2 {
   color: #484848;
   font-size: 13.5px;
+}
+
+.filters {
+  background-color: grey;
+  display: flex;
 }
 
 .filters-row-bottom {

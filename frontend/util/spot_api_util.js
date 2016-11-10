@@ -40,7 +40,7 @@ export const fetchAllSpots = (filters, success, error) => {
   $.ajax ({
     method: 'GET',
     url: 'api/spots',
-    data: filters,
+    data: {bounds: filters.bounds},
     success,
     error
   });

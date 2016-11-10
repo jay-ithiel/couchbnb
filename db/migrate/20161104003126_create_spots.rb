@@ -12,7 +12,7 @@ class CreateSpots < ActiveRecord::Migration
       t.string :post_code, null: false, index: true
       t.string :street_address, null: false
 
-      t.string :price_per_night, null: false, index: true
+      t.integer :price_per_night, null: false, index: true
       t.string :room_type, null: false, index: true
       t.integer :bed_count, null: false, index: true
       t.integer :max_guests, null: false, index: true

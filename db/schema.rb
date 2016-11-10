@@ -39,7 +39,7 @@ ActiveRecord::Schema.define(version: 20161107183606) do
     t.string   "city",            null: false
     t.string   "post_code",       null: false
     t.string   "street_address",  null: false
-    t.string   "price_per_night", null: false
+    t.integer  "price_per_night", null: false
     t.string   "room_type",       null: false
     t.integer  "bed_count",       null: false
     t.integer  "max_guests",      null: false

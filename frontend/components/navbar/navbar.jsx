@@ -41,7 +41,8 @@ class Navbar extends React.Component {
     });
   }
 
-  handleSearchSubmit() {
+  handleSearchSubmit(e) {
+    e.preventDefault();
     this.props.router.push(`search`);
   }
 

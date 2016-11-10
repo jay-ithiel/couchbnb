@@ -18,7 +18,20 @@ class Api::SpotsController < ApplicationController
   end
 
   def index
-    @spots = Spot.in_bounds(params[:bounds])
+    spots = bounds ? Spot.in_bounds(params[:bounds]) : Spot.all
+
+    if (params[:minPrice] && params[:maxPrice])
+      spots = spots.where(price: price_range)
+    end
+    #
+    # if (params[:check_in_date] && params[:check_out_date])
+    #
+    # end
+    #
+    # @spots = spots.includes(:room_type)
+
+    @spots = spots
+
     render :index
   end
 
@@ -51,7 +64,24 @@ class Api::SpotsController < ApplicationController
         :post_code,
         :lat,
         :lng,
-        :bounds
+        :bounds,
+        :minPrice,
+        :maxPrice,
+        :check_in_date,
+        :check_out_date
       )
     end
+
+    def price_range
+      (params[:minPrice]..params[:maxPrice])
+    end
+
+    def date_range
+      (params[:check_in_date]..params[:check_out_date])
+    end
+
+    def bounds
+      params[:bounds]
+    end
+
 end
