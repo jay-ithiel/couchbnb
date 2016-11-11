@@ -18,6 +18,8 @@ class User < ActiveRecord::Base
     foreign_key: :host_id,
     class_name: :Spot
 
+  has_many :bookings
+
   after_initialize :ensure_session_token
 
   def self.find_by_credentials(email, password)

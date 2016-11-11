@@ -25,10 +25,19 @@ class Api::SpotsController < ApplicationController
     end
 
     # if (params[:check_in_date] && params[:check_out_date])
-    #
+    #   spots = current_user.tasks.where(due_date: 1.week.ago..Date.today)
+    #   spots = Spot.where()
     # end
+
     #
-    # @spots = spots.includes(:room_type)
+    if params[:roomType].length > 1
+      debugger
+      spots = spots.where(room_type: params[:roomType])
+    end
+
+    if params[:numGuests]
+      spots = spots.where(max_guests: (params[:numGuests].to_i)..100)
+    end
 
     @spots = spots
     render :index
@@ -66,8 +75,9 @@ class Api::SpotsController < ApplicationController
         :bounds,
         :minPrice,
         :maxPrice,
-        :check_in_date,
-        :check_out_date
+        :numGuests,
+        :checkIn,
+        :checkOut
       )
     end
 

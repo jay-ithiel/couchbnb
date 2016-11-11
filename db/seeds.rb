@@ -175,6 +175,8 @@ Spot.create({
   lng: 127.029368
 })
 
+
+
 # Booking.create({
 #   spot_id: 1,
 #   guest_id: 1,
@@ -185,3 +187,7 @@ Spot.create({
 #   num_guests: 2,
 #   price: "$100"
 # })
+
+Booking.create({
+
+});

@@ -17,10 +17,10 @@ const _defaultState = {
   },
   minPrice: 10,
   maxPrice: 1000,
-  roomType: "",
-  checkIn: "",
-  checkOut: "",
-  location: "",
+  roomType: null,
+  checkIn: null,
+  checkOut: null,
+  location: null,
   numGuests: 1
 };
 

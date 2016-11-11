@@ -250,7 +250,7 @@ class Spot extends React.Component {
     };
 
     const handleBookingRequest = (e) => {
-      e.preventDefault;
+      e.preventDefault();
       const booking = this.state;
       booking.check_in_date = booking.check_in_date.unix();
       booking.check_out_date = booking.check_out_date.unix();

@@ -1,4 +1,6 @@
+require 'byebug'
 
+require 'net/http'
 
 locations = "
   SEOUL	| South Korea *
@@ -120,37 +122,58 @@ cities.each do |city|
   CITIES.push(city.join('+'))
 end
 
-puts CITIES
 
 us_locations = "
-  Chicago, Illinois, US *
-  Charleston, South Carolina, US *
-  Las+Vegas, Nevada, US *
-  Seattle, Washington, US *
-  Washington+DC, District Of Columbia, US *
-  New+Orleans, Louisiana, US *
-  San+Diego, California, US *
-  St+Louis, Missouri, US *
-  Honolulu, Hawaii, US *
-  Miami, Florida, US *
-  Branson, Missouri, US *
-  Boston, Massachusetts, US *
-  Savannah, Georgia, US *
-  Orlando, Florida, US *
-  Portland, Oregon, US *
-  Lahaina, Hawaii, US *
-  Nashville, Tennessee, US *
-  San+Antonio, Texas, US *
-  Austin, Texas, US *
-  Minneapolis, Minnesota, US *
+  Chicago,+Illinois *
+  Charleston, South+Carolina *
+  Las+Vegas,+Nevada *
+  Seattle,+Washington *
+  Washington+DC, District Of+Columbia *
+  New+Orleans,+Louisiana *
+  San+Diego,+California *
+  St+Louis,+Missouri *
+  Honolulu,+Hawaii *
+  Miami,+Florida *
+  Branson,+Missouri *
+  Boston,+Massachusetts *
+  Savannah,+Georgia *
+  Orlando,+Florida *
+  Portland,+Oregon *
+  Lahaina,+Hawaii *
+  Nashville,+Tennessee *
+  San+Antonio,+Texas *
+  Austin,+Texas *
+  Minneapolis,+Minnesota *
 "
 us_locations = us_locations.split('*')
 
 US_CITIES = []
 US_STATES = []
 
+# us_locations.each do |location|
+#   location = location.split('|')
+#   US_CITIES << location[0]
+#   US_STATES << location[1]
+# end
+# puts US_CITIES
+
+def parseAddress(address)
+  url = URI.parse(
+    "https://maps.googleapis.com/maps/api/geocode/json?address=#{address}&key=AIzaSyBDm-uAWZjK-h7w-tf0euzdr_lH9n3bkr8"
+  )
+  req = Net::HTTP::Get.new(url.to_s)
+  res = Net::HTTP.start(url.host, url.port) {|http|
+    http.request(req)
+  }
+
+  res.body
+end
+
+# https://maps.googleapis.com/maps/api/geocode/json?address=1600+Amphitheatre+Parkway,+Mountain+View,+CA&key=YOUR_API_KEY
+
 us_locations.each do |location|
-  location = location.split('|')
-  US_CITIES << location[0]
-  US_STATES << location[1]
+  byebug
+  json_address = parseAddress(location.strip)
+  byebug
+  puts json_address
 end

@@ -10,8 +10,17 @@ class FilterForm extends React.Component {
   constructor(props) {
     super(props);
 
+    this.state = {
+      checkIn: moment(),
+      checkOut: moment()
+    };
+
     this.handleChange = this.handleChange.bind(this);
     this.handlePriceChange = this.handlePriceChange.bind(this);
+    this.handleCheckIn = this.handleCheckIn.bind(this);
+    this.handleCheckOut = this.handleCheckOut.bind(this);
+    this.handleNumGuests = this.handleNumGuests.bind(this);
+    this.handleRoomType = this.handleRoomType.bind(this);
   }
 
   componentDidUpdate() {
@@ -24,9 +33,35 @@ class FilterForm extends React.Component {
   }
 
   handlePriceChange(e) {
-    // dispatch update min price and update max price here
     this.props.updateMinPrice(e[0]);
     this.props.updateMaxPrice(e[1]);
+  }
+
+  handleCheckIn(date) {
+    // will need to give spot model  functionality to filter spots index
+    // where spot.open_dates > params[:check_in_date]
+    //   and spot.opes_dates < params[:check_out_date]
+    // for now, create temp internal state to handle Date change in UI
+      // let dateUnix = date.unix();
+      // this.props.updateCheckIn(dateUnix);
+    this.setState({
+      checkIn: date
+    });
+  }
+
+  handleCheckOut(date) {
+    this.setState({
+      checkOut: date
+    });
+  }
+
+  handleNumGuests(e) {
+    this.props.updateNumGuests(e.target.value);
+  }
+
+  handleRoomType(e) {
+    debugger;
+    this.props.updateRoomType(e.target.value);
   }
 
   render() {
@@ -41,26 +76,30 @@ class FilterForm extends React.Component {
           <div className="filters-row-right">
             <div className="filters">
               <div className="filters-row-date">
-                <DatePicker />
+                <DatePicker
+                  selected={this.state.checkIn}
+                  onChange={this.handleCheckIn} />
               </div>
 
               <div className="filters-row-date">
-                <DatePicker />
+                <DatePicker
+                  selected={this.state.checkOut}
+                  onChange={this.handleCheckOut} />
               </div>
 
               <div className="filters-row-date">
-                <select className="">
-                  <option value="" disabled selected>Max Guests</option>
-                  <option value="1">1</option>
-                  <option value='2'>2</option>
-                  <option value='3'>3</option>
-                  <option value='4'>4</option>
-                  <option value='5'>5</option>
-                  <option value='6'>6</option>
-                  <option value='7'>7</option>
-                  <option value='8'>8</option>
-                  <option value='9'>9</option>
-                  <option value='10+'>10+</option>
+                <select className="" onChange={this.handleNumGuests}>
+                  <option value="" disabled selected>Num Guests</option>
+                  <option value="1">1 guest</option>
+                  <option value='2'>2 guests</option>
+                  <option value='3'>3 guests</option>
+                  <option value='4'>4 guests</option>
+                  <option value='5'>5 guests</option>
+                  <option value='6'>6 guests</option>
+                  <option value='7'>7 guests</option>
+                  <option value='8'>8 guests</option>
+                  <option value='9'>9 guests</option>
+                  <option value='10+'>10+ guests</option>
                 </select>
               </div>
             </div>
@@ -77,18 +116,24 @@ class FilterForm extends React.Component {
               <div className='filters-row-roomtype'>
                 <p>Entire House/Apt</p>
                 <input type="checkbox"
+                       value="Entire House/Apt"
+                       onChange={this.handleRoomType}
                        name="room_type" />
               </div>
 
               <div className='filters-row-roomtype'>
                 <p>Private Room</p>
                 <input type="checkbox"
+                       value="Private Room"
+                       onChange={this.handleRoomType}
                        name="room_type" />
               </div>
 
               <div className='filters-row-roomtype'>
                 <p>Shared Room</p>
                 <input type="checkbox"
+                       value="Shared Room"
+                       onChange={this.handleRoomType}
                        name="room_type" />
               </div>
             </div>

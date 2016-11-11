@@ -37,7 +37,7 @@ CITIES.forEach( city => {
   });
 });
 
-console.log(cityCoords);
+// console.log(cityCoords);
 
 // let usLocations = " Chicago, Illinois, US * Charleston, South Carolina, US * Las+Vegas, Nevada, US * Seattle, Washington, US * Washington+DC, District Of Columbia, US * New+Orleans, Louisiana, US * San+Diego, California, US * St+Louis, Missouri, US * Honolulu, Hawaii, US * Miami, Florida, US * Branson, Missouri, US * Boston, Massachusetts, US * Savannah, Georgia, US * Orlando, Florida, US * Portland, Oregon, US * Lahaina, Hawaii, US * Nashville, Tennessee, US * San+Antonio, Texas, US * Austin, Texas, US * Minneapolis, Minnesota, US *";
 // usLocations = usLocations.split('*');

@@ -50,7 +50,13 @@ class Search extends React.Component {
         maxPrice={this.props.maxPrice}
         updateFilter={this.props.updateFilter}
         updateMaxPrice={this.props.updateMaxPrice}
-        updateMinPrice={this.props.updateMinPrice}/>
+        updateMinPrice={this.props.updateMinPrice}
+        updateMaxPrice={this.props.updateMaxPrice}
+        updateRoomType={this.props.updateRoomType}
+        updateCheckIn={this.props.updateCheckIn}
+        updateCheckOut={this.props.updateCheckOut}
+        updateLocation={this.props.updateLocation}
+        updateNumGuests={this.props.updateNumGuests}/>
     );
   }
 
