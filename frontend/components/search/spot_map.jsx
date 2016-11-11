@@ -26,23 +26,18 @@ class SpotMap extends React.Component {
   }
 
   _registerListeners() {
-    let that = this;
+    let self = this;
     google.maps.event.addListener(this.map, 'idle', () => {
 
-      const { north, south, east, west } = that.map.getBounds().toJSON();
+      const { north, south, east, west } = self.map.getBounds().toJSON();
       const bounds = {
         northEast: { lat: north, lng: east },
         southWest: { lat: south, lng: west }
       };
 
-      that.props.requestSpots();
-      that.props.updateBounds(bounds);
+      self.props.requestSpots();
+      self.props.updateBounds(bounds);
     });
-
-    // google.maps.event.addListener(this.map, 'click', event => {
-    //   const coords = _getCoordsObj(event.latLng);
-    //   this._handleClick(coords);
-    // });
   }
 
   render() {

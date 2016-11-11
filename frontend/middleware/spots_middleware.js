@@ -68,6 +68,16 @@ const SpotsMiddleware = ({ getState, dispatch }) => next => action => {
       dispatch(requestSpots());
       break;
 
+    case UPDATE_MIN_PRICE:
+      next(action);
+      dispatch(requestSpots());
+      break;
+
+    case UPDATE_MAX_PRICE:
+      next(action);
+      dispatch(requestSpots());
+      break;
+
     case UPDATE_FILTER:
       next(action);
       dispatch(requestSpots());

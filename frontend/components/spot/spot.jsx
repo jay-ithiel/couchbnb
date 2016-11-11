@@ -280,7 +280,7 @@ class Spot extends React.Component {
       <div className="price-info">
         <div className="price-info-head">
           <div>
-            { this.spot.price_per_night }
+            ${ this.spot.price_per_night }
           </div>
           <p>Per Night</p>
         </div>

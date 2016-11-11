@@ -11,7 +11,6 @@ import { updateBounds,
 import { asArray } from '../../reducers/selectors';
 
 const mapStateToProps = state => {
-
   return {
     spots: state.spots.index,
     minPrice: state.filters.minPrice,

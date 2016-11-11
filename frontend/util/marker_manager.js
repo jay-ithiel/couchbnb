@@ -41,7 +41,7 @@ export default class MarkerManager {
 
   _removeMarker(marker) {
     const idx = this.markers.indexOf(marker);
-    // this.markers[idx].setMap(null);
+    this.markers[idx].setMap(null);
     this.markers.splice(idx, 1);
   }
 }
