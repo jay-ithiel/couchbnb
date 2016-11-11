@@ -76,53 +76,42 @@ class FilterForm extends React.Component {
             <div className="filters">
               <div className='filters-row-roomtype'>
                 <p>Entire House/Apt</p>
-                <input type="radio"
+                <input type="checkbox"
                        name="room_type" />
               </div>
 
               <div className='filters-row-roomtype'>
                 <p>Private Room</p>
-                <input type="radio"
+                <input type="checkbox"
                        name="room_type" />
               </div>
 
               <div className='filters-row-roomtype'>
                 <p>Shared Room</p>
-                <input type="radio"
+                <input type="checkbox"
                        name="room_type" />
               </div>
             </div>
           </div>
         </div>
 
-        <div>
-          <span className="filter">Filter results:</span>
-          <br/>
-          <label>Minimum Price</label>
-          <input
-            type="number"
-            value={this.props.minPrice}
-            onChange={this.handleChange('minPrice', this.props.updateFilter)}/>
-           <br/>
-          <label>Maximum Price</label>
-          <input
-            type="number"
-            value={this.props.maxPrice}
-            onChange={this.handleChange('maxPrice', this.props.updateFilter)}/>
-        </div>
-
         <div className="filters-row">
           <div className='filters-row-left'>
             <h2>Price Range</h2>
           </div>
-          <div className="filters-row-right">
+          <div className="filters-row-right-price">
             <div className="filters-row-price">
               <ReactSlider withBars
                 value={[this.props.minPrice, this.props.maxPrice]}
                 min={10}
                 max={1000}
                 minDistance={2}
-                onAfterChange={this.handlePriceChange}/>
+                onChange={this.handlePriceChange}/>
+            </div>
+
+            <div className="filters-row-price-text">
+              <p>${this.props.minPrice}</p>
+              <p>${this.props.maxPrice}+</p>
             </div>
           </div>
         </div>
@@ -136,6 +125,21 @@ export default FilterForm;
 
 
 
+// <div>
+//   <span className="filter">Filter results:</span>
+//   <br/>
+//   <label>Minimum Price</label>
+//   <input
+//     type="number"
+//     value={this.props.minPrice}
+//     onChange={this.handleChange('minPrice', this.props.updateFilter)}/>
+//    <br/>
+//   <label>Maximum Price</label>
+//   <input
+//     type="number"
+//     value={this.props.maxPrice}
+//     onChange={this.handleChange('maxPrice', this.props.updateFilter)}/>
+// </div>
 //
 // <div>
 //   <ReactSlider defaultValue={[0, 100]} withBars />

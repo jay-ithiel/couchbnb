@@ -8,7 +8,6 @@ import BookingFormContainer from '../booking/booking_form_container';
 const DatePicker = require('react-datepicker');
 const moment = require('moment');
 
-
 class Spot extends React.Component {
   constructor(props) {
     super(props);

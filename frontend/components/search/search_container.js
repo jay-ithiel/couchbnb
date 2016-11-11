@@ -5,7 +5,12 @@ import { requestSpots } from '../../actions/spot_actions';
 import { updateBounds,
          updateFilter,
          updateMinPrice,
-         updateMaxPrice
+         updateMaxPrice,
+         updateRoomType,
+         updateCheckIn,
+         updateCheckOut,
+         updateLocation,
+         updateNumGuests
        } from '../../actions/filter_actions';
 
 import { asArray } from '../../reducers/selectors';
@@ -23,7 +28,12 @@ const mapDispatchToProps = dispatch => ({
   updateFilter: (filter, value) => dispatch(updateFilter(filter, value)),
   updateBounds: (bounds) => dispatch(updateBounds(bounds)),
   updateMinPrice: minPrice => dispatch(updateMinPrice(minPrice)),
-  updateMaxPrice: maxPrice => dispatch(updateMaxPrice(maxPrice))
+  updateMaxPrice: maxPrice => dispatch(updateMaxPrice(maxPrice)),
+  updateRoomType: roomType => dispatch(updateRoomType(roomType)),
+  updateCheckIn: checkIn => dispatch(updateCheckIn(checkIn)),
+  updateCheckOut: checkOut => dispatch(updateCheckOut(checkOut)),
+  updateLocation: location => dispatch(updateLocation(location)),
+  updateNumGuests: numGuests => dispatch(updateNumGuests(numGuests))
 });
 
 export default connect(

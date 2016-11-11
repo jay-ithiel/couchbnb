@@ -20,7 +20,12 @@ import { createSpot,
 import { UPDATE_BOUNDS,
          UPDATE_FILTER,
          UPDATE_MIN_PRICE,
-         UPDATE_MAX_PRICE
+         UPDATE_MAX_PRICE,
+         UPDATE_ROOM_TYPE,
+         UPDATE_CHECK_IN,
+         UPDATE_CHECK_OUT,
+         UPDATE_LOCATION,
+         UPDATE_NUM_GUESTS
        } from '../actions/filter_actions';
 
 const SpotsMiddleware = ({ getState, dispatch }) => next => action => {
@@ -74,6 +79,26 @@ const SpotsMiddleware = ({ getState, dispatch }) => next => action => {
       break;
 
     case UPDATE_MAX_PRICE:
+      next(action);
+      dispatch(requestSpots());
+      break;
+
+    case UPDATE_ROOM_TYPE:
+      next(action);
+      dispatch(requestSpots());
+      break;
+
+    case UPDATE_CHECK_IN:
+      next(action);
+      dispatch(requestSpots());
+      break;
+
+    case UPDATE_CHECK_OUT:
+      next(action);
+      dispatch(requestSpots());
+      break;
+
+    case UPDATE_NUM_GUESTS:
       next(action);
       dispatch(requestSpots());
       break;
