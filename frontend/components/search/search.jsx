@@ -69,6 +69,7 @@ class Search extends React.Component {
         </div>
         <SpotMap
           spots={this.props.spots}
+          location={this.props.location}
           requestSpots={this.props.requestSpots}
           updateBounds={this.props.updateBounds}
           updateFilter={this.props.updateFilter}/>

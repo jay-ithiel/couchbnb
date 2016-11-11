@@ -31,7 +31,6 @@ class Api::SpotsController < ApplicationController
 
     #
     if params[:roomType].length > 1
-      debugger
       spots = spots.where(room_type: params[:roomType])
     end
 

@@ -7,12 +7,17 @@ class Navbar extends React.Component {
   constructor(props) {
     super(props);
 
+    this.state = {
+      searchLocation: ""
+    };
+
     this.loginLink = this.loginLink.bind(this);
     this.logo = this.logo.bind(this);
     this.handleLogoClick = this.handleLogoClick.bind(this);
     this.handleClickLogin = this.handleClickLogin.bind(this);
     this.searchBar = this.searchBar.bind(this);
     this.handleSearchSubmit = this.handleSearchSubmit.bind(this);
+    this.handleSearchChange = this.handleSearchChange.bind(this);
   }
 
   logo() {
@@ -41,8 +46,16 @@ class Navbar extends React.Component {
     });
   }
 
+  handleSearchChange(e) {
+    this.setState({
+      searchLocation: e.target.value
+    });
+  }
+
   handleSearchSubmit(e) {
     e.preventDefault();
+    let location = this.state.searchLocation.split(' ').join('+');
+    this.props.requestLocation(location);
     this.props.router.push(`search`);
   }
 
@@ -54,6 +67,8 @@ class Navbar extends React.Component {
           <input
             type="text"
             name="search"
+            value={this.state.searchLocation}
+            onChange={this.handleSearchChange}
             className="nav-search-bar"
             placeholder="Where to?" />
 

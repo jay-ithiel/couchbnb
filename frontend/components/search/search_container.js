@@ -19,7 +19,8 @@ const mapStateToProps = state => {
   return {
     spots: state.spots.index,
     minPrice: state.filters.minPrice,
-    maxPrice: state.filters.maxPrice
+    maxPrice: state.filters.maxPrice,
+    location: state.filters.location
   };
 };
 

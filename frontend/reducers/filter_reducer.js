@@ -6,21 +6,21 @@ import { UPDATE_BOUNDS,
          UPDATE_ROOM_TYPE,
          UPDATE_CHECK_IN,
          UPDATE_CHECK_OUT,
-         UPDATE_LOCATION,
+         RECEIVE_LOCATION,
          UPDATE_NUM_GUESTS
        } from '../actions/filter_actions';
 
 const _defaultState = {
   bounds: {
-    "northEast": {"lat": "37.80971", "lng": "-122.39208"},
-    "southWest": {"lat": "37.74187", "lng": "-122.47791"}
+    "northeast": {"lat": "37.80971", "lng": "-122.39208"},
+    "southwest": {"lat": "37.74187", "lng": "-122.47791"}
   },
+  location: {},
   minPrice: 10,
   maxPrice: 1000,
   roomType: null,
   checkIn: null,
   checkOut: null,
-  location: null,
   numGuests: 1
 };
 
@@ -57,7 +57,7 @@ const FilterReducer = (oldState = _defaultState, action) => {
       newState.checkOut = action.checkOut;
       return newState;
 
-    case UPDATE_LOCATION:
+    case RECEIVE_LOCATION:
       newState.location = action.location;
       return newState;
 

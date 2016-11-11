@@ -60,7 +60,6 @@ class FilterForm extends React.Component {
   }
 
   handleRoomType(e) {
-    debugger;
     this.props.updateRoomType(e.target.value);
   }
 

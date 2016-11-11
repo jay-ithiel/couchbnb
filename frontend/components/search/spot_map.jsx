@@ -6,6 +6,7 @@ class SpotMap extends React.Component {
     super(props);
 
     // this._registerListeners = this._registerListeners.bind(this);
+    this.map = null;
   }
 
   componentDidMount() {
@@ -15,14 +16,36 @@ class SpotMap extends React.Component {
       zoom: 13
     };
 
+    this.state = {
+      location: {}
+    };
+
     this.map = new google.maps.Map(mapDOMNode, mapOptions);
     this.MarkerManager = new MarkerManager(this.map);
     this._registerListeners();
     this.MarkerManager.updateMarkers(this.props.spots);
+    this._moveToLocation = this._moveToLocation.bind(this);
   }
 
   componentDidUpdate() {
+    // if this.props.location is not empty, trigger _moveToLocation
+    if (Object.keys(this.props.location).length > 0 && this.state.location !== this.props.location) {
+      this.state.location = this.props.location;
+
+      let lat = this.props.location.lat;
+      let lng = this.props.location.lng;
+
+      // debugger;
+
+      this._moveToLocation(lat, lng);
+      // this.props.location = {};
+    }
     this.MarkerManager.updateMarkers(this.props.spots);
+  }
+
+  _moveToLocation(lat, lng) {
+    let center = new google.maps.LatLng(lat, lng);
+    this.map.panTo(center);
   }
 
   _registerListeners() {
@@ -31,8 +54,8 @@ class SpotMap extends React.Component {
 
       const { north, south, east, west } = self.map.getBounds().toJSON();
       const bounds = {
-        northEast: { lat: north, lng: east },
-        southWest: { lat: south, lng: west }
+        northeast: { lat: north, lng: east },
+        southwest: { lat: south, lng: west }
       };
 
       self.props.requestSpots();

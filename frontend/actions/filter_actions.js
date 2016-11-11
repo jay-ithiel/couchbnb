@@ -34,9 +34,15 @@ export const updateCheckOut = checkOut => ({
   checkOut
 });
 
-export const UPDATE_LOCATION = "UPDATE_LOCATION";
-export const updateLocation = location => ({
-  type: UPDATE_LOCATION,
+export const REQUEST_LOCATION = "REQUEST_LOCATION";
+export const requestLocation = location => ({
+  type: REQUEST_LOCATION,
+  location
+});
+
+export const RECEIVE_LOCATION = "RECEIVE_LOCATION";
+export const receiveLocation = location => ({
+  type: RECEIVE_LOCATION,
   location
 });
 
