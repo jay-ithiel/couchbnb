@@ -31,13 +31,6 @@ import { fetchLocation } from '../util/filter_api_util';
 
 const FilterMiddleware = ({ getState, dispatch }) => next => action => {
   const locationSuccess = data => {
-    // check out data right here, and figure out how to pull the
-    // geocode from the json object
-    // instead of dispatching a receiveLocation action, you might
-    // need to dispatch an UPDATE_BOUNDS action, so that the map
-    // updates the bounds to the specified location
-    // or just update the center of the map to the new lat/lng
-    // store.dispatch(receiveLocation(data));
     let bounds = data.results[0].geometry.bounds;
     let location = data.results[0].geometry.location;
     dispatch(updateBounds(bounds));

@@ -28,17 +28,13 @@ class SpotMap extends React.Component {
   }
 
   componentDidUpdate() {
-    // if this.props.location is not empty, trigger _moveToLocation
     if (Object.keys(this.props.location).length > 0 && this.state.location !== this.props.location) {
       this.state.location = this.props.location;
 
       let lat = this.props.location.lat;
       let lng = this.props.location.lng;
 
-      // debugger;
-
       this._moveToLocation(lat, lng);
-      // this.props.location = {};
     }
     this.MarkerManager.updateMarkers(this.props.spots);
   }
@@ -46,6 +42,7 @@ class SpotMap extends React.Component {
   _moveToLocation(lat, lng) {
     let center = new google.maps.LatLng(lat, lng);
     this.map.panTo(center);
+    this.map.setZoom(13);
   }
 
   _registerListeners() {
