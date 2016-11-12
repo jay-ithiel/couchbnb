@@ -1,17 +1,17 @@
 import { connect } from 'react-redux';
-import Home from './home';
-import { requestLocation } from '../../actions/filter_actions';
+import Booking from './booking';
 
 const mapStateToProps = state => ({
   loggedIn: state.session.currentUser ? true : false,
-  currentUser: state.session.currentUser
+  currentUser: state.session.currentUser,
+  currentUserBookings: state.session.currentUser.bookings
 });
 
 const mapDispatchToProps = dispatch => ({
-  requestLocation: location => dispatch(requestLocation(location))
+
 });
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(Home);
+)(Booking);

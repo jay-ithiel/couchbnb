@@ -60,8 +60,6 @@ class Splash extends React.Component {
       return (
         <div>
           { this.header() }
-          <Body />
-          <Footer />
         </div>
       );
     }

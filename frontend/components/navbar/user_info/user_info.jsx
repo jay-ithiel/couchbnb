@@ -1,5 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router';
+import BookingForm from '../../booking/booking';
 
 class UserInfo extends React.Component {
   constructor(props) {
@@ -14,6 +15,7 @@ class UserInfo extends React.Component {
     this.handleLogout = this.handleLogout.bind(this);
     this.displayHost = this.displayHost.bind(this);
     this.handleHost = this.handleHost.bind(this);
+    this.handleBookings = this.handleBookings.bind(this);
   }
 
   userPic() {
@@ -35,6 +37,7 @@ class UserInfo extends React.Component {
     return (
       <div className="user-info-items hidden">
         { this.displayHost() }
+        { this.displayBookings() }
         { this.displayLogout() }
       </div>
     );
@@ -67,6 +70,18 @@ class UserInfo extends React.Component {
     return (
       <div className="user-info-item" onClick={this.handleHost}>
         Host
+      </div>
+    );
+  }
+
+  handleBookings() {
+    this.props.router.push('bookings');
+  }
+
+  displayBookings() {
+    return (
+      <div className="user-info-item" onClick={this.handleBookings}>
+        My Trips
       </div>
     );
   }

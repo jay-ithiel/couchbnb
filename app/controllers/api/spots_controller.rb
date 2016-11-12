@@ -29,7 +29,6 @@ class Api::SpotsController < ApplicationController
     #   spots = Spot.where()
     # end
 
-    #
     if params[:roomType].length > 1
       spots = spots.where(room_type: params[:roomType])
     end

@@ -1,6 +1,9 @@
 import React from 'react';
 import MarkerManager from '../../util/marker_manager.js';
 
+let lat;
+let lng;
+
 class SpotMap extends React.Component {
   constructor(props) {
     super(props);
@@ -27,15 +30,16 @@ class SpotMap extends React.Component {
     this._moveToLocation = this._moveToLocation.bind(this);
   }
 
-  componentDidUpdate() {
-    if (Object.keys(this.props.location).length > 0 && this.state.location !== this.props.location) {
-      this.state.location = this.props.location;
-
-      let lat = this.props.location.lat;
-      let lng = this.props.location.lng;
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.location.lat !== lat && nextProps.location.lng !== lng) {
+      lat = nextProps.location.lat;
+      lng = nextProps.location.lng;
 
       this._moveToLocation(lat, lng);
     }
+  }
+
+  componentDidUpdate() {
     this.MarkerManager.updateMarkers(this.props.spots);
   }
 

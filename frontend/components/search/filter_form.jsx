@@ -2,8 +2,6 @@ const React = require('react');
 const DatePicker = require('react-datepicker');
 const moment = require('moment');
 
-// import RangeSlider from 'react-dual-rangeslider';
-// const RangeSlider = require("react-dual-rangeslider");
 import ReactSlider from 'react-slider';
 
 class FilterForm extends React.Component {
