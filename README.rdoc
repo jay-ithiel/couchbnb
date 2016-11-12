@@ -1,6 +1,6 @@
 # Couchbnb
 
-[Couchbnb live] [heroku]
+[Couchbnb live][heroku]
 
 [heroku]: https://couchbnb.herokuapp.com
 
