@@ -1,28 +1,38 @@
-== README
+# Couchbnb
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+[Couchbnb live][heroku]
 
-Things you may want to cover:
+[heroku]: https://couchbnb.herokuapp.com
 
-* Ruby version
+Couchbnb is a full-stack web application inspired by Couchsurfing. It was built on Ruby on Rails, PostgreSQL, and React/Redux.
 
-* System dependencies
+## Features
 
-* Configuration
+### Vacation Spots
 
-* Database creation
+  The spots are stored in a singe table in the database, which contains
+columns for 'id', 'host_id', 'title', 'description', 'location', 'latitude', 'longitude', and various amenities the user can filter by to their liking.
 
-* Database initialization
+  Spots are rendered in the search and spot component.In the search,
+the spots are filtered by location, check-in/check-out date, room type,
+and price per night.
 
-* How to run the test suite
+To filter by location, Google's geocode API is used with Ajax to fetch the latitude and longitude coordinates of the city the user searched for, and the map panned to the new lat/lng coordinates. The remaining filters were implementing using ActiveRecord SQL queries.
 
-* Services (job queues, cache servers, search engines, etc.)
+### Bookings
 
-* Deployment instructions
+Users may make booking requests using the booking form in the spot's show page. The host of that spot will receive a notification, and they may approve or deny the request.
 
-* ...
+## Soon to come:
 
+### User profiles
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+Users wil have a profile page with their contact information, and reviews of them.
+
+### Reviews
+
+After a guest's vacation stay, both the host and guest will receive a notification to review the experience. The guest's review will be displayed in the spot's show page and host's profile page. The host's review will be displayed in the guest's profile page.
+
+### Messages
+
+Users will be able to send and receive messages.

@@ -1135,7 +1135,7 @@ spot_locations = [
 ]
 
 def parseLatLng(n)
-  change = rand(0.1) * 0.025
+  change = rand(0.1) * 0.023
 
   randOp = rand(2)
   if randOp == 0
