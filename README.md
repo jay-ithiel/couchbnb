@@ -17,13 +17,35 @@ columns for 'id', 'host_id', 'title', 'description', 'location', 'latitude', 'lo
 the spots are filtered by location, check-in/check-out date, room type,
 and price per night.
 
+![image of notebook index](docs/wireframes/search/search.png)
+
 To filter by location, Google's geocode API is used with Ajax to fetch the latitude and longitude coordinates of the city the user searched for, and the map panned to the new lat/lng coordinates. The remaining filters were implementing using ActiveRecord SQL queries.
 
 ````
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.location.lat !== lat && nextProps.location.lng !== lng) {
+      lat = nextProps.location.lat;
+      lng = nextProps.location.lng;
 
+      this._moveToLocation(lat, lng);
+    }
+  }
+
+  _moveToLocation(lat, lng) {
+    let center = new google.maps.LatLng(lat, lng);
+    this.map.panTo(center);
+    this.map.setZoom(13);
+  }
+
+//
+
+  spots = bounds ? Spot.in_bounds(params[:bounds]) : Spot.all
+
+  if (params[:minPrice] && params[:maxPrice])
+    spots = spots.where(price_per_night: price_range)
+  end
 ````
 
-![image of notebook index](docs/wireframes/search/search.png) 
 
 ### Bookings
 
