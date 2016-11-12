@@ -22,6 +22,7 @@ and price per night.
 To filter by location, Google's geocode API is used with Ajax to fetch the latitude and longitude coordinates of the city the user searched for, and the map panned to the new lat/lng coordinates. The remaining filters were implementing using ActiveRecord SQL queries.
 
 ````
+// Filtering by location
   componentWillReceiveProps(nextProps) {
     if (nextProps.location.lat !== lat && nextProps.location.lng !== lng) {
       lat = nextProps.location.lat;
@@ -37,8 +38,7 @@ To filter by location, Google's geocode API is used with Ajax to fetch the latit
     this.map.setZoom(13);
   }
 
-//
-
+// Filtering other amenities
   spots = bounds ? Spot.in_bounds(params[:bounds]) : Spot.all
 
   if (params[:minPrice] && params[:maxPrice])
