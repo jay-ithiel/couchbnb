@@ -19,6 +19,12 @@ and price per night.
 
 To filter by location, Google's geocode API is used with Ajax to fetch the latitude and longitude coordinates of the city the user searched for, and the map panned to the new lat/lng coordinates. The remaining filters were implementing using ActiveRecord SQL queries.
 
+````
+
+````
+
+![image of notebook index](docs/wireframes/search/search.png) 
+
 ### Bookings
 
 Users may make booking requests using the booking form in the spot's show page. The host of that spot will receive a notification, and they may approve or deny the request.
