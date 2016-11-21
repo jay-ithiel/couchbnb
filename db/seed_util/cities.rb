@@ -10,6 +10,7 @@ def parseAddress(address)
 end
 
 cit = []
+
 File.open('cities.txt').each_line { |line|
   cit << line.strip
 }
