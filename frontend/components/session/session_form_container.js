@@ -9,8 +9,8 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = (dispatch, routerProps) => {
   let formType;
-  const processForm = (user) => {
-    if (routerProps.loginForm === true) {
+  const processForm = (user, propsLoginForm) => {
+    if (propsLoginForm === true) {
       formType = 'login';
       return login(user);
     } else {
@@ -22,7 +22,9 @@ const mapDispatchToProps = (dispatch, routerProps) => {
   return {
     login: user => dispatch(login(user)),
     signup: user => dispatch(signup(user)),
-    processForm: user => dispatch(processForm(user))
+    processForm: (user, propsLoginForm) => (
+      dispatch(processForm(user, propsLoginForm))
+    )
   };
 };
 

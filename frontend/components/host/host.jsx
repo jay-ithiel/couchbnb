@@ -35,6 +35,10 @@ class Host extends React.Component {
     }
   }
 
+  componentDidMount() {
+
+  }
+
   componentDidUpdate() {
     this._redirectUnlessLoggedIn();
   }

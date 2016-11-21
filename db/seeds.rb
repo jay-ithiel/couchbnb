@@ -190,11 +190,195 @@ Spot.create({
 
 spot_locations = [
   {
-    "city": "San Francisco",
-    "state_region": "CA",
+    "city":"The Castro",
+    "state_region":" San Francisco",
     "country":" USA",
-    "lat":37.7749295,
-    "lng":-122.4194155
+    "lat":37.7609082,
+    "lng":-122.4350043
+  },
+
+  {
+    "city":"Berkeley",
+    "state_region":" CA",
+    "country":" USA",
+    "lat":37.8715926,
+    "lng":-122.272747
+  },
+
+  {
+    "city":"Oakland",
+    "state_region":" CA",
+    "country":" USA",
+    "lat":37.8043637,
+    "lng":-122.2711137
+  },
+
+  {
+    "city":"Daly City",
+    "state_region":" CA",
+    "country":" USA",
+    "lat":37.6879241,
+    "lng":-122.4702079
+  },
+
+  {
+    "city":"San Jose",
+    "state_region":" CA",
+    "country":" USA",
+    "lat":37.3382082,
+    "lng":-121.8863286
+  },
+
+  {
+    "city":"San Mateo",
+    "state_region":" CA",
+    "country":" USA",
+    "lat":37.5629917,
+    "lng":-122.3255254
+  },
+
+  {
+    "city":"Palo Alto",
+    "state_region":" CA",
+    "country":" USA",
+    "lat":37.4418834,
+    "lng":-122.1430195
+  },
+
+  {
+    "city":"Mountain View",
+    "state_region":" CA",
+    "country":" USA",
+    "lat":37.3860517,
+    "lng":-122.0838511
+  },
+
+  {
+    "city":"Monterey",
+    "state_region":" CA",
+    "country":" USA",
+    "lat":36.6002378,
+    "lng":-121.8946761
+  },
+
+  {
+    "city":"Bakersfield",
+    "state_region":" CA",
+    "country":" USA",
+    "lat":35.3732921,
+    "lng":-119.0187125
+  },
+
+  {
+    "city":"San Luis Obispo",
+    "state_region":" CA",
+    "country":" USA",
+    "lat":35.2827524,
+    "lng":-120.6596156
+  },
+
+  {
+    "city":"Torrance",
+    "state_region":" CA",
+    "country":" USA",
+    "lat":33.8358492,
+    "lng":-118.3406288
+  },
+
+  {
+    "city":"Lakewood",
+    "state_region":" CA",
+    "country":" USA",
+    "lat":33.8536269,
+    "lng":-118.1339563
+  },
+
+  {
+    "city":"La Habra",
+    "state_region":" CA 90631",
+    "country":" USA",
+    "lat":33.9319578,
+    "lng":-117.9461734
+  },
+
+  {
+    "city":"Anaheim",
+    "state_region":" CA",
+    "country":" USA",
+    "lat":33.8352932,
+    "lng":-117.9145036
+  },
+
+  {
+    "city":"Santa Ana",
+    "state_region":" CA",
+    "country":" USA",
+    "lat":33.7455731,
+    "lng":-117.8678338
+  },
+
+  {
+    "city":"Pomona",
+    "state_region":" CA",
+    "country":" USA",
+    "lat":34.055103,
+    "lng":-117.7499909
+  },
+
+  {
+    "city":"San Bernardino",
+    "state_region":" CA",
+    "country":" USA",
+    "lat":34.1083449,
+    "lng":-117.2897652
+  },
+
+  {
+    "city":"Lancaster",
+    "state_region":" CA",
+    "country":" USA",
+    "lat":34.6867846,
+    "lng":-118.1541632
+  },
+
+  {
+    "city":"Irvine",
+    "state_region":" CA",
+    "country":" USA",
+    "lat":33.6839473,
+    "lng":-117.7946942
+  },
+
+  {
+    "city":"Riverside",
+    "state_region":" CA",
+    "country":" USA",
+    "lat":33.9533487,
+    "lng":-117.3961564
+  },
+
+  {
+    "city":"La Mesa",
+    "state_region":" CA",
+    "country":" USA",
+    "lat":32.7678287,
+    "lng":-117.0230839
+  },
+
+  {
+    "city":"Chula Vista",
+    "state_region":" CA",
+    "country":" USA",
+    "lat":32.6400541,
+    "lng":-117.0841955
+  },
+
+  {
+    "city":"Tijuana",
+    "state_region":" Baja California",
+    "country":" Mexico",
+    "lat":32.5149469,
+    "lng":-117.0382471
   },
 
   {
@@ -206,9 +390,169 @@ spot_locations = [
   },
 
   {
+    "city":"Northridge",
+    "state_region":" Los Angeles",
+    "country":" USA",
+    "lat":34.2381251,
+    "lng":-118.530123
+  },
+
+  {
+    "city":"Hollywood",
+    "state_region":" Los Angeles",
+    "country":" USA",
+    "lat":34.0928092,
+    "lng":-118.3286614
+  },
+
+  {
+    "city":"Orange County",
+    "state_region":" CA",
+    "country":" USA",
+    "lat":33.7174708,
+    "lng":-117.8311428
+  },
+
+  {
+    "city":"Burbank",
+    "state_region":" CA",
+    "country":" USA",
+    "lat":34.1808392,
+    "lng":-118.3089661
+  },
+
+  {
+    "city":"Phoenix",
+    "state_region":" AZ",
+    "country":" USA",
+    "lat":33.4483771,
+    "lng":-112.0740373
+  },
+
+  {
+    "city":"Tucson",
+    "state_region":" AZ",
+    "country":" USA",
+    "lat":32.2217429,
+    "lng":-110.926479
+  },
+
+  {
+    "city":"El Paso",
+    "state_region":" TX",
+    "country":" USA",
+    "lat":31.7618778,
+    "lng":-106.4850217
+  },
+
+  {
+    "city":"Denver",
+    "state_region":" CO",
+    "country":" USA",
+    "lat":39.7392358,
+    "lng":-104.990251
+  },
+
+  {
+    "city":"Fort Collins",
+    "state_region":" CO",
+    "country":" USA",
+    "lat":40.5852602,
+    "lng":-105.084423
+  },
+
+  {
+    "city":"Albuquerque",
+    "state_region":" NM",
+    "country":" USA",
+    "lat":35.0853336,
+    "lng":-106.6055534
+  },
+
+  {
+    "city":"Oklahoma City",
+    "state_region":" OK",
+    "country":" USA",
+    "lat":35.4675602,
+    "lng":-97.5164276
+  },
+
+  {
+    "city":"Tulsa",
+    "state_region":" OK",
+    "country":" USA",
+    "lat":36.1539816,
+    "lng":-95.99277500000001
+  },
+
+  {
+    "city":"Kansas City",
+    "state_region":" KS",
+    "country":" USA",
+    "lat":39.114053,
+    "lng":-94.6274636
+  },
+
+  {
+    "city":"Atlanta",
+    "state_region":" GA",
+    "country":" USA",
+    "lat":33.7489954,
+    "lng":-84.3879824
+  },
+
+  {
+    "city":"Detroit",
+    "state_region":" MI",
+    "country":" USA",
+    "lat":42.331427,
+    "lng":-83.0457538
+  },
+
+  {
+    "city":"Syracuse",
+    "state_region":" NY",
+    "country":" USA",
+    "lat":43.0481221,
+    "lng":-76.14742439999999
+  },
+
+  {
+    "city":"Brooklyn",
+    "state_region":" NY",
+    "country":" USA",
+    "lat":40.6781784,
+    "lng":-73.9441579
+  },
+
+  {
+    "city":"Bronx County",
+    "state_region":" NY",
+    "country":" USA",
+    "lat":40.8370495,
+    "lng":-73.86542949999999
+  },
+
+  {
+    "city":"Queens County",
+    "state_region":" NY",
+    "country":" USA",
+    "lat":40.7282239,
+    "lng":-73.7948516
+  },
+
+  {
+    "city":"Manhattan",
+    "state_region":" New York",
+    "country":" USA",
+    "lat":40.7830603,
+    "lng":-73.9712488
+  },
+
+  {
     "city":"Chicago",
     "state_region":" IL",
-    "country":"USA",
+    "country":" USA",
     "lat":41.8781136,
     "lng":-87.6297982
   },
@@ -262,11 +606,11 @@ spot_locations = [
   },
 
   {
-    "city":"St. Louis",
+    "city":"Saint Louis",
     "state_region":" MO",
     "country":" USA",
-    "lat":38.6270025,
-    "lng":-90.19940419999999
+    "lat":38.6105426,
+    "lng":-90.3371889
   },
 
   {
@@ -350,6 +694,14 @@ spot_locations = [
   },
 
   {
+    "city":"Dallas",
+    "state_region":" TX",
+    "country":" USA",
+    "lat":32.7766642,
+    "lng":-96.79698789999999
+  },
+
+  {
     "city":"Austin",
     "state_region":" TX",
     "country":" USA",
@@ -365,7 +717,7 @@ spot_locations = [
     "lng":-93.2650108
   },
 
-  {
+    {
     "city":"Seoul",
     "state_region":"",
     "country":" South Korea",
@@ -390,11 +742,11 @@ spot_locations = [
   },
 
   {
-    "city":"Jakarta",
-    "state_region":" Special Capital Region of Jakarta",
+    "city":"East Jakarta",
+    "state_region":" East Jakarta City",
     "country":" Indonesia",
-    "lat":-6.2087634,
-    "lng":106.845599
+    "lat":-6.2250138,
+    "lng":106.9004472
   },
 
   {
@@ -423,7 +775,7 @@ spot_locations = [
 
   {
     "city":"Mexico City",
-    "state_region":"",
+    "state_region":" CDMX",
     "country":" Mexico",
     "lat":19.4326077,
     "lng":-99.133208
@@ -487,7 +839,7 @@ spot_locations = [
 
   {
     "city":"Hong Kong",
-    "state_region":"",
+    "state_region": "",
     "country":"Hong Kong",
     "lat":22.396428,
     "lng":114.109497
@@ -623,7 +975,7 @@ spot_locations = [
 
   {
     "city":"Singapore",
-    "state_region":"",
+    "state_region": "",
     "country":"Singapore",
     "lat":1.3553794,
     "lng":103.8677444
@@ -1102,11 +1454,11 @@ spot_locations = [
   },
 
   {
-    "city":"Medellín",
-    "state_region":" Medellin",
+    "city":"Medellin",
+    "state_region":" Antioquia",
     "country":" Colombia",
-    "lat":6.253040800000001,
-    "lng":-75.5645737
+    "lat":6.244203,
+    "lng":-75.5812119
   },
 
   {
@@ -1133,6 +1485,7 @@ spot_locations = [
     "lng":-66.90360629999999
   }
 ]
+
 
 def parseLatLng(n)
   change = rand(0.1) * 0.023

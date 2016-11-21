@@ -19,9 +19,11 @@ class SessionForm extends React.Component {
     this.handleChange = this.handleChange.bind(this);
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
+    this.toggleSession = this.toggleSession.bind(this);
 
     this.loginModal = this.loginModal.bind(this);
     this.signupModal = this.signupModal.bind(this);
+    this.loginForm = this.props.loginForm;
   }
 
   modal() {
@@ -48,6 +50,12 @@ class SessionForm extends React.Component {
     });
   }
 
+  toggleSession() {
+    this.closeModal();
+    this.loginForm = this.loginForm ? false : true;
+    this.openModal();
+  }
+
   loginModal() {
     return (
       <div className="header-login" onClick={this.openModal}>
@@ -68,7 +76,7 @@ class SessionForm extends React.Component {
     e.preventDefault();
     const user = this.state;
 
-    this.props.processForm({ user });
+    this.props.processForm({ user }, this.loginForm);
   }
 
   handleChange(field) {
@@ -106,8 +114,11 @@ class SessionForm extends React.Component {
       );
     };
 
-    const toggleForm = this.props.loginForm === false ? "Log In" : "Sign Up";
-    const formHeader = this.props.loginForm === true ? "Log In" : "Sign Up";
+    const toggleForm = this.loginForm === false ? "Log In" : "Sign Up";
+    const formHeader = this.loginForm === true ? "Log In" : "Sign Up";
+
+    const otherQuestion = this.loginForm ? "Not a Member yet?" : "Already a Member?";
+    const otherSession = this.loginForm ? "Sign Up" : "Log In";
 
     return(
       <div className="modal">
@@ -127,7 +138,7 @@ class SessionForm extends React.Component {
                 { errorsLi }
               </ul>
 
-              { this.props.loginForm === false ? nameInputFields() : ""}
+              { this.loginForm === false ? nameInputFields() : ""}
 
               <input
                 type="text"
@@ -147,7 +158,11 @@ class SessionForm extends React.Component {
 
               <div className="toggle-form">
                 <p>
-                  Not a member yet? <Link to={toggleForm}>{toggleForm}</Link>
+                  {otherQuestion}
+                  <div
+                    className="toggle-session"
+                    onClick={this.toggleSession}>{otherSession}!
+                  </div>
                 </p>
               </div>
             </form>

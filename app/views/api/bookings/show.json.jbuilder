@@ -1,6 +1,8 @@
 json.extract! @booking,
   :spot_id,
+  :spot,
   :guest_id,
+  :guest,
   :location,
   :status,
   :check_id_date,

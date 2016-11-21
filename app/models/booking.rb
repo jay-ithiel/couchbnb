@@ -1,6 +1,8 @@
 class Booking < ActiveRecord::Base
   validates :spot_id,
+            :spot,
             :guest_id,
+            :guest,
             :location,
             :check_in_date,
             :check_out_date,

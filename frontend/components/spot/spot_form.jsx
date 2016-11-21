@@ -1,6 +1,5 @@
 import React from 'react';
 import { withRouter } from 'react-router';
-// import { CITIES } from '../../util/city_coords_api_util';
 const CITIES = require('../../util/city_coords_api_util');
 
 class SpotForm extends React.Component {
@@ -8,25 +7,21 @@ class SpotForm extends React.Component {
     super(props);
 
     this.state = {
-      isSpotFormShowing: this.props.spotFormInfo.isFormShowing,
-
-      spot: {
-        host_id: this.props.currentUser.id,
-        host_name: this.props.currentUser.first_name,
-        title: "",
-        description: "",
-        country: "",
-        state_region: "",
-        city: "",
-        post_code: "",
-        street_address: "",
-        price_per_night: "",
-        room_type: "",
-        bed_count: "",
-        max_guests: "",
-        lat: 0.0,
-        lng: 0.0
-      }
+      host_id: this.props.currentUser.id,
+      host_name: this.props.currentUser.first_name,
+      title: "",
+      description: "",
+      country: "",
+      state_region: "",
+      city: "",
+      post_code: "",
+      street_address: "",
+      price_per_night: "",
+      room_type: "",
+      bed_count: "",
+      max_guests: "",
+      lat: 0.0,
+      lng: 0.0
     };
 
     this.marginRight = this.marginRight.bind(this);
@@ -49,31 +44,30 @@ class SpotForm extends React.Component {
   componentDidUpdate() {
     if (this.props.spotFormInfo.isFormShowing === false) {
       this.state = {
-        spot: {
-          host_id: this.props.currentUser.id,
-          host_name: this.props.currentUser.first_name,
-          title: "",
-          description: "",
-          country: "",
-          state_region: "",
-          city: "",
-          post_code: "",
-          street_address: "",
-          price_per_night: "",
-          room_type: "",
-          bed_count: "",
-          max_guests: "",
-          lat: 0.0,
-          lng: 0.0
-        }
+        host_id: this.props.currentUser.id,
+        host_name: this.props.currentUser.first_name,
+        title: "",
+        description: "",
+        country: "",
+        state_region: "",
+        city: "",
+        post_code: "",
+        street_address: "",
+        price_per_night: "",
+        room_type: "",
+        bed_count: "",
+        max_guests: "",
+        lat: 0.0,
+        lng: 0.0
       };
     }
 
     let editSpot = this.props.spotFormInfo.editSpotTarget;
     if (editSpot === null) { return; }
-    if (this.state.spot.title === "") {
+    if (this.state.title === "") {
       if (this.props.spotFormInfo.isFormShowing === true) {
-        this.setState({ spot: editSpot });
+        // this may have a bug
+        this.setState(editSpot);
       }
     }
   }
@@ -95,25 +89,23 @@ class SpotForm extends React.Component {
   handleSpotFormClose() {
     this.props.spotFormInfo.isFormShowing = false;
     this.props.spotFormInfo.editSpotTarget = null;
-    this.props.errors = [];
+    // this.props.errors = [];
     this.setState({
-      spot: {
-        host_id: this.props.currentUser.id,
-        host_name: this.props.currentUser.first_name,
-        title: "",
-        description: "",
-        country: "",
-        state_region: "",
-        city: "",
-        post_code: "",
-        street_address: "",
-        price_per_night: "",
-        room_type: "",
-        bed_count: "",
-        max_guests: "",
-        lat: 0.0,
-        lng: 0.0
-      }
+      host_id: this.props.currentUser.id,
+      host_name: this.props.currentUser.first_name,
+      title: "",
+      description: "",
+      country: "",
+      state_region: "",
+      city: "",
+      post_code: "",
+      street_address: "",
+      price_per_night: "",
+      room_type: "",
+      bed_count: "",
+      max_guests: "",
+      lat: 0.0,
+      lng: 0.0
     });
     $(".spot-form-container").addClass("display-none");
   }
@@ -128,7 +120,7 @@ class SpotForm extends React.Component {
 
   handleInputChange(field) {
     return(e) => (
-      this.setState({ spot: { [field]: e.target.value } })
+      this.setState({ [field]: e.target.value })
     );
   }
 
@@ -152,11 +144,9 @@ class SpotForm extends React.Component {
 
   setCoords(city) {
     this.setState({
-      spot: {
-        city: city.name,
-        lat: city.lat,
-        lng: city.lng
-      }
+      city: city.name,
+      lat: city.lat,
+      lng: city.lng
     });
   }
 
@@ -167,7 +157,8 @@ class SpotForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    const spot = this.state.spot;
+    const spot = this.state;
+    debugger;
     this.props.processForm(spot);
   }
 
@@ -190,7 +181,7 @@ class SpotForm extends React.Component {
         <div className="spot-form-row">
           <input
             type="text"
-            value={this.state.spot.title}
+            value={this.state.title}
             onChange={this.handleInputChange('title')}
             className="input"
             placeholder="Title" />
@@ -201,15 +192,15 @@ class SpotForm extends React.Component {
             className="spot-form-description"
             placeholder="Short description"
             onChange={this.handleInputChange('description')}
-            value={this.state.spot.description}>
+            value={this.state.description}>
           </textarea>
         </div>
 
         <div className="spot-form-row">
           <select className="select-input"
-                  value={ this.state.spot.room_type }
+                  value={ this.state.room_type }
                   onChange={ this.handleInputChange('room_type') }>
-            <option value="" disabled selected>Room Type</option>
+            <option value="" disabled>Room Type</option>
             <option value="Entire House/Apt">Entire House/Apt</option>
             <option value="Private Room">Private Room</option>
             <option value="Shared Room">Shared Room</option>
@@ -217,7 +208,7 @@ class SpotForm extends React.Component {
 
           <input
             type="text"
-            value={ this.state.spot.price_per_night }
+            value={ this.state.price_per_night }
             onChange={ this.handleInputChange('price_per_night') }
             placeholder="Price Per Night"
             className='input-half' />
@@ -225,9 +216,9 @@ class SpotForm extends React.Component {
 
         <div className="spot-form-row">
           <select className="select-input"
-                  value={ this.state.spot.max_guests }
+                  value={ this.state.max_guests }
                   onChange={ this.handleInputChange('max_guests') }>
-            <option value="" disabled selected>Max Guests</option>
+            <option value="" disabled>Max Guests</option>
             <option value="1">1</option>
             <option value='2'>2</option>
             <option value='3'>3</option>
@@ -241,9 +232,9 @@ class SpotForm extends React.Component {
           </select>
 
           <select className="select-input"
-                  value={ this.state.spot.bed_count }
+                  value={ this.state.bed_count }
                   onChange={ this.handleInputChange('bed_count') }>
-            <option value="" disabled selected>Bed Count</option>
+            <option value="" disabled>Bed Count</option>
             <option value='0'>0</option>
             <option value='1'>1</option>
             <option value='2'>2</option>
@@ -262,16 +253,16 @@ class SpotForm extends React.Component {
           <input
             type="text"
             onChange={ this.handleInputChange('street_address') }
-            value={ this.state.spot.street_address }
+            value={ this.state.street_address }
             placeholder="Street Address"
             className="input" />
         </div>
 
         <div className="spot-form-row">
           <select className="select-input"
-                  value={ this.state.spot.city }
+                  value={ this.state.city }
                   onChange={ this.handleCityChange }>
-            <option value="" disabled selected>City</option>
+            <option value="" disabled>City</option>
             <option value="Amsterdam">Amsterdam</option>
             <option value="Cape Town">Cape Town</option>
             <option value="London">London</option>
@@ -284,16 +275,16 @@ class SpotForm extends React.Component {
           <input
             type="text"
             onChange={ this.handleInputChange('state_region') }
-            value={ this.state.spot.state_region }
+            value={ this.state.state_region }
             placeholder="State/Region"
             className="input-half" />
         </div>
 
         <div className="spot-form-row">
           <select className="select-input"
-                  value={ this.state.spot.country }
+                  value={ this.state.country }
                   onChange={ this.handleInputChange('country') }>
-            <option value="" disabled selected>Country</option>
+            <option value="" disabled>Country</option>
             <option value="France">France</option>
             <option value="Netherlands">Netherlands</option>
             <option value="South Africa">South Africa</option>
@@ -305,7 +296,7 @@ class SpotForm extends React.Component {
           <input
             type="text"
             onChange={ this.handleInputChange('post_code') }
-            value={ this.state.spot.post_code }
+            value={ this.state.post_code }
             placeholder="Post Code"
             className="input-half" />
         </div>

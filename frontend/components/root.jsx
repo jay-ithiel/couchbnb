@@ -9,7 +9,7 @@ import HomeContainer from './home/home_container';
 import SpotContainer from './spot/spot_container';
 import HostContainer from './host/host_container';
 import SearchContainer from './search/search_container';
-import Booking from './booking/booking';
+import BookingContainer from './booking/booking_container';
 
 import { requestSpots } from '../actions/spot_actions';
 
@@ -60,7 +60,7 @@ const Root = ({ store }) => {
 
           <Route
             path='/bookings'
-            component={Booking}
+            component={BookingContainer}
             onEnter={_redirectUnlessLoggedIn}>
           </Route>
 

@@ -18,7 +18,10 @@ class User < ActiveRecord::Base
     foreign_key: :host_id,
     class_name: :Spot
 
-  has_many :bookings
+  has_many :bookings,
+    primary_key: :id,
+    foreign_key: :guest_id,
+    class_name: :Booking
 
   after_initialize :ensure_session_token
 
