@@ -18,14 +18,17 @@ class Api::SpotsController < ApplicationController
   end
 
   def index
-    spots = bounds ? Spot.in_bounds(params[:bounds]) : Spot.all
+    spots = Spot.all
+    if params[:roomType].length > 1
+      spots = spots.where(room_type: params[:roomType])
+    else
+      spots = Spot.all
+    end
+
+    spots = bounds ? spots.in_bounds(params[:bounds]) : spots # Spot.all
 
     if (params[:minPrice] && params[:maxPrice])
       spots = spots.where(price_per_night: price_range)
-    end
-
-    if params[:roomType].length > 1
-      spots = spots.where(room_type: params[:roomType])
     end
 
     if params[:numGuests]

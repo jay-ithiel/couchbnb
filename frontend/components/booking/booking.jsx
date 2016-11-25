@@ -18,7 +18,15 @@ class Booking extends React.Component {
       );
     }
 
-    let bookingLis = this.props.currentUserBookings.map(booking => {
+    let realCurrentUserBookings = [];
+    Object.keys(this.props.realCurrentUserBookings).forEach(k => {
+      let nextBooking = this.props.realCurrentUserBookings[k];
+      if (!realCurrentUserBookings.includes(nextBooking)) {
+        realCurrentUserBookings.push(nextBooking);
+      }
+    });
+
+    let bookingLis = realCurrentUserBookings.map(booking => {
       return (
         <div className='booking' key={booking.id}>
           { this.bookingImage(booking) }
@@ -38,10 +46,9 @@ class Booking extends React.Component {
   }
 
   bookingInfo(booking) {
-    // this.line throws errors because association is not working
-    // <li className='booking-title'>Title: {booking.spot.title}</li>
     return (
       <div className='booking-info'>
+        <li className='booking-title'>Title: {booking.spot.title}</li>
         <li>Status: {booking.status}</li>
         <li>Location: {booking.location}</li>
         <li>Check In Date: {booking.check_in_date}</li>
@@ -52,11 +59,11 @@ class Booking extends React.Component {
     );
   }
 
-  bookingImage() {
+  bookingImage(booking) {
     return (
       <img
         className='booking-image'
-        src="" >
+        src={booking.spot.spot_pic_url} >
       </img>
     );
   }

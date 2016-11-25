@@ -17,6 +17,8 @@
       :max_guests,
       :spot_pic_url,
       :lat,
-      :lng
+      :lng,
+      :host,
+      :bookings
   end
 end

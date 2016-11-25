@@ -12,6 +12,7 @@ import SearchContainer from './search/search_container';
 import BookingContainer from './booking/booking_container';
 
 import { requestSpots } from '../actions/spot_actions';
+import { requestBooking } from '../actions/booking_actions';
 
 const Root = ({ store }) => {
 
@@ -29,6 +30,17 @@ const Root = ({ store }) => {
 
   const _getSpotsForSearch = () => {
     store.dispatch(requestSpots());
+  };
+
+  const _getCurrentUserBookings = () => {
+    store.getState().session.currentUser.bookings.forEach(booking => {
+      store.dispatch(requestBooking(booking.id));
+    });
+  };
+
+  const _bookingOnEnter = () => {
+    _getCurrentUserBookings();
+    _redirectUnlessLoggedIn();
   };
 
   return (
@@ -61,7 +73,7 @@ const Root = ({ store }) => {
           <Route
             path='/bookings'
             component={BookingContainer}
-            onEnter={_redirectUnlessLoggedIn}>
+            onEnter={_bookingOnEnter}>
           </Route>
 
           <Route

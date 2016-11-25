@@ -19,7 +19,10 @@ class Spot < ActiveRecord::Base
     foreign_key: :host_id,
     class_name: :User
 
-  has_many :bookings
+  has_many :bookings,
+    primary_key: :id,
+    foreign_key: :spot_id,
+    class_name: :Booking
 
   def pending_requests?
     pending_requests.size > 0

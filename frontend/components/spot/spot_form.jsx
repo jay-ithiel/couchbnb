@@ -158,7 +158,6 @@ class SpotForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const spot = this.state;
-    debugger;
     this.props.processForm(spot);
   }
 

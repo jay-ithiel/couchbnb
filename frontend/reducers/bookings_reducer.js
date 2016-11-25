@@ -2,7 +2,7 @@ import merge from 'lodash/merge';
 import { RECEIVE_BOOKING,
          RECEIVE_BOOKINGS,
          RECEIVE_ERRORS
-       } from '../actions/spot_actions';
+       } from '../actions/booking_actions';
 
 const _defaultState = {
   index: {},

@@ -10,7 +10,8 @@ class FilterForm extends React.Component {
 
     this.state = {
       checkIn: moment(),
-      checkOut: moment()
+      checkOut: moment(),
+      roomType: ""
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -18,6 +19,7 @@ class FilterForm extends React.Component {
     this.handleCheckIn = this.handleCheckIn.bind(this);
     this.handleCheckOut = this.handleCheckOut.bind(this);
     this.handleNumGuests = this.handleNumGuests.bind(this);
+    this.toggleRoomType = this.toggleRoomType.bind(this);
     this.handleRoomType = this.handleRoomType.bind(this);
   }
 
@@ -57,8 +59,22 @@ class FilterForm extends React.Component {
     this.props.updateNumGuests(e.target.value);
   }
 
-  handleRoomType(e) {
-    this.props.updateRoomType(e.target.value);
+  handleRoomType() {
+    // this.props.updateRoomType(e.target.value);
+    this.props.updateRoomType(this.state.roomType);
+  }
+
+  toggleRoomType(e) {
+    console.log('e.target.value: ', e.target.value);
+    if (e.target.value === this.state.roomType) {
+      // this.setState({roomType: ""});
+      this.state.roomType = "";
+    } else {
+      // this.setState({roomType: e.target.value});
+      this.state.roomType = e.target.value;
+    }
+    console.log('this.state: ', this.state);
+    this.handleRoomType();
   }
 
   render() {
@@ -114,7 +130,7 @@ class FilterForm extends React.Component {
                 <p>Entire House/Apt</p>
                 <input type="checkbox"
                        value="Entire House/Apt"
-                       onChange={this.handleRoomType}
+                       onChange={this.toggleRoomType}
                        name="room_type" />
               </div>
 
@@ -122,7 +138,7 @@ class FilterForm extends React.Component {
                 <p>Private Room</p>
                 <input type="checkbox"
                        value="Private Room"
-                       onChange={this.handleRoomType}
+                       onChange={this.toggleRoomType}
                        name="room_type" />
               </div>
 
@@ -130,7 +146,7 @@ class FilterForm extends React.Component {
                 <p>Shared Room</p>
                 <input type="checkbox"
                        value="Shared Room"
-                       onChange={this.handleRoomType}
+                       onChange={this.toggleRoomType}
                        name="room_type" />
               </div>
             </div>

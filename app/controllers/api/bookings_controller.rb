@@ -9,7 +9,6 @@ class Api::BookingsController < ApplicationController
     booking_info[:check_out_date] = Time.at(booking_info[:check_out_date].to_i)
 
     @booking = Booking.new(booking_info)
-
     if @booking.save
       render :show
     else
@@ -17,8 +16,14 @@ class Api::BookingsController < ApplicationController
     end
   end
 
+  def show
+    @booking = Booking.find(params[:id])
+    render :show
+  end
+
   def index
     @bookings = Booking.all
+    render :index
   end
 
   def destroy

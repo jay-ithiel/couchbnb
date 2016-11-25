@@ -12,9 +12,14 @@ class Spot extends React.Component {
   constructor(props) {
     super(props);
 
+    let guest_id = 1;
+    if (this.props.currentUser) {
+      guest_id = this.props.currentUser.id;
+    }
+
     this.state = {
       spot_id: this.props.routeParams.spot_id,
-      guest_id: this.props.currentUser.id || 1,
+      guest_id: guest_id,//this.props.currentUser.id || 1,
       location: null,
       check_in_date: moment(),
       check_out_date: moment(),
@@ -249,24 +254,32 @@ class Spot extends React.Component {
       };
     };
 
+    let currentUser = this.props.currentUser || null;
     const handleBookingRequest = (e) => {
       e.preventDefault();
-      const booking = this.state;
-      booking.check_in_date = booking.check_in_date.unix();
-      booking.check_out_date = booking.check_out_date.unix();
-      // alert("You have been blacklisted from this listing. Please try again later");
-      this.props.createBooking(booking);
 
-      this.setState({
-        spot_id: this.props.routeParams.spot_id,
-        guest_id: this.props.currentUser.id,
-        location: null,
-        check_in_date: moment(),
-        check_out_date: moment(),
-        num_guests: '1',
-        price: `${this.currency}0`
-      });
+      if (currentUser === null) {
+        $(".null-user-warning").removeClass("display-none");
+      } else {
+        $("null-user-warning").addClass("display-none");
 
+        const booking = this.state;
+        booking.check_in_date = booking.check_in_date.unix();
+        booking.check_out_date = booking.check_out_date.unix();
+        this.props.createBooking(booking);
+
+        // this.setState({
+        //   spot_id: this.props.routeParams.spot_id,
+        //   guest_id: this.props.currentUser.id,
+        //   location: null,
+        //   check_in_date: moment(),
+        //   check_out_date: moment(),
+        //   num_guests: '1',
+        //   price: `${this.currency}0`
+        // });
+
+        this.props.router.push('/bookings');
+      }
     };
 
     const bookedDates = [
@@ -339,6 +352,10 @@ class Spot extends React.Component {
           </div>
 
           <button className="request-to-book button">Request To Book</button>
+
+          <span className="null-user-warning display-none">
+            Please log in or sign up before booking any trips!
+          </span>
         </form>
       </div>
     );
