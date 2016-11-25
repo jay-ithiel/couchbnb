@@ -375,13 +375,6 @@
   font-family: sans-serif;
 }
 
-// .host-head:hover {
-//   z-index: -2;
-//   cursor: pointer;
-//   filter: brightness(106%);
-//   transition: filter .15s ease-in;
-// }
-
 .host-button {
   padding: 15px;
   border: 2px solid whitesmoke;
@@ -469,6 +462,32 @@
 
 .listing-title {
   font-size: 20px;
+  width: 100%;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.manage-bookings-button {
+  border: 1px solid #ddd;
+  border-radius: 7px;
+  margin-right: 10px;
+
+  width: 130px;
+  height: 25px;
+
+  font-size: 13px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.manage-bookings-button:hover {
+  background-color: #f7f7f7;
+  transition: background .2s ease-in;
+  cursor: pointer;
 }
 
 .listing-info-buttons {

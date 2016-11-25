@@ -12,6 +12,9 @@ class Host extends React.Component {
     this.listings = this.listings.bind(this);
     this._redirectUnlessLoggedIn = this._redirectUnlessLoggedIn.bind(this);
 
+    this.goToManageSpot = this.goToManageSpot.bind(this);
+    this.manageBookingsButton = this.manageBookingsButton.bind(this);
+
     this.listingImage = this.listingImage.bind(this);
     this.listingInfo = this.listingInfo.bind(this);
     this.listingInfoButtons = this.listingInfoButtons.bind(this);
@@ -112,10 +115,30 @@ class Host extends React.Component {
     };
   }
 
+  goToManageSpot(spot) {
+    return () => (
+      this.props.router.push(`/manage/${spot.id}`)
+    );
+  }
+
+  manageBookingsButton(spot) {
+    return (
+      <div
+        className="manage-bookings-button"
+        onClick={this.goToManageSpot(spot)}>
+        Manage Bookings
+      </div>
+    );
+  }
+
   listingInfo(spot) {
     return (
       <div className='listing-info'>
-        <li className='listing-title'>Title: { spot.title }</li>
+        <li className='listing-title'>
+          Title: { spot.title }
+          { this.manageBookingsButton(spot) }
+        </li>
+
         <li>Price Per Night: { spot.price_per_night }</li>
         <li>City: { spot.city }</li>
         <li>Country: { spot.country }</li>
@@ -138,7 +161,17 @@ class Host extends React.Component {
   listings() {
     if (this.props.currentUserSpots == null) { return; }
 
-    let spotLis = this.props.currentUserSpots.map(spot => {
+
+    let realCurrentUserSpots = [];
+    Object.keys(this.props.realCurrentUserSpots).forEach(k => {
+      let nextSpot = this.props.realCurrentUserSpots[k];
+      if (!realCurrentUserSpots.includes(nextSpot)) {
+        realCurrentUserSpots.push(nextSpot);
+      }
+    });
+
+    // let spotLis = realCurrentUserSpots.map(spot => {
+      let spotLis = this.props.currentUserSpots.map(spot => {
       return (
         <div className='listing' key={ spot.id }>
           { this.listingImage(spot) }

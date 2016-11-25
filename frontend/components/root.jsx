@@ -7,11 +7,15 @@ import SessionFormContainer from './session/session_form_container';
 import SplashContainer from './splash/splash_container';
 import HomeContainer from './home/home_container';
 import SpotContainer from './spot/spot_container';
+import ManageSpotContainer from './spot/manage_container';
 import HostContainer from './host/host_container';
 import SearchContainer from './search/search_container';
 import BookingContainer from './booking/booking_container';
 
-import { requestSpots } from '../actions/spot_actions';
+import {
+  requestSpots,
+  requestSpot
+} from '../actions/spot_actions';
 import { requestBooking } from '../actions/booking_actions';
 
 const Root = ({ store }) => {
@@ -30,6 +34,17 @@ const Root = ({ store }) => {
 
   const _getSpotsForSearch = () => {
     store.dispatch(requestSpots());
+  };
+
+  const _getCurrentUserSpots = () => {
+    store.getState().session.currentUser.spots.forEach(spot => {
+      store.dispatch(requestSpot(spot.id));
+    });
+  };
+
+  const _hostOnEnter = () => {
+    _getCurrentUserSpots();
+    _redirectUnlessLoggedIn();
   };
 
   const _getCurrentUserBookings = () => {
@@ -80,6 +95,12 @@ const Root = ({ store }) => {
             path='/search'
             component={SearchContainer}
             onEnter={_getSpotsForSearch}>
+          </Route>
+
+          <Route
+            path='/manage/:spot_id'
+            component={ManageSpotContainer}
+            onEnter={_redirectUnlessLoggedIn}>
           </Route>
 
         </Route>

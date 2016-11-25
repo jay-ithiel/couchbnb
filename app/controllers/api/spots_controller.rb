@@ -49,6 +49,12 @@ class Api::SpotsController < ApplicationController
     render :show
   end
 
+  def manage
+    @spot = Spot.find(params[:id])
+    render :show
+    # render 'api/spots/manage'
+  end
+
   def destroy
     @spot = Spot.find(params[:id])
     @spot.destroy
