@@ -1,11 +1,10 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router';
+import BookingsCarousel from './booking_carousel';
 
 class ManageSpot extends React.Component {
   constructor(props) {
     super(props);
-
-    this.currentSpot = null;
 
     this.state = {
       currentBooking: null,
@@ -14,13 +13,14 @@ class ManageSpot extends React.Component {
       previousBookings: []
     };
 
-    this.bookings = this.bookings.bind(this);
     this.bookingInfo = this.bookingInfo.bind(this);
     this.bookingImage = this.bookingImage.bind(this);
+    this.hostImage = this.hostImage.bind(this);
 
+    this.delegateBookings = this.delegateBookings.bind(this);
     this.currentBooking = this.currentBooking.bind(this);
     this.pendingBookings = this.pendingBookings.bind(this);
-
+    // this.upcomingBookings = this.upcomingBookings.bind(this);
   }
 
   componentDidMount() {
@@ -28,9 +28,15 @@ class ManageSpot extends React.Component {
     this.props.requestSpot(this.spotId);
   }
 
+  componentWillUpdate() {
+  }
+
   delegateBookings() {
     let currentSpot = this.props.currentSpot[this.spotId];
     if (currentSpot == null) { return; }
+
+    this.currentSpot = currentSpot;
+    console.log('delegateBookings was called');
 
     let dateNow = new Date();
 
@@ -61,40 +67,19 @@ class ManageSpot extends React.Component {
 
     let pendingBookingsLis = pendingBookings.map(booking => {
       return (
-        <div className='manage-booking' key={booking.id}>
+        <div className='pending-booking' key={booking.id}>
           { this.bookingImage(booking) }
-          { this.bookingInfo(booking) }
-        </div>
-      );
-    });
-  }
-
-  bookings() {
-    this.currentSpot = this.props.currentSpot[this.spotId];
-    if (this.currentSpot == null) { return; }
-
-    if (this.currentSpot.bookings.length === 0) {
-      return (
-        <div className='no-trips'>
-          This vacation has not been booked yet!
-        </div>
-      );
-    }
-
-    let bookingLis = this.currentSpot.bookings.map(booking => {
-      return (
-        <div className='booking' key={booking.id}>
-          { this.bookingImage(booking) }
+          { this.hostImage() }
           { this.bookingInfo(booking) }
         </div>
       );
     });
 
     return (
-      <div className='bookings'>
-        <h2 className='bookings-header'>This vacation's bookings</h2>
-        <ul className='bookings-ul'>
-          { bookingLis }
+      <div className='pending-bookings-container'>
+        <h2 className='pending-bookings-header'>Pending Bookings</h2>
+        <ul className='pending-bookings-ul'>
+          { pendingBookingsLis }
         </ul>
       </div>
     );
@@ -116,14 +101,49 @@ class ManageSpot extends React.Component {
   }
 
   bookingInfo(booking) {
+    const months = {
+      1: 'Jan',
+      2: 'Feb',
+      3: 'Mar',
+      4: 'Apr',
+      5: 'May',
+      6: 'Jun',
+      7: 'Jul',
+      8: 'Aug',
+      9: 'Sep',
+      10: 'Oct',
+      11: 'Nov',
+      12: 'Dec'
+    };
+
+    let city = booking.location.split(',')[0];
+    let inDate = booking.check_in_date.split('-');
+    let outDate = booking.check_out_date.split('-');
+    let numGuests = `${booking.num_guests} guests`;
+
+    let checkInDate = inDate[2];
+    let checkInMonth = months[inDate[1]];
+    let checkInYear = `, ${inDate[0]}`;
+    let checkOutDate = outDate[2];
+    let checkOutMonth = months[outDate[1]];
+    let checkOutYear = `, ${outDate[0]}`;
+
+    if (checkInMonth === checkOutMonth) { checkOutMonth = ''; }
+    if (checkInYear === checkOutYear) { checkInYear = ''; }
+
+    let bookingDatesGuest = `${checkInMonth} ${checkInDate}${checkInYear} - ${checkOutMonth} ${checkOutDate}${checkOutYear} | ${numGuests}`;
+
     return (
-      <div className="booking-info">
-        <li className='booking-title'>Title: {this.currentSpot.title}</li>
-        <li>Status: {booking.status}</li>
-        <li>Location: {booking.location}</li>
-        <li>Check In Date: {booking.check_in_date}</li>
-        <li>Check Out Date: {booking.check_out_date}</li>
-        <li>Num Guests: {booking.num_guests}</li>
+      <div className="pending-booking-info">
+        <li className='city'>{city}</li>
+        <div>
+          <li className='date-guest'>{bookingDatesGuest}</li>
+          <li className='pending-booking-title'>
+            {this.currentSpot.title}
+          </li>
+        </div>
+
+
         <li>Total Price: {booking.price}</li>
       </div>
     );
@@ -131,17 +151,31 @@ class ManageSpot extends React.Component {
 
   bookingImage() {
     return (
+      <div className='pending-booking-image-div'>
+        <img
+          className='pending-booking-image'
+          src={this.currentSpot.spot_pic_url}>
+        </img>
+      </div>
+    );
+  }
+
+  hostImage() {
+    console.log('host image wal called');
+    return (
       <img
-        className='booking-image'
-        src={this.currentSpot.spot_pic_url}>
+        className='host-image'
+        src={this.currentSpot.host.profile_pic_url}>
       </img>
     );
   }
 
   render() {
-    debugger;
+    this.delegateBookings();
+    // BookingsCarousel has no style
+    // <BookingsCarousel />
     return (
-      <div className='bookings-body'>
+      <div>
         { this.currentBooking() }
         { this.pendingBookings() }
       </div>

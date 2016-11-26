@@ -1376,3 +1376,98 @@ $navigation-size: .45rem;
 .react-datepicker__tether-element {
   z-index: 2147483647;
 }
+
+
+// Manage Spot Bookings Component
+
+.pending-bookings-container {
+  width: 80%;
+  height: 635px;
+
+  margin: 50px auto;
+
+  font-family: sans-serif;
+  color: #484848;
+}
+
+.pending-bookings-header {
+  font-size: 30px;
+  margin-bottom: 50px;
+}
+
+.pending-bookings-ul {
+  display: flex;
+}
+
+.pending-booking {
+  position: relative;
+  height: 548px;
+  margin-right: 20px;
+  border: 1px solid #dce0e0;
+}
+
+.pending-booking-image-div {
+  width: 310px;
+  height: 200px;
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
+.pending-booking-image {
+  width: 310px;
+  height: 280px;
+
+  margin-top: -30px;
+}
+
+.host-image {
+  position: absolute;
+  top: 150px;
+  right: 125px;
+
+  min-width: 58px;
+  min-height: 58px;
+
+  width: 58px;
+  height: 58px;
+
+  border: 2px solid #fff;
+  border-radius: 58px;
+  background-color: #dedede;
+
+}
+
+.city {
+  font-size: 30px;
+}
+
+.date-guest {
+  font-size: 16px;
+}
+
+.pending-booking-title {
+  font-size: 17px;
+}
+
+.pending-booking-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+
+  height: 328px;
+}
+
+.pending-booking-info div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pending-info-title {
+
+}
+
+.slider {
+  background-color: #1b22ca;
+}

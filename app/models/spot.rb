@@ -20,6 +20,7 @@ class Spot < ActiveRecord::Base
     class_name: :User
 
   has_many :bookings,
+    dependent: :destroy,
     primary_key: :id,
     foreign_key: :spot_id,
     class_name: :Booking
