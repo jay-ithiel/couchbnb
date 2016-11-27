@@ -4,7 +4,6 @@ import Slider from 'react-slick';
 class BookingsCarousel extends React.Component {
   constructor(props) {
     super(props);
-
   }
 
   render() {
@@ -12,7 +11,7 @@ class BookingsCarousel extends React.Component {
       dots: true,
       infinite: true,
       speed: 500,
-      slidesToShow: 1,
+      slidesToShow: 3,
       slidesToScroll: 1
     };
     return (

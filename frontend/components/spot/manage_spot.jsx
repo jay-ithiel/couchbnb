@@ -20,7 +20,7 @@ class ManageSpot extends React.Component {
     this.delegateBookings = this.delegateBookings.bind(this);
     this.currentBooking = this.currentBooking.bind(this);
     this.pendingBookings = this.pendingBookings.bind(this);
-    // this.upcomingBookings = this.upcomingBookings.bind(this);
+    this.upcomingBookings = this.upcomingBookings.bind(this);
   }
 
   componentDidMount() {
@@ -36,7 +36,6 @@ class ManageSpot extends React.Component {
     if (currentSpot == null) { return; }
 
     this.currentSpot = currentSpot;
-    console.log('delegateBookings was called');
 
     let dateNow = new Date();
 
@@ -61,6 +60,22 @@ class ManageSpot extends React.Component {
     });
   }
 
+  approveBookingButton() {
+    return (
+      <div className="pending-button approve-button">
+        Approve
+      </div>
+    );
+  }
+
+  denyBookingButton() {
+    return (
+      <div className='pending-button deny-button'>
+        Deny
+      </div>
+    );
+  }
+
   pendingBookings() {
     let pendingBookings = this.state.pendingBookings;
     if (pendingBookings.length === 0) { return; }
@@ -71,6 +86,8 @@ class ManageSpot extends React.Component {
           { this.bookingImage(booking) }
           { this.hostImage() }
           { this.bookingInfo(booking) }
+          { this.approveBookingButton() }
+          { this.denyBookingButton() }
         </div>
       );
     });
@@ -98,6 +115,10 @@ class ManageSpot extends React.Component {
         </div>
       </div>
     );
+  }
+
+  upcomingBookings() {
+
   }
 
   bookingInfo(booking) {
@@ -143,8 +164,14 @@ class ManageSpot extends React.Component {
           </li>
         </div>
 
+        <div className='pending-info-link'>
+          <li>* * * * *</li>
+          <li>Read Your Reviews</li>
+        </div>
 
-        <li>Total Price: {booking.price}</li>
+        <div className='pending-info-link'>
+          <li>Total Price: { booking.price }</li>
+        </div>
       </div>
     );
   }
@@ -161,12 +188,14 @@ class ManageSpot extends React.Component {
   }
 
   hostImage() {
-    console.log('host image wal called');
     return (
-      <img
-        className='host-image'
-        src={this.currentSpot.host.profile_pic_url}>
-      </img>
+      // Will eventually use a 'img' tag when I have users that have
+      // actual profile pictures. Otherwise, default css will add a
+      // border automatically and its f***** annoying
+      // src={this.currentSpot.host.profile_pic_url}>
+      <div className='host-image'>
+
+      </div>
     );
   }
 
@@ -175,7 +204,7 @@ class ManageSpot extends React.Component {
     // BookingsCarousel has no style
     // <BookingsCarousel />
     return (
-      <div>
+      <div style={{display: 'inline-block', width: 500}}>
         { this.currentBooking() }
         { this.pendingBookings() }
       </div>
