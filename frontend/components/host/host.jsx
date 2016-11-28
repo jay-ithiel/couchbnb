@@ -139,7 +139,7 @@ class Host extends React.Component {
           { this.manageBookingsButton(spot) }
         </li>
 
-        <li>Price Per Night: { spot.price_per_night }</li>
+        <li>Price Per Night: ${ spot.price_per_night }</li>
         <li>City: { spot.city }</li>
         <li>Country: { spot.country }</li>
         <li>Room Type: { spot.room_type}</li>

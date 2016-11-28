@@ -34,3 +34,23 @@ export const fetchAllBookings = (success, error) => {
     error
   });
 };
+
+export const approveBooking = (booking, success, error) => {
+  $.ajax ({
+    method: 'PATCH',
+    url: `api/bookings/${booking.id}/approve`,
+    data: { booking },
+    success,
+    error
+  });
+};
+
+export const denyBooking = (booking, success, error) => {
+  $.ajax ({
+    method: 'PATCH',
+    url: `api/bookings/${booking.id}/deny`,
+    data: { booking },
+    success,
+    error
+  });
+};

@@ -5,6 +5,9 @@ Rails.application.routes.draw do
     resources :users, only: [:create, :home]
     resource :session, only: [:create, :destroy]
     resources :spots, only: [:create, :update, :show, :index, :destroy]
-    resources :bookings, only: [:create, :index, :show, :destroy]
+    resources :bookings, only: [:create, :index, :show, :destroy] do
+      patch 'approve'
+      patch 'deny'
+    end
   end
 end

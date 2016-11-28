@@ -32,9 +32,24 @@ class Api::BookingsController < ApplicationController
     render json: {}
   end
 
+  def approve
+    @booking = Booking.find(booking_params[:id])
+    @booking.status = 'APPROVED'
+    @booking.save!
+    render :show
+  end
+
+  def deny
+    @booking = Booking.find(booking_params[:id])
+    @booking.status = 'DENIED'
+    @booking.save!
+    render :show
+  end
+
   private
     def booking_params
       params.require(:booking).permit(
+        :id,
         :spot_id,
         :spot,
         :guest_id,

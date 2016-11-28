@@ -17,10 +17,16 @@ class ManageSpot extends React.Component {
     this.bookingImage = this.bookingImage.bind(this);
     this.hostImage = this.hostImage.bind(this);
 
-    this.delegateBookings = this.delegateBookings.bind(this);
     this.currentBooking = this.currentBooking.bind(this);
     this.pendingBookings = this.pendingBookings.bind(this);
     this.upcomingBookings = this.upcomingBookings.bind(this);
+    this.previousBookings = this.previousBookings.bind(this);
+
+    this.delegateBookings = this.delegateBookings.bind(this);
+    this.approveBookingButton = this.approveBookingButton.bind(this);
+    this.denyBookingButton = this.denyBookingButton.bind(this);
+
+    this.render = this.render.bind(this);
   }
 
   componentDidMount() {
@@ -28,50 +34,133 @@ class ManageSpot extends React.Component {
     this.props.requestSpot(this.spotId);
   }
 
-  componentWillUpdate() {
+  componentDidUpdate() {
   }
+
 
   delegateBookings() {
     let currentSpot = this.props.currentSpot[this.spotId];
     if (currentSpot == null) { return; }
 
     this.currentSpot = currentSpot;
+    let newCurrentBooking = null;
+    let newPendingBookings = [];
+    let newUpcomingBookings = [];
+    let newPreviousBookings = [];
+
+    this.state = {
+      currentBooking: null,
+      pendingBookings: [],
+      upcomingBookings: [],
+      previousBookings: []
+    };
 
     let dateNow = new Date();
+    const self = this;
 
     currentSpot.bookings.forEach(booking => {
       if (booking.status === "PENDING") {
-        this.state.pendingBookings.push(booking);
+        // if (!self.state.pendingBookings.includes(booking)) {
+        // }
+        newPendingBookings.push(booking);
       } else if (booking.status === "APPROVED") {
         // upcoming bookings
-        if (dateNow < booking.check_in_date) {
-          this.state.upcomingBookings.push(booking);
+        let checkIn = booking.check_in_date.split('-');
+        let checkOut = booking.check_out_date.split('-');
+        let checkInDate = new Date(
+          checkIn[0],
+          checkIn[1] - 1,
+          checkIn[2]
+        );
+
+        let checkOutDate = new Date(
+          checkOut[0],
+          checkOut[1] - 1,
+          checkOut[2]
+        );
+
+        if (dateNow < checkInDate) {
+          // if (!newUpcomingBookings.includes(booking)) {
+          // }
+          newUpcomingBookings.push(booking);
         }
         // current booking
-        else if (dateNow > booking.check_in_date &&
-                 dateNow < booking.check_out_date) {
-          this.state.currentBooking = booking;
+        else if (dateNow > checkInDate && dateNow < checkOutDate) {
+          newCurrentBooking = booking;
         }
         // previous bookings
-        else if (dateNow > booking.check_out_date) {
-          this.state.previousBookings.push(booking);
+        else if (dateNow > checkOutDate) {
+          // if (!newPreviousBookings.includes(booking)) {
+          // }
+          newPreviousBookings.push(booking);
         }
       }
     });
+
+    this.state = {
+      currentBooking: newCurrentBooking,
+      pendingBookings: newPendingBookings,
+      upcomingBookings: newUpcomingBookings,
+      previousBookings: newPreviousBookings
+    };
   }
 
-  approveBookingButton() {
+  approveBookingButton(booking) {
+    const handleApprove = () => {
+      setTimeout(() => {
+        this.delegateBookings();
+        this.render();
+      }, 300);
+      () => this.props.approveBooking(booking);
+    };
+
     return (
-      <div className="pending-button approve-button">
+      <div
+        onClick={ handleApprove(booking) }
+        className="pending-button approve-button">
         Approve
       </div>
     );
   }
 
-  denyBookingButton() {
+  denyBookingButton(booking) {
+    const handleDeny = () => {
+      setTimeout(() => {
+        this.delegateBookings();
+        this.render();
+      }, 300);
+      () => this.props.denyBooking(booking);
+    };
+
     return (
-      <div className='pending-button deny-button'>
+      <div
+        onClick={ handleDeny(booking) }
+        className='pending-button deny-button'>
         Deny
+      </div>
+    );
+  }
+
+  upcomingBookings() {
+    let upcomingBookings = this.state.upcomingBookings;
+    if (upcomingBookings.length === 0) { return; }
+
+    let upcomingBookingLis = upcomingBookings.map(booking => {
+      return (
+        <div className='manage-booking' key={booking.id}>
+          { this.bookingImage(booking) }
+          { this.hostImage() }
+          { this.bookingInfo(booking) }
+        </div>
+      );
+    });
+
+    return (
+      <div className='manage-bookings-container'>
+        <h2 className='manage-bookings-header'>Upcoming Bookings</h2>
+        <ul className='manage-bookings-ul'>
+          { upcomingBookingLis }
+        </ul>
       </div>
     );
   }
@@ -82,21 +171,45 @@ class ManageSpot extends React.Component {
 
     let pendingBookingsLis = pendingBookings.map(booking => {
       return (
-        <div className='pending-booking' key={booking.id}>
+        <div className='manage-booking' key={booking.id}>
           { this.bookingImage(booking) }
           { this.hostImage() }
           { this.bookingInfo(booking) }
-          { this.approveBookingButton() }
-          { this.denyBookingButton() }
+          { this.approveBookingButton(booking) }
+          { this.denyBookingButton(booking) }
         </div>
       );
     });
 
     return (
-      <div className='pending-bookings-container'>
-        <h2 className='pending-bookings-header'>Pending Bookings</h2>
-        <ul className='pending-bookings-ul'>
+      <div className='manage-bookings-container'>
+        <h2 className='manage-bookings-header'>Pending Bookings</h2>
+        <ul className='manage-bookings-ul'>
           { pendingBookingsLis }
+        </ul>
+      </div>
+    );
+  }
+
+  previousBookings() {
+    let previousBookings = this.state.previousBookings;
+    if (previousBookings.length === 0) { return; }
+
+    let previousBookingLis = previousBookings.map(booking => {
+      return (
+        <div className='manage-booking' key={booking.id}>
+          { this.bookingImage(booking) }
+          { this.hostImage() }
+          { this.bookingInfo(booking) }
+        </div>
+      );
+    });
+
+    return (
+      <div className='manage-bookings-container'>
+        <h2 className='manage-bookings-header'>Previous Bookings</h2>
+        <ul className='manage-bookings-ul'>
+          { previousBookingLis }
         </ul>
       </div>
     );
@@ -106,19 +219,30 @@ class ManageSpot extends React.Component {
     let booking = this.state.currentBooking;
     if (booking == null) { return; }
 
+    let handleClick = () => {
+      this.props.router.push(`/spots/${this.currentSpot.id}`);
+    };
+
     return (
-      <div className='bookings'>
-        <h2 className='bookings-header'>Current Booking</h2>
-        <div className="booking">
-          { this.bookingImage(booking) }
-          { this.bookingInfo(booking) }
+      <div className='current-booking-box'>
+        <h2 className='current-booking-header'>Current Booking</h2>
+        <div className='current-booking'>
+          <img
+            onClick={ handleClick }
+            className='current-booking-image'
+            src={this.currentSpot.spot_pic_url}>
+          </img>
+
+          <div className='current-booking-info'>
+            <li className='current-booking-info-header'>
+              {this.currentSpot.title}
+            </li>
+
+            <li></li>
+          </div>
         </div>
       </div>
     );
-  }
-
-  upcomingBookings() {
-
   }
 
   bookingInfo(booking) {
@@ -155,32 +279,40 @@ class ManageSpot extends React.Component {
     let bookingDatesGuest = `${checkInMonth} ${checkInDate}${checkInYear} - ${checkOutMonth} ${checkOutDate}${checkOutYear} | ${numGuests}`;
 
     return (
-      <div className="pending-booking-info">
+      <div className="manage-booking-info">
         <li className='city'>{city}</li>
         <div>
           <li className='date-guest'>{bookingDatesGuest}</li>
-          <li className='pending-booking-title'>
+          <li className ='manage-booking-title'>
             {this.currentSpot.title}
           </li>
         </div>
 
-        <div className='pending-info-link'>
-          <li>* * * * *</li>
-          <li>Read Your Reviews</li>
-        </div>
+        <div>
+          <div className='manage-info-link manage-reviews'>
+            <li>* * * * *</li>
+            <li>Read Your Reviews</li>
+          </div>
 
-        <div className='pending-info-link'>
-          <li>Total Price: { booking.price }</li>
+          <div className='manage-info-link manage-price'>
+            <li>Total Price: { booking.price }</li>
+          </div>
         </div>
       </div>
     );
   }
 
   bookingImage() {
+    let handleClick = () => {
+      this.props.router.push(`/spots/${this.currentSpot.id}`);
+    };
+
     return (
-      <div className='pending-booking-image-div'>
+      <div
+        onClick={ handleClick }
+        className='manage-booking-image-div'>
         <img
-          className='pending-booking-image'
+          className='manage-booking-image'
           src={this.currentSpot.spot_pic_url}>
         </img>
       </div>
@@ -202,14 +334,22 @@ class ManageSpot extends React.Component {
   render() {
     this.delegateBookings();
     // BookingsCarousel has no style
-    // <BookingsCarousel />
+
+  // console.log('currentBooking', this.state.currentBooking);
+  // console.log('pendingBookings', this.state.pendingBookings);
+  // console.log('upcomingBookings', this.state.upcomingBookings);
+  // console.log('previousBookings', this.state.previousBookings);
+
+  // <BookingsCarousel />
     return (
-      <div style={{display: 'inline-block', width: 500}}>
+      <div>
         { this.currentBooking() }
         { this.pendingBookings() }
+        { this.upcomingBookings() }
+        { this.previousBookings() }
       </div>
     );
   }
 }
 
-export default ManageSpot;
+export default withRouter(ManageSpot);

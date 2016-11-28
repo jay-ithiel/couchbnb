@@ -1378,30 +1378,31 @@ $navigation-size: .45rem;
 }
 
 
-// Manage Spot Bookings Component
+// Manage Spot manageComponent
 
-.pending-bookings-container {
+.manage-bookings-container {
   width: 80%;
   height: 635px;
 
   margin: 50px auto;
+  margin-bottom: 230px;
 
   font-family: sans-serif;
   color: #484848;
 }
 
-.pending-bookings-header {
+.manage-bookings-header {
   font-size: 30px;
   margin-bottom: 50px;
 }
 
-.pending-bookings-ul {
+.manage-bookings-ul {
   display: flex;
 }
 
-.pending-booking {
+.manage-booking {
   position: relative;
-  min-height: 448px;
+  min-height: 400px;
   width: 310px;
   margin-right: 20px;
   border: 1px solid #dce0e0;
@@ -1444,14 +1445,22 @@ $navigation-size: .45rem;
   filter: brightness(150%);
 }
 
-.pending-booking-image-div {
+.manage-booking-image-div {
   width: 310px;
   height: 200px;
   margin-bottom: 20px;
   overflow: hidden;
+
+  transition: filter .2s ease-in;
 }
 
-.pending-booking-image {
+.manage-booking-image-div:hover {
+  cursor: pointer;
+  filter: brightness(120%);
+  transition: filter .2s ease-in;
+}
+
+.manage-booking-image {
   width: 310px;
   height: 280px;
 
@@ -1482,44 +1491,35 @@ $navigation-size: .45rem;
   font-size: 16px;
 }
 
-.pending-booking-title {
+.manage-booking-title {
   font-size: 17px;
 }
 
-.pending-booking-info {
-  position: relative;
-
+.manage-booking-info {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
+
+  padding-top: 20px;
 
   height: 328px;
 }
 
-.pending-booking-info div {
+.manage-booking-info div {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.pending-info-link {
-  // position: absolute;
-  // top: ;
-  // right: ;
-
+.manage-info-link {
   width: 250px;
   height: 53px;
   border-top: 1px solid #bbb;
 
-  background-color: grey;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
-  margin-top: 0;
-  margin-bottom: 0;
 }
 
 .pending-info-title {
@@ -1529,3 +1529,81 @@ $navigation-size: .45rem;
 .slider {
   background-color: #1b22ca;
 }
+
+.current-booking-box {
+  font-family: sans-serif;
+  color: #484848;
+
+  margin: 50px auto;
+  height: 450px;
+  width: 80%;
+}
+
+.current-booking-header {
+  font-size: 30px;
+}
+
+.current-booking {
+  width: 100%;
+  height: 350px;
+
+  margin: 50px auto;
+  border: 1px solid #dedede;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.current-booking-image {
+  width: 40%;
+  height: 80%;
+  margin-right: 20px;
+}
+
+.current-booking-info {
+  width: 50%;
+  height: 80%;
+
+  background-color: #dedede;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.current-booking-info-header {
+  font-size: 25px;
+}
+
+
+//
+// .listing {
+//   width: 100%;
+//   height: 350px;
+//
+//   margin: 30px 0;
+//
+//   border: 1px solid #dedede;
+//
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+// }
+//
+// .listing-image {
+//   width: 40%;
+//   height: 80%;
+//   margin-right: 20px;
+//
+//   background-color: #dedede;
+// }
+//
+// .listing-info {
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: space-between;
+//
+//   width: 50%;
+//   height: 80%;
+// }

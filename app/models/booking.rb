@@ -64,12 +64,15 @@ class Booking < ActiveRecord::Base
       get_overlapping_requests.where("status = 'PENDING'").each do |request|
         request.deny!
       end
-      self.saze!
+      self.save!
     end
   end
 
   def deny!
-    self.destroy!
+    Booking.transaction do
+      self.status = 'DENIED'
+      self.save!
+    end
   end
 
   def pending?

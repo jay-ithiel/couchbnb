@@ -16,12 +16,12 @@ class BookingsCarousel extends React.Component {
     };
     return (
       <Slider {...settings}>
-        <div><h3>1</h3></div>
-        <div><h3>2</h3></div>
-        <div><h3>3</h3></div>
-        <div><h3>4</h3></div>
-        <div><h3>5</h3></div>
-        <div><h3>6</h3></div>
+        <div key="carousel-1"><h3>10</h3></div>
+        <div key="carousel-2"><h3>20</h3></div>
+        <div key="carousel-3"><h3>30</h3></div>
+        <div key="carousel-4"><h3>40</h3></div>
+        <div key="carousel-5"><h3>50</h3></div>
+        <div key="carousel-6"><h3>60</h3></div>
       </Slider>
     );
   }

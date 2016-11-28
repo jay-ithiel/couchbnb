@@ -44,3 +44,15 @@ export const receiveErrors = (errors) => ({
   type: RECEIVE_ERRORS,
   errors
 });
+
+export const APPROVE_BOOKING = "APPROVE_BOOKING";
+export const approveBooking = (booking) => ({
+  type: APPROVE_BOOKING,
+  booking
+});
+
+export const DENY_BOOKING = "DENY_BOOKING";
+export const denyBooking = (booking) => ({
+  type: DENY_BOOKING,
+  booking
+});
