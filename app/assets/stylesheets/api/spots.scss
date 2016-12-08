@@ -1527,7 +1527,7 @@ $navigation-size: .45rem;
 }
 
 .slider {
-  background-color: #1b22ca;
+  // background-color: #1b22ca;
 }
 
 .current-booking-box {
@@ -1576,6 +1576,9 @@ $navigation-size: .45rem;
   font-size: 25px;
 }
 
+.carousel-item {
+  background-color: yellow;
+}
 
 //
 // .listing {

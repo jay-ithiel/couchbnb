@@ -35,6 +35,7 @@ class ManageSpot extends React.Component {
   }
 
   componentDidUpdate() {
+    // this.delegateBookings();
   }
 
 
@@ -60,8 +61,6 @@ class ManageSpot extends React.Component {
 
     currentSpot.bookings.forEach(booking => {
       if (booking.status === "PENDING") {
-        // if (!self.state.pendingBookings.includes(booking)) {
-        // }
         newPendingBookings.push(booking);
       } else if (booking.status === "APPROVED") {
         // upcoming bookings
@@ -80,8 +79,6 @@ class ManageSpot extends React.Component {
         );
 
         if (dateNow < checkInDate) {
-          // if (!newUpcomingBookings.includes(booking)) {
-          // }
           newUpcomingBookings.push(booking);
         }
         // current booking
@@ -90,8 +87,6 @@ class ManageSpot extends React.Component {
         }
         // previous bookings
         else if (dateNow > checkOutDate) {
-          // if (!newPreviousBookings.includes(booking)) {
-          // }
           newPreviousBookings.push(booking);
         }
       }
@@ -103,14 +98,18 @@ class ManageSpot extends React.Component {
       upcomingBookings: newUpcomingBookings,
       previousBookings: newPreviousBookings
     };
+
+    // this.setState = {
+    //   currentBooking: newCurrentBooking,
+    //   pendingBookings: newPendingBookings,
+    //   upcomingBookings: newUpcomingBookings,
+    //   previousBookings: newPreviousBookings
+    // };
+
   }
 
   approveBookingButton(booking) {
     const handleApprove = () => {
-      setTimeout(() => {
-        this.delegateBookings();
-        this.render();
-      }, 300);
       () => this.props.approveBooking(booking);
     };
 
@@ -125,10 +124,6 @@ class ManageSpot extends React.Component {
 
   denyBookingButton(booking) {
     const handleDeny = () => {
-      setTimeout(() => {
-        this.delegateBookings();
-        this.render();
-      }, 300);
       () => this.props.denyBooking(booking);
     };
 
@@ -264,7 +259,16 @@ class ManageSpot extends React.Component {
     let city = booking.location.split(',')[0];
     let inDate = booking.check_in_date.split('-');
     let outDate = booking.check_out_date.split('-');
-    let numGuests = `${booking.num_guests} guests`;
+    let numGuests = `${booking.num_guests}`;
+    if (numGuests === '1') {
+      numGuests += ' guest';
+    } else {
+      numGuests += ' guests';
+    }
+
+
+    if (inDate[1][0] === '0') { inDate[1] = inDate[1][1]; }
+    if (outDate[1][0] === '0') { outDate[1] = outDate[1][1]; }
 
     let checkInDate = inDate[2];
     let checkInMonth = months[inDate[1]];
@@ -334,13 +338,13 @@ class ManageSpot extends React.Component {
   render() {
     this.delegateBookings();
     // BookingsCarousel has no style
+    // <BookingsCarousel />
 
-  // console.log('currentBooking', this.state.currentBooking);
-  // console.log('pendingBookings', this.state.pendingBookings);
-  // console.log('upcomingBookings', this.state.upcomingBookings);
-  // console.log('previousBookings', this.state.previousBookings);
+    // console.log('currentBooking', this.state.currentBooking);
+    // console.log('pendingBookings', this.state.pendingBookings);
+    // console.log('upcomingBookings', this.state.upcomingBookings);
+    // console.log('previousBookings', this.state.previousBookings);
 
-  // <BookingsCarousel />
     return (
       <div>
         { this.currentBooking() }
