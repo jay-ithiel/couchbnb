@@ -15,7 +15,7 @@ const mapStateToProps = (state, ownProps) => {
 
   return {
     currentUser: state.session.currentUser,
-    loggedIn: state.session.currentUser ? true : null,
+    loggedIn: state.session.currentUser ? true : false,
     spot: ownProps.spotFormInfo.editSpotTarget,
     errors: state.spots.errors || [],
     formType: formType
