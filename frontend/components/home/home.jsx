@@ -1,5 +1,5 @@
 import React from 'react';
-import Body from '../body/body';
+import BodyContainer from '../body/body_container';
 import Footer from '../footer/footer';
 import { withRouter } from 'react-router';
 
@@ -167,6 +167,8 @@ class Home extends React.Component {
       return (
         <div>
           { this.mainHead() }
+          <BodyContainer />
+          <Footer />
         </div>
       );
     } else {

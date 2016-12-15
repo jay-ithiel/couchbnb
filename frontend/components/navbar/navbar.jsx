@@ -56,7 +56,7 @@ class Navbar extends React.Component {
     e.preventDefault();
     let location = this.state.searchLocation.split(' ').join('+');
     this.props.requestLocation(location);
-    this.props.router.push(`search`);
+    this.props.router.push(`/search`);
   }
 
   searchBar() {
