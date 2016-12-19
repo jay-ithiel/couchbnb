@@ -4,4 +4,5 @@ json.extract! @user,
   :last_name,
   :email,
   :spots,
-  :bookings
+  :bookings,
+  :profile_pic_url

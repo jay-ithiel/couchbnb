@@ -154,6 +154,10 @@ class SessionForm extends React.Component {
                 className="input" />
 
               <button className="form-submit">{formHeader}</button>
+              <div className="form-guest-login"
+                   onClick={this.props.guestLogin}>
+                <p>Guest Login</p>
+              </div>
 
               <div className="toggle-form">
                 <p>

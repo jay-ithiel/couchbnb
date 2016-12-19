@@ -24,7 +24,13 @@ const mapDispatchToProps = (dispatch, routerProps) => {
     signup: user => dispatch(signup(user)),
     processForm: (user, propsLoginForm) => (
       dispatch(processForm(user, propsLoginForm))
-    )
+    ),
+    guestLogin: () => dispatch(login({
+      user: {
+        email: "guest@gmail.com",
+        password: "password"
+      }
+    }))
   };
 };
 

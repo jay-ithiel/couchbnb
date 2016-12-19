@@ -20,8 +20,16 @@ class SearchResultItem extends React.Component {
 
   userImage() {
     return (
-      <div className="search-item-user-image">
-
+      <div className='user-search-info-cont'>
+        <div className='user-image-container'>
+          <img
+            className='search-item-user-image'
+            src={this.props.spot.host.profile_pic_url}>
+          </img>
+        </div>
+        <span className='user-image-name'>
+          {this.props.spot.host.first_name}
+        </span>
       </div>
     );
   }

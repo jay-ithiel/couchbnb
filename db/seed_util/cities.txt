@@ -1,14 +1,5 @@
-Castro+San+Francisco,+California
+San+Francisco,+California
 Berkeley,+California
-Oakland,+California
-Daly+City,+California
-San+Jose,+California
-San+Mateo,+California
-Palo+Alto,+California
-Mountain+View,+California
-Monterey,+California
-Bakersfield,+California
-San+Luis+Obispo,+California
 Torrance,+California
 Lakewood,+California
 La+Habra,+California

@@ -79,7 +79,7 @@
   align-items: center;
 }
 
-.host-info-side-pic {
+.host-info-side-pic-container {
   background-color: whitesmoke;
 
   height: 90px;
@@ -89,6 +89,15 @@
   min-width: 90px;
 
   border-radius: 50%;
+  overflow: hidden;
+
+  display: flex;
+  justify-content: center;
+}
+
+.host-info-side-pic {
+  height: 130%;
+  width: 100%;
 }
 
 .host-info-side-name {
@@ -922,21 +931,55 @@
   background-color: #dedede;
 }
 
-.search-item-user-image {
+.user-image-container {
   min-height: 55px;
   min-width: 55px;
 
   height: 55px;
   width: 55px;
 
-  background-color: #dedede;
-  border-radius: 55px;
-  border: 2px solid #fff;
+  overflow: hidden;
+
+  margin-left: auto;
+  margin-right: auto;
+
+  border: 2px solid white;
+  border-radius: 50%;
+}
+
+.user-search-info-cont {
+  min-height: 60px;
+  height: 80px;
+
+  font-size: 14px;
 
   float: right;
   position: relative;
   right: 20px;
   bottom: 35px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.user-image-name {
+
+}
+
+.search-item-user-image {
+  min-height: 55px;
+  min-width: 55px;
+
+  height: 75px;
+  width: 55px;
+
+  background-color: #dedede;
+  border-radius: 55px;
+  border: 2px solid #fff;
+
+  margin-top: -10%;
 }
 
 .search-result-item-info {

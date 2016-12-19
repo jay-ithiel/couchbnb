@@ -72,7 +72,7 @@
 
 .form-submit {
   border-radius: 3px;
-  margin: 30px 10px;
+  margin: 30px 10px 0 10px;
 
   height: 50px;
   width: 330px;
@@ -80,11 +80,38 @@
   background-color: #287fb8;
 
   font-family: sans-serif;
+  color: #fff;
+  transition: filter .2s ease-in;
+}
+
+.form-guest-login {
+  border-radius: 3px;
+  margin: 20px 10px;
+
+  height: 50px;
+  width: 330px;
+
+  background-color: #3b5998;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-family: sans-serif;
+  color: #fff;
+  transition: filter .2s ease-in;
+}
+
+
+.form-guest-login:hover {
+  filter: brightness(90%);
+  transition: filter .2s ease-in;
+  cursor: pointer;
 }
 
 .form-submit:hover {
-  background-color: #2077b0;
-  transition: background .2s ease-in;
+  filter: brightness(90%);
+  transition: filter .2s ease-in;
   cursor: pointer;
 }
 

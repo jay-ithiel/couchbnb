@@ -2,14 +2,22 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.profile-pic {
+.profile-pic-cont {
   border: 1px solid #dedede;
-  border-radius: 45px;
+  border-radius: 50%;
   height: 45px;
   width: 45px;
 
   min-height: 45px;
   min-width: 45px;
+
+  overflow: hidden;
+}
+
+.profile-pic {
+  height: 120%;
+  width: 100%;
+  z-index: 1000000;
 }
 
 .user-info {
@@ -22,6 +30,8 @@
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
+
+  transition: background .2s ease-in;
 }
 
 .user-info p {

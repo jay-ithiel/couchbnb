@@ -128,12 +128,15 @@ class Spot extends React.Component {
     return (
       <div className="spot-info">
         <div className="host-info-side">
-          <div className="host-info-side-pic">
-
+          <div className="host-info-side-pic-container">
+            <img
+              className='host-info-side-pic'
+              src={this.spot.host.profile_pic_url}>
+            </img>
           </div>
 
           <div className="host-info-side-name">
-            { this.spot.host_name }
+            { this.spot.host.first_name }
           </div>
         </div>
 

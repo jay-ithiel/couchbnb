@@ -19,10 +19,12 @@ class UserInfo extends React.Component {
   }
 
   userPic() {
-    // create a pic column in the users table
     return (
-      <div className="profile-pic">
-
+      <div className="profile-pic-cont">
+        <img
+          className='profile-pic'
+          src={this.props.currentUser.profile_pic_url}>
+        </img>
       </div>
     );
   }

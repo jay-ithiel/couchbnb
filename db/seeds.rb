@@ -10,14 +10,560 @@ User.create({
   first_name: "Guest",
   last_name: "User",
   email: "guest@gmail.com",
-  password: "password"
+  password: "password",
+  profile_pic_url: "https://res.cloudinary.com/ddgtwtbre/image/upload/v1482131647/person-solid_telh7f.png"
 })
 
 User.create({
-  first_name: "Host",
-  last_name: "User",
-  email: "host@gmail.com",
-  password: "password"
+  first_name: "Jay",
+  last_name: "Hwang",
+  email: "jay_hwang@gmail.com",
+  password: "password",
+  profile_pic_url: "https://res.cloudinary.com/ddgtwtbre/image/upload/v1482128677/Jay-Hwang_pbkp5u.png"
+})
+
+User.create({
+  first_name: "Adam",
+  last_name: "Foosaner",
+  email: 'adam@gmail.com',
+  password: 'password',
+  profile_pic_url: "https://res.cloudinary.com/ddgtwtbre/image/upload/v1482128656/Adam-Foosaner_nypijr.png"
+})
+
+User.create({
+  first_name: "Alex",
+  last_name: "Bennet",
+  email: "alex@gmail.com",
+  password: "password",
+  profile_pic_url: "https://res.cloudinary.com/ddgtwtbre/image/upload/v1482128656/Alex-Bennet_bpdgy6.png"
+})
+
+User.create({
+  first_name: "Alex",
+  last_name: "Manning",
+  email: "alex_manning@gmail.com",
+  password: "password",
+  profile_pic_url: "https://res.cloudinary.com/ddgtwtbre/image/upload/v1482128656/Alex-Manning_tzlryt.png"
+})
+
+User.create({
+  first_name: "Alex",
+  last_name: "Doundakov",
+  email: "alex_doundakov@gmail.com",
+  password: "password",
+  profile_pic_url: "https://res.cloudinary.com/ddgtwtbre/image/upload/v1482128656/Alexander-Doundakov_g045nm.png"
+})
+
+User.create({
+  first_name: "Amanda",
+  last_name: "Fielding",
+  email: "amanda@gmail.com",
+  password: "password",
+  profile_pic_url: "https://res.cloudinary.com/ddgtwtbre/image/upload/v1482128657/Amanda-Fielding_fnmudx.png"
+})
+
+User.create({
+  first_name: "Andrew",
+  last_name: "Tae",
+  email: "andrew_tae@gmail.com",
+  password: "password",
+  profile_pic_url: "https://res.cloudinary.com/ddgtwtbre/image/upload/v1482128661/Andrew-Tae_ht1kcz.png"
+})
+
+User.create({
+  first_name: "Anudeep",
+  last_name: "Kasturi",
+  email: "anudeep_kasturi@gmail.com",
+  password: "password",
+  profile_pic_url: "https://res.cloudinary.com/ddgtwtbre/image/upload/v1482128664/Anudeep-Kasturi_odxgby.png"
+})
+
+User.create({
+  first_name: "Benjamin",
+  last_name: "Dippelsman",
+  email: "ben_dip@gmail.com",
+  password: "password",
+  profile_pic_url: "https://res.cloudinary.com/ddgtwtbre/image/upload/v1482128658/Benjamin-Dippelsman_xl0tbl.png"
+})
+
+User.create({
+  first_name: "Brian",
+  last_name: "Chen",
+  email: "brian_chen@gmail.com",
+  password: "password",
+  profile_pic_url: "https://res.cloudinary.com/ddgtwtbre/image/upload/v1482128665/Brian-Chen_mwcxww.png"
+})
+
+User.create({
+  first_name: "Brian",
+  last_name: "Lee",
+  email: "brian_lee@gmail.com",
+  password: "password",
+  profile_pic_url: "https://res.cloudinary.com/ddgtwtbre/image/upload/v1482128666/Brian-Lee_l4b2h5.png"
+})
+
+User.create({
+  first_name: "Brian",
+  last_name: "Tsai",
+  email: "brian_tsai@gmail.com",
+  password: "password",
+  profile_pic_url: "https://res.cloudinary.com/ddgtwtbre/image/upload/v1482128661/Brian-Tsai_n5qaky.png"
+})
+
+User.create({
+  first_name: "Caleb",
+  last_name: "Ontiveros",
+  email: "caleb_onti@gmail.com",
+  password: "password",
+  profile_pic_url: "https://res.cloudinary.com/ddgtwtbre/image/upload/v1482128661/Caleb-Ontiveros_ihuvpj.png"
+})
+
+User.create({
+  first_name: "Christopher",
+  last_name: "Button",
+  email: "christopher_button@gmail.com",
+  password: 'password',
+  profile_pic_url: "https://res.cloudinary.com/ddgtwtbre/image/upload/v1482128669/Christopher-Button_o3lysh.png"
+})
+
+User.create({
+  first_name: "Cindy",
+  last_name: "Wang",
+  email: "cindy_wang@gmail.com",
+  password: "password",
+  profile_pic_url: "https://res.cloudinary.com/ddgtwtbre/image/upload/v1482128665/Cindy-Wang_woewj1.png"
+})
+
+User.create({
+  first_name: "Connor",
+  last_name: "Murphy",
+  email: "connor_muphy@gmail.com",
+  password: "password",
+  profile_pic_url: "https://res.cloudinary.com/ddgtwtbre/image/upload/v1482128668/Connor-Murphy_kmoitq.png"
+})
+
+User.create({
+  first_name: "Daniel",
+  last_name: "Sulfaro",
+  email: "daniel_sulfaro@gmail.com",
+  password: "password",
+  profile_pic_url: "https://res.cloudinary.com/ddgtwtbre/image/upload/v1482128667/Daniel-Sulfaro_lnsv0o.png"
+})
+
+User.create({
+  first_name: "David",
+  last_name: "Kim",
+  email: "david_kim@gmail.com",
+  password: "password",
+  profile_pic_url: "https://res.cloudinary.com/ddgtwtbre/image/upload/v1482128665/David-Kim_nqb3b7.png"
+})
+
+User.create({
+  first_name: "David",
+  last_name: "McAfee",
+  email: 'david_mcafee@gmail.com',
+  password: "password",
+  profile_pic_url: "https://res.cloudinary.com/ddgtwtbre/image/upload/v1482128669/David-McAfee_v2okis.png"
+})
+
+User.create({
+  first_name: "Debra",
+  last_name: "Fong",
+  email: "debra_fong@gmail.com",
+  password: "password",
+  profile_pic_url: "https://res.cloudinary.com/ddgtwtbre/image/upload/v1482128668/Debra-Fong_junc34.png"
+})
+
+User.create({
+  first_name: "Deep",
+  last_name: "Tailor",
+  email: "deep_tailor@gmail.com",
+  password: "password",
+  profile_pic_url: 'https://res.cloudinary.com/ddgtwtbre/image/upload/v1482128669/Deep-Tailor_fcid09.png'
+})
+
+User.create({
+  first_name: "Duc",
+  last_name: "Nguyen",
+  email: "duc_nguyen@gmail.com",
+  password: "password",
+  profile_pic_url: "https://res.cloudinary.com/ddgtwtbre/image/upload/v1482128670/Duc-Nguyen_tqn8ll.png"
+})
+
+User.create({
+  first_name: "Eric",
+  last_name: "Kwok",
+  email: "eric_kwok@gmail.com",
+  password: "password",
+  profile_pic_url: "https://res.cloudinary.com/ddgtwtbre/image/upload/v1482128669/Eric-Kwok_tijkgu.png"
+})
+
+User.create({
+  first_name: "Eric",
+  last_name: "Oliveira",
+  email: 'eric_oliveira@gmail.com',
+  password: "password",
+  profile_pic_url: "https://res.cloudinary.com/ddgtwtbre/image/upload/v1482128672/Eric-Oliveira_wpe6od.png"
+})
+
+User.create({
+  first_name: "Ethan",
+  last_name: "Wan",
+  email: "ethan_wan@gmail.com",
+  password: "password",
+  profile_pic_url: "https://res.cloudinary.com/ddgtwtbre/image/upload/v1482128675/Ethan-Wan_ekbgwv.png"
+})
+
+User.create({
+  first_name: "Evan",
+  last_name: "Waits",
+  email: "evan_waits@gmail.com",
+  password: "password",
+  profile_pic_url: "https://res.cloudinary.com/ddgtwtbre/image/upload/v1482128675/Ethan-Wan_ekbgwv.png"
+})
+
+User.create({
+  first_name: "Fan",
+  last_name: "Song",
+  email: "fan_song@gmail.com",
+  password: "password",
+  profile_pic_url: "https://res.cloudinary.com/ddgtwtbre/image/upload/v1482128672/Fan-Song_ul7irn.png"
+})
+
+User.create({
+  first_name: "Frank",
+  last_name: "Bi",
+  email: 'frank_bi@gmail.com',
+  password: "password",
+  profile_pic_url: "https://res.cloudinary.com/ddgtwtbre/image/upload/v1482128675/Frank-Bi_yczosf.png"
+})
+
+User.create({
+  first_name: "Gabriel",
+  last_name: "Lewis",
+  email: "gabriel_lewis@gmail.com",
+  password: "password",
+  profile_pic_url: "https://res.cloudinary.com/ddgtwtbre/image/upload/v1482128673/Gabriel-Lewis_srgc8n.png"
+})
+
+User.create({
+  first_name: "Humza",
+  last_name: "Baig",
+  email: 'humza_baig@gmail.com',
+  password: "password",
+  profile_pic_url: "https://res.cloudinary.com/ddgtwtbre/image/upload/v1482128672/Hamza-Baig_jnvfo1.png"
+})
+
+User.create({
+  first_name: "Henry",
+  last_name: "Hsu",
+  email: "henry_hsu@gmail.com",
+  password: "password",
+  profile_pic_url: "https://res.cloudinary.com/ddgtwtbre/image/upload/v1482128672/Hamza-Baig_jnvfo1.png"
+})
+
+User.create({
+  first_name: "James",
+  last_name: "Conklin",
+  email: "james_conklin",
+  password: "password",
+  profile_pic_url: "https://res.cloudinary.com/ddgtwtbre/image/upload/v1482128678/James-Conklin_p0dvzr.png"
+})
+
+User.create({
+  first_name: "Jane",
+  last_name: "Hauf",
+  email: "jane_hauf@gmail.com",
+  password: "password",
+  profile_pic_url: "https://res.cloudinary.com/ddgtwtbre/image/upload/v1482128675/Jane-Hauf_chq1eb.png"
+})
+
+User.create({
+  first_name: "Janine",
+  last_name: "Love",
+  email: 'janine_love@gmail.com',
+  password: "password",
+  profile_pic_url: "https://res.cloudinary.com/ddgtwtbre/image/upload/v1482128676/Janine-Love_fjhlft.png"
+})
+
+User.create({
+  first_name: 'JC',
+  last_name: 'Balcita',
+  email: "jc_balcita@gmail.com",
+  password: "password",
+  profile_pic_url: "https://res.cloudinary.com/ddgtwtbre/image/upload/v1482128679/JC-Balcita_uhjc9l.png"
+})
+
+User.create({
+  first_name: "John",
+  last_name: "Lekili",
+  email: 'john_lekili@gmail.com',
+  password: "password",
+  profile_pic_url: "https://res.cloudinary.com/ddgtwtbre/image/upload/v1482128678/John-Lekili_hjymxe.png"
+})
+
+User.create({
+  first_name: "Joseph",
+  last_name: "McBride",
+  email: 'joseph_mcbride@gmail.com',
+  password: "password",
+  profile_pic_url: "https://res.cloudinary.com/ddgtwtbre/image/upload/v1482128681/Joseph-McBride_rt9bro.png"
+})
+
+User.create({
+  first_name: "Justice",
+  last_name: "Yen",
+  email: "justice_yen@gmail.com",
+  password: "password",
+  profile_pic_url: "https://res.cloudinary.com/ddgtwtbre/image/upload/v1482128679/Justice-Yen_vaqjbg.png"
+})
+
+User.create({
+  first_name: "Lindsey",
+  last_name: "Whitley",
+  email: 'lindsey_whitley@gmail.com',
+  password: "password",
+  profile_pic_url: "https://res.cloudinary.com/ddgtwtbre/image/upload/v1482128682/Lindsey-Whitley_pwedp2.png"
+})
+
+User.create({
+  first_name: "Louis",
+  last_name: "Cruz",
+  email: "louis_cruz@gmail.com",
+  password: "password",
+  profile_pic_url: "https://res.cloudinary.com/ddgtwtbre/image/upload/v1482128682/Louis-Cruz_bwx4za.png"
+})
+
+User.create({
+  first_name: "Luke",
+  last_name: "Wassink",
+  email: "luke_wassink@gmail.com",
+  password: "password",
+  profile_pic_url: "https://res.cloudinary.com/ddgtwtbre/image/upload/v1482128685/Luke-Wassink_dvzgti.png"
+})
+
+User.create({
+  first_name: "Matt",
+  last_name: "Velker",
+  email: "matt_velker@gmail.com",
+  password: "password",
+  profile_pic_url: "https://res.cloudinary.com/ddgtwtbre/image/upload/v1482128680/Matt-Velker_snyprp.png"
+})
+
+User.create({
+  first_name: "Melissa",
+  last_name: "Lau",
+  email: "melissa_lau@gmail.com",
+  password: "password",
+  profile_pic_url: "https://res.cloudinary.com/ddgtwtbre/image/upload/v1482128683/Melissa-Lau_xrxrbh.png"
+})
+
+User.create({
+  first_name: "Micah",
+  last_name: "Sapitsky",
+  email: "micach_sapitsky@gmail.com",
+  password: "password",
+  profile_pic_url: "https://res.cloudinary.com/ddgtwtbre/image/upload/v1482128684/Micah-Sapitsky_yt84jv.png"
+})
+
+User.create({
+  first_name: "Michael",
+  last_name: "Hirabayashi",
+  email: "michael_hirabayashi@gmail.com",
+  password: "password",
+  profile_pic_url: "https://res.cloudinary.com/ddgtwtbre/image/upload/v1482128682/Michael-Hirabayashi_jd05gl.png"
+})
+
+User.create({
+  first_name: "Michael",
+  last_name: "Loschiavo",
+  email: 'michael_loschiavo@gmail.com',
+  password: "password",
+  profile_pic_url: "https://res.cloudinary.com/ddgtwtbre/image/upload/v1482128688/Michael-Loschiavo_kzxqhl.png"
+})
+
+User.create({
+  first_name: "Michael",
+  last_name: "Pak",
+  email: "michael_pak@gmail.com",
+  password: "password",
+  profile_pic_url: "https://res.cloudinary.com/ddgtwtbre/image/upload/v1482128685/Michael-Pak_dqyesg.png"
+})
+
+User.create({
+  first_name: "Michaelangelo",
+  last_name: "Loreti",
+  email: "miki_loreti@gmail.com",
+  password: "password",
+  profile_pic_url: "https://res.cloudinary.com/ddgtwtbre/image/upload/v1482128685/Michaelangelo-Loreti_td9ell.png"
+})
+
+User.create({
+  first_name: 'Mike',
+  last_name: "Barille",
+  email: 'mike_barille@gmail.com',
+  password: "password",
+  profile_pic_url: "https://res.cloudinary.com/ddgtwtbre/image/upload/v1482128687/Mike-Barille_igrjta.png"
+})
+
+User.create({
+  first_name: "Miki",
+  last_name: "Sparks",
+  email: "miki_sparks@gmail.com",
+  password: "password",
+  profile_pic_url: "https://res.cloudinary.com/ddgtwtbre/image/upload/v1482128687/Miki-Sparks_yttcgo.png"
+})
+
+User.create({
+  first_name: "Nicholas",
+  last_name: "Skoularikis",
+  email: 'nicho@gmail.com',
+  password: "password",
+  profile_pic_url: "https://res.cloudinary.com/ddgtwtbre/image/upload/v1482128689/Nicholas-Skoularikis_p71di2.png"
+})
+
+User.create({
+  first_name: "Paul",
+  last_name: "Cathey",
+  email: "paul_cathey@gmail.com",
+  password: "password",
+  profile_pic_url: "https://res.cloudinary.com/ddgtwtbre/image/upload/v1482128688/Paul-Cathey_uqbi6h.png"
+})
+
+User.create({
+  first_name: "Peik",
+  last_name: "Sia",
+  email: "peik_sia@gmail.com",
+  password: "password",
+  profile_pic_url: "https://res.cloudinary.com/ddgtwtbre/image/upload/v1482128689/Peik-Sia_bqpfzr.png"
+})
+
+User.create({
+  first_name: "Pysith",
+  last_name: "Vanuptikul",
+  email: 'pi_van@gmail.com',
+  password: "password",
+  profile_pic_url: "https://res.cloudinary.com/ddgtwtbre/image/upload/v1482128689/Pysith_Vanuptikul_eh6roj.png"
+})
+
+User.create({
+  first_name: "Samuel",
+  last_name: "Mak",
+  email: "sam_mak@gmail.com",
+  password: "password",
+  profile_pic_url: "https://res.cloudinary.com/ddgtwtbre/image/upload/v1482128689/Pysith_Vanuptikul_eh6roj.png"
+})
+
+User.create({
+  first_name: "Sebastian",
+  last_name: "Cruz",
+  email: "seb_cruz@gmail.com",
+  password: "password",
+  profile_pic_url: "https://res.cloudinary.com/ddgtwtbre/image/upload/v1482128691/Sebastian-Cruz_lm5qde.png"
+})
+
+User.create({
+  first_name: "Shaurya",
+  last_name: "Sinha",
+  email: "shaurya_sinha@gmail.com",
+  password: "password",
+  profile_pic_url: "https://res.cloudinary.com/ddgtwtbre/image/upload/v1482128690/Shaurya-Sinha_fbwey8.png"
+})
+
+User.create({
+  first_name: "Sonik",
+  last_name: "Jang",
+  email: "sonik_jang@gmail.com",
+  password: "password",
+  profile_pic_url: "https://res.cloudinary.com/ddgtwtbre/image/upload/v1482128694/Sonik-Jhang_ajrt0r.png"
+})
+
+User.create({
+  first_name: "Taylor",
+  last_name: "Chestnut",
+  email: "taylor_chestnut",
+  password: "password",
+  profile_pic_url: "https://res.cloudinary.com/ddgtwtbre/image/upload/v1482128691/Taylor-Chestnut_wkwtrx.png"
+})
+
+User.create({
+  first_name: "Todd",
+  last_name: "Nestor",
+  email: "todd_nestor@gmail.com",
+  password: "password",
+  profile_pic_url: 'https://res.cloudinary.com/ddgtwtbre/image/upload/v1482128693/Todd-Nestor_ehdiai.png'
+})
+
+User.create({
+  first_name: "Tonia",
+  last_name: "Hsia",
+  email: "tonia_hsia@gmail.com",
+  password: "password",
+  profile_pic_url: "https://res.cloudinary.com/ddgtwtbre/image/upload/v1482128694/Tonia-Hsia_dxh834.png"
+})
+
+User.create({
+  first_name: "Tony",
+  last_name: "Xie",
+  email: "tony_xie@gmail.com",
+  password: "password",
+  profile_pic_url: "https://res.cloudinary.com/ddgtwtbre/image/upload/v1482128694/Tony-Xie_prap45.png"
+})
+
+User.create({
+  first_name: "Travis",
+  last_name: "Ludlum",
+  email: "travis_ludlum@gmail.com",
+  password: "password",
+  profile_pic_url: "https://res.cloudinary.com/ddgtwtbre/image/upload/v1482128693/Travis-Ludlum_dnjeqg.png"
+})
+
+User.create({
+  first_name: "Trevor",
+  last_name: "Scandalios",
+  email: "trevor_scan@gmail.com",
+  password: "password",
+  profile_pic_url: "https://res.cloudinary.com/ddgtwtbre/image/upload/v1482128697/Trevor-Scandalios_lwkfma.png"
+})
+
+User.create({
+  first_name: "Tyler",
+  last_name: "Fields",
+  email: "tyler_fields@gmail.com",
+  password: "password",
+  profile_pic_url: "https://res.cloudinary.com/ddgtwtbre/image/upload/v1482128697/Trevor-Scandalios_lwkfma.png"
+})
+
+User.create({
+  first_name: "Victor",
+  last_name: "Aw",
+  email: "victor_aw@gmail.com",
+  password: "password",
+  profile_pic_url: "https://res.cloudinary.com/ddgtwtbre/image/upload/v1482128694/Victor-Aw_vesrpm.png"
+})
+
+User.create({
+  first_name: "Vince",
+  last_name: "Sangke",
+  email: "vince_sangke@gmail.com",
+  password: "password",
+  profile_pic_url: "https://res.cloudinary.com/ddgtwtbre/image/upload/v1482128695/Vince-Sangkhae_gotqet.png"
+})
+
+User.create({
+  first_name: "Winston",
+  last_name: "Zhao",
+  email: "winston_zhao@gmail.com",
+  password: "password",
+  profile_pic_url: "https://res.cloudinary.com/ddgtwtbre/image/upload/v1482128697/Winston-Zhao_a5pqvw.png"
+})
+
+User.create({
+  first_name: "Yue",
+  last_name: "Gu",
+  email: "yue_gu@gmail.com",
+  password: "password",
+  profile_pic_url: "https://res.cloudinary.com/ddgtwtbre/image/upload/v1482128697/Yue-Gu_nxn82n.png"
 })
 
 Spot.create({
@@ -41,7 +587,7 @@ Spot.create({
 
 Spot.create({
   host_id: 2,
-  host_name: "Host",
+  host_name: "Jay",
   title: "Los Angeles Apt Downtown",
   description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
   country: "United States",
@@ -61,7 +607,7 @@ Spot.create({
 
 Spot.create({
   host_id: 2,
-  host_name: "Host",
+  host_name: "Jay",
   title: "Private Studio in London",
   description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
   country: "United Kingdom",
@@ -80,7 +626,7 @@ Spot.create({
 
 Spot.create({
   host_id: 2,
-  host_name: "Host",
+  host_name: "Jay",
   title: "Quaint room in Los Angeles",
   description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
   country: "United States",
@@ -99,7 +645,7 @@ Spot.create({
 
 Spot.create({
   host_id: 2,
-  host_name: "Host",
+  host_name: "Jay",
   title: "Disneyland Paris perfect for 5!",
   description: "This apartment is ideally located at the foot of the famous Valley Shopping and just close to the Disney Parks!! Finish a day full of emotions for a moment of relaxation in the pool of the residence.",
   country: "France",
@@ -118,7 +664,7 @@ Spot.create({
 
 Spot.create({
   host_id: 2,
-  host_name: "Host",
+  host_name: "Jay",
   title: "Luxury Flat",
   description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
   country: "Netherlands",
@@ -137,7 +683,7 @@ Spot.create({
 
 Spot.create({
   host_id: 2,
-  host_name: "Host",
+  host_name: "Jay",
   title: "Entertainer's Paradise, Heart of Umhlanga",
   description: "Our contemporary home boasts open plan living at its finest. This fully furnished home is situated in a quiet and safe complex in Umhlanga, Durban. The house consists of four en-suite bedrooms, a fully equipped kitchen, 12 seating dining area & 2 TV lounges. There is a large infinity pool with heated Jacuzzi located off a sunset facing pool deck looking into natural bush.
 
@@ -158,7 +704,7 @@ Spot.create({
 
 Spot.create({
   host_id: 2,
-  host_name: "Host",
+  host_name: "Jay",
   title: "Spacious Home in heart of Seoul",
   description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
   country: "South Korea",
@@ -175,23 +721,10 @@ Spot.create({
   lng: 127.029368
 })
 
-
-
-# Booking.create({
-#   spot_id: 1,
-#   guest_id: 1,
-#   location: "City, State/Region, Country",
-#   status: "PENDING",
-#   check_in_date: Mon, 07 Nov 2016,
-#   check_out_date: Mon, 07 Nov 2016,
-#   num_guests: 2,
-#   price: "$100"
-# })
-
 spot_locations = [
   {
-    "city":"The Castro",
-    "state_region":" San Francisco",
+    "city":"San Francisco",
+    "state_region":" California",
     "country":" USA",
     "lat":37.7609082,
     "lng":-122.4350043
@@ -206,45 +739,13 @@ spot_locations = [
   },
 
   {
-    "city":"Oakland",
-    "state_region":" CA",
-    "country":" USA",
-    "lat":37.8043637,
-    "lng":-122.2711137
-  },
-
-  {
-    "city":"Daly City",
-    "state_region":" CA",
-    "country":" USA",
-    "lat":37.6879241,
-    "lng":-122.4702079
-  },
-
-  {
     "city":"San Jose",
     "state_region":" CA",
     "country":" USA",
     "lat":37.3382082,
     "lng":-121.8863286
   },
-
-  {
-    "city":"San Mateo",
-    "state_region":" CA",
-    "country":" USA",
-    "lat":37.5629917,
-    "lng":-122.3255254
-  },
-
-  {
-    "city":"Palo Alto",
-    "state_region":" CA",
-    "country":" USA",
-    "lat":37.4418834,
-    "lng":-122.1430195
-  },
-
+  
   {
     "city":"Mountain View",
     "state_region":" CA",
@@ -1572,7 +2073,9 @@ end
     spot_pic_url_idx = rand(spot_pic_urls.count-1)
     spot_pic_url = spot_pic_urls[spot_pic_url_idx]
 
-    spot.host_id = 2
+    gen_host_id = rand(67) + 2
+
+    spot.host_id = gen_host_id
     spot.host_name = 'Host'
     spot.title = "#{title_adj} #{title_noun} in #{city}"
     spot.description = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
