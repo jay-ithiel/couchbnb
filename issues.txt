@@ -1,0 +1,77 @@
+When testing actions in chrome dev tools, I imported 'login' from util, the ajax call instead of importing from session_actions into the entry file. Then in my session reducer, I tried to pull the value of action.user from receiveCurrentUser, when I had named it action.currentUser.
+
+TODO:
+  - in delegateBookings' create individual slices of state to hold each type of booking by status, and just push the booking into the corresponding array. THen at the end of the method, after the forEach soop, setState with the collected arrays to reset the state and re-render the new state. Then remove delegateBooking being invoked in render, and call delegate Bookings inside of componenthDidUpdate. The page should re-render the new state now since you are using setState inside of delegateBookinggs. now smoke, go to safeway and get off your lazy ass.s
+
+  - Use carousel to allow users to scroll through the bookings in 'manage bookings' page
+    if the length is greater than 3
+    - Carousel styles are not applying. Work on booking overlap requests first
+
+  - Seed users with cohort
+
+  - create filters for dates
+  - refactor spots.jsx: move everything related to booking_form into booking_form.jsx
+  - let hosts receive a 'booking request' notification and approve or deny the request
+  - black out unavailable calendar dates
+  - confirm before spot delete
+
+UNRESOLVED:
+  - approve/deny bookings do not work 
+
+  - hosted spots do not render on 'host' page until the page is refreshed 
+    after first logging in or after a user creates a new spot. 
+    Have to re-render host component in the spot create/update success callback.
+
+
+
+  - request to book button triggers only when mouse is directly above font
+
+
+
+RESOLVED: 
+  - moment.js:410 Uncaught TypeError: Cannot read property '_calendar' of undefined(…)
+    when trying to create a booking
+    - Needed to convert moment.js objects into seconds, then dispatch a createBooking
+      action with the moment.js objects parsed. Then in the 'bookings#create' controller
+      action, had to parse the seconds into an integer, then create a new Ruby Time object
+      using Time.at(seconds).
+  - Inside search_container, the
+    state.spots.index is empty until everything loads so search.jsx is passing an empty
+    array to spot_map, so MarkerManager is receiving 'undefined' as its 'spots' props.
+    Where to define 'state.spots.index' so that it isn't undefined when it is called
+    in search_container
+    - Had to dispatch (requestSpots) action in an onEnter hook in the root
+  - spot form error messages do not render
+	- spot form errors did not render because the same RECEIVE_ERRORS action was being used
+ 	for both spot errors and session errors, so it was hitting the receiveErrors in the 
+	session reducer as well as the spots reducer. Also, I wasn't returning an error status
+	code in the spot controller
+  - map filter.bounds changes according to map location, but the markers don't update.
+  - Whenever the map re-renders, there is a lodash error in the js console.
+	- had to pass in '{ bounds: bounds }' but was passing in { bounds }
+	- forgot 'e.preventDefault()' in the nav bar search  
+  - spots controller index action is not filtering by bounds correctly. Move the map and it ends up  
+    fetching all the spots in the world instead of just the spots in bounds of the map. Filters
+    are fucked
+	- Don't really know what happened, but filters works now. If it works, don't look back
+
+    - in spot_map.jsx, try invoking '_moveMapToCenter' in componentWillReceiveProps instead of 
+    componentDidUpdate so it only moves map to center and re-zooms when component receives new props
+    and not on every update
+	- this worked, but had to create separate local variables in the file, then capture those 	    	variables in the '_moveMapToCenter' function.
+
+
+  - tried to seed database by parsing a string of locations but ran into errors. ajax is undefined
+    in js and (Errno::ECONNRESET) in ruby
+	- was running an unnecessary request. Simplified it and it works now. 
+
+  - heroku not compatible with 'react-slider'? site is broken because it can't find it
+	- forgot to 'npm --save'
+
+  - associations are not working in booking.jsx. They work in rails c.
+	- associations are only 1 level deep in the front end. ie: 
+		- bookings belongs to spot
+		- spot belongs to user
+		- user has_many bookings thru spots
+		User.spot // => valid
+		User.spot.bookings // => invalid

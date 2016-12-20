@@ -151,3 +151,5 @@ Medellin,+Colombia
 Kanpur,+India
 Budapest,+Hungary
 Caracas,+Venezuela
+Dubai,+United+Arab+Emirates
+Amsterdam,+Netherlands

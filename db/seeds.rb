@@ -745,7 +745,7 @@ spot_locations = [
     "lat":37.3382082,
     "lng":-121.8863286
   },
-  
+
   {
     "city":"Mountain View",
     "state_region":" CA",
@@ -1984,6 +1984,22 @@ spot_locations = [
     "country":" Venezuela",
     "lat":10.4805937,
     "lng":-66.90360629999999
+  },
+
+  {
+    "city":"Dubai",
+    "state_region":"",
+    "country":"United Arab Emirates",
+    "lat":25.190248,
+    "lng":55.277778
+  },
+
+  {
+    "city":"Amsterdam",
+    "state_region":"",
+    "country":"Netherlands",
+    "lat":52.368631,
+    "lng":4.888371
   }
 ]
 
