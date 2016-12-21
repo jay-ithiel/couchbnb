@@ -451,7 +451,7 @@ User.create({
   last_name: "Mak",
   email: "sam_mak@gmail.com",
   password: "password",
-  profile_pic_url: "https://res.cloudinary.com/ddgtwtbre/image/upload/v1482128689/Pysith_Vanuptikul_eh6roj.png"
+  profile_pic_url: "https://res.cloudinary.com/ddgtwtbre/image/upload/v1482128692/Samuel-Mak_e9huh3.png"
 })
 
 User.create({
