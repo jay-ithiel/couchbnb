@@ -1,6 +1,8 @@
 class User < ActiveRecord::Base
   validates :first_name,
             :last_name,
+            :password_digest,
+            :session_token,
             presence: true
 
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
@@ -10,7 +12,6 @@ class User < ActiveRecord::Base
             uniqueness: { case_sensitive: false },
             format: { with: VALID_EMAIL_REGEX }
 
-  validates :password_digest, :session_token, presence: true
   validates :password, length: { minimum: 6, allow_nil: true }
 
   has_many :spots,

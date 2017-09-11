@@ -24,21 +24,17 @@ class SpotForm extends React.Component {
       lng: 0.0
     };
 
-    this.marginRight = this.marginRight.bind(this);
-    this.marginLeft = this.marginLeft.bind(this);
-
+    this.marginRight         = this.marginRight.bind(this);
+    this.marginLeft          = this.marginLeft.bind(this);
     this.handleSpotFormClose = this.handleSpotFormClose.bind(this);
-    this.handleInputChange = this.handleInputChange.bind(this);
-
-    this.closeSpotForm = this.closeSpotForm.bind(this);
-    this.spotFormImage = this.spotFormImage.bind(this);
-    this.spotFormContainer = this.spotFormContainer.bind(this);
-
-    this.setCoords = this.setCoords.bind(this);
-    this.handleCityChange = this.handleCityChange.bind(this);
-
-    this.handleSubmit = this.handleSubmit.bind(this);
-    this.spotForm = this.spotForm.bind(this);
+    this.handleInputChange   = this.handleInputChange.bind(this);
+    this.closeSpotForm       = this.closeSpotForm.bind(this);
+    this.spotFormImage       = this.spotFormImage.bind(this);
+    this.spotFormContainer   = this.spotFormContainer.bind(this);
+    this.setCoords           = this.setCoords.bind(this);
+    this.handleCityChange    = this.handleCityChange.bind(this);
+    this.handleSubmit        = this.handleSubmit.bind(this);
+    this.spotForm            = this.spotForm.bind(this);
   }
 
   componentDidUpdate() {

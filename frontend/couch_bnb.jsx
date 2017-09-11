@@ -31,8 +31,5 @@ document.addEventListener("DOMContentLoaded", () => {
   window.logout = logout;
   window.signup = signup;
 
-  window.requestSpot = requestSpot;
-  window.requestSpots = requestSpots;
-
   ReactDOM.render(<Root store={store}/>, mainRoot);
 });

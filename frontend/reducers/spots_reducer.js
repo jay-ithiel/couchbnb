@@ -30,7 +30,6 @@ const SpotsReducer = (oldState = _defaultState, action) => {
     default:
       return oldState;
   }
-
 };
 
 export default SpotsReducer;

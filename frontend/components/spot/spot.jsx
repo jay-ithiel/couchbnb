@@ -79,7 +79,6 @@ class Spot extends React.Component {
 
   headImg() {
     if (this.spot === undefined) { return; }
-    if (this.spot === undefined) { return; }
 
     return (
       <img

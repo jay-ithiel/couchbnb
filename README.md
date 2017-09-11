@@ -2,7 +2,7 @@
 
 [Couchbnb live][heroku]
 
-[heroku]: https://couchbnb.herokuapp.com
+[heroku]: http://www.couchnb.xyz
 
 Couchbnb is a full-stack web application inspired by Couchsurfing. It was built on Ruby on Rails, PostgreSQL, and React/Redux.
 

@@ -23,13 +23,8 @@ class FilterForm extends React.Component {
     this.handleRoomType = this.handleRoomType.bind(this);
   }
 
-  componentDidUpdate() {
-  }
-
   handleChange(filter, updateFilter) {
-    return (e) => {
-      updateFilter(filter, e.currentTarget.value);
-    };
+    return e => updateFilter(filter, e.currentTarget.value);
   }
 
   handlePriceChange(e) {
@@ -65,7 +60,7 @@ class FilterForm extends React.Component {
   }
 
   toggleRoomType(e) {
-    console.log('e.target.value: ', e.target.value);
+    // console.log('e.target.value: ', e.target.value);
     if (e.target.value === this.state.roomType) {
       // this.setState({roomType: ""});
       this.state.roomType = "";
@@ -73,7 +68,7 @@ class FilterForm extends React.Component {
       // this.setState({roomType: e.target.value});
       this.state.roomType = e.target.value;
     }
-    console.log('this.state: ', this.state);
+    // console.log('this.state: ', this.state);
     this.handleRoomType();
   }
 
