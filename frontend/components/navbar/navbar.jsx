@@ -7,11 +7,16 @@ import Logo from './logo';
 import NavSearch from './nav_search';
 import NavMenu from './nav_menu';
 
+// Actions
 import { requestLocation } from '../../actions/filter_actions';
 
 class Navbar extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      modalOpen: false,
+      login: false
+    };
     this.handleClickLogin = this.handleClickLogin.bind(this);
   }
 

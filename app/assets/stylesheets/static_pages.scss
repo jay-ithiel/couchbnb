@@ -2,65 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.navbar {
-  width: 100%;
-  height: 60px;
-
-  border-bottom: 1px solid #DEDEDE;
-
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-direction: row;
-}
-
-
-.nav-search-bar-container {
-  display: flex;
-  align-items: center;
-
-  width: 80%;
-  height: 100%;
-}
-
-.nav-search-bar-form {
-  margin: 0;
-  padding: 0;
-  border-left: 1px solid #dedede;
-  border-right: 1px solid #dedede;
-
-
-  width: 100%;
-  height: 100%;
-
-  display: flex;
-  align-items: center;
-
-}
-
-.nav-search-bar {
-  display: inline-block;
-
-  margin: 0;
-  padding: 0 30px;
-
-  border: 0;
-  border-radius: 0;
-
-  width: 90%;
-  height: 100%;
-
-  font-size: 17px;
-  outline: none;
-}
-
-.nav-search-button {
-  display: inline-block;
-  width: 10%;
-  outline: none;
-  border: 0;
-  background-color: #fff;
-}
+@import './navbar/navbar.scss';
 
 .logo {
   display: flex;
@@ -77,7 +19,7 @@
 
 .logo:hover {
   background-color: #f3f3f3;
-  transition: background .2s ease-in;
+  transition: all .15s ease-in;
   cursor: pointer;
 }
 
@@ -90,23 +32,30 @@
   height: 40px;
 
   margin: 10px 30px;
-  border: 1px solid #287fb8;
-  border-radius: 4px;
+  // border: 1px solid #287fb8;
+  // border-radius: 4px;
 
   text-align: center;
+  cursor: pointer;
+  transition: all .15s ease-in
 }
 
 .header-login p {
-  color: #287fb8;
-  font-family: sans-serif;
-  font-size: 14px;
+  color: #777;
+  font-size: 15px;
   font-weight: 500;
+  letter-spacing: 1px;
+  // color: #287fb8;
+  font-family: sans-serif;
+  transition: all .15s ease-in
+
+  // font-size: 14px;
+  // font-weight: 500;
 }
 
-.header-login:hover {
-  background-color: #f3f3f3;
-  cursor: pointer;
-  transition: background .2s ease-in
+.header-login:hover p {
+  // background-color: #f3f3f3;
+  color: #000;
 }
 
 .main-pic {

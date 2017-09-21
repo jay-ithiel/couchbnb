@@ -28,10 +28,12 @@ class SessionForm extends React.Component {
 
   modal() {
     return (
-      <Modal isOpen={this.state.modalOpen}
-             onRequestClose={this.closeModal}
-             style={ModalStyle}>
-          {<SessionFormContainer loginForm={this.state.login}/>}
+      <Modal
+        isOpen={this.state.modalOpen}
+        onRequestClose={this.closeModal}
+        style={ModalStyle}
+      >
+        <SessionFormContainer loginForm={this.state.login}/>
       </Modal>
     );
   }
