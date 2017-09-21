@@ -1,6 +1,7 @@
 import React from 'react';
-import NavbarContainer from './navbar/navbar_container';
+import NavbarNew from './navbar/navbar';
 import SplashContainer from './splash/splash_container';
+
 
 class App extends React.Component {
   constructor(props){
@@ -9,9 +10,10 @@ class App extends React.Component {
   }
 
   render() {
+    // <NavbarContainer />
     return(
       <div>
-        <NavbarContainer />
+        <NavbarNew/>
 
         {this.props.children}
       </div>

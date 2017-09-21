@@ -4,16 +4,6 @@ import Root from './components/root';
 import configureStore from './store/store';
 import Modal from 'react-modal';
 
-// dev test imports
-import { login,
-         logout,
-         signup
-       } from './actions/session_actions';
-
-import { requestSpot,
-         requestSpots
-       } from './actions/spot_actions';
-
 document.addEventListener("DOMContentLoaded", () => {
   const mainRoot = document.getElementById("root");
   Modal.setAppElement(document.body);
@@ -25,11 +15,6 @@ document.addEventListener("DOMContentLoaded", () => {
   } else {
     store = configureStore();
   }
-
-  window.store = store;
-  window.login = login;
-  window.logout = logout;
-  window.signup = signup;
 
   ReactDOM.render(<Root store={store}/>, mainRoot);
 });

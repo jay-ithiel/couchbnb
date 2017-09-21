@@ -17,15 +17,11 @@ import { requestBooking } from '../actions/booking_actions';
 
 const Root = ({ store }) => {
   const _redirectUnlessLoggedIn = (nextState, replace) => {
-    if (!store.getState().session.currentUser) {
-      replace('/splash');
-    }
+    if (!store.getState().session.currentUser) replace('/splash');
   };
 
   const _redirectIfLoggedIn = (nextState, replace) => {
-    if (store.getState().session.currentUser) {
-      replace('/');
-    }
+    if (store.getState().session.currentUser) replace('/');
   };
 
   const _getSpotsForSearch = () => {

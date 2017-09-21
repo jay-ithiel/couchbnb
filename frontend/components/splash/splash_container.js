@@ -1,7 +1,8 @@
-import { logout,
-         login,
-         signup
-       } from '../../actions/session_actions';
+import {
+  logout,
+  login,
+  signup
+} from '../../actions/session_actions';
 
 import { connect } from 'react-redux';
 import Splash from './splash.jsx';
