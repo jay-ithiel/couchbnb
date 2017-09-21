@@ -4,7 +4,8 @@ import { Router, Route, IndexRoute, hashHistory } from 'react-router';
 import App from './app';
 
 import SessionFormContainer from './session/session_form_container';
-import SplashContainer from './splash/splash_container';
+import Splash from './splash/splash';
+
 import HomeContainer from './home/home_container';
 import SpotContainer from './spot/spot_container';
 import ManageSpotContainer from './spot/manage_container';
@@ -61,7 +62,7 @@ const Root = ({ store }) => {
           </IndexRoute>
 
           <Route path='/splash'
-            component={SplashContainer}
+            component={Splash}
             onEnter={_redirectIfLoggedIn} >
           </Route>
 

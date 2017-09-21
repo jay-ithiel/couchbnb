@@ -1,71 +1,57 @@
 import React from 'react';
-import { Link, withRouter} from 'react-router';
-import SessionFormContainer from '../session/session_form_container';
-import Footer from '../footer/footer';
+import { withRouter } from 'react-router';
+import { connect } from 'react-redux';
+
+// Components
+// import SessionFormContainer from '../session/session_form_container';
+import SplashHead from './splash_head';
 import BodyContainer from '../body/body_container';
+import Footer from '../footer/footer';
+
+// Actions
+import {
+  logout,
+  login,
+  signup
+} from '../../actions/session_actions';
 
 class Splash extends React.Component {
   constructor(props) {
     super(props);
-
-    this.header = this.header.bind(this);
-    this.banner = this.banner.bind(this);
-    this.sessionLinks = this.sessionLinks.bind(this);
-    this.guestLogin = this.guestLogin.bind(this);
   }
 
   componentDidUpdate() {
-    if (this.props.loggedIn) {
-      this.props.router.push('/');
-    }
-  }
-
-  banner() {
-    return (
-      <h2 className="banner">Stay with Locals and Travel the World</h2>
-    );
-  }
-
-  sessionLinks() {
-    return (
-      <div className="session-links">
-        { this.guestLogin() }
-        <SessionFormContainer loginForm={false} />
-      </div>
-    );
-  }
-
-  guestLogin() {
-    return (
-      <div className="guest-login"
-           onClick={this.props.guestLogin}>
-        <p>Guest Login</p>
-      </div>
-    );
-  }
-
-  header() {
-    return (
-      <div className="main-pic">
-        { this.banner() }
-        { this.sessionLinks() }
-      </div>
-    );
+    if (this.props.loggedIn) this.props.router.push('/');
   }
 
   render() {
-    if (this.props.loggedIn) {
-      return (<div></div>);
-    } else {
-      return (
-        <div>
-          { this.header() }
-          <BodyContainer />
-          <Footer />
-        </div>
-      );
-    }
+    return this.props.loggedIn ? <div></div> : (
+      <div>
+        <SplashHead guestLogin={this.props.guestLogin}/>
+        <BodyContainer/>
+        <Footer/>
+      </div>
+    );
   }
 }
 
-export default withRouter(Splash);
+const mapStateToProps = state => ({
+  loggedIn: state.session.currentUser ? true : false,
+  currentUser: state.session.currentUser
+});
+
+const mapDispatchToProps = dispatch => ({
+  logout: () => dispatch(logout()),
+  signup: () => dispatch(signup()),
+  login: () => dispatch(login()),
+  guestLogin: () => dispatch(login({
+    user: {
+      email: "guest@gmail.com",
+      password: "password"
+    }
+  }))
+});
+
+export default withRouter(
+  connect(mapStateToProps, mapDispatchToProps)(Splash)
+);
