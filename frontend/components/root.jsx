@@ -61,31 +61,37 @@ const Root = ({ store }) => {
             onEnter={_redirectUnlessLoggedIn}>
           </IndexRoute>
 
-          <Route path='/splash'
+          <Route
+            path='/splash'
             component={Splash}
             onEnter={_redirectIfLoggedIn} >
           </Route>
 
-          <Route path='/spots/:spot_id'
+          <Route
+            path='/spots/:spot_id'
             component={SpotContainer} >
           </Route>
 
-          <Route path='/host'
+          <Route
+            path='/host'
             component={HostContainer}
             onEnter={_redirectUnlessLoggedIn}>
           </Route>
 
-          <Route path='/bookings'
+          <Route
+            path='/bookings'
             component={BookingContainer}
             onEnter={_bookingOnEnter}>
           </Route>
 
-          <Route path='/search'
+          <Route
+            path='/search'
             component={SearchContainer}
             onEnter={_getSpotsForSearch}>
           </Route>
 
-          <Route path='/manage/:spot_id'
+          <Route
+            path='/manage/:spot_id'
             component={ManageSpotContainer}
             onEnter={_redirectUnlessLoggedIn}>
           </Route>
