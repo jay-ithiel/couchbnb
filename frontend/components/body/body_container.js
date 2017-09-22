@@ -6,7 +6,4 @@ const mapDispatchToProps = dispatch => ({
   requestLocation: location => dispatch(requestLocation(location))
 });
 
-export default connect(
-  null,
-  mapDispatchToProps
-)(Body);
+export default connect(null, mapDispatchToProps)(Body);

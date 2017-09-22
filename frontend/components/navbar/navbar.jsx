@@ -1,5 +1,5 @@
 import React from 'react';
-import { withRouter } from 'react-router';
+import { Link, withRouter } from 'react-router';
 import { connect } from 'react-redux';
 
 // Components
@@ -38,7 +38,12 @@ class Navbar extends React.Component {
     return(
       <div className="navbar">
         <Logo/>
-        <NavSearch requestLocation={this.props.requestLocation}/>
+        {/*<NavSearch requestLocation={this.props.requestLocation}/>*/}
+        {/*<NavMenu loggedIn={this.props.loggedIn}/>*/}
+        {/*
+          // Make separate paths for login & signup
+          // Render <Link> to login & signup
+        */}
         <NavMenu loggedIn={this.props.loggedIn}/>
       </div>
     );

@@ -3,10 +3,10 @@ import { withRouter } from 'react-router';
 import { connect } from 'react-redux';
 
 // Components
-// import SessionFormContainer from '../session/session_form_container';
 import SplashHead from './splash_head';
 import BodyContainer from '../body/body_container';
 import Footer from '../footer/footer';
+import Layout from '../layout/layout';
 
 // Actions
 import {
@@ -26,11 +26,10 @@ class Splash extends React.Component {
 
   render() {
     return this.props.loggedIn ? <div></div> : (
-      <div>
+      <Layout>
         <SplashHead guestLogin={this.props.guestLogin}/>
         <BodyContainer/>
-        <Footer/>
-      </div>
+      </Layout>
     );
   }
 }

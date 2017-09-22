@@ -157,8 +157,7 @@ class Home extends React.Component {
 
   searchButton() {
     return (
-      <div className="main-head-search-button"
-           onClick={this.handleSearch} >
+      <div className="main-head-search-button" onClick={this.handleSearch} >
         Search
       </div>
     );
