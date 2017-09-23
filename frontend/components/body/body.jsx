@@ -91,10 +91,10 @@ class Body extends React.Component {
       </li>,
       <li
         key={Math.random()}
-        onClick={this.goToCity('Hong+Kong')}
-        className='city-link city-hongkong'>
+        onClick={this.goToCity('Rome')}
+        className='city-link city-rome'>
         <div className='city-link-cover'>
-          <span className='city-name'>HONG KONG</span>
+          <span className='city-name'>ROME</span>
         </div>
       </li>,
       <li

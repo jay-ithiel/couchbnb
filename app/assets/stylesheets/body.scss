@@ -2,8 +2,7 @@
   width: 100%;
   max-width: 1700px;
   height: 100%;
-  margin: 0 auto;
-  margin-bottom: 40px;
+  margin: 40px auto;
 
   display: flex;
   flex-direction: column;
@@ -33,7 +32,7 @@
   height: 300px;
 
   margin: 40px auto 0 auto;
-  border: 1px solid #dedede;
+  // border: 1px solid #dedede;
 }
 
 .city-link-cover {
@@ -97,7 +96,7 @@
 }
 
 .city-vegas {
-  background: url("https://res.cloudinary.com/ddgtwtbre/image/upload/c_scale,w_700/v1481831631/couchbnb/vegas.png");
+  background: url("https://res.cloudinary.com/ddgtwtbre/image/upload/v1506127615/vegas_morz2z.png");
   background-size: cover;
   background-position: 50% 50%;
 }
@@ -111,5 +110,27 @@
 .city-amsterdam {
   background: url("https://res.cloudinary.com/ddgtwtbre/image/upload/c_scale,w_700/v1481832299/couchbnb/amsterdam.png");
   background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
+
+.city-rome {
+  background: url("https://res.cloudinary.com/ddgtwtbre/image/upload/v1505165742/dj2zjaz75ibbozeffdlx.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
+
+.city-sydney {
+  background: url("https://res.cloudinary.com/ddgtwtbre/image/upload/v1506127420/sydney_aodwk6.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
+
+.city-paris {
+  background: url("https://res.cloudinary.com/ddgtwtbre/image/upload/v1506127419/paris_uelxvz.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
   background-position: 50% 50%;
 }
