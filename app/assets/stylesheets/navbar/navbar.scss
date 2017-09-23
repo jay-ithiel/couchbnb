@@ -8,11 +8,22 @@
   flex-direction: row;
 }
 
+.splash-search-bar-container {
+  display: flex;
+  align-items: center;
+
+  border-radius: 3px;
+  box-shadow: 0px 0px 3px 1px #bbb;
+  max-width: 850px;
+  width: 80vw;
+  height: 70px;
+}
+
 .nav-search-bar-container {
   display: flex;
   align-items: center;
 
-  width: 80%;
+  width: 60%;
   height: 100%;
 }
 
@@ -44,6 +55,28 @@
   outline: none;
 }
 
+.splash-search-button {
+  width: 98px;
+  height: 48px;
+  background-color: #ff5a5f;
+  border-radius: 3px;
+  margin-right: 10px;
+
+  color: #fff;
+  font-size: 17px;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+
+.nav-search-button {
+  display: inline-block;
+  width: 10%;
+  outline: none;
+  border: 0;
+  background-color: #fff;
+}
+
+
 #logo {
   display: flex;
   justify-content: center;
@@ -59,14 +92,6 @@
   font-family: 'Permanent Marker', cursive;
   font-size: 20px;
   color: #ff5a5f;
-}
-
-.nav-search-button {
-  display: inline-block;
-  width: 10%;
-  outline: none;
-  border: 0;
-  background-color: #fff;
 }
 
 #NavMenu-sessionLinks {

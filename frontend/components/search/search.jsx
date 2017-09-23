@@ -65,7 +65,7 @@ class Search extends React.Component {
 
   render() {
     return (
-      <Layout>
+      <Layout isSearchPage={true}>
         <div className='search-container'>
           <div className='results'>
             {this.filters()}

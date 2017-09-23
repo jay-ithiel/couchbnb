@@ -4,9 +4,9 @@ import React from 'react';
 import Navbar from '../navbar/navbar';
 import Footer from '../footer/footer';
 
-const Layout = ({ children }) => (
+const Layout = ({ children, isSearchPage }) => (
   <div id="Layout">
-    <Navbar/>
+    <Navbar isSearchPage={isSearchPage}/>
     <div id="Layout-content">
       {children}
     </div>

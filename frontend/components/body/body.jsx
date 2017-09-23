@@ -88,6 +88,30 @@ class Body extends React.Component {
         <div className='city-link-cover'>
           <span className='city-name'>AMSTERDAM</span>
         </div>
+      </li>,
+      <li
+        key={Math.random()}
+        onClick={this.goToCity('Hong+Kong')}
+        className='city-link city-hongkong'>
+        <div className='city-link-cover'>
+          <span className='city-name'>HONG KONG</span>
+        </div>
+      </li>,
+      <li
+        key={Math.random()}
+        onClick={this.goToCity('Sydney')}
+        className='city-link city-sydney'>
+        <div className='city-link-cover'>
+          <span className='city-name'>SYDNEY</span>
+        </div>
+      </li>,
+      <li
+        key={Math.random()}
+        onClick={this.goToCity('Paris')}
+        className='city-link city-paris'>
+        <div className='city-link-cover'>
+          <span className='city-name'>PARIS</span>
+        </div>
       </li>
     ];
     return ul;
@@ -96,6 +120,7 @@ class Body extends React.Component {
   render() {
     return (
       <div className="body">
+        <h4 id='body-title'>Featured Locations</h4>
         <ul className='city-links'>
           {this.cityLinksUl()}
         </ul>

@@ -38,12 +38,14 @@ class Navbar extends React.Component {
     return(
       <div className="navbar">
         <Logo/>
-        {/*<NavSearch requestLocation={this.props.requestLocation}/>*/}
-        {/*<NavMenu loggedIn={this.props.loggedIn}/>*/}
-        {/*
-          // Make separate paths for login & signup
-          // Render <Link> to login & signup
-        */}
+        {
+          !this.props.isSearchPage ? <div></div> : (
+            <NavSearch
+              isSearchPage={true}
+              requestLocation={this.props.requestLocation}
+            />
+          )
+        }
         <NavMenu loggedIn={this.props.loggedIn}/>
       </div>
     );

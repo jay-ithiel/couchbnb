@@ -21,8 +21,20 @@ class NavSearch extends React.Component {
   }
 
   render() {
+    let searchButtonContent, klassName, btnKlassName;
+
+    if (this.props.isSearchPage) {
+      searchButtonContent = '';
+      btnKlassName = 'nav-search-button';
+      klassName = 'nav-search-bar-container';
+    } else {
+      searchButtonContent = 'Search';
+      btnKlassName = 'splash-search-button';
+      klassName='splash-search-bar-container';
+    }
+
     return (
-      <div className="nav-search-bar-container">
+      <div className={klassName}>
         <form className="nav-search-bar-form" onSubmit={this.handleSearchSubmit} >
           <input
             type="text"
@@ -30,9 +42,11 @@ class NavSearch extends React.Component {
             value={this.state.searchLocation}
             onChange={this.handleSearchChange}
             className="nav-search-bar"
-            placeholder="Where to?"
+            placeholder="Try 'San Francisco'"
           />
-          <button className="nav-search-button"></button>
+        <button className={btnKlassName}>
+            {searchButtonContent}
+          </button>
         </form>
       </div>
     );
