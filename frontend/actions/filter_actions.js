@@ -16,6 +16,13 @@ export const updateMaxPrice = maxPrice => ({
   maxPrice
 });
 
+export const UPDATE_PRICE = "UPDATE_PRICE";
+export const updatePrice = (minPrice, maxPrice) => ({
+  type: UPDATE_PRICE,
+  minPrice,
+  maxPrice,
+});
+
 export const UPDATE_ROOM_TYPE = "UPDATE_ROOM_TYPE";
 export const updateRoomType = roomType => ({
   type: UPDATE_ROOM_TYPE,
