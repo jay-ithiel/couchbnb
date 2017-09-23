@@ -1,6 +1,8 @@
 import React from 'react';
+
+// Components
+import Layout from '../layout/layout';
 import BodyContainer from '../body/body_container';
-import Footer from '../footer/footer';
 import { withRouter } from 'react-router';
 
 const DatePicker = require('react-datepicker');
@@ -38,7 +40,7 @@ class Home extends React.Component {
 
   banner() {
     return (
-      <h2 className="banner">Go Anywhere</h2>
+      <h2 className="banner-white">Go Anywhere</h2>
     );
   }
 
@@ -155,8 +157,7 @@ class Home extends React.Component {
 
   searchButton() {
     return (
-      <div className="main-head-search-button"
-           onClick={this.handleSearch} >
+      <div className="main-head-search-button" onClick={this.handleSearch} >
         Search
       </div>
     );
@@ -165,11 +166,10 @@ class Home extends React.Component {
   render() {
     if (this.props.currentUser) {
       return (
-        <div>
+        <Layout>
           { this.mainHead() }
           <BodyContainer />
-          <Footer />
-        </div>
+        </Layout>
       );
     } else {
       return (

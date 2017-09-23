@@ -45,6 +45,11 @@ const FilterReducer = (oldState = _defaultState, action) => {
       newState.maxPrice = action.maxPrice;
       return newState;
 
+    case "UPDATE_PRICE":
+      newState.minPrice = action.minPrice;
+      newState.maxPrice = action.maxPrice;
+      return newState;
+
     case UPDATE_ROOM_TYPE:
       newState.roomType = action.roomType;
       return newState;

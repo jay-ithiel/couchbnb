@@ -706,16 +706,13 @@
 .search-container {
   display: flex;
   height: 100vh;
-  // max-height: 610px;
-  // height: 610px;
-  // height: 100%;
-  // width: 100%;
 }
 
 .filters-container {
   height: 45%;
   width: 100%;
   border-bottom: 1px solid #dedede;
+  border-top:  1px solid #dedede;
 
   display: flex;
   flex-direction: column;

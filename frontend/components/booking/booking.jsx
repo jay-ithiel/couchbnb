@@ -1,5 +1,8 @@
 import React from 'react';
 
+// Comopnents
+import Layout from '../layout/layout';
+
 class Booking extends React.Component {
   constructor(props) {
     super(props);
@@ -39,7 +42,11 @@ class Booking extends React.Component {
       <div className='bookings'>
         <h2 className='bookings-header'>Your Upcoming Vacations</h2>
         <ul className='bookings-ul'>
-          { bookingLis }
+          {
+            bookingLis.length > 0 ? bookings : (
+              <h2 className='bookings-header'>You have no bookings yet</h2>
+            )
+          }
         </ul>
       </div>
     );
@@ -70,9 +77,11 @@ class Booking extends React.Component {
 
   render() {
     return (
-      <div className='bookings-body'>
-        { this.bookings() }
-      </div>
+      <Layout>
+        <div className='bookings-body'>
+          { this.bookings() }
+        </div>
+      </Layout>
     );
   }
 }

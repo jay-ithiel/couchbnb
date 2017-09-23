@@ -3,8 +3,8 @@ import { Provider } from 'react-redux';
 import { Router, Route, IndexRoute, hashHistory } from 'react-router';
 import App from './app';
 
-import SessionFormContainer from './session/session_form_container';
-import SplashContainer from './splash/splash_container';
+import Splash from './splash/splash';
+
 import HomeContainer from './home/home_container';
 import SpotContainer from './spot/spot_container';
 import ManageSpotContainer from './spot/manage_container';
@@ -17,15 +17,11 @@ import { requestBooking } from '../actions/booking_actions';
 
 const Root = ({ store }) => {
   const _redirectUnlessLoggedIn = (nextState, replace) => {
-    if (!store.getState().session.currentUser) {
-      replace('/splash');
-    }
+    if (!store.getState().session.currentUser) replace('/splash');
   };
 
   const _redirectIfLoggedIn = (nextState, replace) => {
-    if (store.getState().session.currentUser) {
-      replace('/');
-    }
+    if (store.getState().session.currentUser) replace('/');
   };
 
   const _getSpotsForSearch = () => {
@@ -64,31 +60,37 @@ const Root = ({ store }) => {
             onEnter={_redirectUnlessLoggedIn}>
           </IndexRoute>
 
-          <Route path='/splash'
-            component={SplashContainer}
+          <Route
+            path='/splash'
+            component={Splash}
             onEnter={_redirectIfLoggedIn} >
           </Route>
 
-          <Route path='/spots/:spot_id'
+          <Route
+            path='/spots/:spot_id'
             component={SpotContainer} >
           </Route>
 
-          <Route path='/host'
+          <Route
+            path='/host'
             component={HostContainer}
             onEnter={_redirectUnlessLoggedIn}>
           </Route>
 
-          <Route path='/bookings'
+          <Route
+            path='/bookings'
             component={BookingContainer}
             onEnter={_bookingOnEnter}>
           </Route>
 
-          <Route path='/search'
+          <Route
+            path='/search'
             component={SearchContainer}
             onEnter={_getSpotsForSearch}>
           </Route>
 
-          <Route path='/manage/:spot_id'
+          <Route
+            path='/manage/:spot_id'
             component={ManageSpotContainer}
             onEnter={_redirectUnlessLoggedIn}>
           </Route>

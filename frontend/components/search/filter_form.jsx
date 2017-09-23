@@ -28,8 +28,10 @@ class FilterForm extends React.Component {
   }
 
   handlePriceChange(e) {
-    this.props.updateMinPrice(e[0]);
-    this.props.updateMaxPrice(e[1]);
+    debugger;
+    this.props.updatePrice(e[0], e[1]);
+    // this.props.updateMinPrice(e[0]);
+    // this.props.updateMaxPrice(e[1]);
   }
 
   handleCheckIn(date) {
@@ -123,26 +125,32 @@ class FilterForm extends React.Component {
             <div className="filters">
               <div className='filters-row-roomtype'>
                 <p>Entire House/Apt</p>
-                <input type="checkbox"
-                       value="Entire House/Apt"
-                       onChange={this.toggleRoomType}
-                       name="room_type" />
+                <input
+                  type="checkbox"
+                  value="Entire House/Apt"
+                  onChange={this.toggleRoomType}
+                  name="room_type"
+                />
               </div>
 
               <div className='filters-row-roomtype'>
                 <p>Private Room</p>
-                <input type="checkbox"
-                       value="Private Room"
-                       onChange={this.toggleRoomType}
-                       name="room_type" />
+                <input
+                  type="checkbox"
+                  value="Private Room"
+                  onChange={this.toggleRoomType}
+                  name="room_type"
+                />
               </div>
 
               <div className='filters-row-roomtype'>
                 <p>Shared Room</p>
-                <input type="checkbox"
-                       value="Shared Room"
-                       onChange={this.toggleRoomType}
-                       name="room_type" />
+                <input
+                  type="checkbox"
+                  value="Shared Room"
+                  onChange={this.toggleRoomType}
+                  name="room_type"
+                />
               </div>
             </div>
           </div>
@@ -159,7 +167,8 @@ class FilterForm extends React.Component {
                 min={10}
                 max={1000}
                 minDistance={2}
-                onChange={this.handlePriceChange}/>
+                onChange={this.handlePriceChange}
+              />
             </div>
 
             <div className="filters-row-price-text">

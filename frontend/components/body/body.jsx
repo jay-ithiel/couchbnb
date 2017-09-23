@@ -18,6 +18,7 @@ class Body extends React.Component {
   cityLinksUl() {
     let ul = [
       <li
+        key={Math.random()}
         onClick={this.goToCity('Los+Angeles')}
         className='city-link city-los-angeles'>
         <div className='city-link-cover'>
@@ -25,6 +26,7 @@ class Body extends React.Component {
         </div>
       </li>,
       <li
+        key={Math.random()}
         onClick={this.goToCity('San+Francisco')}
         className='city-link city-san-fran'>
         <div className='city-link-cover'>
@@ -32,6 +34,7 @@ class Body extends React.Component {
         </div>
       </li>,
       <li
+        key={Math.random()}
         onClick={this.goToCity('New+York')}
         className='city-link city-new-york'>
         <div className='city-link-cover'>
@@ -39,6 +42,7 @@ class Body extends React.Component {
         </div>
       </li>,
       <li
+        key={Math.random()}
         onClick={this.goToCity('Seattle')}
         className='city-link city-seattle'>
         <div className='city-link-cover'>
@@ -46,6 +50,7 @@ class Body extends React.Component {
         </div>
       </li>,
       <li
+        key={Math.random()}
         onClick={this.goToCity('Seoul')}
         className='city-link city-seoul'>
         <div className='city-link-cover'>
@@ -53,6 +58,7 @@ class Body extends React.Component {
         </div>
       </li>,
       <li
+        key={Math.random()}
         onClick={this.goToCity('Las+Vegas')}
         className='city-link city-vegas'>
         <div className='city-link-cover'>
@@ -60,6 +66,7 @@ class Body extends React.Component {
         </div>
       </li>,
       <li
+        key={Math.random()}
         onClick={this.goToCity('London')}
         className='city-link city-london'>
         <div className='city-link-cover'>
@@ -67,6 +74,7 @@ class Body extends React.Component {
         </div>
       </li>,
       <li
+        key={Math.random()}
         onClick={this.goToCity('Dubai')}
         className='city-link city-dubai'>
         <div className='city-link-cover'>
@@ -74,10 +82,35 @@ class Body extends React.Component {
         </div>
       </li>,
       <li
+        key={Math.random()}
         onClick={this.goToCity('Amsterdam')}
         className='city-link city-amsterdam'>
         <div className='city-link-cover'>
           <span className='city-name'>AMSTERDAM</span>
+        </div>
+      </li>,
+      <li
+        key={Math.random()}
+        onClick={this.goToCity('Rome')}
+        className='city-link city-rome'>
+        <div className='city-link-cover'>
+          <span className='city-name'>ROME</span>
+        </div>
+      </li>,
+      <li
+        key={Math.random()}
+        onClick={this.goToCity('Sydney')}
+        className='city-link city-sydney'>
+        <div className='city-link-cover'>
+          <span className='city-name'>SYDNEY</span>
+        </div>
+      </li>,
+      <li
+        key={Math.random()}
+        onClick={this.goToCity('Paris')}
+        className='city-link city-paris'>
+        <div className='city-link-cover'>
+          <span className='city-name'>PARIS</span>
         </div>
       </li>
     ];
@@ -87,6 +120,7 @@ class Body extends React.Component {
   render() {
     return (
       <div className="body">
+        <h4 id='body-title'>Featured Locations</h4>
         <ul className='city-links'>
           {this.cityLinksUl()}
         </ul>

@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router';
-import Footer from '../footer/footer';
+
+// Components
+import Layout from '../layout/layout';
 import SpotFormContainer from '../spot/spot_form_container';
 
 class Host extends React.Component {
@@ -192,12 +194,11 @@ class Host extends React.Component {
 
   render() {
     return (
-      <div>
+      <Layout>
         { this.head() }
         <SpotFormContainer spotFormInfo={this.state} />
         { this.body() }
-        <Footer />
-      </div>
+      </Layout>
     );
   }
 }

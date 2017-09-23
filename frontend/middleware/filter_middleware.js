@@ -57,6 +57,11 @@ const FilterMiddleware = ({ getState, dispatch }) => next => action => {
       dispatch(requestSpots());
       break;
 
+    case "UPDATE_PRICE":
+      next(action);
+      dispatch(requestSpots());
+      break;
+
     case UPDATE_ROOM_TYPE:
       next(action);
       dispatch(requestSpots());

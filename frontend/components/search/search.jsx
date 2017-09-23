@@ -1,5 +1,8 @@
 import React from 'react';
 import { withRouter } from 'react-router';
+
+// Components
+import Layout from '../layout/layout';
 import SearchResultItem from './search_result_item';
 import SpotMap from './spot_map';
 import FilterForm from './filter_form';
@@ -51,7 +54,7 @@ class Search extends React.Component {
         updateFilter={this.props.updateFilter}
         updateMaxPrice={this.props.updateMaxPrice}
         updateMinPrice={this.props.updateMinPrice}
-        updateMaxPrice={this.props.updateMaxPrice}
+        updatePrice={this.props.updatePrice}
         updateRoomType={this.props.updateRoomType}
         updateCheckIn={this.props.updateCheckIn}
         updateCheckOut={this.props.updateCheckOut}
@@ -62,18 +65,20 @@ class Search extends React.Component {
 
   render() {
     return (
-      <div className='search-container'>
-        <div className='results'>
-          {this.filters()}
-          {this.spots()}
+      <Layout isSearchPage={true}>
+        <div className='search-container'>
+          <div className='results'>
+            {this.filters()}
+            {this.spots()}
+          </div>
+          <SpotMap
+            spots={this.props.spots}
+            location={this.props.location}
+            requestSpots={this.props.requestSpots}
+            updateBounds={this.props.updateBounds}
+            updateFilter={this.props.updateFilter}/>
         </div>
-        <SpotMap
-          spots={this.props.spots}
-          location={this.props.location}
-          requestSpots={this.props.requestSpots}
-          updateBounds={this.props.updateBounds}
-          updateFilter={this.props.updateFilter}/>
-      </div>
+      </Layout>
     );
   }
 }
