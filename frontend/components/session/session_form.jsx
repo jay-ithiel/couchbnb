@@ -42,9 +42,9 @@ class SessionForm extends React.Component {
     const user = this.state;
     debugger;
     if (this.props.isLoginForm) {
-      this.props.login(user);
+      this.props.login({user});
     } else {
-      this.props.signup(user);
+      this.props.signup({user});
     }
   }
 

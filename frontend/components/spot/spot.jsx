@@ -1,8 +1,9 @@
 import React from 'react';
-import Body from '../body/body';
-import Footer from '../footer/footer';
 import { withRouter } from 'react-router';
 
+// Components
+import Layout from '../layout/layout';
+import Body from '../body/body';
 import BookingFormContainer from '../booking/booking_form_container';
 
 const DatePicker = require('react-datepicker');
@@ -390,12 +391,13 @@ class Spot extends React.Component {
 
   render() {
     return (
-      <div className="spot">
-        { this.head() }
-        { this.spotInfoContainer() }
-        { this.body() }
-        <Footer />
-      </div>
+      <Layout>
+        <div className="spot">
+          { this.head() }
+          { this.spotInfoContainer() }
+          { this.body() }
+        </div>
+      </Layout>
     );
   }
 }

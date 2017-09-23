@@ -1,5 +1,8 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router';
+
+// Components
+import Layout from '../layout/layout';
 import BookingsCarousel from './booking_carousel';
 
 class ManageSpot extends React.Component {
@@ -340,18 +343,13 @@ class ManageSpot extends React.Component {
     // BookingsCarousel has no style
     // <BookingsCarousel />
 
-    // console.log('currentBooking', this.state.currentBooking);
-    // console.log('pendingBookings', this.state.pendingBookings);
-    // console.log('upcomingBookings', this.state.upcomingBookings);
-    // console.log('previousBookings', this.state.previousBookings);
-
     return (
-      <div>
+      <Layout>
         { this.currentBooking() }
         { this.pendingBookings() }
         { this.upcomingBookings() }
         { this.previousBookings() }
-      </div>
+      </Layout>
     );
   }
 }

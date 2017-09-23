@@ -40,7 +40,7 @@ class Home extends React.Component {
 
   banner() {
     return (
-      <h2 className="banner">Go Anywhere</h2>
+      <h2 className="banner-white">Go Anywhere</h2>
     );
   }
 
