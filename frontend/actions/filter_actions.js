@@ -4,18 +4,6 @@ export const updateBounds = (bounds) => ({
   bounds
 });
 
-export const UPDATE_MIN_PRICE = "UPDATE_MIN_PRICE";
-export const updateMinPrice = minPrice => ({
-  type: UPDATE_MIN_PRICE,
-  minPrice
-});
-
-export const UPDATE_MAX_PRICE = "UPDATE_MAX_PRICE";
-export const updateMaxPrice = maxPrice => ({
-  type: UPDATE_MAX_PRICE,
-  maxPrice
-});
-
 export const UPDATE_PRICE = "UPDATE_PRICE";
 export const updatePrice = (minPrice, maxPrice) => ({
   type: UPDATE_PRICE,

@@ -1,12 +1,15 @@
 import React from 'react';
 import MarkerManager from '../../util/marker_manager.js';
 
-let lat;
-let lng;
+let lat, lng;
 
 class SpotMap extends React.Component {
   constructor(props) {
     super(props);
+
+    this.state = {
+      location: {}
+    };
 
     // this._registerListeners = this._registerListeners.bind(this);
     this.map = null;
@@ -17,10 +20,6 @@ class SpotMap extends React.Component {
     const mapOptions = {
       center: {lat: 37.7758, lng: -122.435},
       zoom: 13
-    };
-
-    this.state = {
-      location: {}
     };
 
     this.map = new google.maps.Map(mapDOMNode, mapOptions);
@@ -66,9 +65,7 @@ class SpotMap extends React.Component {
 
   render() {
     return (
-      <div id='map-container' ref='map'>
-
-      </div>
+      <div id='map-container' ref='map'></div>
     );
   }
 }

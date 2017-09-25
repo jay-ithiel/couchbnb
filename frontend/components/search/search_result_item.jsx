@@ -1,63 +1,32 @@
 import React from 'react';
 
-class SearchResultItem extends React.Component {
-  constructor(props) {
-    super(props);
+const HostInfo = ({ host }) => (
+  <div className='user-search-info-cont'>
+    <div className='user-image-container'>
+      <img className='search-item-user-image' src={host.profile_pic_url}/>
+    </div>
+    <span className='user-image-name'>
+      {host.first_name}
+    </span>
+  </div>
+);
 
-    this.spotImage = this.spotImage.bind(this);
-    this.info = this.info.bind(this);
-    this.userImage = this.userImage.bind(this);
-  }
+const SearchResultItem = ({ spot }) => (
+  <div className="search-result-item">
+    <img className="search-item-spot-image" src={spot.spot_pic_url}/>
 
-  spotImage() {
-    return (
-      <img
-        className="search-item-spot-image"
-        src={this.props.spot.spot_pic_url}>
-      </img>
-    );
-  }
+    <div className="search-result-item-info">
+      { spot.title }
 
-  userImage() {
-    return (
-      <div className='user-search-info-cont'>
-        <div className='user-image-container'>
-          <img
-            className='search-item-user-image'
-            src={this.props.spot.host.profile_pic_url}>
-          </img>
-        </div>
-        <span className='user-image-name'>
-          {this.props.spot.host.first_name}
-        </span>
+      <HostInfo host={spot.host}/>
+
+      <div>
+        <p>{ spot.room_type }</p>
+        <p>-</p>
+        <p>{ spot.max_guests } guests</p>
       </div>
-    );
-  }
-
-  info() {
-    const spot = this.props.spot;
-
-    return (
-      <div className="search-result-item-info">
-        { spot.title }
-        { this.userImage() }
-        <div>
-          <p>{ spot.room_type }</p>
-          <p>-</p>
-          <p>{ spot.max_guests } guests</p>
-        </div>
-      </div>
-    );
-  }
-
-  render() {
-    return (
-      <div className="search-result-item">
-        {this.spotImage()}
-        {this.info()}
-      </div>
-    );
-  }
-}
+    </div>
+  </div>
+);
 
 export default SearchResultItem;
