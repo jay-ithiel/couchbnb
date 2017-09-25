@@ -7,9 +7,7 @@ import Footer from '../footer/footer';
 const Layout = ({ children, isSearchPage }) => (
   <div id="Layout">
     <Navbar isSearchPage={isSearchPage}/>
-    <div id="Layout-content">
-      {children}
-    </div>
+    <section id="Layout-content">{children}</section>
     <Footer/>
   </div>
 );

@@ -13,9 +13,6 @@ const moment = require('moment');
 class Search extends React.Component {
   constructor(props) {
     super(props);
-
-    this.state = {};
-
     this.spots = this.spots.bind(this);
     this.filters = this.filters.bind(this);
   }
@@ -59,7 +56,8 @@ class Search extends React.Component {
         updateCheckIn={this.props.updateCheckIn}
         updateCheckOut={this.props.updateCheckOut}
         updateLocation={this.props.updateLocation}
-        updateNumGuests={this.props.updateNumGuests}/>
+        updateNumGuests={this.props.updateNumGuests}
+      />
     );
   }
 
@@ -76,7 +74,8 @@ class Search extends React.Component {
             location={this.props.location}
             requestSpots={this.props.requestSpots}
             updateBounds={this.props.updateBounds}
-            updateFilter={this.props.updateFilter}/>
+            updateFilter={this.props.updateFilter}
+          />
         </div>
       </Layout>
     );
