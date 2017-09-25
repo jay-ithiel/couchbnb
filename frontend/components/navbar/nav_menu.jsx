@@ -2,12 +2,12 @@ import React from 'react';
 
 // Components
 import UserInfoContainer from './user_info/user_info_container';
-import SessionFormNew from '../session/session_form';
+import SessionForm from './session_form';
 
 export default class NavMenu extends React.Component {
   constructor(props) {
     super(props);
-    
+
     this.state = {
       isOpen: false,
       isLoginForm: false,
@@ -44,7 +44,7 @@ export default class NavMenu extends React.Component {
         <li className="session-link" onClick={this.showSignUp.bind(this)}>
           <span>Sign Up</span>
         </li>
-        <SessionFormNew
+        <SessionForm
           isOpen={this.state.isOpen}
           isLoginForm={this.state.isLoginForm}
           toggleModalContent={this.toggleModalContent.bind(this)}

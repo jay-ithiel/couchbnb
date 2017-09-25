@@ -1,17 +1,17 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 import { Router, Route, IndexRoute, hashHistory } from 'react-router';
+
+// Components
 import App from './app';
-
 import Splash from './splash/splash';
-
-import HomeContainer from './home/home_container';
 import SpotContainer from './spot/spot_container';
 import ManageSpotContainer from './spot/manage_container';
 import HostContainer from './host/host_container';
 import SearchContainer from './search/search_container';
 import BookingContainer from './booking/booking_container';
 
+// Actions
 import { requestSpots, requestSpot } from '../actions/spot_actions';
 import { requestBooking } from '../actions/booking_actions';
 
@@ -53,18 +53,9 @@ const Root = ({ store }) => {
   return (
     <Provider store={store}>
       <Router history={hashHistory}>
-        <Route path='/' component={App} >
+        <Route path='/' component={App}>
 
-          <IndexRoute
-            component={HomeContainer}
-            onEnter={_redirectUnlessLoggedIn}>
-          </IndexRoute>
-
-          <Route
-            path='/splash'
-            component={Splash}
-            onEnter={_redirectIfLoggedIn} >
-          </Route>
+          <IndexRoute component={Splash}></IndexRoute>
 
           <Route
             path='/spots/:spot_id'

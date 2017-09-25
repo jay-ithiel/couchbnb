@@ -3,7 +3,7 @@ import { withRouter } from 'react-router';
 
 // Components
 import Layout from '../layout/layout';
-import Body from '../body/body';
+// import Body from '../body/body';
 import BookingFormContainer from '../booking/booking_form_container';
 
 const DatePicker = require('react-datepicker');

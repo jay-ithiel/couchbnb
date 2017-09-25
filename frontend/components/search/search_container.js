@@ -1,19 +1,18 @@
 import { connect } from 'react-redux';
 import Search from './search';
 import { requestSpots } from '../../actions/spot_actions';
-
-import { updateBounds,
-         updateFilter,
-         updateMinPrice,
-         updateMaxPrice,
-         updatePrice,
-         updateRoomType,
-         updateCheckIn,
-         updateCheckOut,
-         updateLocation,
-         updateNumGuests
-       } from '../../actions/filter_actions';
-
+import {
+  updateBounds,
+  updateFilter,
+  updateMinPrice,
+  updateMaxPrice,
+  updatePrice,
+  updateRoomType,
+  updateCheckIn,
+  updateCheckOut,
+  updateLocation,
+  updateNumGuests,
+} from '../../actions/filter_actions';
 import { asArray } from '../../reducers/selectors';
 
 const mapStateToProps = state => {

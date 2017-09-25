@@ -1,7 +1,11 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
 
-class Body extends React.Component {
+// Actions
+import { requestLocation } from '../../actions/filter_actions';
+
+class SplashBody extends React.Component {
   constructor(props) {
     super(props);
     this.goToCity = this.goToCity.bind(this);
@@ -98,4 +102,10 @@ class Body extends React.Component {
   }
 }
 
-export default withRouter(Body);
+const mapDispatchToProps = dispatch => ({
+  requestLocation: location => dispatch(requestLocation(location))
+});
+
+export default withRouter(
+  connect(null, mapDispatchToProps)(SplashBody)
+);
