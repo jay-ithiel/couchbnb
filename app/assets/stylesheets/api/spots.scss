@@ -13,16 +13,20 @@
 
 .spot-head {
   width: 100%;
-  height: 604px;
-  background-color: whitesmoke;
+  height: 60vh;
 
-  display: flex;
-  align-items: flex-end;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .head-img {
   height: 100%;
   width: 100%;
+
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .all-photos-button {

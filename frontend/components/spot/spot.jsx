@@ -34,8 +34,8 @@ class Spot extends React.Component {
     return !spot ? <div></div> : (
       <Layout>
         <div className="spot">
-          <div className='spot-head'>
-            <img className='head-img' src={spot.spot_pic_url}/>
+          <div className='spot-head'
+            style={{ backgroundImage: `url(${spot.spot_pic_url})` }}>
           </div>
 
           <div className="spot-info-container">
