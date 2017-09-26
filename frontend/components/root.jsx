@@ -5,7 +5,7 @@ import { Router, Route, IndexRoute, hashHistory } from 'react-router';
 // Components
 import App from './app';
 import Splash from './splash/splash';
-import SpotContainer from './spot/spot_container';
+import Spot from './spot/spot';
 import ManageSpotContainer from './spot/manage_container';
 import HostContainer from './host/host_container';
 import SearchContainer from './search/search_container';
@@ -59,7 +59,7 @@ const Root = ({ store }) => {
 
           <Route
             path='/spots/:spot_id'
-            component={SpotContainer} >
+            component={Spot} >
           </Route>
 
           <Route

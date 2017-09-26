@@ -171,7 +171,6 @@
 .price-info-head {
   height: 12%;
   width: 100%;
-  color: #fff;
 
   background-color: rgba(0, 0, 0, 0.7);
   border: 1px solid #000;
@@ -183,11 +182,13 @@
 }
 
 .price-info-head div {
+  color: #fff;
   margin: 0 15px;
   font-size: 23px;
 }
 
-.price-info-head p {
+  .price-info-head p {
+  color: #fff;
   margin: 0 15px;
   font-size: 14px;
   font-weight: 100;
