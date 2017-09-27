@@ -9,5 +9,6 @@ Rails.application.routes.draw do
       patch 'approve'
       patch 'deny'
     end
+    resources :reviews, only: [:create, :update, :destroy]
   end
 end
