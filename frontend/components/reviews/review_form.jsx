@@ -18,6 +18,7 @@ class ReviewForm extends React.Component {
       rating: null,
       errors: [],
     };
+    this.handleChange = this.handleChange.bind(this);
   }
 
   handleChange(field) {
@@ -34,8 +35,13 @@ class ReviewForm extends React.Component {
   }
 
   render() {
+    const errors = this.state.errors;
+
+    let errorsLi;
+    if (errors) errorsLi = errors.map((error, i) => <li key={i}>{error}</li> )
+
     return (
-      <form id='ReviewForm'>
+      <form id='ReviewForm' onSubmit={this.handleSubmit.bind(this)}>
         <select onChange={this.handleChange("rating")}>
           <option defaultValue value="">Please select an option</option>
           <option value="1">1 star</option>
@@ -50,6 +56,12 @@ class ReviewForm extends React.Component {
           onChange={this.handleChange("body")}
           placeholder={"Write your review here.."}
         />
+
+        <button>Submit Review</button>
+
+        <ul className="errors">
+          {errorsLi}
+        </ul>
       </form>
     );
   }
