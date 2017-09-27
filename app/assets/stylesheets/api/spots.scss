@@ -164,8 +164,12 @@
 }
 
 .spot-icon {
+  min-height: 40px;
+  min-width: 40px;
   height: 48%;
   width: 25%;
+  max-height: 50px;
+  max-width: 50px;
 }
 
 .spot-icon-wide {
