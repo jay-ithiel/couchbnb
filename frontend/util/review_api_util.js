@@ -8,7 +8,7 @@ export const createReview = (review, success, error) => {
   });
 };
 
-export const fetchReviews = (success, errorr) => {
+export const fetchReviews = (success, error) => {
   $.ajax({
     method: "GET",
     url: "api/reviews",

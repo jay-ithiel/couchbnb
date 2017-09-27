@@ -28,7 +28,7 @@ class Spot < ActiveRecord::Base
   has_many :reviews,
     primary_key: :id,
     foreign_key: :spot_id,
-    class_name: :review
+    class_name: :Review
 
   def pending_requests?
     pending_requests.size > 0

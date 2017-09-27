@@ -57,7 +57,7 @@ class Spot extends React.Component {
               </p>
 
               <ReviewForm spot={spot}/>
-              <Reviews/>
+              <Reviews reviews={spot.reviews} spot={spot}/>
             </div>
             <div className="spot-body-placeholder"></div>
             <div className='margin-right'></div>

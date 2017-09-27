@@ -21,7 +21,7 @@ const ReviewsMiddleware = ({ getState, dispatch }) => next => action => {
   const reviewsSuccess = reviews => dispatch(receiveReviews(reviews));
   const reviewDeleteSuccess = id => dispatch(removeReview(id));
   const reviewError = errors => dispatch(receiveReviewErrors(errors.responseJSON));
-
+  
   switch(action.type) {
     case CREATE_REVIEW:
       createReview(action.review, reviewSuccess, reviewError);

@@ -13,23 +13,14 @@ class Reviews extends React.Component {
     this.state = { reviews: {} };
   }
 
-  componentDidMount() {
-    this.props.requestReviews();
-  }
-
-  componentWillReceiveProps(nextProps) {
-    this.setState({ reviews: nextProps.reviews });
-  }
-
   mapReviewLis() {
-    return this.state.reviews.map((review, idx) => (
+    return this.props.spot.reviews.map((review, idx) => (
       <Review review={review}/>
     ));
   }
 
   render() {
     const reviewLis = this.mapReviewLis.bind(this)();
-
     return (
       <ul id='reviews'>
         {reviewLis}

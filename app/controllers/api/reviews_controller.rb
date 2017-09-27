@@ -9,6 +9,8 @@ class Api::ReviewsController < ApplicationController
   end
 
   def index
+    # reviews = Review.all
+    # render :index
     if params.include?("review")
       @reviews = Review.where(review_params)
     else
