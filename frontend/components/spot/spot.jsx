@@ -7,6 +7,7 @@ import Layout from '../layout/layout';
 import SpotInfo from './spot_info';
 import BookingForm from '../booking/booking_form';
 import ReviewForm from '../reviews/review_form';
+import Reviews from '../reviews/reviews';
 
 // Actions
 import { requestSpots } from '../../actions/spot_actions';
@@ -56,6 +57,7 @@ class Spot extends React.Component {
               </p>
 
               <ReviewForm spot={spot}/>
+              <Reviews/>
             </div>
             <div className="spot-body-placeholder"></div>
             <div className='margin-right'></div>
