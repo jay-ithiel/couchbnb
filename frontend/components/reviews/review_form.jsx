@@ -35,14 +35,14 @@ class ReviewForm extends React.Component {
   }
 
   render() {
-    const errors = this.state.errors;
-
-    let errorsLi;
+    let errors = this.state.errors, errorsLi;
     if (errors) errorsLi = errors.map((error, i) => <li key={i}>{error}</li> )
 
     return (
       <form id='ReviewForm' onSubmit={this.handleSubmit.bind(this)}>
-        <select onChange={this.handleChange("rating")}>
+        <h3 id='ReviewForm-title'>Write a Review</h3>
+
+        <select id='ReviewForm-rating' className='ReviewForm-input' onChange={this.handleChange("rating")}>
           <option defaultValue value="">Please select an option</option>
           <option value="1">1 star</option>
           <option value="2">2 stars</option>
@@ -52,16 +52,15 @@ class ReviewForm extends React.Component {
         </select>
 
         <textarea
+          id='ReviewForm-body'
+          className='ReviewForm-input'
           value={this.state.body}
           onChange={this.handleChange("body")}
           placeholder={"Write your review here.."}
         />
-
-        <button>Submit Review</button>
-
-        <ul className="errors">
-          {errorsLi}
-        </ul>
+        
+        <button id='ReviewForm-submit'>Submit Review</button>
+        <ul className="errors">{errorsLi}</ul>
       </form>
     );
   }

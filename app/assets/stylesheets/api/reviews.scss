@@ -1,3 +1,52 @@
 // Place all the styles related to the api/reviews controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#ReviewForm {
+  min-height: 300px;
+  width: 100%;
+
+  margin-top: 40px;
+  border-top: 1px solid #dedede;
+  padding: 20px;
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+#ReviewForm-title {
+  font-size: 25px;
+  margin-bottom: 10px;
+}
+
+#ReviewForm-rating {
+  height: 40px;
+}
+
+#ReviewForm-body {
+  min-height: 70px;
+  box-sizing: border-box;
+  padding: 10px;
+}
+
+#ReviewForm-submit {
+  height: 40px;
+  width: 250px;
+  background-color: #ff5a5f;
+  border-radius: 3px;
+  cursor: pointer;
+
+  color: #fff;
+  font-size: 15px;
+  letter-spacing: 1px;
+}
+
+.ReviewForm-input {
+  outline: none;
+  font-size: 15px;
+  border-radius: 3px;
+  border: 1px solid #cecece;
+  background-color: #fff;
+}

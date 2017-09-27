@@ -192,9 +192,11 @@ class SpotForm extends React.Component {
         </div>
 
         <div className="spot-form-row">
-          <select className="select-input"
-                  value={ this.state.room_type }
-                  onChange={ this.handleInputChange('room_type') }>
+          <select
+            className="select-input"
+            value={ this.state.room_type }
+            onChange={ this.handleInputChange('room_type') }
+          >
             <option value="" disabled>Room Type</option>
             <option value="Entire House/Apt">Entire House/Apt</option>
             <option value="Private Room">Private Room</option>
