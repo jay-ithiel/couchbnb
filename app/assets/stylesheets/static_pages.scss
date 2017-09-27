@@ -5,11 +5,19 @@
 @import './navbar/navbar.scss';
 @import './layout/layout.scss';
 
+#splash {
+  background-color: #fff;
+}
+
 .main-pic {
   width: 100%;
   height: calc(100vh - 60px);
 
-  background-color: #fff;
+  // background: url('https://res.cloudinary.com/ddgtwtbre/image/upload/v1506479255/splash_head_uhqad3.png');
+  // background-position: bottom;
+  // background-size: contain;
+  // background-repeat: no-repeat;
+
   box-sizing: border-box;
 
   display: flex;

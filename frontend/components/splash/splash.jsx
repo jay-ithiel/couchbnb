@@ -6,7 +6,7 @@ import SplashHead from './splash_head';
 import SplashBody from './splash_body';
 
 const Splash = () => (
-  <Layout>
+  <Layout id='splash'>
     <SplashHead/>
     <SplashBody/>
   </Layout>
