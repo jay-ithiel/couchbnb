@@ -22,7 +22,7 @@ class Reviews extends React.Component {
     const reviewLis = this.mapReviewLis.bind(this)();
 
     return (
-      <ul id='reviews'>
+      <ul id='Reviews'>
         {reviewLis}
       </ul>
     );

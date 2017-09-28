@@ -29,7 +29,6 @@
   min-height: 100px;
   box-sizing: border-box;
   padding: 10px;
-  // resize: none;
 }
 
 #ReviewForm-submit {
@@ -54,5 +53,44 @@
   margin: 10px 0;
   border-radius: 3px;
   border: 1px solid #cecece;
+}
 
+#Reviews {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+#Review {
+  min-height: 50px;
+
+  box-sizing: border-box;
+
+  border-top: 1px solid #cecece;
+  padding-top: 20px;
+  padding-bottom: 30px;
+}
+
+#Review-authorInfo {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+#Review-authorInfo--image {
+  height: 50px;
+  width: 50px;
+  min-height: 50px;
+  min-width: 50px;
+  max-height: 50px;
+  max-width: 50px;
+  background-color: lightgrey;
+  border-radius: 50%;
+  margin-right: 15px;
+}
+
+#Review-authorInfo--name {
+  font-size: 21px;
+}
+
+#Review-authorInfo--createdAt {
+  font-size: 15px;
 }

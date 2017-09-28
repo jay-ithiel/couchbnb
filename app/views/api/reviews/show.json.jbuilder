@@ -6,3 +6,4 @@ json.extract! @review,
   :rating,
   :spot,
   :guest
+  :created_at

@@ -7,6 +7,7 @@
       :body,
       :rating,
       :spot,
-      :guest
+      :guest,
+      :created_at
   end
 end

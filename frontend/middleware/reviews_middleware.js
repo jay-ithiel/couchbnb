@@ -3,6 +3,7 @@ import {
   REQUEST_REVIEWS,
   UPDATE_REVIEW,
   DELETE_REVIEW,
+  requestReviews,
   receiveReview,
   receiveReviews,
   removeReview,
@@ -21,7 +22,10 @@ import {
 } from '../util/review_api_util';
 
 const ReviewsMiddleware = ({ getState, dispatch }) => next => action => {
-  const reviewSuccess = () => dispatch(requestSpots());
+  const reviewSuccess = () => {
+    dispatch(requestSpots());
+    dispatch(requestReviews());
+  }
   const reviewsSuccess = reviews => dispatch(receiveReviews(reviews));
   const reviewDeleteSuccess = id => dispatch(removeReview(id));
   const reviewError = errors => dispatch(receiveReviewErrors(errors.responseJSON));

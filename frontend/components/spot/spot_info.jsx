@@ -38,10 +38,15 @@ const SpotInfo = ({ spot }) => {
     <div className="spot-info">
       <div className="host-info-side">
         <div className="host-info-side-pic-container">
-          <img
-            className='host-info-side-pic'
-            src={spot.host.profile_pic_url}>
-          </img>
+          {/*
+            <img
+              className='host-info-side-pic'
+              src={spot.host.profile_pic_url}
+            />
+          */}
+          <div className='host-info-side-pic'
+            style={{ backgroundImage: `url(${spot.host.profile_pic_url})` }}>
+          </div>
         </div>
 
         <div className="host-info-side-name">
