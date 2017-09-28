@@ -3,7 +3,6 @@ class CreateReviews < ActiveRecord::Migration
     create_table :reviews do |t|
       t.integer :guest_id, null: false
       t.integer :spot_id, null: false
-      t.string :title, null: false
       t.text :body, null: false
       t.integer :rating, null: false
 

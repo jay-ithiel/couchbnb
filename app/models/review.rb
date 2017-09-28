@@ -1,5 +1,5 @@
 class Review < ActiveRecord::Base
-  validates :guest_id, :spot_id, :title, :body, :rating, presence: true
+  validates :guest_id, :spot_id, :body, :rating, presence: true
 
   belongs_to :guest,
     primary_key: :id,

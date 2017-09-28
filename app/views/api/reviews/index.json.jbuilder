@@ -4,7 +4,6 @@
       :id,
       :guest_id,
       :spot_id,
-      :title,
       :body,
       :rating,
   end

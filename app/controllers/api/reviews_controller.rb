@@ -37,7 +37,6 @@ class Api::ReviewsController < ApplicationController
       params.require(:review).permit(
         :guest_id,
         :spot_id,
-        :title,
         :body,
         :rating
       )
