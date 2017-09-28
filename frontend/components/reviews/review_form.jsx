@@ -1,6 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
+// Components
+import ReactStars from 'react-stars';
+
 // Actions
 import {
   createReview,
@@ -25,6 +28,10 @@ class ReviewForm extends React.Component {
     this.setState({ errors: nextProps.reviewErrors });
   }
 
+  handleRatingChange(newRating) {
+    this.setState({ rating: newRating });
+  }
+
   handleChange(field) {
     return e => this.setState({ [field]: e.target.value });
   }
@@ -46,14 +53,14 @@ class ReviewForm extends React.Component {
       <form id='ReviewForm' onSubmit={this.handleSubmit.bind(this)}>
         <h3 id='ReviewForm-title'>Write a Review</h3>
 
-        <select id='ReviewForm-rating' className='ReviewForm-input' onChange={this.handleChange("rating")}>
-          <option defaultValue value="">Please select an option</option>
-          <option value="1">1 star</option>
-          <option value="2">2 stars</option>
-          <option value="3">3 stars</option>
-          <option value="4">4 stars</option>
-          <option value="5">5 stars</option>
-        </select>
+        <ReactStars
+          count={5}
+          value={this.state.rating || 0}
+          onChange={this.handleRatingChange.bind(this)}
+          size={34}
+          color1={'#bbbbbb'}
+          color2={'#008489'}
+        />
 
         <textarea
           id='ReviewForm-body'

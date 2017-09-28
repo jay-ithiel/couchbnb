@@ -8,10 +8,11 @@ export const createReview = (review, success, error) => {
   });
 };
 
-export const fetchReviews = (success, error) => {
+export const fetchReviews = (spotId, success, error) => {
   $.ajax({
     method: "GET",
     url: "api/reviews",
+    data: {spotId},
     success,
     error
   });

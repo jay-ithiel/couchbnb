@@ -55,7 +55,32 @@
   border: 1px solid #cecece;
 }
 
-#Reviews {
+#Reviews-head {
+  height: 100px;
+  width: 100%;
+
+  box-sizing: border-box;
+  border-top: 1px solid #cecece;
+  padding-bottom: 20px;
+  margin-top: 30px;
+
+  display: flex;
+  align-items: flex-end;
+}
+
+#Reviews-head h4 {
+  font-size: 28px;
+  color: #444;
+  margin-right: 20px;
+}
+
+#Reviews-head div {
+  width: 115px;
+  display: flex;
+  justify-content: space-between;
+}
+
+#Reviews-ul {
   display: flex;
   flex-direction: column-reverse;
 }
@@ -82,9 +107,11 @@
   min-width: 50px;
   max-height: 50px;
   max-width: 50px;
-  background-color: lightgrey;
   border-radius: 50%;
   margin-right: 15px;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
 #Review-authorInfo--name {

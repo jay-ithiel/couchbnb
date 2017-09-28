@@ -1,15 +1,19 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
+// Actions
+import { requestReviews } from '../../actions/review_actions';
+
+// Helper Methods
 import { _parseDate } from '../../util/helper_methods';
 
 const Review = props => {
-  if (Object.keys(props.reviews).length === 0) return <div></div>;
-
   const review = props.review;
-  const guest = props.reviews[review.id].guest;
 
-  debugger;
+  if (Object.keys(reviews).length === 0) return <div></div>;
+  if (!props.reviews[review.id]) return <div></div>;
+
+  const guest = props.reviews[review.id].guest;
 
   return (
     <li id='Review'>
@@ -26,7 +30,6 @@ const Review = props => {
         </div>
       </div>
 
-      <span>{/*review.rating*/}</span>
       <p>{review.body}</p>
     </li>
   );
@@ -36,4 +39,8 @@ const mapStateToProps = state => ({
   reviews: state.reviews.index,
 });
 
-export default connect(mapStateToProps, null)(Review);
+const mapDispatchToProps = dispatch => ({
+  requestReviews: spotId => dispatch(requestReviews(spotId)),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Review);
