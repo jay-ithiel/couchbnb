@@ -3,4 +3,6 @@ json.extract! @review,
   :guest_id,
   :spot_id,
   :body,
-  :rating
+  :rating,
+  :spot,
+  :guest

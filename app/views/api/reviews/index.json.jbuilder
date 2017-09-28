@@ -6,5 +6,7 @@
       :spot_id,
       :body,
       :rating,
+      :spot,
+      :guest
   end
 end

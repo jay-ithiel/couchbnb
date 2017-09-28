@@ -26,9 +26,10 @@
 }
 
 #ReviewForm-body {
-  min-height: 70px;
+  min-height: 100px;
   box-sizing: border-box;
   padding: 10px;
+  // resize: none;
 }
 
 #ReviewForm-submit {
@@ -36,6 +37,7 @@
   width: 250px;
   background-color: #ff5a5f;
   border-radius: 3px;
+  margin: 10px 0;
   outline: none;
   cursor: pointer;
 
@@ -45,9 +47,12 @@
 }
 
 .ReviewForm-input {
+  max-width: 500px;
   outline: none;
+  background-color: #fff;
   font-size: 15px;
+  margin: 10px 0;
   border-radius: 3px;
   border: 1px solid #cecece;
-  background-color: #fff;
+
 }
