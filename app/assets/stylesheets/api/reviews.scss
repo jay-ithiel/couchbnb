@@ -56,6 +56,35 @@
 }
 
 #Reviews {
+
+}
+
+#Reviews-head {
+  height: 100px;
+  width: 100%;
+
+  box-sizing: border-box;
+  border-top: 1px solid #cecece;
+  padding-bottom: 20px;
+  margin-top: 30px;
+
+  display: flex;
+  align-items: flex-end;
+}
+
+#Reviews-head h4 {
+  font-size: 28px;
+  color: #444;
+  margin-right: 20px;
+}
+
+#Reviews-head div {
+  width: 115px;
+  display: flex;
+  justify-content: space-between;
+}
+
+#Reviews-ul {
   display: flex;
   flex-direction: column-reverse;
 }

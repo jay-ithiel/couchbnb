@@ -58,7 +58,8 @@ class ReviewForm extends React.Component {
           value={this.state.rating || 0}
           onChange={this.handleRatingChange.bind(this)}
           size={34}
-          color2={'#ffd700'}
+          color1={'#bbbbbb'}
+          color2={'#008489'}
         />
 
         <textarea
