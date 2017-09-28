@@ -1,10 +1,5 @@
 import React from 'react';
 import { connect } from 'react-redux';
-
-// Components
-import ReactStars from 'react-stars';
-
-// Helper Methods
 import { _parseDate } from '../../util/helper_methods';
 
 const Review = props => {
@@ -27,16 +22,6 @@ const Review = props => {
           </span>
         </div>
       </div>
-
-      {/*
-        <ReactStars
-          count={5}
-          value={review.rating}
-          size={24}
-          color2={'#ffd700'}
-          edit={false}
-        />
-      */}
 
       <p>{review.body}</p>
     </li>
