@@ -10,7 +10,7 @@ import { requestReviews } from '../../actions/review_actions';
 
 class Reviews extends React.Component {
   componentDidMount() {
-    this.props.requestReviews();
+    this.props.requestReviews(this.props.spot.id);
   }
 
   mapReviewLis() {
@@ -58,7 +58,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  requestReviews: () => dispatch(requestReviews()),
+  requestReviews: (spotId) => dispatch(requestReviews(spotId)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Reviews);

@@ -5,8 +5,9 @@ export const createReview = review => ({
 });
 
 export const REQUEST_REVIEWS = "REQUEST_REVIEWS";
-export const requestReviews = () => ({
-  type: REQUEST_REVIEWS
+export const requestReviews = (spotId) => ({
+  type: REQUEST_REVIEWS,
+  spotId
 });
 
 export const UPDATE_REVIEW = "UPDATE_REVIEW";

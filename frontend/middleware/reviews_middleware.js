@@ -22,9 +22,9 @@ import {
 } from '../util/review_api_util';
 
 const ReviewsMiddleware = ({ getState, dispatch }) => next => action => {
-  const reviewSuccess = () => {
+  const reviewSuccess = review => {
     dispatch(requestSpots());
-    dispatch(requestReviews());
+    dispatch(requestReviews(review.spot_id));
   }
   const reviewsSuccess = reviews => dispatch(receiveReviews(reviews));
   const reviewDeleteSuccess = id => dispatch(removeReview(id));
@@ -36,7 +36,7 @@ const ReviewsMiddleware = ({ getState, dispatch }) => next => action => {
       return next(action);
 
     case REQUEST_REVIEWS:
-      fetchReviews(reviewsSuccess, reviewError);
+      fetchReviews(action.spotId, reviewsSuccess, reviewError);
       return next(action);
 
     case UPDATE_REVIEW:

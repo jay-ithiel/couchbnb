@@ -9,10 +9,8 @@ class Api::ReviewsController < ApplicationController
   end
 
   def index
-    # reviews = Review.all
-    # render :index
-    if params.include?("review")
-      @reviews = Review.where(review_params)
+    if params.include?("spotId")
+      @reviews = Review.where(spot_id: params["spotId"])
     else
       @reviews = Review.all.limit(20)
     end
