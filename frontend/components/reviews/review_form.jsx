@@ -21,6 +21,10 @@ class ReviewForm extends React.Component {
     this.handleChange = this.handleChange.bind(this);
   }
 
+  componentWillReceiveProps(nextProps) {
+    this.setState({ errors: nextProps.reviewErrors });
+  }
+
   handleChange(field) {
     return e => this.setState({ [field]: e.target.value });
   }
@@ -58,7 +62,7 @@ class ReviewForm extends React.Component {
           onChange={this.handleChange("body")}
           placeholder={"Write your review here.."}
         />
-        
+
         <button id='ReviewForm-submit'>Submit Review</button>
         <ul className="errors">{errorsLi}</ul>
       </form>
@@ -69,6 +73,7 @@ class ReviewForm extends React.Component {
 const mapStateToProps = state => ({
   loggedIn: state.session.currentUser ? true : false,
   currentUser: state.session.currentUser,
+  reviewErrors: state.reviews.errors,
 });
 
 const mapDispatchToProps = dispatch => ({

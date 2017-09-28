@@ -8,7 +8,7 @@ import {
 
 const _defaultState = {
   index: {},
-  errors: []
+  errors: [],
 };
 
 const ReviewsReducer = (oldState = _defaultState, action) => {

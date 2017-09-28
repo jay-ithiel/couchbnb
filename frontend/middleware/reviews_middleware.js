@@ -10,6 +10,10 @@ import {
 } from '../actions/review_actions';
 
 import {
+  requestSpots,
+} from '../actions/spot_actions';
+
+import {
   createReview,
   fetchReviews,
   updateReview,
@@ -17,11 +21,11 @@ import {
 } from '../util/review_api_util';
 
 const ReviewsMiddleware = ({ getState, dispatch }) => next => action => {
-  const reviewSuccess = review => dispatch(receiveReview(review));
+  const reviewSuccess = () => dispatch(requestSpots());
   const reviewsSuccess = reviews => dispatch(receiveReviews(reviews));
   const reviewDeleteSuccess = id => dispatch(removeReview(id));
   const reviewError = errors => dispatch(receiveReviewErrors(errors.responseJSON));
-  
+
   switch(action.type) {
     case CREATE_REVIEW:
       createReview(action.review, reviewSuccess, reviewError);

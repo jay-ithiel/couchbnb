@@ -15,12 +15,13 @@ class Reviews extends React.Component {
 
   mapReviewLis() {
     return this.props.spot.reviews.map((review, idx) => (
-      <Review review={review}/>
+      <Review review={review} key={idx}/>
     ));
   }
 
   render() {
     const reviewLis = this.mapReviewLis.bind(this)();
+
     return (
       <ul id='reviews'>
         {reviewLis}
