@@ -10,7 +10,7 @@ import { _parseDate } from '../../util/helper_methods';
 const Review = props => {
   const review = props.review;
 
-  if (Object.keys(reviews).length === 0) return <div></div>;
+  if (Object.keys(props.reviews).length === 0) return <div></div>;
   if (!props.reviews[review.id]) return <div></div>;
 
   const guest = props.reviews[review.id].guest;
