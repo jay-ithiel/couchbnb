@@ -1,0 +1,39 @@
+#Layout {
+  min-height: 100vh;
+  height: auto;
+  width: 100vw;
+
+  position: relative;
+  box-sizing: border-box;
+  padding-top: 60px;
+}
+
+#Layout-content {
+  min-height: 100vh;
+  height: auto;
+  width: 100%;
+}
+
+
+
+.footer-link {
+  color: #555;
+  letter-spacing: 0.5px;
+}
+
+.footer-link:hover {
+  cursor: pointer;
+  color: #eb6542;
+  text-decoration: underline;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: #fff;
+  border-top: 1px solid #dedede;
+  width: 100vw;
+  height: 300px;
+}

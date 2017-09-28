@@ -1,7 +1,8 @@
 .body {
   width: 100%;
   max-width: 1700px;
-  height: 100%;
+  min-height: 100vh;
+  height: auto;
   margin: 40px auto;
 
   display: flex;
@@ -46,7 +47,7 @@
 }
 
 .city-link-cover:hover {
-  background: rgba(255,255,255,0.2);
+  background: rgba(0,0,0,0.2);
   transition: background .2s ease-in;
   cursor: pointer;
 }
@@ -72,7 +73,7 @@
 }
 
 .city-new-york {
-  background: url("https://res.cloudinary.com/ddgtwtbre/image/upload/v1481829752/couchbnb/new_york.png");
+  background: url("https://res.cloudinary.com/ddgtwtbre/image/upload/v1506372107/new_york_w0ypyd.png");
   background-size: cover;
   background-position: 50% 50%;
 }
@@ -84,7 +85,7 @@
 }
 
 .city-seoul {
-  background: url("https://res.cloudinary.com/ddgtwtbre/image/upload/v1481829554/couchbnb/seoul.png");
+  background: url("https://res.cloudinary.com/ddgtwtbre/image/upload/v1506371945/Seoul_xxwlvs.jpg");
   background-size: cover;
   background-position: 50% 50%;
 }

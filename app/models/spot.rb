@@ -25,6 +25,11 @@ class Spot < ActiveRecord::Base
     foreign_key: :spot_id,
     class_name: :Booking
 
+  has_many :reviews,
+    primary_key: :id,
+    foreign_key: :spot_id,
+    class_name: :Review
+
   def pending_requests?
     pending_requests.size > 0
   end

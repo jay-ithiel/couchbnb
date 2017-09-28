@@ -44,7 +44,7 @@ class NavSearch extends React.Component {
             className="nav-search-bar"
             placeholder="Try 'San Francisco'"
           />
-        <button className={btnKlassName}>
+          <button className={btnKlassName}>
             {searchButtonContent}
           </button>
         </form>

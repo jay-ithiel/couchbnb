@@ -1,31 +1,33 @@
-import { CREATE_SPOT,
-         UPDATE_SPOT,
-         DELETE_SPOT,
-         REQUEST_SPOT,
-         REQUEST_SPOTS,
-         requestSpots,
-         removeSpot,
-         receiveSpot,
-         receiveSpots,
-         receiveSpotErrors
-       } from '../actions/spot_actions';
+import {
+  CREATE_SPOT,
+  UPDATE_SPOT,
+  DELETE_SPOT,
+  REQUEST_SPOT,
+  REQUEST_SPOTS,
+  requestSpots,
+  removeSpot,
+  receiveSpot,
+  receiveSpots,
+  receiveSpotErrors
+} from '../actions/spot_actions';
 
-import { REQUEST_LOCATION,
-         requestLocation,
-         receiveLocation,
-         updateBounds
-       } from '../actions/filter_actions';
+import {
+  REQUEST_LOCATION,
+  requestLocation,
+  receiveLocation,
+  updateBounds
+} from '../actions/filter_actions';
 
-import { UPDATE_BOUNDS,
-        UPDATE_FILTER,
-        UPDATE_MIN_PRICE,
-        UPDATE_MAX_PRICE,
-        UPDATE_ROOM_TYPE,
-        UPDATE_CHECK_IN,
-        UPDATE_CHECK_OUT,
-        UPDATE_LOCATION,
-        UPDATE_NUM_GUESTS
-      } from '../actions/filter_actions';
+import {
+  UPDATE_BOUNDS,
+  UPDATE_FILTER,
+  UPDATE_PRICE,
+  UPDATE_ROOM_TYPE,
+  UPDATE_CHECK_IN,
+  UPDATE_CHECK_OUT,
+  UPDATE_LOCATION,
+  UPDATE_NUM_GUESTS
+} from '../actions/filter_actions';
 
 import { fetchLocation } from '../util/filter_api_util';
 
@@ -47,17 +49,7 @@ const FilterMiddleware = ({ getState, dispatch }) => next => action => {
       dispatch(requestSpots());
       break;
 
-    case UPDATE_MIN_PRICE:
-      next(action);
-      dispatch(requestSpots());
-      break;
-
-    case UPDATE_MAX_PRICE:
-      next(action);
-      dispatch(requestSpots());
-      break;
-
-    case "UPDATE_PRICE":
+    case UPDATE_PRICE:
       next(action);
       dispatch(requestSpots());
       break;

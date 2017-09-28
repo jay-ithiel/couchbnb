@@ -1,19 +1,16 @@
 import { connect } from 'react-redux';
 import Search from './search';
 import { requestSpots } from '../../actions/spot_actions';
-
-import { updateBounds,
-         updateFilter,
-         updateMinPrice,
-         updateMaxPrice,
-         updatePrice,
-         updateRoomType,
-         updateCheckIn,
-         updateCheckOut,
-         updateLocation,
-         updateNumGuests
-       } from '../../actions/filter_actions';
-
+import {
+  updateBounds,
+  updateFilter,
+  updatePrice,
+  updateRoomType,
+  updateCheckIn,
+  updateCheckOut,
+  updateLocation,
+  updateNumGuests,
+} from '../../actions/filter_actions';
 import { asArray } from '../../reducers/selectors';
 
 const mapStateToProps = state => {
@@ -29,8 +26,6 @@ const mapDispatchToProps = dispatch => ({
   requestSpots: () => dispatch(requestSpots()),
   updateFilter: (filter, value) => dispatch(updateFilter(filter, value)),
   updateBounds: (bounds) => dispatch(updateBounds(bounds)),
-  updateMinPrice: minPrice => dispatch(updateMinPrice(minPrice)),
-  updateMaxPrice: maxPrice => dispatch(updateMaxPrice(maxPrice)),
   updatePrice: (minPrice, maxPrice) => dispatch(updatePrice(minPrice, maxPrice)),
   updateRoomType: roomType => dispatch(updateRoomType(roomType)),
   updateCheckIn: checkIn => dispatch(updateCheckIn(checkIn)),

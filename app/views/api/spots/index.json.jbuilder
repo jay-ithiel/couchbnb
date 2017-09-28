@@ -19,6 +19,7 @@
       :lat,
       :lng,
       :host,
-      :bookings
+      :bookings,
+      :reviews
   end
 end

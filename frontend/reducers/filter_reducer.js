@@ -1,14 +1,14 @@
 import merge from 'lodash/merge';
-import { UPDATE_BOUNDS,
-         UPDATE_FILTER,
-         UPDATE_MIN_PRICE,
-         UPDATE_MAX_PRICE,
-         UPDATE_ROOM_TYPE,
-         UPDATE_CHECK_IN,
-         UPDATE_CHECK_OUT,
-         RECEIVE_LOCATION,
-         UPDATE_NUM_GUESTS
-       } from '../actions/filter_actions';
+import {
+  UPDATE_BOUNDS,
+  UPDATE_FILTER,
+  UPDATE_PRICE,
+  UPDATE_ROOM_TYPE,
+  UPDATE_CHECK_IN,
+  UPDATE_CHECK_OUT,
+  RECEIVE_LOCATION,
+  UPDATE_NUM_GUESTS,
+} from '../actions/filter_actions';
 
 const _defaultState = {
   bounds: {
@@ -37,15 +37,7 @@ const FilterReducer = (oldState = _defaultState, action) => {
       newState.bounds = action.bounds;
       return newState;
 
-    case UPDATE_MIN_PRICE:
-      newState.minPrice = action.minPrice;
-      return newState;
-
-    case UPDATE_MAX_PRICE:
-      newState.maxPrice = action.maxPrice;
-      return newState;
-
-    case "UPDATE_PRICE":
+    case UPDATE_PRICE:
       newState.minPrice = action.minPrice;
       newState.maxPrice = action.maxPrice;
       return newState;

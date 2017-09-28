@@ -46,16 +46,17 @@ class Booking < ActiveRecord::Base
   end
 
   def get_overlapping_requests
-    Booking.where("(check_out_date > '#{check_in_date}'
-                    AND check_in_date < '#{check_out_date}')\
-                    OR (check_in_date < '#{check_out_date}'
-                    AND check_out_date > '#{check_in_date}')\
-                    OR (check_out_date > '#{check_out_date}'
-                    AND check_in_date < '#{check_in_date}')\
-                    OR (check_out_date < '#{check_out_date}'
-                    AND check_in_date > '#{check_in_date}')
-                    OR check_in_date = '#{check_in_date}'")
-                    .where("spot_id = '#{spot_id}'")
+    Booking.where(
+      "(check_out_date > '#{check_in_date}'
+      AND check_in_date < '#{check_out_date}')\
+      OR (check_in_date < '#{check_out_date}'
+      AND check_out_date > '#{check_in_date}')\
+      OR (check_out_date > '#{check_out_date}'
+      AND check_in_date < '#{check_in_date}')\
+      OR (check_out_date < '#{check_out_date}'
+      AND check_in_date > '#{check_in_date}')
+      OR check_in_date = '#{check_in_date}'"
+    ).where("spot_id = '#{spot_id}'")
   end
 
   def approve!

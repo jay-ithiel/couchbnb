@@ -3,64 +3,25 @@ import { withRouter } from 'react-router';
 
 // Components
 import Layout from '../layout/layout';
+import FilterForm from './filter_form';
 import SearchResultItem from './search_result_item';
 import SpotMap from './spot_map';
-import FilterForm from './filter_form';
 
-const DatePicker = require('react-datepicker');
-const moment = require('moment');
-
-class Search extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {};
-
-    this.spots = this.spots.bind(this);
-    this.filters = this.filters.bind(this);
-  }
-
+export default class Search extends React.Component {
   handleSpotView(spotId) {
     return () => this.props.router.push(`spots/${spotId}`);
   }
 
   spots() {
     let spotIds = Object.keys(this.props.spots);
-
-    if (spotIds.length === 0) { return; }
-    let allSpots = spotIds.map(spotId => {
+    return spotIds.length === 0 ? [] : spotIds.map(spotId => {
       let spot = this.props.spots[spotId];
       return (
-        <div key={spot.id}
-             className="spot-item"
-             onClick={ this.handleSpotView(spot.id) }>
+        <div  key={spot.id} className="spot-item" onClick={this.handleSpotView(spot.id)}>
           <SearchResultItem spot={spot}/>
         </div>
       );
     });
-
-    return (
-      <div className='filtered-spots'>
-        {allSpots}
-      </div>
-    );
-  }
-
-  filters() {
-    return (
-      <FilterForm
-        minPrice={this.props.minPrice}
-        maxPrice={this.props.maxPrice}
-        updateFilter={this.props.updateFilter}
-        updateMaxPrice={this.props.updateMaxPrice}
-        updateMinPrice={this.props.updateMinPrice}
-        updatePrice={this.props.updatePrice}
-        updateRoomType={this.props.updateRoomType}
-        updateCheckIn={this.props.updateCheckIn}
-        updateCheckOut={this.props.updateCheckOut}
-        updateLocation={this.props.updateLocation}
-        updateNumGuests={this.props.updateNumGuests}/>
-    );
   }
 
   render() {
@@ -68,19 +29,31 @@ class Search extends React.Component {
       <Layout isSearchPage={true}>
         <div className='search-container'>
           <div className='results'>
-            {this.filters()}
-            {this.spots()}
+            <FilterForm
+              minPrice={this.props.minPrice}
+              maxPrice={this.props.maxPrice}
+              updateFilter={this.props.updateFilter}
+              updatePrice={this.props.updatePrice}
+              updateRoomType={this.props.updateRoomType}
+              updateCheckIn={this.props.updateCheckIn}
+              updateCheckOut={this.props.updateCheckOut}
+              updateLocation={this.props.updateLocation}
+              updateNumGuests={this.props.updateNumGuests}
+            />
+            <div className='filtered-spots'>
+              {this.spots.bind(this)()}
+            </div>
           </div>
+
           <SpotMap
             spots={this.props.spots}
             location={this.props.location}
             requestSpots={this.props.requestSpots}
             updateBounds={this.props.updateBounds}
-            updateFilter={this.props.updateFilter}/>
+            updateFilter={this.props.updateFilter}
+          />
         </div>
       </Layout>
     );
   }
 }
-
-export default Search;

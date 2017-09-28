@@ -28,10 +28,7 @@ class FilterForm extends React.Component {
   }
 
   handlePriceChange(e) {
-    debugger;
     this.props.updatePrice(e[0], e[1]);
-    // this.props.updateMinPrice(e[0]);
-    // this.props.updateMaxPrice(e[1]);
   }
 
   handleCheckIn(date) {
@@ -57,20 +54,15 @@ class FilterForm extends React.Component {
   }
 
   handleRoomType() {
-    // this.props.updateRoomType(e.target.value);
     this.props.updateRoomType(this.state.roomType);
   }
 
   toggleRoomType(e) {
-    // console.log('e.target.value: ', e.target.value);
     if (e.target.value === this.state.roomType) {
-      // this.setState({roomType: ""});
       this.state.roomType = "";
     } else {
-      // this.setState({roomType: e.target.value});
       this.state.roomType = e.target.value;
     }
-    // console.log('this.state: ', this.state);
     this.handleRoomType();
   }
 
@@ -88,13 +80,15 @@ class FilterForm extends React.Component {
               <div className="filters-row-date">
                 <DatePicker
                   selected={this.state.checkIn}
-                  onChange={this.handleCheckIn} />
+                  onChange={this.handleCheckIn}
+                />
               </div>
 
               <div className="filters-row-date">
                 <DatePicker
                   selected={this.state.checkOut}
-                  onChange={this.handleCheckOut} />
+                  onChange={this.handleCheckOut}
+                />
               </div>
 
               <div className="filters-row-date">
@@ -184,25 +178,3 @@ class FilterForm extends React.Component {
 }
 
 export default FilterForm;
-
-
-
-// <div>
-//   <span className="filter">Filter results:</span>
-//   <br/>
-//   <label>Minimum Price</label>
-//   <input
-//     type="number"
-//     value={this.props.minPrice}
-//     onChange={this.handleChange('minPrice', this.props.updateFilter)}/>
-//    <br/>
-//   <label>Maximum Price</label>
-//   <input
-//     type="number"
-//     value={this.props.maxPrice}
-//     onChange={this.handleChange('maxPrice', this.props.updateFilter)}/>
-// </div>
-//
-// <div>
-//   <ReactSlider defaultValue={[0, 100]} withBars />
-// </div>

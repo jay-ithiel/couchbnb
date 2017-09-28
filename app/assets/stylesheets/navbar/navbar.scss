@@ -6,6 +6,9 @@
   justify-content: space-between;
   align-items: center;
   flex-direction: row;
+
+  position: absolute;
+  top: 0;
 }
 
 .splash-search-bar-container {
@@ -36,7 +39,7 @@
 
   display: flex;
   align-items: center;
-
+  background-color: #fff;
 }
 
 .nav-search-bar {
@@ -83,7 +86,7 @@
   align-items: center;
 
   height: 100%;
-  width: 10%;
+  min-width: 10%;
   padding: 0;
   cursor: pointer;
 }
@@ -92,6 +95,12 @@
   font-family: 'Permanent Marker', cursive;
   font-size: 20px;
   color: #ff5a5f;
+}
+
+#logo-img {
+  height: 32px;
+  margin-left: 13px;
+  margin-right: 7px;
 }
 
 #NavMenu-sessionLinks {

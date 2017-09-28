@@ -40,7 +40,6 @@ class SessionForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const user = this.state;
-    debugger;
     if (this.props.isLoginForm) {
       this.props.login({user});
     } else {
