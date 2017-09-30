@@ -35,9 +35,7 @@ class Host extends React.Component {
   }
 
   _redirectUnlessLoggedIn() {
-    if (!this.props.loggedIn) {
-      this.props.router.push('/');
-    }
+    if (!this.props.loggedIn) this.props.router.push('/');
   }
 
   componentDidMount() {
@@ -173,7 +171,7 @@ class Host extends React.Component {
     });
 
     // let spotLis = realCurrentUserSpots.map(spot => {
-      let spotLis = this.props.currentUserSpots.map(spot => {
+    let spotLis = this.props.currentUserSpots.map(spot => {
       return (
         <div className='listing' key={ spot.id }>
           { this.listingImage(spot) }
