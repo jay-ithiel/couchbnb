@@ -1,5 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router';
+
 const CITIES = require('../../util/city_coords_api_util');
 
 class SpotForm extends React.Component {
@@ -62,7 +63,6 @@ class SpotForm extends React.Component {
     if (editSpot === null) { return; }
     if (this.state.title === "") {
       if (this.props.spotFormInfo.isFormShowing === true) {
-        // this may have a bug
         this.setState(editSpot);
       }
     }
