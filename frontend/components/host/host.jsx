@@ -50,8 +50,8 @@ class Host extends React.Component {
   render() {
     return (
       <Layout>
-        <button onClick={this.toggleSpotForm}>
-          Add A New Listing
+        <button id="add-listing" onClick={this.toggleSpotForm}>
+          Add A Listing
         </button>
 
         <SpotFormContainer spotFormInfo={this.state}/>

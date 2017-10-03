@@ -389,6 +389,28 @@
 
 // Host Component
 
+#add-listing {
+  height: 60px;
+  min-width: 100px;
+  float: right;
+
+  background-color: #fff;
+  box-sizing: border-box;
+  padding: 5px 15px;
+  outline: none;
+
+  color: #19a598;
+  font-size: 16px;
+
+  transition: all .15s ease-in;
+  cursor: pointer;
+}
+
+#add-listing:hover {
+  background-color: #19a598;
+  color: #fff;
+}
+
 .host-body {
   display: flex;
   justify-content: center;
