@@ -21,3 +21,4 @@ app/assets/images/seed_user_imgs
 
 # Ignore application configuration
 /config/application.yml
+issues.txt
