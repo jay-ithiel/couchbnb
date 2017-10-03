@@ -4,26 +4,14 @@ import { Link, withRouter } from 'react-router';
 // Components
 import Layout from '../layout/layout';
 import SpotFormContainer from '../spot/spot_form_container';
+import Listing from './listing';
 
 class Host extends React.Component {
   constructor(props) {
     super(props);
 
-    this.head = this.head.bind(this);
-    this.body = this.body.bind(this);
     this.listings = this.listings.bind(this);
     this._redirectUnlessLoggedIn = this._redirectUnlessLoggedIn.bind(this);
-
-    this.goToManageSpot = this.goToManageSpot.bind(this);
-    this.manageBookingsButton = this.manageBookingsButton.bind(this);
-
-    this.listingImage = this.listingImage.bind(this);
-    this.listingInfo = this.listingInfo.bind(this);
-    this.listingInfoButtons = this.listingInfoButtons.bind(this);
-    this.handleEdit = this.handleEdit.bind(this);
-    this.handleDelete = this.handleDelete.bind(this);
-    this.handlePreview = this.handlePreview.bind(this);
-
     this.toggleSpotForm = this.toggleSpotForm.bind(this);
 
     this.state = {
@@ -36,10 +24,6 @@ class Host extends React.Component {
 
   _redirectUnlessLoggedIn() {
     if (!this.props.loggedIn) this.props.router.push('/');
-  }
-
-  componentDidMount() {
-
   }
 
   componentDidUpdate() {
@@ -56,146 +40,30 @@ class Host extends React.Component {
     }
   }
 
-  head() {
-    return (
-      <div className="host-head">
-        <h2 className="banner host-button"
-            onClick={ this.toggleSpotForm }>
-          Host an Unforgettable Vacation
-        </h2>
-      </div>
-    );
-  }
-
-  body() {
-    return (
-      <div className='host-body'>
-        { this.listings() }
-      </div>
-    );
-  }
-
-  listingInfoButtons(spot) {
-    return (
-      <div className="listing-info-buttons">
-        <button
-          className="listing-info-button"
-          onClick={ this.handleEdit(spot) }>Edit
-        </button>
-
-        <button
-          className="listing-info-button"
-          onClick={ this.handleDelete(spot) }>Delete
-        </button>
-
-        <button
-          className="preview-button"
-          onClick={ this.handlePreview(spot.id) }>Preview
-        </button>
-      </div>
-    );
-  }
-
-  handlePreview(id) {
-    return () => {
-      this.props.router.push(`spots/${id}`);
-    };
-  }
-
-  handleDelete(spot) {
-    return () => {
-      this.props.deleteSpot(spot.id);
-    };
-  }
-
-  handleEdit(spot) {
-    return () => {
-      this.setState({ isNewSpot: false, editSpotTarget: spot });
-      this.toggleSpotForm();
-    };
-  }
-
-  goToManageSpot(spot) {
-    return () => (
-      this.props.router.push(`/manage/${spot.id}`)
-    );
-  }
-
-  manageBookingsButton(spot) {
-    return (
-      <div
-        className="manage-bookings-button"
-        onClick={this.goToManageSpot(spot)}>
-        Manage Bookings
-      </div>
-    );
-  }
-
-  listingInfo(spot) {
-    return (
-      <div className='listing-info'>
-        <li className='listing-title'>
-          Title: { spot.title }
-          { this.manageBookingsButton(spot) }
-        </li>
-
-        <li>Price Per Night: ${ spot.price_per_night }</li>
-        <li>City: { spot.city }</li>
-        <li>Country: { spot.country }</li>
-        <li>Room Type: { spot.room_type}</li>
-
-        {this.listingInfoButtons(spot)}
-      </div>
-    );
-  }
-
-  listingImage(spot) {
-    return (
-      <img
-        className="listing-image"
-        src={spot.spot_pic_url}>
-      </img>
-    );
-  }
-
   listings() {
-    if (this.props.currentUserSpots == null) { return; }
-
-
-    let realCurrentUserSpots = [];
-    Object.keys(this.props.realCurrentUserSpots).forEach(k => {
-      let nextSpot = this.props.realCurrentUserSpots[k];
-      if (!realCurrentUserSpots.includes(nextSpot)) {
-        realCurrentUserSpots.push(nextSpot);
-      }
-    });
-
-    // let spotLis = realCurrentUserSpots.map(spot => {
-    let spotLis = this.props.currentUserSpots.map(spot => {
-      return (
-        <div className='listing' key={ spot.id }>
-          { this.listingImage(spot) }
-          { this.listingInfo(spot) }
-        </div>
-      );
-    });
-
-    return (
-      <div className='listings'>
-        <h2 className='listings-header'>Your hosted vacations</h2>
-        <ul className="listings-ul">
-          { spotLis }
-        </ul>
-      </div>
-    );
+    if (this.props.currentUserSpots == null) return;
+    return this.props.currentUserSpots.map(spot => (
+      <Listing spot={spot}/>
+    ));
   }
 
   render() {
     return (
       <Layout>
-        { this.head() }
-        <SpotFormContainer spotFormInfo={this.state} />
-        { this.body() }
+        <button onClick={this.toggleSpotForm}>
+          Add A New Listing
+        </button>
+
+        <SpotFormContainer spotFormInfo={this.state}/>
+
+        <div className='host-body'>
+          <div className='listings'>
+            <h2 className='listings-header'>Your hosted vacations</h2>
+            <ul className="listings-ul">
+              { this.listings() }
+            </ul>
+          </div>
+        </div>
       </Layout>
     );
   }
