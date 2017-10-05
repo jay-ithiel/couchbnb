@@ -719,6 +719,27 @@
   height: 100vh;
 }
 
+@media screen and (max-width: 1001px) {
+  .search-container {
+    flex-direction: column-reverse;
+    transition: all .1s ease-in !important;
+  }
+
+  #map-container {
+    width: 100vw !important;
+    transition: all .1s ease-in !important;
+  }
+
+  .results {
+    width: 100vw !important;
+    transition: all .1s ease-in !important;
+  }
+
+  .spot-item {
+    width: 80vw !important;
+  }
+}
+
 .filters-container {
   height: 45%;
   width: 100%;
@@ -937,6 +958,9 @@
   height: 80%;
   width: 100%;
   background-color: #dedede;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .user-image-container {
@@ -988,6 +1012,10 @@
   border: 2px solid #fff;
 
   margin-top: -10%;
+
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .search-result-item-info {

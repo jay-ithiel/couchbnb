@@ -13,14 +13,12 @@ import {
 } from '../../actions/filter_actions';
 import { asArray } from '../../reducers/selectors';
 
-const mapStateToProps = state => {
-  return {
-    spots: state.spots.index,
-    minPrice: state.filters.minPrice,
-    maxPrice: state.filters.maxPrice,
-    location: state.filters.location
-  };
-};
+const mapStateToProps = state => ({
+  spots: state.spots.index,
+  minPrice: state.filters.minPrice,
+  maxPrice: state.filters.maxPrice,
+  location: state.filters.location
+});
 
 const mapDispatchToProps = dispatch => ({
   requestSpots: () => dispatch(requestSpots()),

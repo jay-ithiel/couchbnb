@@ -59,7 +59,7 @@ const Root = ({ store }) => {
 
           <Route
             path='/spots/:spot_id'
-            component={Spot} >
+            component={Spot}>
           </Route>
 
           <Route
