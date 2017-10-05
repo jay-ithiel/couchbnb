@@ -42,7 +42,7 @@ class NavSearch extends React.Component {
             value={this.state.searchLocation}
             onChange={this.handleSearchChange}
             className="nav-search-bar"
-            placeholder="Try 'San Francisco'"
+            placeholder="Try 'Los Angeles'"
           />
           <button className={btnKlassName}>
             {searchButtonContent}
