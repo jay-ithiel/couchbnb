@@ -9,7 +9,7 @@
 }
 
 #Layout-content {
-  min-height: 100vh;
+  min-height: calc(100vh - 60px);
   height: auto;
   width: 100%;
 }
