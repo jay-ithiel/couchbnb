@@ -18,10 +18,8 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   setInterval(function() {
-    console.log('making request');
     http.get("http://couchbnb.herokuapp.com");
-    console.log('made request');
-  }, 5000); // every 5 minutes (300000)
+  }, 300000); // every 5 minutes (300000)
 
   ReactDOM.render(<Root store={store}/>, mainRoot);
 
