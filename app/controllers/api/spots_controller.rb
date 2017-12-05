@@ -39,7 +39,6 @@ class Api::SpotsController < ApplicationController
     #   spots = current_user.tasks.where(due_date: 1.week.ago..Date.today)
     #   spots = Spot.where()
     # end
-
     @spots = spots
     render :index
   end

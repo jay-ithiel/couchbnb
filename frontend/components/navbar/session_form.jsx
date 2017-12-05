@@ -108,13 +108,11 @@ class SessionForm extends React.Component {
               className="input"
             />
 
-            <button className="form-submit session-form-btn">
+            <div className="form-submit session-form-btn">
               {formHeader}
-            </button>
+            </div>
 
-            <div
-              className="form-guest-login session-form-btn" onClick={this.props.guestLogin}
-            >
+            <div className="form-guest-login session-form-btn" onClick={this.props.guestLogin}>
               Guest Login
             </div>
 
