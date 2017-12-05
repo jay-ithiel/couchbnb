@@ -9,3 +9,5 @@ const Logo = () => (
 );
 
 export default Logo;
+
+// https://res.cloudinary.com/ddgtwtbre/image/upload/v1512496336/couchbnb_logo_zycffe.png

@@ -8,7 +8,6 @@
   min-height: 350px;
   margin: auto;
 
-  z-index: 20;
 }
 
 .ReactModal__Content div form  {
@@ -20,6 +19,7 @@
 }
 
 #sessionForm {
+  z-index: 20000000000000;
   box-sizing: border-box;
   padding: 20px;
 }
@@ -80,6 +80,7 @@
 .session-form-btn {
   border-radius: 3px;
   margin-top: 30px;
+  text-align: center;
 
   height: 50px;
   width: 100%;

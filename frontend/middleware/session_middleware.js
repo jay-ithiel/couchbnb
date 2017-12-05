@@ -1,14 +1,16 @@
-import { LOGIN,
-         LOGOUT,
-         SIGNUP,
-         receiveCurrentUser,
-         receiveErrors
-       } from '../actions/session_actions';
+import {
+  LOGIN,
+  LOGOUT,
+  SIGNUP,
+  receiveCurrentUser,
+  receiveErrors
+} from '../actions/session_actions';
 
-import { login,
-         logout,
-         signup
-       } from '../util/session_api_util';
+import {
+  login,
+  logout,
+  signup
+} from '../util/session_api_util';
 
 const SessionMiddleware = store => next => action => {
   const loginSuccessCallback = (user) => {
