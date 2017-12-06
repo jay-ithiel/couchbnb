@@ -4,19 +4,15 @@ const Footer = () => (
   <div className="footer">
     <ul className="links-container">
       <li>
-        <a className="footer-link" target="_blank" href="http://www.jayhwang.xyz">ABOUT</a>
+        <a className="footer-link" target="_blank" href="http://www.jayithiel.com">ABOUT</a>
       </li>
 
       <li>
-        <a className="footer-link" target="_blank" href="https://github.com/jay-hwang/couchbnb">SOURCE</a>
+        <a className="footer-link" target="_blank" href="https://github.com/jay-ithiel/couchbnb">SOURCE</a>
       </li>
 
       <li>
-        <a className="footer-link" target="_blank" href="https://github.com/jay-hwang/couchbnb/issues">SUPPORT</a>
-      </li>
-
-      <li>
-        <a className="footer-link" target="_blank" href="https://www.linkedin.com/in/jay-hwang">COMPANY</a>
+        <a className="footer-link" target="_blank" href="https://github.com/jay-ithiel/couchbnb/issues">SUPPORT</a>
       </li>
     </ul>
   </div>

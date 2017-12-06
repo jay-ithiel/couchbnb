@@ -39,13 +39,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jay-hwang/couchbnb.git"
+    "url": "git+https://github.com/jay-ithiel/couchbnb.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/jay-hwang/couchbnb/issues"
+    "url": "https://github.com/jay-ithiel/couchbnb/issues"
   },
-  "homepage": "https://github.com/jay-hwang/couchbnb#readme"
+  "homepage": "https://github.com/jay-ithiel/couchbnb#readme"
 }
