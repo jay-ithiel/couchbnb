@@ -8,8 +8,8 @@ User.create({
 
 User.create({
   first_name: "Jay",
-  last_name: "Hwang",
-  email: "jay_hwang@gmail.com",
+  last_name: "Ithiel",
+  email: "jay_ithiel@gmail.com",
   password: "password",
   profile_pic_url: "http://res.cloudinary.com/ddgtwtbre/image/upload/v1481587215/portfolio/linkedin_eiulzq.jpg"
 })
