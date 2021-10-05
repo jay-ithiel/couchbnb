@@ -12,13 +12,6 @@ import {
 } from '../actions/spot_actions';
 
 import {
-  REQUEST_LOCATION,
-  requestLocation,
-  receiveLocation,
-  updateBounds
-} from '../actions/filter_actions';
-
-import {
   UPDATE_BOUNDS,
   UPDATE_FILTER,
   UPDATE_PRICE,
@@ -26,7 +19,11 @@ import {
   UPDATE_CHECK_IN,
   UPDATE_CHECK_OUT,
   UPDATE_LOCATION,
-  UPDATE_NUM_GUESTS
+  UPDATE_NUM_GUESTS,
+  REQUEST_LOCATION,
+  requestLocation,
+  receiveLocation,
+  updateBounds,
 } from '../actions/filter_actions';
 
 import { fetchLocation } from '../util/filter_api_util';
